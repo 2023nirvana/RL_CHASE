@@ -1,0 +1,7 @@
+# 水流干扰等级3: 强水流
+current:
+  enabled: true
+  type: "tidal"
+  base_velocity: [0.15, 0.10, 0.0]
+  variation_amplitude: 0.10
+  variation_frequency: 0.08

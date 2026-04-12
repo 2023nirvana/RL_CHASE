@@ -1,0 +1,369 @@
+training:
+  total_timesteps: 10000000
+  n_envs: 8
+  n_steps: 2048
+  batch_size: 512
+  n_epochs: 4
+  learning_rate: 5.0e-05
+  lr_schedule: linear
+  lr_end: 1.0e-06
+  gamma: 0.99
+  gae_lambda: 0.95
+  clip_range: 0.2
+  clip_range_vf: null
+  ent_coef: 0.08
+  vf_coef: 0.5
+  max_grad_norm: 0.5
+  save_freq: 50000
+  eval_freq: 10000
+  eval_episodes: 20
+  early_stop_patience: 50
+  early_stop_min_delta: 0.01
+network:
+  encoder:
+    hidden_sizes:
+    - 128
+  decoder:
+    hidden_sizes:
+    - 128
+  feature_extractor:
+    hidden_sizes:
+    - 256
+    - 256
+    activation: relu
+    use_layer_norm: true
+  lstm:
+    hidden_size: 256
+    num_layers: 2
+    dropout: 0.0
+  actor_head:
+    hidden_sizes:
+    - 128
+  critic_head:
+    hidden_sizes:
+    - 128
+action_space:
+  type: discrete
+  num_actions: 13
+  actions:
+    0: hover
+    1: surge_forward
+    2: surge_backward
+    3: sway_left
+    4: sway_right
+    5: heave_up
+    6: heave_down
+    7: yaw_left
+    8: yaw_right
+    9: pitch_up
+    10: pitch_down
+    11: roll_left
+    12: roll_right
+  translation_mode: distance
+  translation_heading: target
+  heading_max_delta: 0.12
+  action_distance:
+    surge: 0.03
+    sway: 0.03
+    heave: 0.025
+  action_angle_delta:
+    yaw: 0.1
+    pitch: 0.1
+    roll: 0.1
+  velocity_controller:
+    kp:
+    - 20.0
+    - 20.0
+    - 25.0
+    kd:
+    - 6.0
+    - 6.0
+    - 8.0
+    max_force:
+    - 30.0
+    - 30.0
+    - 30.0
+  goal_slowdown:
+    enabled: true
+    radius: 1.0
+    min_scale: 0.2
+  action_thrust_mapping:
+    hover:
+    - 0.0
+    - 0.1
+    - 0.1
+    - 0.0
+    - 0.0
+    - 0.1
+    - 0.1
+    - 0.0
+    surge_forward:
+    - 1.0
+    - 0.0
+    - 0.0
+    - 1.0
+    - -1.0
+    - 0.0
+    - 0.0
+    - -1.0
+    surge_backward:
+    - -0.7
+    - 0.0
+    - 0.0
+    - -0.7
+    - 0.7
+    - 0.0
+    - 0.0
+    - 0.7
+    sway_left:
+    - 1.0
+    - 0.0
+    - 0.0
+    - -1.0
+    - 1.0
+    - 0.0
+    - 0.0
+    - -1.0
+    sway_right:
+    - -1.0
+    - 0.0
+    - 0.0
+    - 1.0
+    - -1.0
+    - 0.0
+    - 0.0
+    - 1.0
+    heave_up:
+    - 0.0
+    - 1.0
+    - 1.0
+    - 0.0
+    - 0.0
+    - 1.0
+    - 1.0
+    - 0.0
+    heave_down:
+    - 0.0
+    - -0.7
+    - -0.7
+    - 0.0
+    - 0.0
+    - -0.7
+    - -0.7
+    - 0.0
+    yaw_left:
+    - 0.7
+    - 0.0
+    - 0.0
+    - 0.7
+    - 0.7
+    - 0.0
+    - 0.0
+    - 0.7
+    yaw_right:
+    - -0.7
+    - 0.0
+    - 0.0
+    - -0.7
+    - -0.7
+    - 0.0
+    - 0.0
+    - -0.7
+    pitch_up:
+    - 0.0
+    - -0.5
+    - 0.5
+    - 0.0
+    - 0.0
+    - -0.5
+    - 0.5
+    - 0.0
+    pitch_down:
+    - 0.0
+    - 0.5
+    - -0.5
+    - 0.0
+    - 0.0
+    - 0.5
+    - -0.5
+    - 0.0
+    roll_left:
+    - 0.0
+    - -0.5
+    - -0.5
+    - 0.0
+    - 0.0
+    - 0.5
+    - 0.5
+    - 0.0
+    roll_right:
+    - 0.0
+    - 0.5
+    - 0.5
+    - 0.0
+    - 0.0
+    - -0.5
+    - -0.5
+    - 0.0
+observation_space:
+  include_position: true
+  include_orientation: true
+  include_velocity: true
+  include_target_position: true
+  include_target_orientation: true
+  include_error: true
+  history_length: 1
+  normalize: true
+  clip_obs: 10.0
+reward:
+  weights:
+    position_error: -0.3
+    orientation_error: -0.1
+    velocity_penalty: -0.02
+    angular_velocity_penalty: -0.02
+    energy_cost: -0.002
+    stability_bonus: 0.3
+    goal_reached: 30.0
+    time_penalty: -0.0002
+  thresholds:
+    position_tolerance: 0.5
+    orientation_tolerance: 0.3
+    velocity_limit: 4.0
+    angular_velocity_limit: 4.0
+  attitude_clip_limit: 1.0
+  attitude_roll_coeff: -0.5
+  attitude_pitch_coeff: -0.5
+  attitude_angular_coeff: -0.05
+  flip_threshold: 2.0
+  sparse: false
+termination:
+  no_progress:
+    enabled: true
+    patience_steps: 180
+    min_improvement: 0.01
+    min_distance: 1.5
+curriculum:
+  enabled: true
+  stages:
+  - name: easy
+    position_range: 1.5
+    orientation_required: false
+    velocity_init: zero
+    success_threshold: 0.6
+  - name: medium
+    position_range: 5.0
+    orientation_required: true
+    velocity_init: small
+    success_threshold: 0.7
+  - name: hard
+    position_range: 10.0
+    orientation_required: true
+    velocity_init: random
+    success_threshold: 0.6
+  - name: expert
+    position_range: 20.0
+    orientation_required: true
+    velocity_init: random
+    add_disturbance: true
+    success_threshold: 0.5
+logging:
+  log_dir: visualization/logs
+  save_dir: checkpoints
+  tensorboard:
+    enabled: true
+    log_freq: 100
+  metrics:
+  - episode_reward
+  - episode_length
+  - success_rate
+  - position_error
+  - orientation_error
+  - actor_loss
+  - critic_loss
+  - entropy
+  - learning_rate
+  - explained_variance
+  video:
+    enabled: true
+    record_freq: 100000
+    max_video_length: 500
+domain_randomization:
+  enabled: false
+  dynamics:
+    mass_range:
+    - 0.9
+    - 1.1
+    inertia_range:
+    - 0.9
+    - 1.1
+    damping_range:
+    - 0.7
+    - 1.3
+    thruster_efficiency_range:
+    - 0.8
+    - 1.0
+  environment:
+    current_velocity_range:
+    - 0.0
+    - 0.3
+    initial_position_noise: 0.5
+    initial_velocity_noise: 0.2
+dual_loop_pid:
+  enabled: true
+  dynamics:
+    J:
+    - 0.35
+    - 0.27
+    - 0.16
+    B:
+    - 0.06
+    - 0.05
+    - 0.04
+    D:
+    - 0.01
+    - 0.008
+    - 0.06
+  outer_loop:
+    Kp:
+    - 2.0
+    - 2.0
+    - 2.5
+    Ki:
+    - 0.1
+    - 0.1
+    - 0.1
+  inner_loop:
+    Kp:
+    - 1.5
+    - 1.5
+    - 1.2
+    Kd:
+    - 0.05
+    - 0.05
+    - 0.03
+  eso:
+    w0:
+    - 10.0
+    - 10.0
+    - 10.0
+  limits:
+    integral:
+    - 1.0
+    - 1.0
+    - 1.0
+    omega_ref:
+    - 2.0
+    - 2.0
+    - 2.0
+    tau:
+    - 10.0
+    - 10.0
+    - 10.0
+  action_force:
+    surge: 30.0
+    sway: 25.0
+    heave: 30.0
+  action_angle_delta:
+    yaw: 0.1
+    pitch: 0.1
+    roll: 0.1

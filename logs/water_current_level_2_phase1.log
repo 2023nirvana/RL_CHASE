@@ -1,0 +1,13 @@
+usage: collect_expert_trajectories.py [-h] --low-level-ckpt LOW_LEVEL_CKPT
+                                      [--episodes-per-strategy EPISODES_PER_STRATEGY]
+                                      [--only-success]
+                                      [--evader-mode EVADER_MODE]
+                                      [--world-size WORLD_SIZE]
+                                      [--catch-radius CATCH_RADIUS]
+                                      [--subgoal-range SUBGOAL_RANGE]
+                                      [--low-steps LOW_STEPS]
+                                      [--max-steps MAX_STEPS]
+                                      [--output-dir OUTPUT_DIR] [--seed SEED]
+                                      [--strategies STRATEGIES [STRATEGIES ...]]
+                                      [--merge] [--num-workers NUM_WORKERS]
+collect_expert_trajectories.py: error: unrecognized arguments: --n-episodes 3000

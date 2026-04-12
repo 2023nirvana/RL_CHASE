@@ -1,0 +1,28 @@
+Device: cuda
+Creating SubprocVecEnv with 4 workers ...
+Loaded V4 NN: obs_dim=8, act_dim=3, hidden=(64, 64)
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:236: UserWarning: [33mWARN: Box low's precision lowered by casting to float32, current low.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:306: UserWarning: [33mWARN: Box high's precision lowered by casting to float32, current high.dtype=float64[0m
+  gym.logger.warn(
+Traceback (most recent call last):
+  File "/root/autodl-tmp/pursue_20260302/training/online_ppo_finetune.py", line 1004, in <module>
+    main()
+  File "/root/autodl-tmp/pursue_20260302/training/online_ppo_finetune.py", line 999, in main
+    trainer = OnlinePPOTrainer(args)
+              ^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/pursue_20260302/training/online_ppo_finetune.py", line 228, in __init__
+    self._load_pretrained(args.pretrain_ckpt)
+  File "/root/autodl-tmp/pursue_20260302/training/online_ppo_finetune.py", line 268, in _load_pretrained
+    ckpt = torch.load(path, map_location=self.device,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/torch/serialization.py", line 1479, in load
+    with _open_file_like(f, "rb") as opened_file:
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/torch/serialization.py", line 759, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/torch/serialization.py", line 740, in __init__
+    super().__init__(open(name, mode))
+                     ^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'checkpoints/water_current_level_0/offline/best.pth'

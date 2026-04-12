@@ -1,0 +1,990 @@
+Using device: cuda
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:236: UserWarning: [33mWARN: Box low's precision lowered by casting to float32, current low.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:306: UserWarning: [33mWARN: Box high's precision lowered by casting to float32, current high.dtype=float64[0m
+  gym.logger.warn(
+[3DContEnv] heave step in config is 0.0000, fallback to sway_step=0.0300
+[3DContEnv] yaw delta in config is 0.0000, fallback to yaw_delta=0.0800
+[3DContEnv] heave step in config is 0.0000, fallback to sway_step=0.0300
+[3DContEnv] yaw delta in config is 0.0000, fallback to yaw_delta=0.0800
+[3DContEnv] heave step in config is 0.0000, fallback to sway_step=0.0300
+[3DContEnv] yaw delta in config is 0.0000, fallback to yaw_delta=0.0800
+[3DContEnv] heave step in config is 0.0000, fallback to sway_step=0.0300
+[3DContEnv] yaw delta in config is 0.0000, fallback to yaw_delta=0.0800
+[3DContEnv] heave step in config is 0.0000, fallback to sway_step=0.0300
+[3DContEnv] yaw delta in config is 0.0000, fallback to yaw_delta=0.0800
+3D V2 Continuous Environment initialized:
+  Observation dim: 10
+  Action dim: 5 (continuous)
+  Target distance: 12.0m
+  Z range: [1.0, 6.0]
+  Success radius: 0.7
+  Heave step: 0.03
+  Yaw delta: 0.08
+  Num envs: 4
+Network parameters: 10,123
+Start training for 488 updates (2000000 timesteps)
+  [Eval] steps=8192 mean_reward=-7251.257 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/best.pth
+  [Eval] steps=12288 mean_reward=-8214.603 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=16384 mean_reward=-7365.401 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=20480 mean_reward=-8433.681 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=28672 mean_reward=-8005.832 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=32768 mean_reward=-8245.085 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=36864 mean_reward=-7821.224 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Update 10/488 | Steps 40960 | TrainRew -2.229 | Loss 3259.3018 | Succ 0.00%
+  [Eval] steps=40960 mean_reward=-8640.744 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=45056 mean_reward=-7336.650 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=53248 mean_reward=-6824.285 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/best.pth
+  [Eval] steps=57344 mean_reward=-8517.971 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=61440 mean_reward=-7376.771 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=65536 mean_reward=-6964.396 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=73728 mean_reward=-7316.334 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=77824 mean_reward=-8587.161 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Update 20/488 | Steps 81920 | TrainRew -2.085 | Loss 118.0370 | Succ 0.00%
+  [Eval] steps=81920 mean_reward=-7483.878 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=86016 mean_reward=-8524.124 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=90112 mean_reward=-7480.510 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=98304 mean_reward=-7059.760 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=102400 mean_reward=-7106.899 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=106496 mean_reward=-7425.325 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=110592 mean_reward=-6630.272 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/best.pth
+  [Eval] steps=118784 mean_reward=-6714.370 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Update 30/488 | Steps 122880 | TrainRew -2.116 | Loss 455.1581 | Succ 0.00%
+  [Eval] steps=122880 mean_reward=-8258.772 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=126976 mean_reward=-6645.681 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=131072 mean_reward=-7201.715 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=135168 mean_reward=-7692.871 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=143360 mean_reward=-8083.746 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=147456 mean_reward=-8212.681 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=151552 mean_reward=-8039.317 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=155648 mean_reward=-7708.852 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Update 40/488 | Steps 163840 | TrainRew -2.355 | Loss 116.5579 | Succ 0.00%
+  [Eval] steps=163840 mean_reward=-7800.073 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=167936 mean_reward=-8062.747 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=172032 mean_reward=-7919.796 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=176128 mean_reward=-8542.224 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=180224 mean_reward=-8260.375 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=188416 mean_reward=-7337.131 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=192512 mean_reward=-8702.317 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=196608 mean_reward=-8577.055 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=200704 mean_reward=-7763.520 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+Update 50/488 | Steps 204800 | TrainRew -2.123 | Loss 105.1880 | Succ 0.00%
+  [Eval] steps=208896 mean_reward=-7539.681 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=212992 mean_reward=-8152.486 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=217088 mean_reward=-8420.170 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=221184 mean_reward=-8208.601 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=225280 mean_reward=-7640.613 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=233472 mean_reward=-8207.153 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=237568 mean_reward=-7342.176 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=241664 mean_reward=-7641.294 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+Update 60/488 | Steps 245760 | TrainRew -2.030 | Loss 59.2015 | Succ 0.00%
+  [Eval] steps=245760 mean_reward=-7743.249 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=253952 mean_reward=-7982.220 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=258048 mean_reward=-6893.726 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=262144 mean_reward=-7785.945 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=266240 mean_reward=-8545.724 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=270336 mean_reward=-8086.261 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=278528 mean_reward=-7287.808 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=282624 mean_reward=-8021.010 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+Update 70/488 | Steps 286720 | TrainRew -2.466 | Loss 109.9943 | Succ 0.00%
+  [Eval] steps=286720 mean_reward=-8259.041 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=290816 mean_reward=-8062.910 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=299008 mean_reward=-7912.423 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=303104 mean_reward=-7652.294 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=307200 mean_reward=-7904.118 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=311296 mean_reward=-8121.637 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=315392 mean_reward=-7741.407 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=323584 mean_reward=-8850.633 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+Update 80/488 | Steps 327680 | TrainRew -2.020 | Loss 44.9140 | Succ 0.00%
+  [Eval] steps=327680 mean_reward=-7807.492 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=331776 mean_reward=-8431.632 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=335872 mean_reward=-8050.997 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=344064 mean_reward=-7470.050 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=348160 mean_reward=-6933.586 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=352256 mean_reward=-7852.321 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=356352 mean_reward=-7672.899 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=360448 mean_reward=-7589.186 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+Update 90/488 | Steps 368640 | TrainRew -2.073 | Loss 50.5694 | Succ 0.00%
+  [Eval] steps=368640 mean_reward=-7417.837 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=372736 mean_reward=-8076.444 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=376832 mean_reward=-8251.549 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=380928 mean_reward=-7443.131 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=385024 mean_reward=-8005.760 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=393216 mean_reward=-7622.549 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=397312 mean_reward=-7100.170 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=401408 mean_reward=-6949.383 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=405504 mean_reward=-8706.929 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Update 100/488 | Steps 409600 | TrainRew -1.854 | Loss 24.7769 | Succ 0.00%
+  [Eval] steps=413696 mean_reward=-8120.087 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=417792 mean_reward=-7105.951 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=421888 mean_reward=-8032.516 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=425984 mean_reward=-7822.646 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=430080 mean_reward=-8509.422 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=438272 mean_reward=-8416.386 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=442368 mean_reward=-7018.312 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=446464 mean_reward=-7080.731 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Update 110/488 | Steps 450560 | TrainRew -1.692 | Loss 42.3462 | Succ 0.00%
+  [Eval] steps=450560 mean_reward=-8225.990 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=458752 mean_reward=-8156.953 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=462848 mean_reward=-8284.350 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=466944 mean_reward=-7310.754 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=471040 mean_reward=-7719.122 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=475136 mean_reward=-6721.425 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=483328 mean_reward=-7329.280 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=487424 mean_reward=-7973.651 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Update 120/488 | Steps 491520 | TrainRew -2.137 | Loss 45.2695 | Succ 0.00%
+  [Eval] steps=491520 mean_reward=-7456.494 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=495616 mean_reward=-7851.241 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=503808 mean_reward=-8793.943 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=507904 mean_reward=-7193.618 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=512000 mean_reward=-7736.138 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=516096 mean_reward=-7980.030 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=520192 mean_reward=-8291.997 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=528384 mean_reward=-7309.066 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Update 130/488 | Steps 532480 | TrainRew -1.879 | Loss 42.4751 | Succ 0.00%
+  [Eval] steps=532480 mean_reward=-7706.102 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=536576 mean_reward=-6880.209 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=540672 mean_reward=-7464.834 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=548864 mean_reward=-7633.107 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=552960 mean_reward=-7693.568 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=557056 mean_reward=-7377.987 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=561152 mean_reward=-7058.875 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=565248 mean_reward=-7817.970 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Update 140/488 | Steps 573440 | TrainRew -1.832 | Loss 33.1492 | Succ 0.00%
+  [Eval] steps=573440 mean_reward=-7828.577 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=577536 mean_reward=-8803.892 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=581632 mean_reward=-7546.301 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=585728 mean_reward=-7835.914 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=593920 mean_reward=-7126.880 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=598016 mean_reward=-7648.791 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=602112 mean_reward=-7145.223 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=606208 mean_reward=-6671.244 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=610304 mean_reward=-6532.795 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/best.pth
+Update 150/488 | Steps 614400 | TrainRew -2.280 | Loss 28.6293 | Succ 0.00%
+  [Eval] steps=618496 mean_reward=-8114.851 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=622592 mean_reward=-7609.916 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=626688 mean_reward=-7094.333 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=630784 mean_reward=-7073.347 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=638976 mean_reward=-7661.107 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=643072 mean_reward=-6823.326 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=647168 mean_reward=-7280.748 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=651264 mean_reward=-6966.078 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Update 160/488 | Steps 655360 | TrainRew -2.345 | Loss 45.1939 | Succ 0.00%
+  [Eval] steps=655360 mean_reward=-7293.482 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=663552 mean_reward=-7440.371 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=667648 mean_reward=-6907.401 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=671744 mean_reward=-7476.658 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=675840 mean_reward=-7436.329 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=684032 mean_reward=-7281.965 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=688128 mean_reward=-7292.433 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=692224 mean_reward=-6842.051 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Update 170/488 | Steps 696320 | TrainRew -2.295 | Loss 50.3023 | Succ 0.00%
+  [Eval] steps=696320 mean_reward=-7250.097 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=700416 mean_reward=-7564.152 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=708608 mean_reward=-7722.404 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=712704 mean_reward=-7506.790 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=716800 mean_reward=-6745.781 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=720896 mean_reward=-7269.172 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=729088 mean_reward=-7159.648 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=733184 mean_reward=-7295.416 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Update 180/488 | Steps 737280 | TrainRew -1.752 | Loss 58.8337 | Succ 0.00%
+  [Eval] steps=737280 mean_reward=-7028.894 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=741376 mean_reward=-7279.010 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=745472 mean_reward=-6459.401 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/best.pth
+  [Eval] steps=753664 mean_reward=-7379.476 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=757760 mean_reward=-7315.708 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=761856 mean_reward=-7809.810 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=765952 mean_reward=-7993.949 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=770048 mean_reward=-7498.150 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Update 190/488 | Steps 778240 | TrainRew -1.954 | Loss 178.8690 | Succ 0.00%
+  [Eval] steps=778240 mean_reward=-6838.173 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=782336 mean_reward=-6580.915 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=786432 mean_reward=-5818.072 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/best.pth
+  [Eval] steps=790528 mean_reward=-7423.273 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=798720 mean_reward=-6230.673 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=802816 mean_reward=-6741.271 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=806912 mean_reward=-6937.831 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=811008 mean_reward=-6368.305 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=815104 mean_reward=-5668.984 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/best.pth
+Update 200/488 | Steps 819200 | TrainRew -1.996 | Loss 56.0147 | Succ 0.00%
+  [Eval] steps=823296 mean_reward=-5112.887 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/best.pth
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=827392 mean_reward=-6404.846 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=831488 mean_reward=-5528.010 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=835584 mean_reward=-5898.485 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=843776 mean_reward=-6306.915 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=847872 mean_reward=-6194.303 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=851968 mean_reward=-6535.092 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=856064 mean_reward=-5851.405 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Update 210/488 | Steps 860160 | TrainRew -1.898 | Loss 80.3949 | Succ 0.00%
+  [Eval] steps=860160 mean_reward=-5738.855 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=868352 mean_reward=-6368.619 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=872448 mean_reward=-6771.425 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=876544 mean_reward=-5655.180 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=880640 mean_reward=-5993.168 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=888832 mean_reward=-7082.222 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=892928 mean_reward=-5295.015 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=897024 mean_reward=-6127.825 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Update 220/488 | Steps 901120 | TrainRew -1.670 | Loss 81.9180 | Succ 0.00%
+  [Eval] steps=901120 mean_reward=-5221.190 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=905216 mean_reward=-6114.791 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=913408 mean_reward=-5735.535 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=917504 mean_reward=-5405.081 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=921600 mean_reward=-5245.297 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=925696 mean_reward=-4856.395 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/best.pth
+  [Eval] steps=933888 mean_reward=-6024.626 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=937984 mean_reward=-6988.169 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Update 230/488 | Steps 942080 | TrainRew -1.905 | Loss 137.6979 | Succ 0.00%
+  [Eval] steps=942080 mean_reward=-5849.245 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=946176 mean_reward=-6150.155 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=950272 mean_reward=-5633.961 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=958464 mean_reward=-6006.235 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=962560 mean_reward=-6309.137 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=966656 mean_reward=-5073.141 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=970752 mean_reward=-5645.146 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=978944 mean_reward=-6249.430 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Update 240/488 | Steps 983040 | TrainRew -1.964 | Loss 74.6481 | Succ 0.00%
+  [Eval] steps=983040 mean_reward=-5146.325 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=987136 mean_reward=-6165.890 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=991232 mean_reward=-6633.896 success_rate=10.00%
+  [EvalTerm] {'success': 1, 'timeout': 9, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=995328 mean_reward=-6471.410 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1003520 mean_reward=-5940.810 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=1007616 mean_reward=-4943.632 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1011712 mean_reward=-5076.262 success_rate=10.00%
+  [EvalTerm] {'success': 1, 'timeout': 9, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1015808 mean_reward=-6080.870 success_rate=10.00%
+  [EvalTerm] {'success': 1, 'timeout': 9, 'out_of_bounds': 0, 'other': 0}
+Update 250/488 | Steps 1024000 | TrainRew -1.715 | Loss 48.5526 | Succ 0.00%
+  [Eval] steps=1024000 mean_reward=-6350.976 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=1028096 mean_reward=-5650.098 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1032192 mean_reward=-4951.522 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1036288 mean_reward=-6247.346 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1040384 mean_reward=-5349.526 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=1048576 mean_reward=-5381.276 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1052672 mean_reward=-5851.717 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1056768 mean_reward=-6887.560 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1060864 mean_reward=-4805.948 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/best.pth
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+Update 260/488 | Steps 1064960 | TrainRew -1.918 | Loss 47.7958 | Succ 0.00%
+  [Eval] steps=1069056 mean_reward=-6213.206 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1073152 mean_reward=-5537.020 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1077248 mean_reward=-6280.811 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1081344 mean_reward=-5416.321 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=1085440 mean_reward=-5278.839 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1093632 mean_reward=-4555.174 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/best.pth
+  [Eval] steps=1097728 mean_reward=-5881.003 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1101824 mean_reward=-5985.111 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+Update 270/488 | Steps 1105920 | TrainRew -1.428 | Loss 60.1208 | Succ 0.00%
+  [Eval] steps=1105920 mean_reward=-4962.724 success_rate=10.00%
+  [EvalTerm] {'success': 1, 'timeout': 9, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1110016 mean_reward=-6208.109 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1118208 mean_reward=-5629.765 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1122304 mean_reward=-5301.701 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=1126400 mean_reward=-5538.210 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1130496 mean_reward=-4556.363 success_rate=10.00%
+  [EvalTerm] {'success': 1, 'timeout': 9, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1138688 mean_reward=-5192.235 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1142784 mean_reward=-5220.971 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+Update 280/488 | Steps 1146880 | TrainRew -1.647 | Loss 68.6637 | Succ 0.00%
+  [Eval] steps=1146880 mean_reward=-5752.998 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1150976 mean_reward=-5072.303 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1155072 mean_reward=-5324.968 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1163264 mean_reward=-5990.572 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=1167360 mean_reward=-5886.558 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1171456 mean_reward=-5512.421 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1175552 mean_reward=-5939.933 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1183744 mean_reward=-5832.539 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+Update 290/488 | Steps 1187840 | TrainRew -1.907 | Loss 33.9424 | Succ 0.00%
+  [Eval] steps=1187840 mean_reward=-4235.522 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/best.pth
+  [Eval] steps=1191936 mean_reward=-5596.626 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1196032 mean_reward=-5673.935 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1200128 mean_reward=-5106.568 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=1208320 mean_reward=-6146.918 success_rate=10.00%
+  [EvalTerm] {'success': 1, 'timeout': 9, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1212416 mean_reward=-5382.527 success_rate=10.00%
+  [EvalTerm] {'success': 1, 'timeout': 9, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1216512 mean_reward=-6239.481 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1220608 mean_reward=-5536.298 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+Update 300/488 | Steps 1228800 | TrainRew -1.767 | Loss 56.0576 | Succ 0.00%
+  [Eval] steps=1228800 mean_reward=-5302.827 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1232896 mean_reward=-5853.455 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1236992 mean_reward=-5473.312 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1241088 mean_reward=-5072.833 success_rate=20.00%
+  [EvalTerm] {'success': 2, 'timeout': 8, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=1245184 mean_reward=-5165.200 success_rate=10.00%
+  [EvalTerm] {'success': 1, 'timeout': 9, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1253376 mean_reward=-3947.155 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/best.pth
+  [Eval] steps=1257472 mean_reward=-4295.081 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1261568 mean_reward=-5107.351 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=1265664 mean_reward=-5153.748 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Update 310/488 | Steps 1269760 | TrainRew -1.561 | Loss 57.4797 | Succ 0.00%
+  [Eval] steps=1273856 mean_reward=-7353.724 success_rate=10.00%
+  [EvalTerm] {'success': 1, 'timeout': 9, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1277952 mean_reward=-4475.546 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1282048 mean_reward=-3837.791 success_rate=10.00%
+  [EvalTerm] {'success': 1, 'timeout': 9, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/best.pth
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=1286144 mean_reward=-4446.048 success_rate=10.00%
+  [EvalTerm] {'success': 1, 'timeout': 9, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1290240 mean_reward=-4937.971 success_rate=10.00%
+  [EvalTerm] {'success': 1, 'timeout': 9, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1298432 mean_reward=-5630.110 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1302528 mean_reward=-5466.202 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=1306624 mean_reward=-4422.523 success_rate=10.00%
+  [EvalTerm] {'success': 1, 'timeout': 9, 'out_of_bounds': 0, 'other': 0}
+Update 320/488 | Steps 1310720 | TrainRew -2.247 | Loss 54.6128 | Succ 0.00%
+  [Eval] steps=1310720 mean_reward=-4706.043 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1318912 mean_reward=-4806.706 success_rate=10.00%
+  [EvalTerm] {'success': 1, 'timeout': 9, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1323008 mean_reward=-4801.553 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=1327104 mean_reward=-5141.179 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1331200 mean_reward=-4393.411 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1335296 mean_reward=-5775.879 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1343488 mean_reward=-5976.570 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=1347584 mean_reward=-5261.802 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Update 330/488 | Steps 1351680 | TrainRew -1.890 | Loss 39.8518 | Succ 0.00%
+  [Eval] steps=1351680 mean_reward=-4707.082 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1355776 mean_reward=-5875.432 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1363968 mean_reward=-4900.214 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=1368064 mean_reward=-4464.715 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1372160 mean_reward=-4765.935 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1376256 mean_reward=-5622.100 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1380352 mean_reward=-5475.644 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=1388544 mean_reward=-5283.293 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Update 340/488 | Steps 1392640 | TrainRew -1.914 | Loss 45.9560 | Succ 0.00%
+  [Eval] steps=1392640 mean_reward=-5267.097 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1396736 mean_reward=-5488.040 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1400832 mean_reward=-4736.618 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=1409024 mean_reward=-5041.128 success_rate=10.00%
+  [EvalTerm] {'success': 1, 'timeout': 9, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1413120 mean_reward=-5888.447 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1417216 mean_reward=-5241.471 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1421312 mean_reward=-5469.555 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=1425408 mean_reward=-5622.743 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Update 350/488 | Steps 1433600 | TrainRew -1.833 | Loss 34.9516 | Succ 0.00%
+  [Eval] steps=1433600 mean_reward=-5093.914 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1437696 mean_reward=-5168.499 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1441792 mean_reward=-5065.555 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=1445888 mean_reward=-5023.167 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1454080 mean_reward=-5244.449 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1458176 mean_reward=-4552.308 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1462272 mean_reward=-5084.568 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=1466368 mean_reward=-5236.848 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1470464 mean_reward=-5394.051 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Update 360/488 | Steps 1474560 | TrainRew -1.333 | Loss 44.6091 | Succ 0.00%
+  [Eval] steps=1478656 mean_reward=-5298.384 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1482752 mean_reward=-5277.107 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=1486848 mean_reward=-4114.855 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1490944 mean_reward=-5313.803 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1495040 mean_reward=-4937.326 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1503232 mean_reward=-5171.953 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=1507328 mean_reward=-4791.198 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1511424 mean_reward=-4038.468 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Update 370/488 | Steps 1515520 | TrainRew -1.590 | Loss 47.4225 | Succ 0.00%
+  [Eval] steps=1515520 mean_reward=-4838.573 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1523712 mean_reward=-4397.974 success_rate=10.00%
+  [EvalTerm] {'success': 1, 'timeout': 9, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=1527808 mean_reward=-5540.056 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1531904 mean_reward=-4543.815 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1536000 mean_reward=-3526.018 success_rate=20.00%
+  [EvalTerm] {'success': 2, 'timeout': 8, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/best.pth
+  [Eval] steps=1540096 mean_reward=-4403.041 success_rate=20.00%
+  [EvalTerm] {'success': 2, 'timeout': 8, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=1548288 mean_reward=-4017.748 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1552384 mean_reward=-4114.593 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Update 380/488 | Steps 1556480 | TrainRew -2.180 | Loss 70.5709 | Succ 0.00%
+  [Eval] steps=1556480 mean_reward=-4912.153 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1560576 mean_reward=-6131.484 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=1568768 mean_reward=-4741.844 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1572864 mean_reward=-4533.061 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1576960 mean_reward=-4464.220 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1581056 mean_reward=-5279.402 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=1585152 mean_reward=-4457.042 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1593344 mean_reward=-5817.781 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Update 390/488 | Steps 1597440 | TrainRew -1.741 | Loss 52.2952 | Succ 0.00%
+  [Eval] steps=1597440 mean_reward=-3881.179 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1601536 mean_reward=-4270.744 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=1605632 mean_reward=-3949.621 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1613824 mean_reward=-3376.670 success_rate=10.00%
+  [EvalTerm] {'success': 1, 'timeout': 9, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/best.pth
+  [Eval] steps=1617920 mean_reward=-5347.430 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1622016 mean_reward=-5028.523 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=1626112 mean_reward=-4717.430 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1630208 mean_reward=-5121.641 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Update 400/488 | Steps 1638400 | TrainRew -1.423 | Loss 52.5122 | Succ 0.00%
+  [Eval] steps=1638400 mean_reward=-5827.812 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1642496 mean_reward=-5310.733 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=1646592 mean_reward=-5921.622 success_rate=10.00%
+  [EvalTerm] {'success': 1, 'timeout': 9, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1650688 mean_reward=-5264.366 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1658880 mean_reward=-5167.339 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1662976 mean_reward=-5754.030 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=1667072 mean_reward=-6169.271 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1671168 mean_reward=-4721.076 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1675264 mean_reward=-5183.907 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Update 410/488 | Steps 1679360 | TrainRew -1.934 | Loss 83.1536 | Succ 0.00%
+  [Eval] steps=1683456 mean_reward=-5360.418 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=1687552 mean_reward=-5640.463 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1691648 mean_reward=-5632.772 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1695744 mean_reward=-6380.338 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1703936 mean_reward=-6213.852 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=1708032 mean_reward=-6058.057 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1712128 mean_reward=-4659.034 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1716224 mean_reward=-4887.932 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Update 420/488 | Steps 1720320 | TrainRew -1.958 | Loss 64.8150 | Succ 0.00%
+  [Eval] steps=1720320 mean_reward=-4412.943 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=1728512 mean_reward=-5606.897 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1732608 mean_reward=-4671.168 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1736704 mean_reward=-5740.562 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1740800 mean_reward=-5910.317 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=1748992 mean_reward=-4818.458 success_rate=10.00%
+  [EvalTerm] {'success': 1, 'timeout': 9, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1753088 mean_reward=-4451.112 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1757184 mean_reward=-4729.512 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Update 430/488 | Steps 1761280 | TrainRew -1.560 | Loss 63.3292 | Succ 0.00%
+  [Eval] steps=1761280 mean_reward=-5751.095 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=1765376 mean_reward=-5429.160 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1773568 mean_reward=-5593.668 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1777664 mean_reward=-5060.488 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1781760 mean_reward=-4244.588 success_rate=10.00%
+  [EvalTerm] {'success': 1, 'timeout': 9, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=1785856 mean_reward=-4376.410 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1794048 mean_reward=-5390.709 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1798144 mean_reward=-5553.931 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Update 440/488 | Steps 1802240 | TrainRew -1.567 | Loss 63.7676 | Succ 0.00%
+  [Eval] steps=1802240 mean_reward=-6517.613 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=1806336 mean_reward=-5666.170 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1810432 mean_reward=-6554.834 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1818624 mean_reward=-4922.543 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1822720 mean_reward=-5533.729 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=1826816 mean_reward=-5758.927 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1830912 mean_reward=-5732.906 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1835008 mean_reward=-6176.123 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Update 450/488 | Steps 1843200 | TrainRew -2.067 | Loss 35.0559 | Succ 0.00%
+  [Eval] steps=1843200 mean_reward=-5389.527 success_rate=10.00%
+  [EvalTerm] {'success': 1, 'timeout': 9, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=1847296 mean_reward=-5845.565 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1851392 mean_reward=-5590.813 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1855488 mean_reward=-5685.271 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1863680 mean_reward=-6321.437 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=1867776 mean_reward=-5317.985 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1871872 mean_reward=-5824.993 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1875968 mean_reward=-6096.293 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1880064 mean_reward=-5616.678 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+Update 460/488 | Steps 1884160 | TrainRew -2.048 | Loss 86.7808 | Succ 0.00%
+  [Eval] steps=1888256 mean_reward=-6160.367 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1892352 mean_reward=-6304.585 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1896448 mean_reward=-6982.613 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1900544 mean_reward=-5460.015 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=1908736 mean_reward=-6824.650 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1912832 mean_reward=-5801.352 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1916928 mean_reward=-5612.605 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1921024 mean_reward=-6044.001 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+Update 470/488 | Steps 1925120 | TrainRew -1.766 | Loss 71.1039 | Succ 0.00%
+  [Eval] steps=1925120 mean_reward=-6794.819 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1933312 mean_reward=-5191.156 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1937408 mean_reward=-5136.206 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1941504 mean_reward=-6719.267 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=1945600 mean_reward=-6265.925 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1953792 mean_reward=-6516.440 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1957888 mean_reward=-4790.324 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1961984 mean_reward=-5748.781 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+Update 480/488 | Steps 1966080 | TrainRew -2.115 | Loss 73.4726 | Succ 0.00%
+  [Eval] steps=1966080 mean_reward=-4503.663 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1970176 mean_reward=-5437.125 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1978368 mean_reward=-6944.325 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1982464 mean_reward=-6644.225 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/latest.pth
+  [Eval] steps=1986560 mean_reward=-5818.383 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1990656 mean_reward=-5198.003 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+  [Eval] steps=1998848 mean_reward=-5079.377 success_rate=0.00%
+  [EvalTerm] {'success': 0, 'timeout': 10, 'out_of_bounds': 0, 'other': 0}
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/3d_v2_cont_big_c/final.pth
+Saved training curves: /root/autodl-tmp/pursue_20260302/visualization/logs/3d_v2_cont_big_c/training_curves.png
+Training finished.

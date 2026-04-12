@@ -1,0 +1,50 @@
+[
+  {
+    "scenario": "1_line_forward",
+    "num_waypoints": 5,
+    "success_count": 5,
+    "success_rate": 1.0,
+    "total_steps": 429,
+    "avg_steps_per_wp": 85.8
+  },
+  {
+    "scenario": "2_line_diagonal",
+    "num_waypoints": 5,
+    "success_count": 5,
+    "success_rate": 1.0,
+    "total_steps": 291,
+    "avg_steps_per_wp": 58.2
+  },
+  {
+    "scenario": "3_rectangle",
+    "num_waypoints": 4,
+    "success_count": 1,
+    "success_rate": 0.25,
+    "total_steps": 575,
+    "avg_steps_per_wp": 143.75
+  },
+  {
+    "scenario": "4_s_curve",
+    "num_waypoints": 6,
+    "success_count": 5,
+    "success_rate": 0.8333333333333334,
+    "total_steps": 508,
+    "avg_steps_per_wp": 84.66666666666667
+  },
+  {
+    "scenario": "5_zigzag",
+    "num_waypoints": 5,
+    "success_count": 5,
+    "success_rate": 1.0,
+    "total_steps": 428,
+    "avg_steps_per_wp": 85.6
+  },
+  {
+    "scenario": "6_random",
+    "num_waypoints": 6,
+    "success_count": 6,
+    "success_rate": 1.0,
+    "total_steps": 546,
+    "avg_steps_per_wp": 91.0
+  }
+]

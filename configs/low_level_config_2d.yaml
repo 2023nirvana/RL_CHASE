@@ -1,0 +1,248 @@
+# =============================================================================    
+# 2D 简化环境训练配置
+# =============================================================================    
+# 
+# 目的：在最简单的 2D 场景下验证 PID+RL 架构能否收敛
+# 动作：4 个离散动作（前进/后退/左平移/右平移）
+# 状态：x-y 平面内的位置和速度
+# 
+    
+training:    
+  total_timesteps: 2000000      # 2M 步（2D 应该更快收敛）
+  n_envs: 4                     # 并行环境数量
+  n_steps: 1024                 # 每次更新的步数
+  batch_size: 256               # mini-batch 大小
+  n_epochs: 4                   # 每次更新的 epoch 数
+      
+  # 学习率
+  learning_rate: 3.0e-4         # 相对较高的学习率
+  lr_schedule: "linear"
+  lr_end: 1.0e-5
+      
+  # PPO 超参数
+  gamma: 0.99
+  gae_lambda: 0.95
+  clip_range: 0.2
+  clip_range_vf: null
+  ent_coef: 0.05                # 探索系数
+  vf_coef: 0.5
+  max_grad_norm: 0.5
+      
+  # 保存和评估
+  save_freq: 20000
+  eval_freq: 5000
+  eval_episodes: 10
+  early_stop_patience: 30
+  early_stop_min_delta: 0.01
+    
+# =============================================================================    
+# 网络架构（简化）
+# =============================================================================    
+    
+network:    
+  # 不使用 encoder/decoder，保持简单
+  encoder:
+    hidden_sizes: null
+  decoder:
+    hidden_sizes: null
+  
+  # 简化的特征提取器
+  feature_extractor:    
+    hidden_sizes: [64, 64]
+    activation: "relu"
+    use_layer_norm: true
+        
+  # 简化的 LSTM
+  lstm:    
+    hidden_size: 64
+    num_layers: 1
+    dropout: 0.0
+        
+  # Actor/Critic 头
+  actor_head:    
+    hidden_sizes: [32]
+        
+  critic_head:    
+    hidden_sizes: [32]
+    
+# =============================================================================    
+# 2D 动作空间配置
+# =============================================================================    
+    
+action_space:    
+  type: "discrete"    
+  num_actions: 4                # 只有 4 个动作
+      
+  actions:    
+    0: "forward"
+    1: "backward"
+    2: "left"
+    3: "right"
+  
+  translation_mode: "distance"
+  
+  # 每步位移（简化）
+  action_distance:  
+    surge: 0.03
+    sway: 0.03
+    heave: 0.0                  # 2D 不用
+  
+  action_angle_delta:
+    yaw: 0.0                    # 2D 暂不转向
+    pitch: 0.0
+    roll: 0.0
+  
+  velocity_controller:  
+    kp: [15.0, 15.0, 0.0]
+    kd: [5.0, 5.0, 0.0]
+    max_force: [20.0, 20.0, 0.0]
+  
+  goal_slowdown:  
+    enabled: true  
+    radius: 0.5
+    min_scale: 0.3
+    
+  # 不使用航向对准（2D 简化）
+  translation_heading: "lock"
+  heading_max_delta: 0.0
+
+  # action_thrust_mapping 保留但不使用（兼容）
+  action_thrust_mapping:    
+    hover: [0.0, 0.1, 0.1, 0.0, 0.0, 0.1, 0.1, 0.0]  
+    surge_forward:  [1.0, 0.0, 0.0, 1.0, -1.0, 0.0, 0.0, -1.0]  
+    surge_backward: [-0.7, 0.0, 0.0, -0.7, 0.7, 0.0, 0.0, 0.7]  
+    sway_left:  [1.0, 0.0, 0.0, -1.0, 1.0, 0.0, 0.0, -1.0]  
+    sway_right: [-1.0, 0.0, 0.0, 1.0, -1.0, 0.0, 0.0, 1.0]  
+    heave_up:   [0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0]  
+    heave_down: [0.0, -0.7, -0.7, 0.0, 0.0, -0.7, -0.7, 0.0]  
+    yaw_left:  [0.7, 0.0, 0.0, 0.7, 0.7, 0.0, 0.0, 0.7]  
+    yaw_right: [-0.7, 0.0, 0.0, -0.7, -0.7, 0.0, 0.0, -0.7]  
+    pitch_up:   [0.0, -0.5, 0.5, 0.0, 0.0, -0.5, 0.5, 0.0]  
+    pitch_down: [0.0, 0.5, -0.5, 0.0, 0.0, 0.5, -0.5, 0.0]  
+    roll_left:  [0.0, -0.5, -0.5, 0.0, 0.0, 0.5, 0.5, 0.0]  
+    roll_right: [0.0, 0.5, 0.5, 0.0, 0.0, -0.5, -0.5, 0.0]  
+
+# =============================================================================    
+# 观测空间（简化）
+# =============================================================================    
+    
+observation_space:    
+  include_position: true
+  include_orientation: false    # 2D 不需要完整姿态
+  include_velocity: true
+  include_target_position: true
+  include_target_orientation: false
+  include_error: true
+  history_length: 1
+  normalize: true
+  clip_obs: 10.0
+    
+# =============================================================================    
+# 奖励函数（简化）
+# =============================================================================    
+    
+reward:    
+  weights:
+    position_error: -0.5
+    orientation_error: 0.0      # 2D 不惩罚姿态
+    velocity_penalty: -0.01
+    angular_velocity_penalty: 0.0
+    energy_cost: -0.001
+    stability_bonus: 0.0
+    goal_reached: 50.0
+    time_penalty: -0.01
+        
+  thresholds:
+    position_tolerance: 0.2     # 成功阈值 0.2m
+    orientation_tolerance: 1.0  # 2D 放宽
+    velocity_limit: 3.0
+    angular_velocity_limit: 3.0
+    
+  attitude_clip_limit: 0.0
+  attitude_roll_coeff: 0.0
+  attitude_pitch_coeff: 0.0
+  attitude_angular_coeff: 0.0
+  flip_threshold: 3.14
+  sparse: false
+  
+# =============================================================================    
+# 终止条件（简化）
+# =============================================================================  
+  
+termination:  
+  no_progress:  
+    enabled: true  
+    patience_steps: 100         # 更短的耐心
+    min_improvement: 0.005
+    min_distance: 0.3
+    
+# =============================================================================    
+# 课程学习（简化）
+# =============================================================================    
+    
+curriculum:    
+  enabled: false                # 2D 先不用课程学习
+  stages:
+    - name: "easy"
+      position_range: 1.0
+      orientation_required: false
+      velocity_init: "zero"
+      success_threshold: 0.7
+    
+# =============================================================================    
+# 域随机化（关闭）
+# =============================================================================    
+    
+domain_randomization:    
+  enabled: false
+      
+# =============================================================================    
+# 双环 PID（保留，用于姿态稳定）
+# =============================================================================    
+  
+dual_loop_pid:  
+  enabled: true
+  dynamics:  
+    J: [0.35, 0.27, 0.16]
+    B: [0.06, 0.05, 0.04]
+    D: [0.01, 0.008, 0.06]
+  outer_loop:  
+    Kp: [2.0, 2.0, 2.5]  
+    Ki: [0.1, 0.1, 0.1]
+  inner_loop:  
+    Kp: [1.5, 1.5, 1.2]  
+    Kd: [0.05, 0.05, 0.03]
+  eso:  
+    w0: [10.0, 10.0, 10.0]
+  limits:  
+    integral: [1.0, 1.0, 1.0]
+    omega_ref: [2.0, 2.0, 2.0]
+    tau: [10.0, 10.0, 10.0]
+  action_force:  
+    surge: 20.0
+    sway: 15.0
+    heave: 20.0
+  action_angle_delta:  
+    yaw: 0.1  
+    pitch: 0.1  
+    roll: 0.1
+
+# =============================================================================    
+# 日志
+# =============================================================================    
+    
+logging:    
+  log_dir: "visualization/logs"    
+  save_dir: "checkpoints"    
+  tensorboard:    
+    enabled: true    
+    log_freq: 50
+  metrics:    
+    - "episode_reward"    
+    - "episode_length"    
+    - "success_rate"    
+    - "position_error"
+  video:    
+    enabled: true    
+    record_freq: 50000
+    max_video_length: 300

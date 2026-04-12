@@ -1,0 +1,17 @@
+Device: cuda
+Loaded 482279 transitions
+  reward: [-76.3, 105.5], mean=-6.65, std=17.88
+  Reward normalized: mean=-6.65, std=17.88
+  After: [-3.89, 6.27], mean=-0.0000
+  Split: train=434052, val=48227
+Total params: 159,111
+
+============================================================
+BPPO Training Pipeline
+  Phase 1: V steps=300000, Q steps=300000
+  Phase 2: BC steps=300000
+  Phase 3: BPPO steps=3000, clip=0.2, omega=0.9
+============================================================
+
+Phase 1a: Training Value function V(s) ...
+  [V] step  10000/300000 | loss=14.5817 V=-3.43 (404s)

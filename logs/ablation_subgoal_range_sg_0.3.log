@@ -1,0 +1,90 @@
+Device: cuda
+Creating SubprocVecEnv with 4 workers ...
+Loaded V4 NN: obs_dim=8, act_dim=3, hidden=(64, 64)
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:236: UserWarning: [33mWARN: Box low's precision lowered by casting to float32, current low.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:306: UserWarning: [33mWARN: Box high's precision lowered by casting to float32, current high.dtype=float64[0m
+  gym.logger.warn(
+Loaded pretrained (TD3Actor→AC): checkpoints/td3bc_v4_2m/best.pth
+Online PPO: 195 updates, 256 steps × 4 envs = 1024/update [reward-norm]
+Reward params: {'R_catch': 150.0, 'R_fail': -50.0, 'alpha': 5.0, 'c_sg': 10.0, 'd_sg_safe': 1.5, 'c_path': 5.0, 'lam_time': 0.02}
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:236: UserWarning: [33mWARN: Box low's precision lowered by casting to float32, current low.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:306: UserWarning: [33mWARN: Box high's precision lowered by casting to float32, current high.dtype=float64[0m
+  gym.logger.warn(
+Process SpawnProcess-4:
+Traceback (most recent call last):
+  File "/root/miniconda3/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/root/miniconda3/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/root/autodl-tmp/pursue_20260302/training/vec_env.py", line 36, in _worker_fn
+    obs = env.reset()
+          ^^^^^^^^^^^
+  File "/root/autodl-tmp/pursue_20260302/high_tabular/hrl_v3_real_auv_fixed.py", line 539, in reset
+    self.auv_env.reset()
+  File "/root/autodl-tmp/pursue_20260302/core/environment/low_level_env_2d_v2_continuous.py", line 227, in reset
+    self._sample_2d_target()
+  File "/root/autodl-tmp/pursue_20260302/core/environment/low_level_env_2d_v2_continuous.py", line 95, in _sample_2d_target
+    distance = self.inner.np_random.uniform(0.5, self.target_distance)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "numpy/random/_generator.pyx", line 1094, in numpy.random._generator.Generator.uniform
+  File "numpy/random/_common.pyx", line 634, in numpy.random._common.cont
+  File "numpy/random/_common.pyx", line 432, in numpy.random._common.check_constraint
+ValueError: high - low < 0
+Loaded V4 NN: obs_dim=8, act_dim=3, hidden=(64, 64)
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:236: UserWarning: [33mWARN: Box low's precision lowered by casting to float32, current low.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:306: UserWarning: [33mWARN: Box high's precision lowered by casting to float32, current high.dtype=float64[0m
+  gym.logger.warn(
+Process SpawnProcess-1:
+Traceback (most recent call last):
+  File "/root/autodl-tmp/pursue_20260302/training/online_ppo_finetune.py", line 1004, in <module>
+Traceback (most recent call last):
+  File "/root/miniconda3/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/root/miniconda3/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/root/autodl-tmp/pursue_20260302/training/vec_env.py", line 36, in _worker_fn
+    obs = env.reset()
+          ^^^^^^^^^^^
+  File "/root/autodl-tmp/pursue_20260302/high_tabular/hrl_v3_real_auv_fixed.py", line 539, in reset
+    self.auv_env.reset()
+  File "/root/autodl-tmp/pursue_20260302/core/environment/low_level_env_2d_v2_continuous.py", line 227, in reset
+    self._sample_2d_target()
+  File "/root/autodl-tmp/pursue_20260302/core/environment/low_level_env_2d_v2_continuous.py", line 95, in _sample_2d_target
+    distance = self.inner.np_random.uniform(0.5, self.target_distance)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "numpy/random/_generator.pyx", line 1094, in numpy.random._generator.Generator.uniform
+  File "numpy/random/_common.pyx", line 634, in numpy.random._common.cont
+  File "numpy/random/_common.pyx", line 432, in numpy.random._common.check_constraint
+ValueError: high - low < 0
+Loaded V4 NN: obs_dim=8, act_dim=3, hidden=(64, 64)
+    main()
+  File "/root/autodl-tmp/pursue_20260302/training/online_ppo_finetune.py", line 1000, in main
+    trainer.train()
+  File "/root/autodl-tmp/pursue_20260302/training/online_ppo_finetune.py", line 741, in train
+    bufs, last_vs, r_info = self.collect_rollouts(args.n_steps)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/pursue_20260302/training/online_ppo_finetune.py", line 336, in collect_rollouts
+    return self._collect_vec(n_steps)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/pursue_20260302/training/online_ppo_finetune.py", line 427, in _collect_vec
+    obs_all = self.vec_env.reset()  # (n_envs, obs_dim)
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/pursue_20260302/training/vec_env.py", line 114, in reset
+    return np.array([conn.recv() for conn in self.parent_conns])
+                     ^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/multiprocessing/connection.py", line 250, in recv
+    buf = self._recv_bytes()
+          ^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/multiprocessing/connection.py", line 430, in _recv_bytes
+    buf = self._recv(4)
+          ^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/multiprocessing/connection.py", line 399, in _recv
+    raise EOFError
+EOFError
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:236: UserWarning: [33mWARN: Box low's precision lowered by casting to float32, current low.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:306: UserWarning: [33mWARN: Box high's precision lowered by casting to float32, current high.dtype=float64[0m
+  gym.logger.warn(

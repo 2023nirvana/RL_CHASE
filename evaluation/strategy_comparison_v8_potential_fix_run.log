@@ -1,0 +1,91 @@
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:236: UserWarning: [33mWARN: Box low's precision lowered by casting to float32, current low.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:306: UserWarning: [33mWARN: Box high's precision lowered by casting to float32, current high.dtype=float64[0m
+  gym.logger.warn(
+Loading low-level model: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_vel10_v2/checkpoints/best.pth
+Loaded V4 NN: obs_dim=8, act_dim=3, hidden=(64, 64)
+
+============================================================
+  Evaluating: PurePursuit
+============================================================
+  [10/30] caught=7/10
+  [20/30] caught=17/20
+  [30/30] caught=26/30
+  Result: catch_rate=87%, avg_steps=38, avg_min_dist=1.79m
+  Saved PNG: evaluation/strategy_comparison_v8_potential_fix/PurePursuit/pursuit_PurePursuit.png
+  Saved GIF: evaluation/strategy_comparison_v8_potential_fix/PurePursuit/pursuit_PurePursuit.gif
+
+============================================================
+  Evaluating: LeadPursuit
+============================================================
+  [10/30] caught=9/10
+  [20/30] caught=18/20
+  [30/30] caught=28/30
+  Result: catch_rate=93%, avg_steps=36, avg_min_dist=1.38m
+  Saved PNG: evaluation/strategy_comparison_v8_potential_fix/LeadPursuit/pursuit_LeadPursuit.png
+  Saved GIF: evaluation/strategy_comparison_v8_potential_fix/LeadPursuit/pursuit_LeadPursuit.gif
+
+============================================================
+  Evaluating: ProNav(N=4.0)
+============================================================
+  [10/30] caught=8/10
+  [20/30] caught=17/20
+  [30/30] caught=27/30
+  Result: catch_rate=90%, avg_steps=35, avg_min_dist=1.44m
+  Saved PNG: evaluation/strategy_comparison_v8_potential_fix/ProNavN4.0/pursuit_ProNavN4.0.png
+  Saved GIF: evaluation/strategy_comparison_v8_potential_fix/ProNavN4.0/pursuit_ProNavN4.0.gif
+
+============================================================
+  Evaluating: AugProNav(N=4.0)
+============================================================
+  [10/30] caught=10/10
+  [20/30] caught=19/20
+  [30/30] caught=27/30
+  Result: catch_rate=90%, avg_steps=32, avg_min_dist=1.52m
+  Saved PNG: evaluation/strategy_comparison_v8_potential_fix/AugProNavN4.0/pursuit_AugProNavN4.0.png
+  Saved GIF: evaluation/strategy_comparison_v8_potential_fix/AugProNavN4.0/pursuit_AugProNavN4.0.gif
+
+============================================================
+  Evaluating: ConstantBearing(K=8.0)
+============================================================
+  [10/30] caught=10/10
+  [20/30] caught=18/20
+  [30/30] caught=27/30
+  Result: catch_rate=90%, avg_steps=36, avg_min_dist=1.46m
+  Saved PNG: evaluation/strategy_comparison_v8_potential_fix/ConstantBearingK8.0/pursuit_ConstantBearingK8.0.png
+  Saved GIF: evaluation/strategy_comparison_v8_potential_fix/ConstantBearingK8.0/pursuit_ConstantBearingK8.0.gif
+
+============================================================
+  Evaluating: DeviatedPursuit(δ=20.0°)
+============================================================
+  [10/30] caught=9/10
+  [20/30] caught=18/20
+  [30/30] caught=28/30
+  Result: catch_rate=93%, avg_steps=32, avg_min_dist=1.30m
+  Saved PNG: evaluation/strategy_comparison_v8_potential_fix/DeviatedPursuitδ20.0°/pursuit_DeviatedPursuitδ20.0°.png
+  Saved GIF: evaluation/strategy_comparison_v8_potential_fix/DeviatedPursuitδ20.0°/pursuit_DeviatedPursuitδ20.0°.gif
+
+============================================================
+  Evaluating: Expert(pred=2.0s)
+============================================================
+  [10/30] caught=8/10
+  [20/30] caught=18/20
+  [30/30] caught=26/30
+  Result: catch_rate=87%, avg_steps=33, avg_min_dist=1.54m
+  Saved PNG: evaluation/strategy_comparison_v8_potential_fix/Expertpred2.0s/pursuit_Expertpred2.0s.png
+  Saved GIF: evaluation/strategy_comparison_v8_potential_fix/Expertpred2.0s/pursuit_Expertpred2.0s.gif
+
+Saved summary: evaluation/strategy_comparison_v8_potential_fix/summary.json
+
+Saved comparison: evaluation/strategy_comparison_v8_potential_fix/strategy_comparison.png
+
+============================================================
+  ALL DONE
+============================================================
+  PurePursuit              : catch=87%  steps=38  min_d=1.79m
+  LeadPursuit              : catch=93%  steps=36  min_d=1.38m
+  ProNav(N=4.0)            : catch=90%  steps=35  min_d=1.44m
+  AugProNav(N=4.0)         : catch=90%  steps=32  min_d=1.52m
+  ConstantBearing(K=8.0)   : catch=90%  steps=36  min_d=1.46m
+  DeviatedPursuit(δ=20.0°) : catch=93%  steps=32  min_d=1.30m
+  Expert(pred=2.0s)        : catch=87%  steps=33  min_d=1.54m

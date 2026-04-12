@@ -1,0 +1,16 @@
+Device: cuda
+Model params: 78,981
+Loaded 482279 transitions from data/expert_trajectories/expert_dataset.npz
+  ? episodes, 0 strategies
+  Expert actions: mean=[-0.02036655 -0.05763134], std=[0.69861335 0.71254086]
+  Returns: mean=-237.5, std=399.4
+  Train: 434052, Val: 48227
+
+BC Pretraining: 500 epochs, 434052 train / 48227 val transitions
+  MSE weight: 0.7, train_critic: True
+  Epoch    1/500 | train_mse=0.11990  val_mse=0.03268  nll=1.811  lr=3.00e-04  (49s)
+  Saved: /root/autodl-tmp/pursue_20260302/checkpoints/bc_v2_500ep/best.pth
+  Saved: /root/autodl-tmp/pursue_20260302/checkpoints/bc_v2_500ep/best.pth
+  Saved: /root/autodl-tmp/pursue_20260302/checkpoints/bc_v2_500ep/best.pth
+  Epoch    5/500 | train_mse=0.06963  val_mse=0.10241  nll=3.482  lr=3.00e-04  (249s)
+  Epoch   10/500 | train_mse=0.49850  val_mse=0.49851  nll=3.921  lr=3.00e-04  (495s)

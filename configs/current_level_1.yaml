@@ -1,0 +1,7 @@
+# 水流干扰等级1: 弱水流
+current:
+  enabled: true
+  type: "variable"
+  base_velocity: [0.03, 0.02, 0.0]
+  variation_amplitude: 0.02
+  variation_frequency: 0.03

@@ -1,0 +1,406 @@
+nohup: ignoring input
+Device: cuda
+Loaded 482279 transitions
+  reward: [-76.3, 105.5], mean=-6.65, std=17.88
+  Reward normalized: mean=-6.65, std=17.88
+  After: [-3.89, 6.27], mean=-0.0000
+  Split: train=434052, val=48227
+  Target Q clip: [-1500.0, 1500.0]
+Total params: 158,853
+
+IQL: 2000000 steps, expectile=0.7, beta=3.0, gamma=0.99
+  Step  10000/2000000 | c=15.4851 v=0.5159 a=0.0510 Q=-2.24 V=-2.65 (222s)
+  Step  20000/2000000 | c=20.7616 v=0.6116 a=0.0211 Q=-5.02 V=-4.64 (442s)
+  Step  30000/2000000 | c=31.1730 v=0.4428 a=0.0302 Q=-4.88 V=-4.86 (662s)
+  Step  40000/2000000 | c=17.4351 v=0.3520 a=0.0254 Q=-4.07 V=-4.05 (805s)
+  Step  50000/2000000 | c=30.2985 v=0.2874 a=0.0166 Q=-4.67 V=-4.73 (1018s)
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:236: UserWarning: [33mWARN: Box low's precision lowered by casting to float32, current low.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:306: UserWarning: [33mWARN: Box high's precision lowered by casting to float32, current high.dtype=float64[0m
+  gym.logger.warn(
+Loaded V4 NN: obs_dim=8, act_dim=3, hidden=(64, 64)
+    [Eval diag] avg_steps=70 max_steps=120
+    [Reward breakdown per step] event=1.005 shaping=0.690 sg_obs=-10.390 time=-0.050
+    [Reward total] event=1050.0 shaping=721.0 sg_obs=-10857.4 time=-52.2
+    [Eval] step=50000 reward=-609.2 success=73%
+  Saved: /root/autodl-tmp/pursue_20260302/checkpoints/iql_v2_2m/best.pth
+  Step  60000/2000000 | c=16.6341 v=0.3310 a=0.0226 Q=-5.94 V=-5.88 (1306s)
+  Step  70000/2000000 | c=27.1158 v=0.2989 a=0.0321 Q=-5.18 V=-5.13 (1493s)
+  Step  80000/2000000 | c=13.2830 v=0.2954 a=0.0266 Q=-4.41 V=-4.44 (1661s)
+  Step  90000/2000000 | c=21.7242 v=0.3180 a=0.0232 Q=-4.80 V=-4.67 (1874s)
+  Step 100000/2000000 | c=22.1794 v=0.3457 a=0.0242 Q=-5.13 V=-5.26 (2091s)
+    [Eval diag] avg_steps=71 max_steps=120
+    [Reward breakdown per step] event=1.085 shaping=0.710 sg_obs=-10.007 time=-0.050
+    [Reward total] event=1150.0 shaping=752.1 sg_obs=-10607.8 time=-53.0
+    [Eval] step=100000 reward=-583.9 success=80%
+  Saved: /root/autodl-tmp/pursue_20260302/checkpoints/iql_v2_2m/best.pth
+  Saved: /root/autodl-tmp/pursue_20260302/checkpoints/iql_v2_2m/latest.pth
+  Step 110000/2000000 | c=16.7074 v=0.3569 a=0.0324 Q=-7.13 V=-7.33 (2308s)
+  Step 120000/2000000 | c=16.9889 v=0.3697 a=0.0153 Q=-5.31 V=-5.26 (2525s)
+  Step 130000/2000000 | c=16.3168 v=0.4162 a=0.0245 Q=-5.97 V=-6.00 (2745s)
+  Step 140000/2000000 | c=13.4010 v=0.4425 a=0.0211 Q=-5.20 V=-5.44 (2960s)
+  Step 150000/2000000 | c=19.5096 v=0.4817 a=0.0247 Q=-3.74 V=-3.96 (3121s)
+    [Eval diag] avg_steps=58 max_steps=120
+    [Reward breakdown per step] event=1.319 shaping=0.789 sg_obs=-8.400 time=-0.050
+    [Reward total] event=1150.0 shaping=688.0 sg_obs=-7324.4 time=-43.6
+    [Eval] step=150000 reward=-368.7 success=80%
+  Saved: /root/autodl-tmp/pursue_20260302/checkpoints/iql_v2_2m/best.pth
+  Step 160000/2000000 | c=22.6476 v=0.4515 a=0.0226 Q=-4.68 V=-4.68 (3394s)
+  Step 170000/2000000 | c=16.2376 v=0.2969 a=0.0230 Q=-7.24 V=-7.31 (3602s)
+  Step 180000/2000000 | c=10.7294 v=0.3312 a=0.0216 Q=-5.28 V=-5.29 (3783s)
+  Step 190000/2000000 | c=12.4537 v=0.5149 a=0.0187 Q=-6.73 V=-6.56 (3965s)
+  Step 200000/2000000 | c=9.6777 v=0.4863 a=0.0207 Q=-4.40 V=-4.47 (4181s)
+    [Eval diag] avg_steps=65 max_steps=120
+    [Reward breakdown per step] event=0.930 shaping=0.667 sg_obs=-10.257 time=-0.050
+    [Reward total] event=900.0 shaping=645.9 sg_obs=-9928.4 time=-48.4
+    [Eval] step=200000 reward=-562.1 success=73%
+  Saved: /root/autodl-tmp/pursue_20260302/checkpoints/iql_v2_2m/latest.pth
+  Step 210000/2000000 | c=12.6397 v=0.3031 a=0.0283 Q=-6.30 V=-6.32 (4454s)
+  Step 220000/2000000 | c=16.8288 v=0.4185 a=0.0182 Q=-6.37 V=-6.40 (4626s)
+  Step 230000/2000000 | c=13.1502 v=0.3376 a=0.0159 Q=-6.40 V=-6.48 (4845s)
+  Step 240000/2000000 | c=17.3981 v=0.3501 a=0.0171 Q=-7.38 V=-7.52 (5062s)
+  Step 250000/2000000 | c=20.0723 v=0.3159 a=0.0187 Q=-5.39 V=-5.42 (5276s)
+    [Eval diag] avg_steps=71 max_steps=120
+    [Reward breakdown per step] event=1.039 shaping=0.727 sg_obs=-11.474 time=-0.050
+    [Reward total] event=1100.0 shaping=770.1 sg_obs=-12151.0 time=-52.9
+    [Eval] step=250000 reward=-688.9 success=80%
+  Step 260000/2000000 | c=12.8580 v=0.4104 a=0.0164 Q=-5.80 V=-5.97 (5555s)
+  Step 270000/2000000 | c=17.1309 v=0.4804 a=0.0171 Q=-5.59 V=-5.53 (5765s)
+  Step 280000/2000000 | c=12.8585 v=0.4105 a=0.0191 Q=-6.83 V=-6.78 (5971s)
+  Step 290000/2000000 | c=11.0977 v=0.4175 a=0.0150 Q=-7.93 V=-8.08 (6117s)
+  Step 300000/2000000 | c=12.5390 v=0.3450 a=0.0213 Q=-4.65 V=-4.71 (6325s)
+    [Eval diag] avg_steps=71 max_steps=120
+    [Reward breakdown per step] event=0.887 shaping=0.700 sg_obs=-10.660 time=-0.050
+    [Reward total] event=950.0 shaping=749.9 sg_obs=-11417.1 time=-53.5
+    [Eval] step=300000 reward=-651.4 success=73%
+  Saved: /root/autodl-tmp/pursue_20260302/checkpoints/iql_v2_2m/latest.pth
+  Step 310000/2000000 | c=10.3882 v=0.4841 a=0.0185 Q=-6.25 V=-6.18 (6614s)
+  Step 320000/2000000 | c=13.5595 v=0.4884 a=0.0233 Q=-7.48 V=-7.46 (6801s)
+  Step 330000/2000000 | c=14.4534 v=0.5514 a=0.0312 Q=-6.98 V=-6.99 (7006s)
+  Step 340000/2000000 | c=12.6469 v=0.4416 a=0.0184 Q=-7.72 V=-7.86 (7226s)
+  Step 350000/2000000 | c=23.5100 v=0.3754 a=0.0196 Q=-6.47 V=-6.53 (7451s)
+    [Eval diag] avg_steps=65 max_steps=120
+    [Reward breakdown per step] event=0.967 shaping=0.701 sg_obs=-10.213 time=-0.050
+    [Reward total] event=950.0 shaping=688.2 sg_obs=-10029.5 time=-49.1
+    [Eval] step=350000 reward=-562.7 success=73%
+  Step 360000/2000000 | c=13.5502 v=0.5196 a=0.0160 Q=-8.07 V=-8.08 (7696s)
+  Step 370000/2000000 | c=11.1430 v=0.4425 a=0.0248 Q=-5.28 V=-5.25 (7918s)
+  Step 380000/2000000 | c=15.6925 v=0.5152 a=0.0162 Q=-5.32 V=-5.55 (8143s)
+  Step 390000/2000000 | c=15.1823 v=0.3354 a=0.0165 Q=-6.59 V=-6.65 (8332s)
+  Step 400000/2000000 | c=7.8772 v=0.4289 a=0.0173 Q=-7.14 V=-7.18 (8537s)
+    [Eval diag] avg_steps=63 max_steps=120
+    [Reward breakdown per step] event=1.226 shaping=0.781 sg_obs=-10.085 time=-0.050
+    [Reward total] event=1150.0 shaping=732.7 sg_obs=-9459.8 time=-46.9
+    [Eval] step=400000 reward=-508.3 success=80%
+  Saved: /root/autodl-tmp/pursue_20260302/checkpoints/iql_v2_2m/latest.pth
+  Step 410000/2000000 | c=10.2250 v=0.4436 a=0.0248 Q=-7.71 V=-7.81 (8820s)
+  Step 420000/2000000 | c=10.9319 v=0.3380 a=0.0179 Q=-5.37 V=-5.56 (9035s)
+  Step 430000/2000000 | c=19.7169 v=0.5652 a=0.0163 Q=-6.27 V=-6.29 (9223s)
+  Step 440000/2000000 | c=12.5026 v=0.5666 a=0.0207 Q=-5.86 V=-5.86 (9435s)
+  Step 450000/2000000 | c=7.9845 v=0.5256 a=0.0236 Q=-6.03 V=-6.10 (9646s)
+    [Eval diag] avg_steps=65 max_steps=120
+    [Reward breakdown per step] event=1.342 shaping=0.789 sg_obs=-10.577 time=-0.050
+    [Reward total] event=1300.0 shaping=764.1 sg_obs=-10249.1 time=-48.4
+    [Eval] step=450000 reward=-548.9 success=87%
+  Saved: /root/autodl-tmp/pursue_20260302/checkpoints/iql_v2_2m/best.pth
+  Step 460000/2000000 | c=13.1857 v=0.5982 a=0.0177 Q=-7.86 V=-7.95 (9881s)
+  Step 470000/2000000 | c=9.5211 v=0.3762 a=0.0173 Q=-5.34 V=-5.58 (10104s)
+  Step 480000/2000000 | c=13.0393 v=0.4754 a=0.0282 Q=-6.25 V=-6.56 (10327s)
+  Step 490000/2000000 | c=10.8077 v=0.5701 a=0.0220 Q=-6.87 V=-6.93 (10535s)
+  Step 500000/2000000 | c=8.8295 v=0.4475 a=0.0297 Q=-6.60 V=-6.59 (10707s)
+    [Eval diag] avg_steps=73 max_steps=120
+    [Reward breakdown per step] event=0.779 shaping=0.635 sg_obs=-11.049 time=-0.050
+    [Reward total] event=850.0 shaping=693.1 sg_obs=-12054.1 time=-54.5
+    [Eval] step=500000 reward=-704.4 success=67%
+  Saved: /root/autodl-tmp/pursue_20260302/checkpoints/iql_v2_2m/latest.pth
+  Step 510000/2000000 | c=12.6082 v=0.5126 a=0.0169 Q=-6.84 V=-6.96 (11005s)
+  Step 520000/2000000 | c=8.1183 v=0.5461 a=0.0280 Q=-6.87 V=-7.11 (11227s)
+  Step 530000/2000000 | c=7.5194 v=0.4428 a=0.0167 Q=-6.61 V=-6.80 (11398s)
+  Step 540000/2000000 | c=9.5849 v=0.3833 a=0.0125 Q=-6.34 V=-6.32 (11623s)
+  Step 550000/2000000 | c=12.8724 v=0.5109 a=0.0190 Q=-6.10 V=-6.19 (11848s)
+    [Eval diag] avg_steps=58 max_steps=120
+    [Reward breakdown per step] event=1.445 shaping=0.851 sg_obs=-9.649 time=-0.050
+    [Reward total] event=1250.0 shaping=736.5 sg_obs=-8346.0 time=-43.2
+    [Eval] step=550000 reward=-426.9 success=87%
+  Saved: /root/autodl-tmp/pursue_20260302/checkpoints/iql_v2_2m/best.pth
+  Step 560000/2000000 | c=14.0793 v=0.4299 a=0.0253 Q=-5.30 V=-5.54 (12088s)
+  Step 570000/2000000 | c=13.9842 v=0.5317 a=0.0164 Q=-5.99 V=-6.08 (12310s)
+  Step 580000/2000000 | c=13.0426 v=0.4856 a=0.0191 Q=-7.77 V=-7.97 (12533s)
+  Step 590000/2000000 | c=9.1738 v=0.5489 a=0.0151 Q=-6.50 V=-6.61 (12756s)
+  Step 600000/2000000 | c=19.1990 v=0.4856 a=0.0120 Q=-7.28 V=-7.41 (12920s)
+    [Eval diag] avg_steps=69 max_steps=120
+    [Reward breakdown per step] event=0.967 shaping=0.700 sg_obs=-10.387 time=-0.050
+    [Reward total] event=1000.0 shaping=723.8 sg_obs=-10739.8 time=-51.7
+    [Eval] step=600000 reward=-604.5 success=73%
+  Saved: /root/autodl-tmp/pursue_20260302/checkpoints/iql_v2_2m/latest.pth
+  Step 610000/2000000 | c=12.6263 v=0.5786 a=0.0184 Q=-5.60 V=-5.73 (13218s)
+  Step 620000/2000000 | c=11.4824 v=0.5032 a=0.0172 Q=-8.12 V=-8.17 (13442s)
+  Step 630000/2000000 | c=10.9162 v=0.5701 a=0.0149 Q=-6.59 V=-6.78 (13605s)
+  Step 640000/2000000 | c=9.2210 v=0.5464 a=0.0161 Q=-6.50 V=-6.70 (13824s)
+  Step 650000/2000000 | c=12.1827 v=0.6574 a=0.0203 Q=-5.26 V=-5.45 (14048s)
+    [Eval diag] avg_steps=69 max_steps=120
+    [Reward breakdown per step] event=0.921 shaping=0.672 sg_obs=-11.176 time=-0.050
+    [Reward total] event=950.0 shaping=693.2 sg_obs=-11533.6 time=-51.6
+    [Eval] step=650000 reward=-662.8 success=73%
+  Step 660000/2000000 | c=13.2314 v=0.4733 a=0.0133 Q=-6.80 V=-6.87 (14301s)
+  Step 670000/2000000 | c=12.2727 v=0.5249 a=0.0197 Q=-6.47 V=-6.63 (14516s)
+  Step 680000/2000000 | c=10.8407 v=0.4840 a=0.0181 Q=-7.40 V=-7.58 (14741s)
+  Step 690000/2000000 | c=15.4069 v=0.5908 a=0.0136 Q=-6.94 V=-7.07 (14966s)
+  Step 700000/2000000 | c=13.0544 v=0.6177 a=0.0197 Q=-7.99 V=-8.18 (15125s)
+    [Eval diag] avg_steps=68 max_steps=120
+    [Reward breakdown per step] event=1.126 shaping=0.717 sg_obs=-10.512 time=-0.050
+    [Reward total] event=1150.0 shaping=732.4 sg_obs=-10733.0 time=-51.0
+    [Eval] step=700000 reward=-593.4 success=80%
+  Saved: /root/autodl-tmp/pursue_20260302/checkpoints/iql_v2_2m/latest.pth
+  Step 710000/2000000 | c=24.0419 v=0.8103 a=0.0261 Q=-6.91 V=-7.15 (15421s)
+  Step 720000/2000000 | c=9.5480 v=0.5124 a=0.0175 Q=-5.59 V=-5.77 (15645s)
+  Step 730000/2000000 | c=9.8913 v=0.4813 a=0.0195 Q=-6.42 V=-6.51 (15819s)
+  Step 740000/2000000 | c=9.4373 v=0.4915 a=0.0156 Q=-5.12 V=-5.24 (16037s)
+  Step 750000/2000000 | c=14.0543 v=0.4869 a=0.0175 Q=-5.63 V=-5.78 (16252s)
+    [Eval diag] avg_steps=72 max_steps=120
+    [Reward breakdown per step] event=0.874 shaping=0.690 sg_obs=-10.932 time=-0.050
+    [Reward total] event=950.0 shaping=750.3 sg_obs=-11882.9 time=-54.3
+    [Eval] step=750000 reward=-682.5 success=67%
+  Step 760000/2000000 | c=10.6221 v=0.6228 a=0.0193 Q=-6.05 V=-6.03 (16516s)
+  Step 770000/2000000 | c=13.5195 v=0.5696 a=0.0195 Q=-6.21 V=-6.43 (16727s)
+  Step 780000/2000000 | c=22.1160 v=0.5769 a=0.0216 Q=-5.41 V=-5.72 (16957s)
+  Step 790000/2000000 | c=9.2253 v=0.4761 a=0.0237 Q=-5.32 V=-5.44 (17181s)
+  Step 800000/2000000 | c=9.6130 v=0.6914 a=0.0315 Q=-8.10 V=-8.25 (17351s)
+    [Eval diag] avg_steps=68 max_steps=120
+    [Reward breakdown per step] event=1.026 shaping=0.703 sg_obs=-9.612 time=-0.050
+    [Reward total] event=1050.0 shaping=719.0 sg_obs=-9832.9 time=-51.1
+    [Eval] step=800000 reward=-541.0 success=73%
+  Saved: /root/autodl-tmp/pursue_20260302/checkpoints/iql_v2_2m/latest.pth
+  Step 810000/2000000 | c=14.0845 v=0.5653 a=0.0145 Q=-5.88 V=-6.09 (17647s)
+  Step 820000/2000000 | c=10.8351 v=0.4634 a=0.0159 Q=-5.75 V=-5.96 (17869s)
+  Step 830000/2000000 | c=12.7377 v=0.6965 a=0.0226 Q=-5.40 V=-5.55 (18046s)
+  Step 840000/2000000 | c=9.2597 v=0.6136 a=0.0190 Q=-7.37 V=-7.58 (18276s)
+  Step 850000/2000000 | c=7.9121 v=0.3622 a=0.0136 Q=-5.61 V=-5.78 (18504s)
+    [Eval diag] avg_steps=68 max_steps=120
+    [Reward breakdown per step] event=1.127 shaping=0.721 sg_obs=-10.470 time=-0.050
+    [Reward total] event=1150.0 shaping=735.1 sg_obs=-10679.4 time=-51.0
+    [Eval] step=850000 reward=-589.7 success=80%
+  Step 860000/2000000 | c=11.6490 v=0.6771 a=0.0218 Q=-7.16 V=-7.31 (18741s)
+  Step 870000/2000000 | c=7.4114 v=0.5690 a=0.0155 Q=-5.75 V=-5.89 (18956s)
+  Step 880000/2000000 | c=9.4402 v=1.2825 a=0.0160 Q=-6.77 V=-6.76 (19185s)
+  Step 890000/2000000 | c=9.8114 v=0.4627 a=0.0223 Q=-5.46 V=-5.58 (19412s)
+  Step 900000/2000000 | c=14.1039 v=0.5330 a=0.0250 Q=-6.28 V=-6.50 (19586s)
+    [Eval diag] avg_steps=70 max_steps=120
+    [Reward breakdown per step] event=0.951 shaping=0.677 sg_obs=-10.478 time=-0.050
+    [Reward total] event=1000.0 shaping=712.1 sg_obs=-11022.9 time=-52.6
+    [Eval] step=900000 reward=-624.2 success=73%
+  Saved: /root/autodl-tmp/pursue_20260302/checkpoints/iql_v2_2m/latest.pth
+  Step 910000/2000000 | c=9.7025 v=0.6432 a=0.0159 Q=-5.65 V=-5.63 (19885s)
+  Step 920000/2000000 | c=10.1892 v=0.4456 a=0.0155 Q=-7.43 V=-7.51 (20108s)
+  Step 930000/2000000 | c=8.8840 v=0.4848 a=0.0224 Q=-4.53 V=-4.53 (20278s)
+  Step 940000/2000000 | c=8.5859 v=0.4807 a=0.0154 Q=-7.65 V=-7.89 (20502s)
+  Step 950000/2000000 | c=12.8061 v=0.5742 a=0.0149 Q=-4.51 V=-4.69 (20730s)
+    [Eval diag] avg_steps=72 max_steps=120
+    [Reward breakdown per step] event=0.833 shaping=0.684 sg_obs=-11.286 time=-0.050
+    [Reward total] event=900.0 shaping=738.6 sg_obs=-12188.8 time=-54.0
+    [Eval] step=950000 reward=-706.9 success=67%
+  Step 960000/2000000 | c=9.0998 v=0.5043 a=0.0154 Q=-5.57 V=-5.61 (20982s)
+  Step 970000/2000000 | c=7.8788 v=0.4715 a=0.0152 Q=-6.33 V=-6.58 (21209s)
+  Step 980000/2000000 | c=7.0037 v=0.4911 a=0.0235 Q=-5.37 V=-5.37 (21420s)
+  Step 990000/2000000 | c=16.4953 v=0.4342 a=0.0195 Q=-4.35 V=-4.56 (21642s)
+  Step 1000000/2000000 | c=10.2167 v=0.5438 a=0.0131 Q=-5.22 V=-5.28 (21831s)
+    [Eval diag] avg_steps=70 max_steps=120
+    [Reward breakdown per step] event=0.855 shaping=0.717 sg_obs=-11.442 time=-0.050
+    [Reward total] event=900.0 shaping=755.5 sg_obs=-12048.2 time=-52.6
+    [Eval] step=1000000 reward=-696.4 success=67%
+  Saved: /root/autodl-tmp/pursue_20260302/checkpoints/iql_v2_2m/latest.pth
+  Step 1010000/2000000 | c=11.4792 v=0.5782 a=0.0236 Q=-5.57 V=-5.70 (22130s)
+  Step 1020000/2000000 | c=10.5170 v=0.6446 a=0.0214 Q=-6.85 V=-7.03 (22356s)
+  Step 1030000/2000000 | c=11.8245 v=0.5121 a=0.0229 Q=-7.83 V=-8.07 (22525s)
+  Step 1040000/2000000 | c=6.7315 v=0.4148 a=0.0183 Q=-4.44 V=-4.56 (22748s)
+  Step 1050000/2000000 | c=10.2155 v=0.6685 a=0.0207 Q=-7.52 V=-7.60 (22972s)
+    [Eval diag] avg_steps=72 max_steps=120
+    [Reward breakdown per step] event=0.839 shaping=0.679 sg_obs=-11.358 time=-0.050
+    [Reward total] event=900.0 shaping=728.8 sg_obs=-12187.0 time=-53.6
+    [Eval] step=1050000 reward=-707.5 success=67%
+  Step 1060000/2000000 | c=9.9097 v=0.6671 a=0.0142 Q=-7.18 V=-7.36 (23198s)
+  Step 1070000/2000000 | c=9.6527 v=0.6097 a=0.0216 Q=-5.10 V=-5.40 (23423s)
+  Step 1080000/2000000 | c=10.4931 v=0.7658 a=0.0136 Q=-5.67 V=-5.58 (23648s)
+  Step 1090000/2000000 | c=5.0068 v=0.5351 a=0.0149 Q=-7.40 V=-7.55 (23874s)
+  Step 1100000/2000000 | c=12.8355 v=0.8923 a=0.0145 Q=-6.93 V=-7.00 (24049s)
+    [Eval diag] avg_steps=60 max_steps=120
+    [Reward breakdown per step] event=1.568 shaping=0.833 sg_obs=-10.208 time=-0.050
+    [Reward total] event=1400.0 shaping=743.8 sg_obs=-9115.6 time=-44.6
+    [Eval] step=1100000 reward=-467.8 success=93%
+  Saved: /root/autodl-tmp/pursue_20260302/checkpoints/iql_v2_2m/best.pth
+  Saved: /root/autodl-tmp/pursue_20260302/checkpoints/iql_v2_2m/latest.pth
+  Step 1110000/2000000 | c=8.5068 v=0.4715 a=0.0185 Q=-5.81 V=-6.03 (24339s)
+  Step 1120000/2000000 | c=8.5934 v=0.6078 a=0.0123 Q=-6.94 V=-7.15 (24562s)
+  Step 1130000/2000000 | c=9.0752 v=0.4617 a=0.0182 Q=-5.60 V=-5.58 (24720s)
+  Step 1140000/2000000 | c=16.3028 v=0.5519 a=0.0164 Q=-5.37 V=-5.53 (24943s)
+  Step 1150000/2000000 | c=12.2003 v=0.6539 a=0.0223 Q=-8.25 V=-8.30 (25169s)
+    [Eval diag] avg_steps=66 max_steps=120
+    [Reward breakdown per step] event=1.005 shaping=0.657 sg_obs=-10.195 time=-0.050
+    [Reward total] event=1000.0 shaping=653.7 sg_obs=-10143.6 time=-49.7
+    [Eval] step=1150000 reward=-569.3 success=73%
+  Step 1160000/2000000 | c=14.1126 v=0.6895 a=0.0215 Q=-5.84 V=-5.98 (25410s)
+  Step 1170000/2000000 | c=9.9551 v=0.7574 a=0.0186 Q=-4.08 V=-4.09 (25637s)
+  Step 1180000/2000000 | c=20.5064 v=0.6289 a=0.0140 Q=-7.29 V=-7.48 (25864s)
+  Step 1190000/2000000 | c=11.8038 v=0.7230 a=0.0232 Q=-4.87 V=-5.13 (26092s)
+  Step 1200000/2000000 | c=8.7485 v=0.4790 a=0.0166 Q=-5.95 V=-6.10 (26266s)
+    [Eval diag] avg_steps=65 max_steps=120
+    [Reward breakdown per step] event=1.074 shaping=0.717 sg_obs=-9.912 time=-0.050
+    [Reward total] event=1050.0 shaping=700.9 sg_obs=-9694.1 time=-48.9
+    [Eval] step=1200000 reward=-532.8 success=73%
+  Saved: /root/autodl-tmp/pursue_20260302/checkpoints/iql_v2_2m/latest.pth
+  Step 1210000/2000000 | c=21.6572 v=0.6946 a=0.0183 Q=-7.34 V=-7.69 (26553s)
+  Step 1220000/2000000 | c=15.6874 v=0.6279 a=0.0202 Q=-5.73 V=-5.95 (26777s)
+  Step 1230000/2000000 | c=8.1172 v=0.5837 a=0.0152 Q=-5.29 V=-5.46 (26941s)
+  Step 1240000/2000000 | c=9.6520 v=0.5609 a=0.0177 Q=-6.76 V=-7.09 (27169s)
+  Step 1250000/2000000 | c=10.9971 v=0.5045 a=0.0150 Q=-6.11 V=-6.25 (27395s)
+    [Eval diag] avg_steps=71 max_steps=120
+    [Reward breakdown per step] event=0.896 shaping=0.699 sg_obs=-10.813 time=-0.050
+    [Reward total] event=950.0 shaping=741.3 sg_obs=-11462.1 time=-53.0
+    [Eval] step=1250000 reward=-654.9 success=67%
+  Step 1260000/2000000 | c=12.2088 v=0.7606 a=0.0158 Q=-7.26 V=-7.24 (27640s)
+  Step 1270000/2000000 | c=11.5624 v=0.6393 a=0.0185 Q=-4.97 V=-5.06 (27866s)
+  Step 1280000/2000000 | c=14.0331 v=1.0012 a=0.0325 Q=-6.57 V=-6.81 (28088s)
+  Step 1290000/2000000 | c=10.3480 v=0.6143 a=0.0194 Q=-6.59 V=-6.58 (28311s)
+  Step 1300000/2000000 | c=9.9429 v=0.4426 a=0.0225 Q=-6.52 V=-6.63 (28465s)
+    [Eval diag] avg_steps=63 max_steps=120
+    [Reward breakdown per step] event=1.160 shaping=0.726 sg_obs=-10.412 time=-0.050
+    [Reward total] event=1100.0 shaping=688.0 sg_obs=-9870.3 time=-47.4
+    [Eval] step=1300000 reward=-542.0 success=80%
+  Saved: /root/autodl-tmp/pursue_20260302/checkpoints/iql_v2_2m/latest.pth
+  Step 1310000/2000000 | c=13.9122 v=0.6390 a=0.0214 Q=-7.32 V=-7.52 (28756s)
+  Step 1320000/2000000 | c=7.3562 v=0.5375 a=0.0196 Q=-5.21 V=-5.26 (28983s)
+  Step 1330000/2000000 | c=11.6251 v=0.5026 a=0.0168 Q=-5.61 V=-5.63 (29158s)
+  Step 1340000/2000000 | c=16.3245 v=0.6393 a=0.0144 Q=-5.71 V=-5.78 (29379s)
+  Step 1350000/2000000 | c=7.0580 v=0.7998 a=0.0204 Q=-6.11 V=-6.35 (29604s)
+    [Eval diag] avg_steps=69 max_steps=120
+    [Reward breakdown per step] event=1.057 shaping=0.693 sg_obs=-10.879 time=-0.050
+    [Reward total] event=1100.0 shaping=721.3 sg_obs=-11324.7 time=-52.0
+    [Eval] step=1350000 reward=-637.0 success=80%
+  Step 1360000/2000000 | c=8.8108 v=0.5177 a=0.0243 Q=-7.24 V=-7.35 (29844s)
+  Step 1370000/2000000 | c=11.8149 v=0.6191 a=0.0143 Q=-6.97 V=-7.13 (29963s)
+  Step 1380000/2000000 | c=13.3847 v=0.5918 a=0.0216 Q=-7.29 V=-7.44 (30083s)
+  Step 1390000/2000000 | c=10.4569 v=0.8122 a=0.0147 Q=-5.48 V=-5.76 (30205s)
+  Step 1400000/2000000 | c=14.3080 v=0.6493 a=0.0227 Q=-5.76 V=-6.00 (30326s)
+    [Eval diag] avg_steps=66 max_steps=120
+    [Reward breakdown per step] event=1.168 shaping=0.769 sg_obs=-11.200 time=-0.050
+    [Reward total] event=1150.0 shaping=757.5 sg_obs=-11031.9 time=-49.2
+    [Eval] step=1400000 reward=-611.6 success=80%
+  Saved: /root/autodl-tmp/pursue_20260302/checkpoints/iql_v2_2m/latest.pth
+  Step 1410000/2000000 | c=8.3752 v=0.5312 a=0.0156 Q=-4.60 V=-4.79 (30514s)
+  Step 1420000/2000000 | c=7.6695 v=0.4674 a=0.0199 Q=-4.91 V=-5.16 (30633s)
+  Step 1430000/2000000 | c=26.5005 v=0.6876 a=0.0215 Q=-6.57 V=-6.68 (30749s)
+  Step 1440000/2000000 | c=7.5098 v=0.6430 a=0.0192 Q=-5.35 V=-5.53 (30867s)
+  Step 1450000/2000000 | c=7.0520 v=0.4032 a=0.0222 Q=-4.05 V=-4.17 (30994s)
+    [Eval diag] avg_steps=68 max_steps=120
+    [Reward breakdown per step] event=1.024 shaping=0.736 sg_obs=-11.522 time=-0.050
+    [Reward total] event=1050.0 shaping=754.5 sg_obs=-11810.0 time=-51.2
+    [Eval] step=1450000 reward=-670.5 success=73%
+  Step 1460000/2000000 | c=8.4022 v=0.5217 a=0.0132 Q=-6.20 V=-6.28 (31183s)
+  Step 1470000/2000000 | c=9.0753 v=0.7736 a=0.0195 Q=-4.34 V=-4.42 (31301s)
+  Step 1480000/2000000 | c=8.7716 v=0.4681 a=0.0168 Q=-6.25 V=-6.43 (31423s)
+  Step 1490000/2000000 | c=9.8605 v=0.5682 a=0.0147 Q=-6.50 V=-6.62 (31546s)
+  Step 1500000/2000000 | c=8.1426 v=0.6238 a=0.0175 Q=-6.41 V=-6.66 (31666s)
+    [Eval diag] avg_steps=67 max_steps=120
+    [Reward breakdown per step] event=0.992 shaping=0.732 sg_obs=-11.650 time=-0.050
+    [Reward total] event=1000.0 shaping=737.8 sg_obs=-11743.2 time=-50.4
+    [Eval] step=1500000 reward=-670.4 success=73%
+  Saved: /root/autodl-tmp/pursue_20260302/checkpoints/iql_v2_2m/latest.pth
+  Step 1510000/2000000 | c=7.6532 v=0.5129 a=0.0194 Q=-5.48 V=-5.82 (31853s)
+  Step 1520000/2000000 | c=9.3339 v=0.6146 a=0.0148 Q=-7.16 V=-7.24 (31974s)
+  Step 1530000/2000000 | c=10.8233 v=0.7815 a=0.0254 Q=-7.05 V=-7.16 (32088s)
+  Step 1540000/2000000 | c=8.2500 v=0.5096 a=0.0163 Q=-5.28 V=-5.60 (32209s)
+  Step 1550000/2000000 | c=9.3307 v=0.7586 a=0.0246 Q=-7.31 V=-7.52 (32330s)
+    [Eval diag] avg_steps=74 max_steps=120
+    [Reward breakdown per step] event=0.725 shaping=0.624 sg_obs=-10.148 time=-0.050
+    [Reward total] event=800.0 shaping=688.4 sg_obs=-11202.8 time=-55.2
+    [Eval] step=1550000 reward=-651.3 success=60%
+  Step 1560000/2000000 | c=10.5837 v=0.4688 a=0.0184 Q=-5.45 V=-5.70 (32523s)
+  Step 1570000/2000000 | c=10.0180 v=0.4787 a=0.0244 Q=-5.48 V=-5.65 (32651s)
+  Step 1580000/2000000 | c=9.8656 v=0.5338 a=0.0160 Q=-5.66 V=-5.86 (32768s)
+  Step 1590000/2000000 | c=12.4738 v=0.6393 a=0.0181 Q=-7.29 V=-7.38 (32893s)
+  Step 1600000/2000000 | c=10.5094 v=0.5013 a=0.0111 Q=-6.51 V=-6.67 (33008s)
+    [Eval diag] avg_steps=61 max_steps=120
+    [Reward breakdown per step] event=1.146 shaping=0.746 sg_obs=-10.199 time=-0.050
+    [Reward total] event=1050.0 shaping=683.6 sg_obs=-9342.1 time=-45.8
+    [Eval] step=1600000 reward=-510.3 success=73%
+  Saved: /root/autodl-tmp/pursue_20260302/checkpoints/iql_v2_2m/latest.pth
+  Step 1610000/2000000 | c=9.5240 v=0.6031 a=0.0175 Q=-8.34 V=-8.48 (33189s)
+  Step 1620000/2000000 | c=9.9264 v=0.5476 a=0.0156 Q=-7.87 V=-7.93 (33312s)
+  Step 1630000/2000000 | c=15.5779 v=0.6149 a=0.0193 Q=-5.95 V=-6.28 (33426s)
+  Step 1640000/2000000 | c=10.5691 v=0.6607 a=0.0165 Q=-4.12 V=-4.37 (33550s)
+  Step 1650000/2000000 | c=8.0334 v=0.6271 a=0.0216 Q=-7.52 V=-7.87 (33672s)
+    [Eval diag] avg_steps=72 max_steps=120
+    [Reward breakdown per step] event=0.788 shaping=0.660 sg_obs=-10.948 time=-0.050
+    [Reward total] event=850.0 shaping=711.2 sg_obs=-11801.8 time=-53.9
+    [Eval] step=1650000 reward=-686.3 success=67%
+  Step 1660000/2000000 | c=10.9792 v=0.6679 a=0.0170 Q=-7.78 V=-8.12 (33867s)
+  Step 1670000/2000000 | c=6.6326 v=0.6590 a=0.0257 Q=-5.25 V=-5.64 (33985s)
+  Step 1680000/2000000 | c=17.0021 v=0.5224 a=0.0129 Q=-6.98 V=-7.15 (34105s)
+  Step 1690000/2000000 | c=11.2179 v=0.4810 a=0.0136 Q=-8.14 V=-8.22 (34233s)
+  Step 1700000/2000000 | c=7.2781 v=0.5795 a=0.0193 Q=-5.87 V=-6.21 (34361s)
+    [Eval diag] avg_steps=67 max_steps=120
+    [Reward breakdown per step] event=0.889 shaping=0.653 sg_obs=-10.684 time=-0.050
+    [Reward total] event=900.0 shaping=661.1 sg_obs=-10812.3 time=-50.6
+    [Eval] step=1700000 reward=-620.1 success=73%
+  Saved: /root/autodl-tmp/pursue_20260302/checkpoints/iql_v2_2m/latest.pth
+  Step 1710000/2000000 | c=8.5505 v=0.5994 a=0.0176 Q=-6.53 V=-6.69 (34553s)
+  Step 1720000/2000000 | c=6.2894 v=0.6312 a=0.0119 Q=-7.28 V=-7.42 (34675s)
+  Step 1730000/2000000 | c=16.6033 v=0.6864 a=0.0181 Q=-6.64 V=-6.75 (34795s)
+  Step 1740000/2000000 | c=8.9743 v=0.5691 a=0.0182 Q=-6.23 V=-6.49 (34911s)
+  Step 1750000/2000000 | c=11.2685 v=0.6270 a=0.0160 Q=-5.76 V=-5.80 (35035s)
+    [Eval diag] avg_steps=76 max_steps=120
+    [Reward breakdown per step] event=0.618 shaping=0.585 sg_obs=-10.499 time=-0.050
+    [Reward total] event=700.0 shaping=662.7 sg_obs=-11895.8 time=-56.6
+    [Eval] step=1750000 reward=-706.0 success=53%
+  Step 1760000/2000000 | c=25.0559 v=0.5671 a=0.0152 Q=-4.88 V=-5.00 (35227s)
+  Step 1770000/2000000 | c=15.3204 v=0.6466 a=0.0134 Q=-5.96 V=-5.93 (35347s)
+  Step 1780000/2000000 | c=12.4125 v=0.4299 a=0.0185 Q=-7.14 V=-7.21 (35461s)
+  Step 1790000/2000000 | c=10.6500 v=0.6999 a=0.0169 Q=-5.64 V=-5.79 (35581s)
+  Step 1800000/2000000 | c=9.6990 v=0.5620 a=0.0160 Q=-6.53 V=-6.55 (35699s)
+    [Eval diag] avg_steps=70 max_steps=120
+    [Reward breakdown per step] event=1.043 shaping=0.672 sg_obs=-9.054 time=-0.050
+    [Reward total] event=1100.0 shaping=709.2 sg_obs=-9552.3 time=-52.7
+    [Eval] step=1800000 reward=-519.7 success=73%
+  Saved: /root/autodl-tmp/pursue_20260302/checkpoints/iql_v2_2m/latest.pth
+  Step 1810000/2000000 | c=13.5214 v=0.5699 a=0.0142 Q=-5.20 V=-5.46 (35892s)
+  Step 1820000/2000000 | c=12.0986 v=0.6542 a=0.0165 Q=-5.80 V=-5.85 (36013s)
+  Step 1830000/2000000 | c=13.8655 v=0.6098 a=0.0191 Q=-5.44 V=-5.70 (36141s)
+  Step 1840000/2000000 | c=11.5809 v=0.4742 a=0.0186 Q=-6.97 V=-7.18 (36252s)
+  Step 1850000/2000000 | c=6.3337 v=0.4512 a=0.0140 Q=-6.25 V=-6.42 (36360s)
+    [Eval diag] avg_steps=59 max_steps=120
+    [Reward breakdown per step] event=1.240 shaping=0.806 sg_obs=-11.950 time=-0.050
+    [Reward total] event=1100.0 shaping=714.7 sg_obs=-10599.4 time=-44.3
+    [Eval] step=1850000 reward=-588.6 success=80%
+  Step 1860000/2000000 | c=11.4446 v=0.8427 a=0.0153 Q=-6.77 V=-6.89 (36546s)
+  Step 1870000/2000000 | c=9.3815 v=0.5981 a=0.0156 Q=-7.63 V=-7.67 (36672s)
+  Step 1880000/2000000 | c=7.8814 v=0.4826 a=0.0134 Q=-5.24 V=-5.37 (36801s)
+  Step 1890000/2000000 | c=10.5658 v=0.4662 a=0.0173 Q=-5.77 V=-5.85 (36919s)
+  Step 1900000/2000000 | c=8.2368 v=0.6629 a=0.0204 Q=-5.34 V=-5.52 (37033s)
+    [Eval diag] avg_steps=56 max_steps=120
+    [Reward breakdown per step] event=1.490 shaping=0.835 sg_obs=-10.257 time=-0.050
+    [Reward total] event=1250.0 shaping=700.6 sg_obs=-8605.9 time=-41.9
+    [Eval] step=1900000 reward=-446.5 success=87%
+  Saved: /root/autodl-tmp/pursue_20260302/checkpoints/iql_v2_2m/latest.pth
+  Step 1910000/2000000 | c=6.2034 v=0.5251 a=0.0152 Q=-6.70 V=-6.75 (37209s)
+  Step 1920000/2000000 | c=10.9991 v=0.5800 a=0.0366 Q=-7.28 V=-7.46 (37335s)
+  Step 1930000/2000000 | c=10.8206 v=0.6136 a=0.0171 Q=-6.05 V=-6.16 (37458s)
+  Step 1940000/2000000 | c=21.1415 v=0.5057 a=0.0132 Q=-6.66 V=-6.84 (37585s)
+  Step 1950000/2000000 | c=6.5692 v=0.7609 a=0.0155 Q=-6.30 V=-6.32 (37710s)
+    [Eval diag] avg_steps=74 max_steps=120
+    [Reward breakdown per step] event=0.725 shaping=0.596 sg_obs=-10.178 time=-0.050
+    [Reward total] event=800.0 shaping=657.8 sg_obs=-11236.5 time=-55.2
+    [Eval] step=1950000 reward=-655.6 success=60%
+  Step 1960000/2000000 | c=8.9315 v=0.5411 a=0.0137 Q=-6.38 V=-6.46 (37901s)
+  Step 1970000/2000000 | c=9.5826 v=0.6270 a=0.0151 Q=-7.43 V=-7.77 (38023s)
+  Step 1980000/2000000 | c=8.5419 v=0.6418 a=0.0180 Q=-7.40 V=-7.63 (38143s)
+  Step 1990000/2000000 | c=10.9939 v=0.7383 a=0.0117 Q=-7.30 V=-7.37 (38268s)
+  Step 2000000/2000000 | c=13.2733 v=0.6625 a=0.0154 Q=-6.83 V=-6.84 (38381s)
+    [Eval diag] avg_steps=64 max_steps=120
+    [Reward breakdown per step] event=1.207 shaping=0.751 sg_obs=-10.729 time=-0.050
+    [Reward total] event=1150.0 shaping=715.8 sg_obs=-10224.6 time=-47.6
+    [Eval] step=2000000 reward=-560.4 success=80%
+  Saved: /root/autodl-tmp/pursue_20260302/checkpoints/iql_v2_2m/latest.pth
+  Saved: /root/autodl-tmp/pursue_20260302/checkpoints/iql_v2_2m/final.pth
+Saved: /root/autodl-tmp/pursue_20260302/visualization/logs/iql_v2_2m/iql_curves.png
+
+IQL done. Best eval success: 93%, Best eval reward: -467.8

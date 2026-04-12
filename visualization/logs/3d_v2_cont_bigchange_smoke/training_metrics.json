@@ -1,0 +1,38 @@
+[
+  {
+    "update": 1,
+    "steps": 2048,
+    "train_mean_reward": -2.1292266763489147,
+    "train_loss": 5110.910598754883,
+    "train_success_rate": 0.0,
+    "eval_mean_reward": null,
+    "eval_success_rate": null
+  },
+  {
+    "update": 2,
+    "steps": 4096,
+    "train_mean_reward": -1.68272329081814,
+    "train_loss": 3128.3519897460938,
+    "train_success_rate": 0.0,
+    "eval_mean_reward": null,
+    "eval_success_rate": null
+  },
+  {
+    "update": 3,
+    "steps": 6144,
+    "train_mean_reward": -2.1319285387128697,
+    "train_loss": 5034.030364990234,
+    "train_success_rate": 0.0,
+    "eval_mean_reward": -7572.564305491661,
+    "eval_success_rate": 0.0
+  },
+  {
+    "update": 4,
+    "steps": 8192,
+    "train_mean_reward": -1.6881666857428046,
+    "train_loss": 3059.909378051758,
+    "train_success_rate": 0.0,
+    "eval_mean_reward": -7572.564305491661,
+    "eval_success_rate": 0.0
+  }
+]

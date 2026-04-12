@@ -1,0 +1,240 @@
+% Compile: pdflatex hrl_mdp_pid_rl_complete.tex
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsfonts,amsthm,mathtools}
+\usepackage{bm}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\setlist{nosep}
+
+\title{Complete MDP Formulation (Revised):\\
+LowLevelAUV2DEnvV2 with RL Decision Layer and PID Control Layer}
+\author{}
+\date{}
+
+\newtheorem{remark}{Remark}
+\newtheorem{proposition}{Proposition}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This document gives a full, code-aligned MDP formulation for the environment defined by \texttt{core/environment/low\_level\_env\_2d\_v2.py}. The previous interpretation is corrected: in this setting, the learned policy is the \emph{decision layer} (6 discrete actions), while the true low-level control is handled by \texttt{LowLevelAUVEnv} + \texttt{IntegratedController} (dual-loop PID + thrust allocation) + full AUV dynamics. We provide exact state/action semantics, transition decomposition, reward/termination equations, and PPO objective.
+\end{abstract}
+
+\section{Scope and Corrected Layer Roles}
+
+\subsection{Primary code path}
+This formulation is based on the following exact path:
+\begin{itemize}
+  \item Wrapper env: \texttt{core/environment/low\_level\_env\_2d\_v2.py}
+  \item Inner env: \texttt{core/environment/low\_level\_env.py}
+  \item Controller: \texttt{core/control/dual\_loop\_pid.py} (\texttt{IntegratedController})
+  \item Dynamics: \texttt{core/dynamics/auv\_dynamics.py} (called by inner env)
+\end{itemize}
+
+\subsection{Correct layer interpretation}
+For \texttt{LowLevelAUV2DEnvV2}:
+\begin{itemize}
+  \item \textbf{Learned layer (policy layer):} RL chooses one of 6 semantic actions.
+  \item \textbf{Control layer (true low-level):} \texttt{IntegratedController.compute\_thrust} converts action + state into 8-thruster command via velocity loop + attitude dual-loop PID + thrust allocation.
+  \item \textbf{Plant layer:} full AUV dynamics evolves state under thrust and disturbance.
+\end{itemize}
+Hence this is a \emph{single-agent MDP with hierarchical control implementation}, not a two-policy HRL (no separate learned high-level policy in this file).
+
+\section{Environment MDP Definition}
+Define
+\begin{equation}
+\mathcal{M}=(\mathcal{S},\mathcal{A},P,R,\gamma,T_{\max}).
+\end{equation}
+
+\subsection{Action space (outer RL, 6 actions)}
+In \texttt{LowLevelAUV2DEnvV2},
+\begin{equation}
+\mathcal{A}=\{0,1,2,3,4,5\}.
+\end{equation}
+Semantics:
+\[
+0:\text{forward},\ 1:\text{backward},\ 2:\text{left},\ 3:\text{right},\ 4:\text{yaw\_left},\ 5:\text{yaw\_right}.
+\]
+This action is mapped to inner action set (13-action vocabulary in \texttt{LowLevelAUVEnv}):
+\begin{equation}
+\phi(a)=
+\begin{cases}
+1,&a=0\\
+2,&a=1\\
+3,&a=2\\
+4,&a=3\\
+7,&a=4\\
+8,&a=5
+\end{cases}
+\end{equation}
+(i.e., surge/sway/yaw subset only).
+
+\subsection{State and observation}
+Underlying physical state comes from inner env dynamics:
+\begin{equation}
+s_t=(\eta_t,\nu_t,\eta_t^{\mathrm{tar}},t),
+\end{equation}
+where
+\[
+\eta_t=[x,y,z,\phi,\theta,\psi],\quad \nu_t=[u,v,w,p,q,r],
+\]
+and target state \(\eta_t^{\mathrm{tar}}\) is sampled in 2D plane (fixed \(z=\text{fixed\_z}\), zero target orientation in this wrapper).
+
+Wrapper enforces 2D constraints after each inner step:
+\[
+z=\text{fixed\_z},\ \phi=0,\ \theta=0,\ w=0,\ p=0,\ q=0.
+\]
+
+Policy observation is 8D (explicitly in \texttt{\_get\_observation}):
+\begin{equation}
+o_t = [e_x^b/5,\ e_y^b/5,\ e_\psi/\pi,\ \alpha_{tar}/\pi,\ u/2,\ v/2,\ r/2,\ d/5],
+\end{equation}
+where:
+\begin{align}
+\bm{e}^{w} &= [x_{tar}-x,\ y_{tar}-y]^\top,\qquad d=\|\bm{e}^{w}\|,\\
+\alpha_{tar} &= \operatorname{atan2}(e^w_y,e^w_x),\\
+e_\psi &= \operatorname{wrap}(\alpha_{tar}-\psi),\\
+\begin{bmatrix}e_x^b\\e_y^b\end{bmatrix}
+&= \begin{bmatrix}\cos\psi & \sin\psi\\-\sin\psi & \cos\psi\end{bmatrix}
+\begin{bmatrix}e_x^w\\e_y^w\end{bmatrix}.
+\end{align}
+
+\section{Transition Kernel Decomposition}
+Transition is composed of four deterministic modules + stochastic reset/external disturbance terms.
+
+Given wrapper action \(a_t\):
+\begin{enumerate}
+  \item \textbf{Action remap}: \(a_t' = \phi(a_t)\).
+  \item \textbf{Inner control synthesis} (in \texttt{LowLevelAUVEnv.step}):
+  \begin{equation}
+  \bm{T}_t = \Pi_{ctrl}(a_t',\eta_t,\nu_t,\eta_t^{tar}),
+  \end{equation}
+  where \(\Pi_{ctrl}=\texttt{IntegratedController.compute\_thrust}\) outputs 8-thruster command.
+  \item \textbf{Dynamics propagation}:
+  \begin{equation}
+  (\eta_{t+1},\nu_{t+1}) = f_{dyn}(\eta_t,\nu_t,\bm{T}_t,\bm{f}^{ext}_t).
+  \end{equation}
+  \item \textbf{2D projection}: enforce fixed-z and zero roll/pitch and associated rates.
+\end{enumerate}
+
+Hence kernel can be written as
+\begin{equation}
+P(s_{t+1}|s_t,a_t)=\int\delta\big(s_{t+1}-\mathcal{F}(s_t,a_t,\xi_t)\big)p(\xi_t)d\xi_t,
+\end{equation}
+with \(\xi_t\) covering disturbances / randomization terms.
+
+\section{Low-level controller equations actually used}
+
+\subsection{IntegratedController translational loop}
+For translation actions under \texttt{translation\_mode=distance}, action command is small displacement \(\Delta \bm{p}_{cmd}\), converted to desired body velocity:
+\begin{equation}
+\bm{v}_{des} = \frac{\Delta \bm{p}_{cmd}}{T_s}\cdot s_{slow},
+\end{equation}
+where \(s_{slow}\in[s_{min},1]\) near target.
+Then force command:
+\begin{equation}
+\bm{f}_{cmd} = K_p^{vel}(\bm{v}_{des}-\bm{v}_{body}) - K_d^{vel}\bm{v}_{body},
+\end{equation}
+with axis-wise clipping.
+
+\subsection{Attitude dual-loop PID}
+Attitude target \([\psi^*,\theta^*,\phi^*]\) is generated from action and heading mode.
+Dual-loop equations (from \texttt{DualLoopPIDController.compute}):
+\begin{align}
+\bm{\omega}_{ref} &= K_p^{out}\bm{e}_{ang}+K_i^{out}\!\int\!\bm{e}_{ang}dt,\\
+\bm{\tau}_{PID} &= K_p^{in}\bm{e}_{\omega}+K_d^{in}\dot{\bm{e}}_{\omega},\\
+\bm{\tau}_{FF} &= J\dot{\bm{\omega}}_{ref}+B\bm{\omega}+D|\bm{\omega}|\odot\bm{\omega},\\
+\bm{\tau}_{cmd} &= \bm{\tau}_{PID}+\bm{\tau}_{FF}-\bm{\tau}_{ESO}.
+\end{align}
+Then thrust allocation maps force+torque to 8-thruster command \(\bm{T}_t\).
+
+\section{Reward model in \texttt{low\_level\_env\_2d\_v2.py}}
+Wrapper reward (not the inner reward) is:
+\begin{equation}
+r_t = r_{pos}+r_{imp}+r_{head}+r_{dir}+r_{prox}+r_{goal}+r_{time}+r_{spin}.
+\end{equation}
+Components:
+\begin{align}
+r_{pos} &= -0.3\,d_t,\\
+r_{imp} &= 10(d_{t-1}-d_t),\\
+r_{head} &= 0.3\left(1-\frac{|e_\psi|}{\pi}\right),\\
+r_{dir} &=
+\begin{cases}
+0.5\,u_t,& |e_\psi|<0.5,\ u_t>0,\ d_t>0.1,\\
+0,&\text{otherwise},
+\end{cases}\\
+r_{prox} &= 3(0.3-d_t)\,\mathbb{I}[d_t<0.3],\\
+r_{goal} &= 100\,\mathbb{I}[d_t<0.2],\\
+r_{time} &= -0.02,\\
+r_{spin} &= -0.1|r_t|\,\mathbb{I}[|r_t|>0.5\ \land\ |u_t|<0.1].
+\end{align}
+
+\section{Termination in \texttt{low\_level\_env\_2d\_v2.py}}
+\begin{align}
+\texttt{terminated}&=\mathbb{I}[d_t<0.2]\ \lor\ \mathbb{I}[|x_t|>20\ \lor\ |y_t|>20],\\
+\texttt{truncated}&=\mathbb{I}[\texttt{inner.current\_step} \ge 90/\Delta t].
+\end{align}
+
+\section{Objective and PPO optimization}
+Policy \(\pi_\theta(a|o)\) is trained with PPO (see \texttt{training/train\_low\_level\_2d\_v2.py}).
+
+Return and value:
+\begin{equation}
+G_t=\sum_{k=0}^{\infty}\gamma^k r_{t+k},\qquad V^\pi(s)=\mathbb{E}[G_t|s_t=s].
+\end{equation}
+GAE:
+\begin{equation}
+\delta_t=r_t+\gamma V(s_{t+1})-V(s_t),\qquad
+\hat A_t=\sum_{l=0}^{\infty}(\gamma\lambda)^l\delta_{t+l}.
+\end{equation}
+PPO clipped objective:
+\begin{equation}
+\mathcal{L}_{clip}=\mathbb{E}\left[\min\left(\rho_t\hat A_t,\operatorname{clip}(\rho_t,1-\epsilon,1+\epsilon)\hat A_t\right)\right],
+\end{equation}
+\begin{equation}
+\rho_t=\frac{\pi_\theta(a_t|o_t)}{\pi_{\theta_{old}}(a_t|o_t)}.
+\end{equation}
+Overall minimized loss:
+\begin{equation}
+\mathcal{J}= -\mathcal{L}_{clip}+c_v\,\mathbb{E}(V_\phi-\hat R)^2-c_e\,\mathbb{E}\,\mathcal{H}(\pi_\theta).
+\end{equation}
+
+\section{What is ``high-level'' and ``low-level'' here (final clarification)}
+\begin{itemize}
+  \item \textbf{In this file pair (V2 wrapper + inner env):}
+  \begin{itemize}
+    \item ``high-level'' = RL discrete decision over 6 actions.
+    \item ``low-level'' = controller+dynamics execution stack (IntegratedController + PID + allocator + AUV dynamics).
+  \end{itemize}
+  \item \textbf{Not present here:} a second learned policy layer doing temporal abstraction (macro-action planner).
+\end{itemize}
+
+\section{Code-to-equation mapping table}
+\begin{center}
+\begin{tabular}{p{0.33\linewidth} p{0.62\linewidth}}
+\toprule
+Equation block & Source implementation \\
+\midrule
+Action map \(\phi(a)\) & \texttt{LowLevelAUV2DEnvV2.action\_map} \\
+8D observation formula & \texttt{LowLevelAUV2DEnvV2.\_get\_observation} \\
+Wrapper reward terms & \texttt{LowLevelAUV2DEnvV2.\_compute\_reward} \\
+Wrapper termination & \texttt{LowLevelAUV2DEnvV2.\_check\_termination} \\
+RL action to thrust pipeline & \texttt{LowLevelAUVEnv.step} \\
+Velocity/goal slowdown loop & \texttt{IntegratedController.compute\_thrust} \\
+Attitude dual-loop PID & \texttt{DualLoopPIDController.compute} \\
+Plant transition & \texttt{AUVDynamics.step} called inside \texttt{LowLevelAUVEnv.step} \\
+PPO objective & \texttt{training/train\_low\_level\_2d\_v2.py} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section*{Compile}
+From \texttt{docs/}:
+\begin{verbatim}
+pdflatex hrl_mdp_pid_rl_complete.tex
+\end{verbatim}
+
+\end{document}

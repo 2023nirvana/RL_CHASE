@@ -1,0 +1,186 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{hyperref}
+
+\title{Hierarchical Markov Modeling for Underwater Pursuit-Evasion}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Overview}
+This document provides three consistent formulations based on the project implementation:
+\begin{itemize}
+  \item Low-level 6DOF control MDP.
+  \item High-level pursuit-evasion task MDP.
+  \item Macro-action (Options) SMDP for hierarchical control.
+\end{itemize}
+
+\section{Low-Level 6DOF Control MDP}
+We model the low-level controller as an MDP:
+\begin{equation}
+M_{LL} = (\mathcal{S}_{LL}, \mathcal{A}_{LL}, P_{LL}, R_{LL}, \gamma).
+\end{equation}
+
+\subsection*{State}
+The state is the full 6DOF vehicle state plus goal:
+\begin{equation}
+ s_t^{LL} = (\eta_t, \nu_t, g_t),
+\end{equation}
+where $\eta_t = [x, y, z, \phi, \theta, \psi]^\top$ is position and orientation, $\nu_t = [u, v, w, p, q, r]^\top$ is linear and angular velocity, and $g_t$ denotes the target state (position/orientation, and optionally target velocity).
+
+\subsection*{Action}
+The low-level action space is discrete with 13 semantic actions:
+\begin{equation}
+\mathcal{A}_{LL} = \{a_0, a_1, \ldots, a_{12}\}.
+\end{equation}
+They correspond to hover, surge/sway/heave, and yaw/pitch/roll in positive or negative directions.
+
+\subsection*{Transition}
+The action is mapped to thrust through a control stack, then the 6DOF dynamics evolve:
+\begin{align}
+\tau_t &= f_{ctrl}(a_t, s_t^{LL}), \\
+ s_{t+1}^{LL} &= f_{dyn}(s_t^{LL}, \tau_t, \xi_t),
+\end{align}
+where $\xi_t$ denotes disturbances (water current, domain randomization).
+
+\subsection*{Reward}
+The reward combines position/orientation error, velocity penalty, energy cost, and goal/time terms:
+\begin{equation}
+ r_t^{LL} = w_p\|e_p\| + w_o\|e_o\| + w_v\|\nu\| + w_e\|\tau\| + r_{goal} + r_{time}.
+\end{equation}
+
+\subsection*{Termination}
+Episodes terminate on success (within thresholds), out-of-bounds, flip, no-progress, or timeout.
+
+\section{High-Level Pursuit-Evasion MDP}
+The pursuit-evasion task is modeled as:
+\begin{equation}
+M_H = (\mathcal{S}_H, \mathcal{A}_H, P_H, R_H, \gamma_H).
+\end{equation}
+
+\subsection*{State}
+A task-level state can be defined by relative geometry and boundary information:
+\begin{equation}
+ s_t^H = [p_p, v_p, p_e, v_e, \psi_e, b_p, b_e],
+\end{equation}
+where $p_p, v_p$ are pursuer position and velocity, $p_e, v_e$ are evader position and velocity, $\psi_e$ is evader heading, and $b_p, b_e$ represent boundary margins.
+
+\subsection*{Action}
+High-level actions represent sub-goal selection or pursuit strategies:
+\begin{equation}
+ \mathcal{A}_H = \{\text{subgoal/heading/strategy}\}.
+\end{equation}
+
+\subsection*{Transition}
+High-level actions are realized by running the low-level policy for multiple steps:
+\begin{equation}
+ s_{t+1}^{H} = F(s_t^{H}, a_t^{H}, \pi_{LL}).
+\end{equation}
+
+\subsection*{Reward}
+A typical high-level reward for pursuit-evasion:
+\begin{equation}
+ r_t^H = \alpha\Delta d + \beta v_{close} + r_{catch} + r_{boundary} - r_{time}.
+\end{equation}
+
+\subsection*{Termination}
+Capture, failure (escape/out-of-bounds), or timeout.
+
+\section{Macro-Action / Options SMDP}
+The hierarchical control can be modeled as an SMDP with options:
+\begin{equation}
+M_S = (\mathcal{S}, \mathcal{O}, P_S, R_S, \gamma).
+\end{equation}
+
+\subsection*{Options}
+Each option is defined as:
+\begin{equation}
+ o = (\mathcal{I}_o, \pi_o, \beta_o),
+\end{equation}
+where $\mathcal{I}_o$ is the initiation set, $\pi_o$ is the intra-option policy (low-level controller), and $\beta_o$ is the termination condition.
+
+\subsection*{Transition}
+An option runs for $k$ steps before transitioning:
+\begin{equation}
+ P_S(s'\mid s,o) = \sum_{k\ge 1} P(s', k \mid s, o).
+\end{equation}
+
+\subsection*{Return}
+The SMDP reward accumulates over the option duration:
+\begin{equation}
+ R_S(s,o) = \mathbb{E}\left[\sum_{i=0}^{k-1}\gamma^i r_{t+i}\right].
+\end{equation}
+
+\section{Observation Vector Definitions}
+This section enumerates the exact observation vectors used in the code.
+
+\subsection{2D Pursuit-Evasion Observation (22D)}
+Let $\Delta p = p_e - p_p$, $\Delta v = v_e - v_p$, $d = \|\Delta p\|$, and
+\begin{equation}
+ v_{close} = -\frac{\Delta v \cdot \Delta p}{\|\Delta p\|} \quad (d>0).
+\end{equation}
+Normalization constants:
+\begin{equation}
+\text{pos\_scale}=\frac{1}{\text{world\_size}},\quad
+\text{vel\_scale}=\frac{1}{\max(v_{p\_max}, v_{e\_max})},\quad
+\text{acc\_scale}=\frac{1}{\max(a_{p\_max}, a_{e\_max})}.
+\end{equation}
+The 22-dimensional observation is ordered as:
+\begin{align*}
+&1: p_{p,x}\cdot\text{pos\_scale}, \quad
+2: p_{p,y}\cdot\text{pos\_scale}, \\
+&3: v_{p,x}\cdot\text{vel\_scale}, \quad
+4: v_{p,y}\cdot\text{vel\_scale}, \\
+&5: \Delta p_x\cdot\text{pos\_scale}, \quad
+6: \Delta p_y\cdot\text{pos\_scale}, \\
+&7: \Delta v_x\cdot\text{vel\_scale}, \quad
+8: \Delta v_y\cdot\text{vel\_scale}, \\
+&9: d\cdot\text{pos\_scale}, \quad
+10: v_{close}\cdot\text{vel\_scale}, \\
+&11: \hat{v}_{e,x}, \quad
+12: \hat{v}_{e,y}, \\
+&13: (\text{world\_size} - p_{p,y})\cdot\text{pos\_scale}, \\
+&14: (p_{p,y} + \text{world\_size})\cdot\text{pos\_scale}, \\
+&15: (p_{p,x} + \text{world\_size})\cdot\text{pos\_scale}, \\
+&16: (\text{world\_size} - p_{p,x})\cdot\text{pos\_scale}, \\
+&17: \min(\text{world\_size}-|p_{e,x}|,\;\text{world\_size}-|p_{e,y}|)\cdot\text{pos\_scale}, \\
+&18: \|v_p\|\cdot\text{vel\_scale}, \quad
+19: \|v_e\|\cdot\text{vel\_scale}, \\
+&20: \hat{v}_p\cdot\hat{\Delta p}, \\
+&21: a_{p,x}\cdot\text{acc\_scale}, \quad
+22: a_{p,y}\cdot\text{acc\_scale}.
+\end{align*}
+
+\subsection{Low-Level 6DOF Observation}
+Let $R(\phi,\theta,\psi)$ be the rotation matrix from body to world. The body-frame position error is:
+\begin{equation}
+ e_p^{body} = R(\phi,\theta,\psi)^\top (g_p - \eta_{pos}).
+\end{equation}
+The orientation error is the wrapped angle difference:
+\begin{equation}
+ e_o = \text{wrap}(\eta_{ori} - g_{ori}) \in [-\pi,\pi]^3.
+\end{equation}
+The observation is assembled in segments depending on configuration flags. Each segment is appended in the following order:
+\begin{itemize}
+  \item Position error (body frame): $e_p^{body}/10$.
+  \item Orientation error: $e_o/\pi$.
+  \item Linear velocity (body frame): $[u,v,w]/2$.
+  \item Angular velocity (body frame): $[p,q,r]/2$.
+  \item Target position (body frame): $e_p^{body}/10$.
+  \item Target orientation: $g_{ori}/\pi$.
+  \item Error terms: $e_p^{body}/10$ and $e_o/\pi$.
+\end{itemize}
+The final observation is the concatenation of all enabled segments in that order.
+
+\section{How to Compile}
+From the project root, run:
+\begin{verbatim}
+cd docs
+pdflatex markov_modeling.tex
+\end{verbatim}
+
+\end{document}

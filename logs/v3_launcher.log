@@ -1,0 +1,10 @@
+nohup: ignoring input
+Tue Apr  7 19:47:49 CST 2026: Starting 6 experiments in parallel...
+  BPPO-A  PID=16630
+  BPPO-B  PID=16631
+  IQL-A   PID=16632
+  IQL-B   PID=16633
+  TD3BC-A PID=16634
+  TD3BC-B PID=16635
+
+Tue Apr  7 19:47:49 CST 2026: All 6 launched. Waiting...

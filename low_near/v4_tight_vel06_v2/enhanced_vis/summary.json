@@ -1,0 +1,10 @@
+{
+  "experiment": "v4_tight_vel06_v2",
+  "episodes": 50,
+  "success_rate": 1.0,
+  "median_final_error": 0.047929131152355295,
+  "mean_final_error": 0.04702295849316068,
+  "median_steps": 93,
+  "mean_init_speed": 0.4767595578889546,
+  "init_velocity_range": 0.6
+}

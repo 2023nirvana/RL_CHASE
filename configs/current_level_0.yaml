@@ -1,0 +1,7 @@
+# 水流干扰等级0: 无水流 (Baseline)
+current:
+  enabled: false
+  type: "constant"
+  base_velocity: [0.0, 0.0, 0.0]
+  variation_amplitude: 0.0
+  variation_frequency: 0.0

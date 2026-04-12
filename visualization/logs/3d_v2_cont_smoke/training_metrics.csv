@@ -1,0 +1,3 @@
+update,steps,train_mean_reward,train_loss,train_success_rate,eval_mean_reward,eval_success_rate
+1,2048,-1.2396848355413554,1840.6785316467285,0.0,,
+2,4096,-1.2016199425523943,1615.376148223877,0.0,,

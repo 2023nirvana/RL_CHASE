@@ -1,0 +1,11 @@
+nohup: ignoring input
+Tue Apr  7 22:41:37 CST 2026: Resuming 6 experiments from latest checkpoints...
+  BPPO-A  PID=2918
+  BPPO-B  PID=2919
+  IQL-A   PID=2920
+  IQL-B   PID=2921
+  TD3BC-A PID=2922
+  TD3BC-B PID=2923
+
+Tue Apr  7 22:41:37 CST 2026: All 6 resumed. Waiting...
+Tue Apr  7 23:36:21 CST 2026: All 6 experiments finished!

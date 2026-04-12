@@ -1,0 +1,268 @@
+Device: cuda
+Loaded V4 NN: obs_dim=8, act_dim=3, hidden=(64, 64)
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:236: UserWarning: [33mWARN: Box low's precision lowered by casting to float32, current low.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:306: UserWarning: [33mWARN: Box high's precision lowered by casting to float32, current high.dtype=float64[0m
+  gym.logger.warn(
+Loaded pretrained (BPPO→AC): checkpoints/bppo_v2_2m/best.pth
+Online PPO: 1953 updates, 256 steps/update [reward-norm]
+  Update 1/1953 | steps=256 | ep_rew=-1356.1 | ep_len=99 | sr=50.00% | pi=-0.007 vf=265.4 ent=1.838 kl=-0.004 clip=0.00 | beta=0.499 | FPS=8
+  Update 10/1953 | steps=2560 | ep_rew=-414.8 | ep_len=62 | sr=70.00% | pi=-0.002 vf=107.2 ent=1.837 kl=-0.017 clip=0.00 | beta=0.495 | FPS=9
+  Update 20/1953 | steps=5120 | ep_rew=-484.3 | ep_len=58 | sr=70.18% | pi=0.027 vf=139.1 ent=1.837 kl=-0.028 clip=0.01 | beta=0.490 | FPS=9
+  Update 30/1953 | steps=7680 | ep_rew=-518.5 | ep_len=75 | sr=70.11% | pi=-0.000 vf=87.6 ent=1.836 kl=-0.013 clip=0.00 | beta=0.485 | FPS=9
+  Update 40/1953 | steps=10240 | ep_rew=-1376.9 | ep_len=94 | sr=70.18% | pi=0.012 vf=265.6 ent=1.836 kl=-0.036 clip=0.00 | beta=0.480 | FPS=10
+    [Eval] rew=-822.61  sr=70.00%
+Saved: /root/autodl-tmp/pursue_20260302/checkpoints/online_ppo_bppo_v1/best.pth
+  Update 50/1953 | steps=12800 | ep_rew=-9.6 | ep_len=43 | sr=71.53% | pi=-0.005 vf=69.8 ent=1.835 kl=-0.046 clip=0.01 | beta=0.474 | FPS=9
+  Update 60/1953 | steps=15360 | ep_rew=-426.3 | ep_len=52 | sr=73.60% | pi=0.033 vf=106.1 ent=1.834 kl=-0.075 clip=0.00 | beta=0.469 | FPS=9
+  Update 70/1953 | steps=17920 | ep_rew=-432.2 | ep_len=74 | sr=71.36% | pi=-0.002 vf=84.1 ent=1.835 kl=-0.086 clip=0.00 | beta=0.464 | FPS=9
+    [Eval] rew=-466.55  sr=90.00%
+Saved: /root/autodl-tmp/pursue_20260302/checkpoints/online_ppo_bppo_v1/best.pth
+  Update 80/1953 | steps=20480 | ep_rew=-1010.8 | ep_len=87 | sr=70.82% | pi=-0.002 vf=260.1 ent=1.834 kl=-0.098 clip=0.01 | beta=0.459 | FPS=9
+  Update 90/1953 | steps=23040 | ep_rew=-1078.6 | ep_len=98 | sr=72.32% | pi=-0.001 vf=197.0 ent=1.833 kl=-0.030 clip=0.00 | beta=0.454 | FPS=9
+  Update 100/1953 | steps=25600 | ep_rew=-1198.0 | ep_len=74 | sr=71.33% | pi=-0.000 vf=272.9 ent=1.832 kl=-0.023 clip=0.00 | beta=0.449 | FPS=9
+  Update 110/1953 | steps=28160 | ep_rew=-1084.3 | ep_len=85 | sr=70.00% | pi=-0.001 vf=233.1 ent=1.832 kl=-0.054 clip=0.00 | beta=0.444 | FPS=9
+    [Eval] rew=-305.12  sr=90.00%
+  Update 120/1953 | steps=30720 | ep_rew=-723.8 | ep_len=104 | sr=68.99% | pi=-0.001 vf=115.7 ent=1.832 kl=-0.025 clip=0.00 | beta=0.439 | FPS=9
+  Update 130/1953 | steps=33280 | ep_rew=-1723.1 | ep_len=120 | sr=67.88% | pi=0.001 vf=230.4 ent=1.833 kl=-0.047 clip=0.00 | beta=0.433 | FPS=9
+  Update 140/1953 | steps=35840 | ep_rew=-263.7 | ep_len=60 | sr=67.63% | pi=-0.003 vf=81.6 ent=1.833 kl=-0.035 clip=0.00 | beta=0.428 | FPS=9
+  Update 150/1953 | steps=38400 | ep_rew=-2.2 | ep_len=36 | sr=68.60% | pi=-0.004 vf=54.4 ent=1.832 kl=-0.053 clip=0.00 | beta=0.423 | FPS=9
+    [Eval] rew=-543.75  sr=80.00%
+  Update 160/1953 | steps=40960 | ep_rew=-1228.5 | ep_len=74 | sr=69.50% | pi=-0.000 vf=206.5 ent=1.832 kl=-0.019 clip=0.00 | beta=0.418 | FPS=9
+  Update 170/1953 | steps=43520 | ep_rew=-783.6 | ep_len=84 | sr=69.41% | pi=0.001 vf=152.9 ent=1.832 kl=-0.057 clip=0.00 | beta=0.413 | FPS=9
+  Update 180/1953 | steps=46080 | ep_rew=-1290.6 | ep_len=120 | sr=68.16% | pi=-0.001 vf=114.1 ent=1.831 kl=-0.091 clip=0.00 | beta=0.408 | FPS=9
+  Update 190/1953 | steps=48640 | ep_rew=-995.4 | ep_len=83 | sr=67.85% | pi=0.000 vf=208.9 ent=1.831 kl=-0.072 clip=0.00 | beta=0.403 | FPS=9
+    [Eval] rew=-732.56  sr=60.00%
+Saved: /root/autodl-tmp/pursue_20260302/checkpoints/online_ppo_bppo_v1/latest.pth
+  Update 200/1953 | steps=51200 | ep_rew=-244.2 | ep_len=51 | sr=69.10% | pi=-0.004 vf=117.1 ent=1.829 kl=-0.086 clip=0.00 | beta=0.398 | FPS=9
+  Update 210/1953 | steps=53760 | ep_rew=-560.9 | ep_len=70 | sr=69.19% | pi=0.000 vf=138.2 ent=1.828 kl=-0.054 clip=0.00 | beta=0.392 | FPS=9
+  Update 220/1953 | steps=56320 | ep_rew=1.2 | ep_len=42 | sr=69.38% | pi=-0.002 vf=68.5 ent=1.827 kl=-0.137 clip=0.00 | beta=0.387 | FPS=9
+  Update 230/1953 | steps=58880 | ep_rew=-1082.8 | ep_len=85 | sr=69.52% | pi=-0.002 vf=111.7 ent=1.827 kl=-0.095 clip=0.00 | beta=0.382 | FPS=9
+    [Eval] rew=-1324.62  sr=40.00%
+  Update 240/1953 | steps=61440 | ep_rew=-1487.0 | ep_len=95 | sr=68.94% | pi=-0.000 vf=202.1 ent=1.827 kl=-0.069 clip=0.00 | beta=0.377 | FPS=9
+  Update 250/1953 | steps=64000 | ep_rew=-499.9 | ep_len=50 | sr=68.55% | pi=-0.003 vf=156.4 ent=1.827 kl=-0.326 clip=0.00 | beta=0.372 | FPS=9
+  Update 260/1953 | steps=66560 | ep_rew=-1604.3 | ep_len=120 | sr=68.01% | pi=-0.000 vf=201.5 ent=1.827 kl=-0.184 clip=0.00 | beta=0.367 | FPS=9
+  Update 270/1953 | steps=69120 | ep_rew=-1650.0 | ep_len=95 | sr=68.42% | pi=0.001 vf=248.0 ent=1.827 kl=-0.110 clip=0.00 | beta=0.362 | FPS=9
+    [Eval] rew=-704.50  sr=80.00%
+  Update 280/1953 | steps=71680 | ep_rew=58.2 | ep_len=35 | sr=68.36% | pi=0.002 vf=133.8 ent=1.828 kl=-0.386 clip=0.01 | beta=0.357 | FPS=9
+  Update 290/1953 | steps=74240 | ep_rew=-427.1 | ep_len=76 | sr=68.19% | pi=-0.000 vf=140.2 ent=1.828 kl=-0.129 clip=0.00 | beta=0.352 | FPS=9
+  Update 300/1953 | steps=76800 | ep_rew=-695.2 | ep_len=85 | sr=68.47% | pi=-0.001 vf=158.7 ent=1.826 kl=-0.151 clip=0.00 | beta=0.346 | FPS=9
+  Update 310/1953 | steps=79360 | ep_rew=-1451.0 | ep_len=120 | sr=68.12% | pi=-0.001 vf=134.5 ent=1.826 kl=-0.048 clip=0.00 | beta=0.341 | FPS=9
+    [Eval] rew=-326.55  sr=80.00%
+  Update 320/1953 | steps=81920 | ep_rew=-970.2 | ep_len=75 | sr=68.29% | pi=-0.000 vf=272.8 ent=1.827 kl=-0.156 clip=0.00 | beta=0.336 | FPS=9
+  Update 330/1953 | steps=84480 | ep_rew=-622.8 | ep_len=70 | sr=68.44% | pi=0.000 vf=185.7 ent=1.827 kl=-0.145 clip=0.00 | beta=0.331 | FPS=9
+  Update 340/1953 | steps=87040 | ep_rew=-326.1 | ep_len=56 | sr=68.22% | pi=-0.002 vf=112.2 ent=1.827 kl=-0.192 clip=0.00 | beta=0.326 | FPS=9
+  Update 350/1953 | steps=89600 | ep_rew=-931.7 | ep_len=69 | sr=68.46% | pi=-0.000 vf=237.3 ent=1.826 kl=-0.082 clip=0.00 | beta=0.321 | FPS=9
+    [Eval] rew=-374.71  sr=80.00%
+  Update 360/1953 | steps=92160 | ep_rew=-704.1 | ep_len=76 | sr=68.50% | pi=-0.001 vf=128.8 ent=1.827 kl=-0.089 clip=0.00 | beta=0.316 | FPS=9
+  Update 370/1953 | steps=94720 | ep_rew=-773.8 | ep_len=61 | sr=68.78% | pi=-0.000 vf=231.8 ent=1.827 kl=-0.082 clip=0.00 | beta=0.311 | FPS=9
+  Update 380/1953 | steps=97280 | ep_rew=-338.0 | ep_len=120 | sr=68.61% | pi=-0.003 vf=16.8 ent=1.827 kl=-0.169 clip=0.00 | beta=0.305 | FPS=9
+  Update 390/1953 | steps=99840 | ep_rew=-83.6 | ep_len=40 | sr=68.98% | pi=-0.003 vf=64.3 ent=1.828 kl=-0.199 clip=0.00 | beta=0.300 | FPS=9
+    [Eval] rew=-606.48  sr=80.00%
+Saved: /root/autodl-tmp/pursue_20260302/checkpoints/online_ppo_bppo_v1/latest.pth
+  Update 400/1953 | steps=102400 | ep_rew=-1088.8 | ep_len=70 | sr=69.01% | pi=-0.000 vf=265.2 ent=1.827 kl=-0.157 clip=0.00 | beta=0.295 | FPS=9
+  Update 410/1953 | steps=104960 | ep_rew=-699.7 | ep_len=77 | sr=69.16% | pi=-0.001 vf=166.4 ent=1.826 kl=-0.088 clip=0.00 | beta=0.290 | FPS=9
+  Update 420/1953 | steps=107520 | ep_rew=-351.3 | ep_len=79 | sr=69.39% | pi=-0.004 vf=46.2 ent=1.826 kl=-0.194 clip=0.00 | beta=0.285 | FPS=9
+  Update 430/1953 | steps=110080 | ep_rew=-628.0 | ep_len=86 | sr=69.05% | pi=-0.001 vf=74.9 ent=1.826 kl=-0.320 clip=0.00 | beta=0.280 | FPS=9
+    [Eval] rew=-408.53  sr=70.00%
+  Update 440/1953 | steps=112640 | ep_rew=-883.0 | ep_len=80 | sr=68.95% | pi=0.000 vf=174.7 ent=1.825 kl=-0.175 clip=0.00 | beta=0.275 | FPS=9
+  Update 450/1953 | steps=115200 | ep_rew=-481.9 | ep_len=63 | sr=68.56% | pi=-0.002 vf=148.2 ent=1.825 kl=-0.229 clip=0.00 | beta=0.270 | FPS=9
+  Update 460/1953 | steps=117760 | ep_rew=-81.3 | ep_len=69 | sr=68.69% | pi=-0.002 vf=119.4 ent=1.825 kl=-0.181 clip=0.00 | beta=0.264 | FPS=9
+    [Eval] rew=-287.79  sr=90.00%
+  Update 470/1953 | steps=120320 | ep_rew=-925.2 | ep_len=81 | sr=68.72% | pi=-0.002 vf=159.2 ent=1.825 kl=-0.165 clip=0.00 | beta=0.259 | FPS=9
+  Update 480/1953 | steps=122880 | ep_rew=-1380.5 | ep_len=93 | sr=68.68% | pi=0.004 vf=241.9 ent=1.824 kl=-0.146 clip=0.00 | beta=0.254 | FPS=9
+  Update 490/1953 | steps=125440 | ep_rew=-1853.2 | ep_len=120 | sr=68.91% | pi=-0.002 vf=225.1 ent=1.825 kl=-0.132 clip=0.01 | beta=0.249 | FPS=9
+  Update 500/1953 | steps=128000 | ep_rew=-222.6 | ep_len=56 | sr=68.99% | pi=-0.002 vf=113.4 ent=1.825 kl=-0.310 clip=0.00 | beta=0.244 | FPS=9
+    [Eval] rew=-114.15  sr=90.00%
+  Update 510/1953 | steps=130560 | ep_rew=-738.7 | ep_len=92 | sr=69.20% | pi=-0.001 vf=140.8 ent=1.825 kl=-0.423 clip=0.00 | beta=0.239 | FPS=9
+  Update 520/1953 | steps=133120 | ep_rew=-335.8 | ep_len=57 | sr=69.34% | pi=-0.005 vf=67.9 ent=1.826 kl=-0.329 clip=0.01 | beta=0.234 | FPS=9
+  Update 530/1953 | steps=135680 | ep_rew=-761.5 | ep_len=110 | sr=69.38% | pi=0.013 vf=106.4 ent=1.827 kl=-0.229 clip=0.01 | beta=0.229 | FPS=9
+  Update 540/1953 | steps=138240 | ep_rew=-422.9 | ep_len=50 | sr=69.38% | pi=-0.001 vf=180.2 ent=1.827 kl=-0.258 clip=0.00 | beta=0.224 | FPS=9
+    [Eval] rew=-72.12  sr=90.00%
+  Update 550/1953 | steps=140800 | ep_rew=-299.3 | ep_len=80 | sr=69.25% | pi=-0.001 vf=91.7 ent=1.827 kl=-0.197 clip=0.00 | beta=0.218 | FPS=9
+  Update 560/1953 | steps=143360 | ep_rew=-1182.4 | ep_len=88 | sr=69.42% | pi=-0.001 vf=220.3 ent=1.827 kl=-0.231 clip=0.00 | beta=0.213 | FPS=9
+  Update 570/1953 | steps=145920 | ep_rew=-1545.7 | ep_len=120 | sr=69.26% | pi=-0.001 vf=188.1 ent=1.826 kl=-0.157 clip=0.00 | beta=0.208 | FPS=9
+  Update 580/1953 | steps=148480 | ep_rew=-226.0 | ep_len=51 | sr=69.18% | pi=0.102 vf=179.5 ent=1.825 kl=-0.160 clip=0.00 | beta=0.203 | FPS=9
+    [Eval] rew=-197.73  sr=100.00%
+Saved: /root/autodl-tmp/pursue_20260302/checkpoints/online_ppo_bppo_v1/best.pth
+Saved: /root/autodl-tmp/pursue_20260302/checkpoints/online_ppo_bppo_v1/latest.pth
+  Update 590/1953 | steps=151040 | ep_rew=-706.6 | ep_len=82 | sr=69.39% | pi=-0.000 vf=111.6 ent=1.825 kl=-0.157 clip=0.00 | beta=0.198 | FPS=9
+  Update 600/1953 | steps=153600 | ep_rew=-711.9 | ep_len=67 | sr=69.63% | pi=-0.001 vf=186.4 ent=1.825 kl=-0.190 clip=0.00 | beta=0.193 | FPS=9
+  Update 610/1953 | steps=156160 | ep_rew=-1000.4 | ep_len=94 | sr=69.59% | pi=0.004 vf=164.8 ent=1.825 kl=-0.130 clip=0.00 | beta=0.188 | FPS=9
+  Update 620/1953 | steps=158720 | ep_rew=-498.1 | ep_len=62 | sr=69.55% | pi=0.019 vf=133.5 ent=1.825 kl=-0.248 clip=0.01 | beta=0.183 | FPS=9
+    [Eval] rew=-395.59  sr=90.00%
+  Update 630/1953 | steps=161280 | ep_rew=-630.3 | ep_len=63 | sr=69.56% | pi=-0.000 vf=188.2 ent=1.824 kl=-0.204 clip=0.00 | beta=0.177 | FPS=9
+  Update 640/1953 | steps=163840 | ep_rew=-878.9 | ep_len=71 | sr=69.63% | pi=-0.001 vf=177.8 ent=1.824 kl=-0.231 clip=0.00 | beta=0.172 | FPS=9
+  Update 650/1953 | steps=166400 | ep_rew=-882.2 | ep_len=90 | sr=69.44% | pi=-0.000 vf=145.8 ent=1.824 kl=-0.116 clip=0.00 | beta=0.167 | FPS=9
+  Update 660/1953 | steps=168960 | ep_rew=-771.7 | ep_len=54 | sr=69.42% | pi=0.115 vf=175.0 ent=1.823 kl=-0.311 clip=0.01 | beta=0.162 | FPS=9
+    [Eval] rew=-937.88  sr=60.00%
+  Update 670/1953 | steps=171520 | ep_rew=-394.8 | ep_len=60 | sr=69.62% | pi=-0.003 vf=121.4 ent=1.823 kl=-0.370 clip=0.01 | beta=0.157 | FPS=9
+  Update 680/1953 | steps=174080 | ep_rew=-488.8 | ep_len=64 | sr=69.88% | pi=0.016 vf=180.3 ent=1.823 kl=-0.325 clip=0.01 | beta=0.152 | FPS=9
+  Update 690/1953 | steps=176640 | ep_rew=-1363.7 | ep_len=106 | sr=70.00% | pi=-0.000 vf=171.7 ent=1.824 kl=-0.184 clip=0.00 | beta=0.147 | FPS=9
+  Update 700/1953 | steps=179200 | ep_rew=-57.4 | ep_len=35 | sr=70.25% | pi=-0.001 vf=211.7 ent=1.824 kl=-0.205 clip=0.00 | beta=0.142 | FPS=9
+    [Eval] rew=-775.79  sr=80.00%
+  Update 710/1953 | steps=181760 | ep_rew=-1416.7 | ep_len=120 | sr=70.28% | pi=0.000 vf=111.8 ent=1.824 kl=-0.243 clip=0.00 | beta=0.136 | FPS=9
+  Update 720/1953 | steps=184320 | ep_rew=-684.3 | ep_len=64 | sr=70.21% | pi=-0.000 vf=200.7 ent=1.825 kl=-0.094 clip=0.00 | beta=0.131 | FPS=9
+  Update 730/1953 | steps=186880 | ep_rew=-51.7 | ep_len=52 | sr=70.29% | pi=0.004 vf=97.3 ent=1.824 kl=-0.094 clip=0.00 | beta=0.126 | FPS=9
+  Update 740/1953 | steps=189440 | ep_rew=-392.3 | ep_len=100 | sr=70.33% | pi=-0.001 vf=50.0 ent=1.824 kl=-0.497 clip=0.00 | beta=0.121 | FPS=9
+    [Eval] rew=-641.51  sr=90.00%
+  Update 750/1953 | steps=192000 | ep_rew=-1439.4 | ep_len=120 | sr=70.15% | pi=-0.000 vf=148.5 ent=1.825 kl=-0.222 clip=0.00 | beta=0.116 | FPS=9
+  Update 760/1953 | steps=194560 | ep_rew=-435.5 | ep_len=60 | sr=70.35% | pi=-0.002 vf=56.6 ent=1.825 kl=-0.262 clip=0.01 | beta=0.111 | FPS=9
+  Update 770/1953 | steps=197120 | ep_rew=-309.1 | ep_len=59 | sr=70.48% | pi=0.007 vf=123.2 ent=1.825 kl=-0.219 clip=0.01 | beta=0.106 | FPS=9
+  Update 780/1953 | steps=199680 | ep_rew=-1482.4 | ep_len=120 | sr=70.50% | pi=-0.000 vf=98.3 ent=1.825 kl=-0.104 clip=0.00 | beta=0.101 | FPS=9
+    [Eval] rew=-283.82  sr=90.00%
+Saved: /root/autodl-tmp/pursue_20260302/checkpoints/online_ppo_bppo_v1/latest.pth
+  Update 790/1953 | steps=202240 | ep_rew=-1179.5 | ep_len=87 | sr=70.42% | pi=0.007 vf=272.1 ent=1.824 kl=-0.209 clip=0.00 | beta=0.096 | FPS=9
+  Update 800/1953 | steps=204800 | ep_rew=-87.5 | ep_len=57 | sr=70.55% | pi=-0.000 vf=77.2 ent=1.824 kl=-0.121 clip=0.00 | beta=0.090 | FPS=9
+  Update 810/1953 | steps=207360 | ep_rew=-591.9 | ep_len=50 | sr=70.67% | pi=-0.001 vf=154.8 ent=1.824 kl=-0.175 clip=0.00 | beta=0.085 | FPS=9
+  Update 820/1953 | steps=209920 | ep_rew=-251.6 | ep_len=44 | sr=70.93% | pi=-0.003 vf=122.3 ent=1.823 kl=-0.177 clip=0.00 | beta=0.080 | FPS=9
+    [Eval] rew=-352.71  sr=80.00%
+  Update 830/1953 | steps=212480 | ep_rew=-875.8 | ep_len=83 | sr=71.01% | pi=-0.001 vf=173.2 ent=1.823 kl=-0.093 clip=0.00 | beta=0.075 | FPS=9
+  Update 840/1953 | steps=215040 | ep_rew=-629.9 | ep_len=51 | sr=70.99% | pi=-0.001 vf=229.0 ent=1.823 kl=-0.114 clip=0.00 | beta=0.070 | FPS=9
+  Update 850/1953 | steps=217600 | ep_rew=-796.0 | ep_len=78 | sr=70.96% | pi=-0.001 vf=174.2 ent=1.823 kl=-0.061 clip=0.00 | beta=0.065 | FPS=9
+  Update 860/1953 | steps=220160 | ep_rew=-473.3 | ep_len=83 | sr=71.11% | pi=0.003 vf=101.9 ent=1.822 kl=-0.152 clip=0.00 | beta=0.060 | FPS=9
+    [Eval] rew=-553.13  sr=80.00%
+  Update 870/1953 | steps=222720 | ep_rew=-96.9 | ep_len=63 | sr=71.10% | pi=-0.003 vf=47.9 ent=1.822 kl=-0.200 clip=0.00 | beta=0.055 | FPS=9
+  Update 880/1953 | steps=225280 | ep_rew=-1151.9 | ep_len=120 | sr=71.00% | pi=-0.000 vf=94.1 ent=1.822 kl=-0.133 clip=0.00 | beta=0.049 | FPS=9
+  Update 890/1953 | steps=227840 | ep_rew=-622.0 | ep_len=75 | sr=71.01% | pi=0.003 vf=134.1 ent=1.822 kl=-0.134 clip=0.00 | beta=0.044 | FPS=9
+    [Eval] rew=-453.80  sr=70.00%
+  Update 900/1953 | steps=230400 | ep_rew=-1461.6 | ep_len=120 | sr=70.89% | pi=-0.001 vf=147.5 ent=1.822 kl=-0.305 clip=0.00 | beta=0.039 | FPS=9
+  Update 910/1953 | steps=232960 | ep_rew=-531.4 | ep_len=56 | sr=70.97% | pi=-0.003 vf=168.9 ent=1.822 kl=-0.218 clip=0.00 | beta=0.034 | FPS=9
+  Update 920/1953 | steps=235520 | ep_rew=33.2 | ep_len=26 | sr=71.15% | pi=-0.001 vf=162.5 ent=1.822 kl=-0.222 clip=0.00 | beta=0.029 | FPS=9
+  Update 930/1953 | steps=238080 | ep_rew=-112.2 | ep_len=82 | sr=71.07% | pi=-0.003 vf=86.4 ent=1.821 kl=-0.380 clip=0.01 | beta=0.024 | FPS=9
+    [Eval] rew=-605.48  sr=80.00%
+  Update 940/1953 | steps=240640 | ep_rew=-1537.8 | ep_len=100 | sr=70.91% | pi=-0.001 vf=197.6 ent=1.821 kl=-0.291 clip=0.00 | beta=0.019 | FPS=9
+  Update 950/1953 | steps=243200 | ep_rew=-1801.8 | ep_len=100 | sr=70.94% | pi=-0.001 vf=233.4 ent=1.821 kl=-0.166 clip=0.00 | beta=0.014 | FPS=9
+  Update 960/1953 | steps=245760 | ep_rew=-1035.3 | ep_len=68 | sr=70.92% | pi=-0.001 vf=304.1 ent=1.821 kl=-0.331 clip=0.00 | beta=0.008 | FPS=9
+  Update 970/1953 | steps=248320 | ep_rew=-1245.9 | ep_len=78 | sr=70.93% | pi=-0.000 vf=288.8 ent=1.821 kl=-0.379 clip=0.00 | beta=0.003 | FPS=9
+    [Eval] rew=-713.33  sr=70.00%
+Saved: /root/autodl-tmp/pursue_20260302/checkpoints/online_ppo_bppo_v1/latest.pth
+  Update 980/1953 | steps=250880 | ep_rew=-2301.2 | ep_len=120 | sr=70.82% | pi=0.001 vf=270.4 ent=1.821 kl=0.000 clip=0.00 | beta=0.000 | FPS=9
+  Update 990/1953 | steps=253440 | ep_rew=-512.8 | ep_len=61 | sr=70.99% | pi=-0.002 vf=197.5 ent=1.821 kl=0.000 clip=0.00 | beta=0.000 | FPS=9
+  Update 1000/1953 | steps=256000 | ep_rew=-568.3 | ep_len=58 | sr=70.97% | pi=0.001 vf=197.8 ent=1.820 kl=0.000 clip=0.00 | beta=0.000 | FPS=9
+  Update 1010/1953 | steps=258560 | ep_rew=-480.6 | ep_len=103 | sr=71.01% | pi=-0.001 vf=83.6 ent=1.820 kl=0.000 clip=0.00 | beta=0.000 | FPS=9
+    [Eval] rew=-303.21  sr=80.00%
+  Update 1020/1953 | steps=261120 | ep_rew=-992.0 | ep_len=85 | sr=71.04% | pi=-0.001 vf=221.0 ent=1.819 kl=0.000 clip=0.00 | beta=0.000 | FPS=9
+  Update 1030/1953 | steps=263680 | ep_rew=-1005.2 | ep_len=58 | sr=71.16% | pi=0.003 vf=283.4 ent=1.819 kl=0.000 clip=0.01 | beta=0.000 | FPS=9
+  Update 1040/1953 | steps=266240 | ep_rew=-234.4 | ep_len=45 | sr=71.23% | pi=-0.001 vf=183.5 ent=1.819 kl=0.000 clip=0.00 | beta=0.000 | FPS=9
+  Update 1050/1953 | steps=268800 | ep_rew=-823.5 | ep_len=62 | sr=71.08% | pi=-0.001 vf=258.6 ent=1.819 kl=0.000 clip=0.00 | beta=0.000 | FPS=9
+    [Eval] rew=-264.02  sr=80.00%
+  Update 1060/1953 | steps=271360 | ep_rew=-151.0 | ep_len=68 | sr=71.17% | pi=-0.001 vf=68.2 ent=1.820 kl=0.000 clip=0.00 | beta=0.000 | FPS=9
+  Update 1070/1953 | steps=273920 | ep_rew=-274.9 | ep_len=43 | sr=71.11% | pi=-0.001 vf=184.2 ent=1.820 kl=0.000 clip=0.00 | beta=0.000 | FPS=9
+  Update 1080/1953 | steps=276480 | ep_rew=-430.5 | ep_len=80 | sr=71.02% | pi=-0.002 vf=101.5 ent=1.820 kl=0.000 clip=0.00 | beta=0.000 | FPS=9
+  Update 1090/1953 | steps=279040 | ep_rew=-612.2 | ep_len=59 | sr=71.09% | pi=-0.000 vf=174.6 ent=1.820 kl=0.000 clip=0.00 | beta=0.000 | FPS=9
+    [Eval] rew=-230.28  sr=80.00%
+  Update 1100/1953 | steps=281600 | ep_rew=-945.7 | ep_len=104 | sr=70.99% | pi=-0.000 vf=106.2 ent=1.820 kl=0.000 clip=0.00 | beta=0.000 | FPS=9
+  Update 1110/1953 | steps=284160 | ep_rew=-141.2 | ep_len=63 | sr=70.95% | pi=0.005 vf=77.7 ent=1.820 kl=0.000 clip=0.00 | beta=0.000 | FPS=9
+  Update 1120/1953 | steps=286720 | ep_rew=-282.2 | ep_len=52 | sr=71.04% | pi=-0.000 vf=150.9 ent=1.821 kl=0.000 clip=0.00 | beta=0.000 | FPS=9
+  Update 1130/1953 | steps=289280 | ep_rew=-974.2 | ep_len=76 | sr=71.07% | pi=-0.001 vf=151.0 ent=1.820 kl=0.000 clip=0.00 | beta=0.000 | FPS=9
+    [Eval] rew=-589.03  sr=80.00%
+  Update 1140/1953 | steps=291840 | ep_rew=-544.0 | ep_len=78 | sr=71.14% | pi=-0.002 vf=133.1 ent=1.819 kl=0.000 clip=0.00 | beta=0.000 | FPS=9
+  Update 1150/1953 | steps=294400 | ep_rew=-6.9 | ep_len=58 | sr=71.16% | pi=-0.002 vf=71.5 ent=1.820 kl=0.000 clip=0.00 | beta=0.000 | FPS=9
+  Update 1160/1953 | steps=296960 | ep_rew=-212.7 | ep_len=84 | sr=71.18% | pi=-0.002 vf=82.5 ent=1.821 kl=0.000 clip=0.00 | beta=0.000 | FPS=9
+  Update 1170/1953 | steps=299520 | ep_rew=-66.4 | ep_len=79 | sr=71.30% | pi=0.002 vf=58.9 ent=1.821 kl=0.000 clip=0.01 | beta=0.000 | FPS=9
+    [Eval] rew=-372.00  sr=90.00%
+Saved: /root/autodl-tmp/pursue_20260302/checkpoints/online_ppo_bppo_v1/latest.pth
+  Update 1180/1953 | steps=302080 | ep_rew=-525.9 | ep_len=62 | sr=71.22% | pi=-0.001 vf=157.6 ent=1.822 kl=0.000 clip=0.00 | beta=0.000 | FPS=9
+  Update 1190/1953 | steps=304640 | ep_rew=-412.5 | ep_len=78 | sr=71.28% | pi=-0.002 vf=77.7 ent=1.822 kl=0.000 clip=0.00 | beta=0.000 | FPS=9
+  Update 1200/1953 | steps=307200 | ep_rew=-1061.5 | ep_len=79 | sr=71.24% | pi=0.000 vf=231.5 ent=1.822 kl=0.000 clip=0.00 | beta=0.000 | FPS=9
+  Update 1210/1953 | steps=309760 | ep_rew=-174.2 | ep_len=39 | sr=71.32% | pi=-0.001 vf=175.7 ent=1.823 kl=0.000 clip=0.00 | beta=0.000 | FPS=9
+    [Eval] rew=-529.46  sr=80.00%
+  Update 1220/1953 | steps=312320 | ep_rew=-243.4 | ep_len=51 | sr=71.37% | pi=0.000 vf=170.3 ent=1.822 kl=0.000 clip=0.01 | beta=0.000 | FPS=9
+  Update 1230/1953 | steps=314880 | ep_rew=-819.8 | ep_len=80 | sr=71.38% | pi=-0.002 vf=62.1 ent=1.822 kl=0.000 clip=0.00 | beta=0.000 | FPS=9
+  Update 1240/1953 | steps=317440 | ep_rew=-1994.6 | ep_len=120 | sr=71.33% | pi=0.002 vf=258.9 ent=1.822 kl=0.000 clip=0.01 | beta=0.000 | FPS=9
+  Update 1250/1953 | steps=320000 | ep_rew=-357.3 | ep_len=80 | sr=71.20% | pi=0.003 vf=90.1 ent=1.822 kl=0.000 clip=0.00 | beta=0.000 | FPS=9
+    [Eval] rew=-327.65  sr=90.00%
+  Update 1260/1953 | steps=322560 | ep_rew=-265.0 | ep_len=52 | sr=71.16% | pi=-0.002 vf=115.7 ent=1.822 kl=0.000 clip=0.00 | beta=0.000 | FPS=9
+  Update 1270/1953 | steps=325120 | ep_rew=9.2 | ep_len=76 | sr=71.13% | pi=-0.002 vf=97.3 ent=1.821 kl=0.000 clip=0.00 | beta=0.000 | FPS=10
+  Update 1280/1953 | steps=327680 | ep_rew=-197.1 | ep_len=44 | sr=71.14% | pi=-0.001 vf=116.0 ent=1.822 kl=0.000 clip=0.00 | beta=0.000 | FPS=10
+  Update 1290/1953 | steps=330240 | ep_rew=-771.1 | ep_len=69 | sr=71.19% | pi=0.021 vf=148.2 ent=1.821 kl=0.000 clip=0.00 | beta=0.000 | FPS=10
+    [Eval] rew=-388.30  sr=80.00%
+  Update 1300/1953 | steps=332800 | ep_rew=-184.3 | ep_len=35 | sr=71.24% | pi=-0.002 vf=138.3 ent=1.821 kl=0.000 clip=0.00 | beta=0.000 | FPS=10
+  Update 1310/1953 | steps=335360 | ep_rew=-619.0 | ep_len=64 | sr=71.27% | pi=-0.000 vf=208.2 ent=1.821 kl=0.000 clip=0.00 | beta=0.000 | FPS=10
+  Update 1320/1953 | steps=337920 | ep_rew=-988.3 | ep_len=78 | sr=71.26% | pi=-0.000 vf=208.9 ent=1.821 kl=0.000 clip=0.00 | beta=0.000 | FPS=10
+    [Eval] rew=-432.72  sr=60.00%
+  Update 1330/1953 | steps=340480 | ep_rew=2.9 | ep_len=48 | sr=71.30% | pi=-0.003 vf=187.6 ent=1.820 kl=0.000 clip=0.00 | beta=0.000 | FPS=10
+  Update 1340/1953 | steps=343040 | ep_rew=-1067.9 | ep_len=69 | sr=71.27% | pi=-0.000 vf=228.2 ent=1.820 kl=0.000 clip=0.00 | beta=0.000 | FPS=10
+  Update 1350/1953 | steps=345600 | ep_rew=-138.7 | ep_len=61 | sr=71.28% | pi=0.001 vf=79.6 ent=1.820 kl=0.000 clip=0.00 | beta=0.000 | FPS=10
+  Update 1360/1953 | steps=348160 | ep_rew=-710.8 | ep_len=64 | sr=71.27% | pi=-0.001 vf=218.4 ent=1.819 kl=0.000 clip=0.00 | beta=0.000 | FPS=10
+    [Eval] rew=-300.10  sr=80.00%
+Saved: /root/autodl-tmp/pursue_20260302/checkpoints/online_ppo_bppo_v1/latest.pth
+  Update 1370/1953 | steps=350720 | ep_rew=-483.4 | ep_len=60 | sr=71.24% | pi=-0.001 vf=140.6 ent=1.819 kl=0.000 clip=0.00 | beta=0.000 | FPS=10
+  Update 1380/1953 | steps=353280 | ep_rew=-423.0 | ep_len=84 | sr=71.26% | pi=-0.002 vf=48.5 ent=1.820 kl=0.000 clip=0.00 | beta=0.000 | FPS=10
+  Update 1390/1953 | steps=355840 | ep_rew=-565.4 | ep_len=120 | sr=71.27% | pi=-0.004 vf=45.0 ent=1.820 kl=0.000 clip=0.00 | beta=0.000 | FPS=10
+  Update 1400/1953 | steps=358400 | ep_rew=-523.8 | ep_len=90 | sr=71.23% | pi=-0.002 vf=98.7 ent=1.820 kl=0.000 clip=0.01 | beta=0.000 | FPS=10
+    [Eval] rew=-295.78  sr=80.00%
+  Update 1410/1953 | steps=360960 | ep_rew=-785.3 | ep_len=108 | sr=71.18% | pi=-0.001 vf=119.1 ent=1.820 kl=0.000 clip=0.00 | beta=0.000 | FPS=10
+  Update 1420/1953 | steps=363520 | ep_rew=-961.9 | ep_len=102 | sr=71.12% | pi=0.002 vf=153.2 ent=1.819 kl=0.000 clip=0.01 | beta=0.000 | FPS=10
+  Update 1430/1953 | steps=366080 | ep_rew=-137.2 | ep_len=39 | sr=71.24% | pi=-0.001 vf=166.7 ent=1.820 kl=0.000 clip=0.00 | beta=0.000 | FPS=10
+  Update 1440/1953 | steps=368640 | ep_rew=-534.3 | ep_len=120 | sr=71.19% | pi=-0.001 vf=42.9 ent=1.820 kl=0.000 clip=0.00 | beta=0.000 | FPS=10
+    [Eval] rew=-321.13  sr=80.00%
+  Update 1450/1953 | steps=371200 | ep_rew=-899.1 | ep_len=90 | sr=71.11% | pi=-0.000 vf=155.9 ent=1.820 kl=0.000 clip=0.00 | beta=0.000 | FPS=10
+  Update 1460/1953 | steps=373760 | ep_rew=-72.4 | ep_len=46 | sr=71.10% | pi=-0.001 vf=85.9 ent=1.820 kl=0.000 clip=0.00 | beta=0.000 | FPS=10
+  Update 1470/1953 | steps=376320 | ep_rew=-392.0 | ep_len=54 | sr=71.11% | pi=-0.001 vf=131.6 ent=1.821 kl=0.000 clip=0.00 | beta=0.000 | FPS=10
+  Update 1480/1953 | steps=378880 | ep_rew=-869.4 | ep_len=94 | sr=71.07% | pi=-0.000 vf=128.5 ent=1.822 kl=0.000 clip=0.00 | beta=0.000 | FPS=10
+    [Eval] rew=56.85  sr=100.00%
+  Update 1490/1953 | steps=381440 | ep_rew=-320.6 | ep_len=63 | sr=70.99% | pi=0.005 vf=94.6 ent=1.822 kl=0.000 clip=0.01 | beta=0.000 | FPS=10
+  Update 1500/1953 | steps=384000 | ep_rew=-644.3 | ep_len=83 | sr=70.89% | pi=-0.000 vf=92.6 ent=1.821 kl=0.000 clip=0.00 | beta=0.000 | FPS=10
+  Update 1510/1953 | steps=386560 | ep_rew=-492.9 | ep_len=53 | sr=70.92% | pi=0.013 vf=216.5 ent=1.822 kl=0.000 clip=0.01 | beta=0.000 | FPS=10
+  Update 1520/1953 | steps=389120 | ep_rew=-2067.9 | ep_len=120 | sr=70.84% | pi=-0.001 vf=259.9 ent=1.821 kl=0.000 clip=0.00 | beta=0.000 | FPS=10
+    [Eval] rew=-362.20  sr=90.00%
+  Update 1530/1953 | steps=391680 | ep_rew=-429.4 | ep_len=54 | sr=70.81% | pi=-0.002 vf=165.6 ent=1.821 kl=0.000 clip=0.00 | beta=0.000 | FPS=10
+  Update 1540/1953 | steps=394240 | ep_rew=-560.4 | ep_len=51 | sr=70.85% | pi=-0.001 vf=237.9 ent=1.821 kl=0.000 clip=0.00 | beta=0.000 | FPS=10
+  Update 1550/1953 | steps=396800 | ep_rew=-391.3 | ep_len=57 | sr=70.81% | pi=-0.004 vf=74.5 ent=1.821 kl=0.000 clip=0.00 | beta=0.000 | FPS=10
+  Update 1560/1953 | steps=399360 | ep_rew=-301.9 | ep_len=46 | sr=70.79% | pi=0.002 vf=185.1 ent=1.821 kl=0.000 clip=0.00 | beta=0.000 | FPS=10
+    [Eval] rew=-469.38  sr=70.00%
+Saved: /root/autodl-tmp/pursue_20260302/checkpoints/online_ppo_bppo_v1/latest.pth
+  Update 1570/1953 | steps=401920 | ep_rew=-301.5 | ep_len=48 | sr=70.71% | pi=-0.003 vf=198.9 ent=1.820 kl=0.000 clip=0.01 | beta=0.000 | FPS=10
+  Update 1580/1953 | steps=404480 | ep_rew=-431.7 | ep_len=57 | sr=70.68% | pi=-0.002 vf=148.4 ent=1.820 kl=0.000 clip=0.00 | beta=0.000 | FPS=10
+  Update 1590/1953 | steps=407040 | ep_rew=-1169.1 | ep_len=90 | sr=70.67% | pi=-0.000 vf=181.7 ent=1.820 kl=0.000 clip=0.00 | beta=0.000 | FPS=10
+  Update 1600/1953 | steps=409600 | ep_rew=91.2 | ep_len=75 | sr=70.63% | pi=-0.001 vf=84.7 ent=1.820 kl=0.000 clip=0.00 | beta=0.000 | FPS=10
+    [Eval] rew=-485.86  sr=70.00%
+  Update 1610/1953 | steps=412160 | ep_rew=-254.5 | ep_len=80 | sr=70.62% | pi=-0.000 vf=69.3 ent=1.820 kl=0.000 clip=0.00 | beta=0.000 | FPS=10
+  Update 1620/1953 | steps=414720 | ep_rew=-1023.0 | ep_len=84 | sr=70.61% | pi=0.014 vf=169.3 ent=1.820 kl=0.000 clip=0.00 | beta=0.000 | FPS=10
+  Update 1630/1953 | steps=417280 | ep_rew=-608.9 | ep_len=60 | sr=70.61% | pi=-0.002 vf=139.8 ent=1.820 kl=0.000 clip=0.00 | beta=0.000 | FPS=10
+  Update 1640/1953 | steps=419840 | ep_rew=-305.3 | ep_len=74 | sr=70.57% | pi=0.000 vf=120.7 ent=1.821 kl=0.000 clip=0.00 | beta=0.000 | FPS=10
+    [Eval] rew=-442.29  sr=90.00%
+  Update 1650/1953 | steps=422400 | ep_rew=-1417.1 | ep_len=120 | sr=70.54% | pi=-0.002 vf=136.1 ent=1.821 kl=0.000 clip=0.00 | beta=0.000 | FPS=10
+  Update 1660/1953 | steps=424960 | ep_rew=31.9 | ep_len=40 | sr=70.49% | pi=0.027 vf=141.4 ent=1.821 kl=0.000 clip=0.00 | beta=0.000 | FPS=10
+  Update 1670/1953 | steps=427520 | ep_rew=-1523.4 | ep_len=120 | sr=70.43% | pi=-0.001 vf=127.4 ent=1.821 kl=0.000 clip=0.00 | beta=0.000 | FPS=10
+  Update 1680/1953 | steps=430080 | ep_rew=-303.7 | ep_len=53 | sr=70.44% | pi=-0.001 vf=160.3 ent=1.821 kl=0.000 clip=0.00 | beta=0.000 | FPS=10
+    [Eval] rew=-412.31  sr=80.00%
+  Update 1690/1953 | steps=432640 | ep_rew=-365.1 | ep_len=59 | sr=70.42% | pi=-0.002 vf=178.0 ent=1.821 kl=0.000 clip=0.00 | beta=0.000 | FPS=10
+  Update 1700/1953 | steps=435200 | ep_rew=-233.2 | ep_len=62 | sr=70.45% | pi=-0.001 vf=88.6 ent=1.819 kl=0.000 clip=0.00 | beta=0.000 | FPS=10
+  Update 1710/1953 | steps=437760 | ep_rew=-103.4 | ep_len=46 | sr=70.43% | pi=-0.001 vf=127.2 ent=1.819 kl=0.000 clip=0.00 | beta=0.000 | FPS=10
+    [Eval] rew=-267.99  sr=90.00%
+  Update 1720/1953 | steps=440320 | ep_rew=-1091.5 | ep_len=78 | sr=70.47% | pi=0.002 vf=225.3 ent=1.820 kl=0.000 clip=0.00 | beta=0.000 | FPS=10
+  Update 1730/1953 | steps=442880 | ep_rew=-333.0 | ep_len=57 | sr=70.45% | pi=-0.002 vf=97.7 ent=1.819 kl=0.000 clip=0.00 | beta=0.000 | FPS=10
+  Update 1740/1953 | steps=445440 | ep_rew=-328.9 | ep_len=70 | sr=70.46% | pi=0.000 vf=91.6 ent=1.819 kl=0.000 clip=0.00 | beta=0.000 | FPS=10
+  Update 1750/1953 | steps=448000 | ep_rew=-810.7 | ep_len=78 | sr=70.44% | pi=-0.000 vf=137.5 ent=1.819 kl=0.000 clip=0.00 | beta=0.000 | FPS=10
+    [Eval] rew=-274.91  sr=70.00%
+Saved: /root/autodl-tmp/pursue_20260302/checkpoints/online_ppo_bppo_v1/latest.pth
+  Update 1760/1953 | steps=450560 | ep_rew=-273.7 | ep_len=60 | sr=70.45% | pi=-0.001 vf=147.1 ent=1.819 kl=0.000 clip=0.00 | beta=0.000 | FPS=11
+  Update 1770/1953 | steps=453120 | ep_rew=-485.6 | ep_len=44 | sr=70.45% | pi=-0.002 vf=199.0 ent=1.819 kl=0.000 clip=0.00 | beta=0.000 | FPS=11
+  Update 1780/1953 | steps=455680 | ep_rew=-516.0 | ep_len=94 | sr=70.55% | pi=0.010 vf=45.8 ent=1.819 kl=0.000 clip=0.01 | beta=0.000 | FPS=11
+  Update 1790/1953 | steps=458240 | ep_rew=-760.9 | ep_len=53 | sr=70.51% | pi=0.006 vf=238.1 ent=1.819 kl=0.000 clip=0.01 | beta=0.000 | FPS=11
+    [Eval] rew=-27.10  sr=100.00%
+  Update 1800/1953 | steps=460800 | ep_rew=-1123.5 | ep_len=120 | sr=70.52% | pi=-0.001 vf=91.3 ent=1.819 kl=0.000 clip=0.00 | beta=0.000 | FPS=11
+  Update 1810/1953 | steps=463360 | ep_rew=-26.6 | ep_len=52 | sr=70.53% | pi=0.000 vf=80.1 ent=1.819 kl=0.000 clip=0.00 | beta=0.000 | FPS=11
+  Update 1820/1953 | steps=465920 | ep_rew=-1586.0 | ep_len=120 | sr=70.51% | pi=-0.000 vf=173.7 ent=1.818 kl=0.000 clip=0.00 | beta=0.000 | FPS=11
+  Update 1830/1953 | steps=468480 | ep_rew=-708.8 | ep_len=73 | sr=70.50% | pi=-0.001 vf=159.0 ent=1.818 kl=0.000 clip=0.00 | beta=0.000 | FPS=11
+    [Eval] rew=-827.69  sr=70.00%
+  Update 1840/1953 | steps=471040 | ep_rew=-1659.6 | ep_len=110 | sr=70.47% | pi=-0.001 vf=191.6 ent=1.818 kl=0.000 clip=0.00 | beta=0.000 | FPS=11
+  Update 1850/1953 | steps=473600 | ep_rew=-136.5 | ep_len=80 | sr=70.46% | pi=-0.000 vf=41.4 ent=1.818 kl=0.000 clip=0.00 | beta=0.000 | FPS=11
+  Update 1860/1953 | steps=476160 | ep_rew=-952.1 | ep_len=84 | sr=70.51% | pi=-0.001 vf=204.3 ent=1.818 kl=0.000 clip=0.00 | beta=0.000 | FPS=11
+  Update 1870/1953 | steps=478720 | ep_rew=-728.8 | ep_len=110 | sr=70.56% | pi=-0.000 vf=114.5 ent=1.818 kl=0.000 clip=0.00 | beta=0.000 | FPS=11
+    [Eval] rew=-544.38  sr=70.00%
+  Update 1880/1953 | steps=481280 | ep_rew=-581.7 | ep_len=61 | sr=70.55% | pi=-0.001 vf=150.6 ent=1.818 kl=0.000 clip=0.00 | beta=0.000 | FPS=11
+  Update 1890/1953 | steps=483840 | ep_rew=-82.6 | ep_len=50 | sr=70.59% | pi=-0.000 vf=80.6 ent=1.818 kl=0.000 clip=0.00 | beta=0.000 | FPS=11
+  Update 1900/1953 | steps=486400 | ep_rew=-536.3 | ep_len=54 | sr=70.55% | pi=0.000 vf=238.0 ent=1.818 kl=0.000 clip=0.00 | beta=0.000 | FPS=11
+  Update 1910/1953 | steps=488960 | ep_rew=-342.9 | ep_len=82 | sr=70.60% | pi=-0.000 vf=74.5 ent=1.818 kl=0.000 clip=0.00 | beta=0.000 | FPS=11
+    [Eval] rew=-337.36  sr=80.00%
+  Update 1920/1953 | steps=491520 | ep_rew=-659.8 | ep_len=120 | sr=70.54% | pi=0.078 vf=53.2 ent=1.818 kl=0.000 clip=0.01 | beta=0.000 | FPS=11
+  Update 1930/1953 | steps=494080 | ep_rew=-1497.5 | ep_len=120 | sr=70.51% | pi=-0.000 vf=172.8 ent=1.818 kl=0.000 clip=0.00 | beta=0.000 | FPS=11
+  Update 1940/1953 | steps=496640 | ep_rew=-266.3 | ep_len=55 | sr=70.53% | pi=-0.000 vf=122.1 ent=1.818 kl=0.000 clip=0.00 | beta=0.000 | FPS=11
+  Update 1950/1953 | steps=499200 | ep_rew=-221.8 | ep_len=49 | sr=70.49% | pi=0.025 vf=153.8 ent=1.818 kl=0.000 clip=0.00 | beta=0.000 | FPS=11
+Saved: /root/autodl-tmp/pursue_20260302/checkpoints/online_ppo_bppo_v1/final.pth
+Saved: /root/autodl-tmp/pursue_20260302/visualization/logs/online_ppo_bppo_v1/online_ppo_curves.png
+Online PPO fine-tuning done.

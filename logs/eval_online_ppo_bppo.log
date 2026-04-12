@@ -1,0 +1,120 @@
+Loaded V4 NN: obs_dim=8, act_dim=3, hidden=(64, 64)
+
+============================================================
+Evaluating: best.pth
+============================================================
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:236: UserWarning: [33mWARN: Box low's precision lowered by casting to float32, current low.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:306: UserWarning: [33mWARN: Box high's precision lowered by casting to float32, current high.dtype=float64[0m
+  gym.logger.warn(
+
+--- Quantitative Eval (30 episodes) ---
+  Episode   1/30 | reward=    24.2 | steps=  21 | 捕获 | dist=1.00
+  Episode   2/30 | reward=    94.6 | steps=  49 | 捕获 | dist=1.00
+  Episode   3/30 | reward= -1534.6 | steps= 120 | 失败 | dist=2.24
+  Episode   4/30 | reward=   -86.8 | steps=  38 | 捕获 | dist=1.00
+  Episode   5/30 | reward=  -397.7 | steps= 120 | 失败 | dist=8.54
+  Episode   6/30 | reward=   129.4 | steps=  33 | 捕获 | dist=0.99
+  Episode   7/30 | reward=   121.2 | steps=   9 | 捕获 | dist=0.99
+  Episode   8/30 | reward=   122.0 | steps=   8 | 捕获 | dist=1.00
+  Episode   9/30 | reward=   -56.8 | steps=  48 | 捕获 | dist=0.99
+  Episode  10/30 | reward=   -70.2 | steps=  47 | 捕获 | dist=1.00
+  Episode  11/30 | reward=   131.5 | steps=  11 | 捕获 | dist=1.00
+  Episode  12/30 | reward=   121.4 | steps=  43 | 捕获 | dist=0.99
+  Episode  13/30 | reward=  -157.2 | steps=  57 | 捕获 | dist=1.00
+  Episode  14/30 | reward=  -588.7 | steps= 120 | 失败 | dist=11.91
+  Episode  15/30 | reward=    -4.7 | steps=  53 | 捕获 | dist=0.99
+  Episode  16/30 | reward= -2211.9 | steps= 120 | 失败 | dist=4.58
+  Episode  17/30 | reward=  -924.1 | steps= 120 | 失败 | dist=13.72
+  Episode  18/30 | reward=  -213.1 | steps= 113 | 捕获 | dist=0.99
+  Episode  19/30 | reward= -2016.7 | steps= 120 | 失败 | dist=7.15
+  Episode  20/30 | reward=   121.2 | steps=  10 | 捕获 | dist=1.00
+  Episode  21/30 | reward=  -247.2 | steps= 112 | 捕获 | dist=1.00
+  Episode  22/30 | reward=    96.3 | steps=  28 | 捕获 | dist=0.99
+  Episode  23/30 | reward= -1269.4 | steps=  85 | 捕获 | dist=0.99
+  Episode  24/30 | reward=  -318.5 | steps=  95 | 捕获 | dist=1.00
+  Episode  25/30 | reward=   134.7 | steps=  14 | 捕获 | dist=0.99
+  Episode  26/30 | reward=   144.2 | steps=  32 | 捕获 | dist=1.00
+  Episode  27/30 | reward= -1055.4 | steps=  80 | 捕获 | dist=0.99
+  Episode  28/30 | reward=  -868.4 | steps= 120 | 失败 | dist=12.89
+  Episode  29/30 | reward=   125.6 | steps=  22 | 捕获 | dist=0.99
+  Episode  30/30 | reward=  -168.6 | steps=  87 | 捕获 | dist=0.98
+
+  Success Rate:    77%
+  Mean Reward:     -360.8 ± 650.4
+  Mean Steps:      64
+  Mean Cap Steps:  48
+  Stats saved: /root/autodl-tmp/pursue_20260302/evaluation/results_online_ppo_bppo_v1/stats_best.json
+
+--- Trajectory Visualization ---
+  Saved: /root/autodl-tmp/pursue_20260302/evaluation/results_online_ppo_bppo_v1/traj_best_success_1.png
+  Saved GIF: /root/autodl-tmp/pursue_20260302/evaluation/results_online_ppo_bppo_v1/traj_best_success_1.gif
+  Saved: /root/autodl-tmp/pursue_20260302/evaluation/results_online_ppo_bppo_v1/traj_best_success_2.png
+  Saved GIF: /root/autodl-tmp/pursue_20260302/evaluation/results_online_ppo_bppo_v1/traj_best_success_2.gif
+  Saved: /root/autodl-tmp/pursue_20260302/evaluation/results_online_ppo_bppo_v1/traj_best_success_3.png
+  Saved GIF: /root/autodl-tmp/pursue_20260302/evaluation/results_online_ppo_bppo_v1/traj_best_success_3.gif
+  Saved: /root/autodl-tmp/pursue_20260302/evaluation/results_online_ppo_bppo_v1/traj_best_success_4.png
+  Saved GIF: /root/autodl-tmp/pursue_20260302/evaluation/results_online_ppo_bppo_v1/traj_best_success_4.gif
+  Saved: /root/autodl-tmp/pursue_20260302/evaluation/results_online_ppo_bppo_v1/traj_best_fail_1.png
+  Saved GIF: /root/autodl-tmp/pursue_20260302/evaluation/results_online_ppo_bppo_v1/traj_best_fail_1.gif
+
+============================================================
+Evaluating: final.pth
+============================================================
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:236: UserWarning: [33mWARN: Box low's precision lowered by casting to float32, current low.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:306: UserWarning: [33mWARN: Box high's precision lowered by casting to float32, current high.dtype=float64[0m
+  gym.logger.warn(
+
+--- Quantitative Eval (30 episodes) ---
+  Episode   1/30 | reward=   -34.8 | steps=  32 | 捕获 | dist=1.00
+  Episode   2/30 | reward=  -826.3 | steps= 120 | 失败 | dist=6.93
+  Episode   3/30 | reward=  -920.9 | steps=  92 | 捕获 | dist=1.00
+  Episode   4/30 | reward=   -51.9 | steps=  39 | 捕获 | dist=0.99
+  Episode   5/30 | reward=  -233.1 | steps= 120 | 失败 | dist=11.57
+  Episode   6/30 | reward=   126.6 | steps=  33 | 捕获 | dist=1.00
+  Episode   7/30 | reward=   121.1 | steps=   7 | 捕获 | dist=1.00
+  Episode   8/30 | reward=   119.5 | steps=  10 | 捕获 | dist=1.00
+  Episode   9/30 | reward=    -3.1 | steps=  38 | 捕获 | dist=0.99
+  Episode  10/30 | reward= -2367.5 | steps= 120 | 失败 | dist=8.29
+  Episode  11/30 | reward=   131.4 | steps=  11 | 捕获 | dist=0.99
+  Episode  12/30 | reward=   125.3 | steps=  19 | 捕获 | dist=0.99
+  Episode  13/30 | reward=    49.3 | steps=  15 | 捕获 | dist=1.00
+  Episode  14/30 | reward=    81.8 | steps=  71 | 捕获 | dist=0.99
+  Episode  15/30 | reward=    77.2 | steps=  59 | 捕获 | dist=1.00
+  Episode  16/30 | reward=  -169.0 | steps=  51 | 捕获 | dist=0.99
+  Episode  17/30 | reward=    96.1 | steps=  48 | 捕获 | dist=0.99
+  Episode  18/30 | reward=  -388.5 | steps= 110 | 捕获 | dist=0.99
+  Episode  19/30 | reward= -2115.0 | steps= 120 | 失败 | dist=2.43
+  Episode  20/30 | reward=   121.2 | steps=  10 | 捕获 | dist=0.99
+  Episode  21/30 | reward=  -368.6 | steps= 120 | 失败 | dist=6.61
+  Episode  22/30 | reward=    76.0 | steps=  30 | 捕获 | dist=0.99
+  Episode  23/30 | reward= -1037.6 | steps=  69 | 捕获 | dist=1.00
+  Episode  24/30 | reward= -1300.2 | steps= 120 | 失败 | dist=5.87
+  Episode  25/30 | reward=   134.8 | steps=  14 | 捕获 | dist=0.99
+  Episode  26/30 | reward=   119.5 | steps=  30 | 捕获 | dist=1.00
+  Episode  27/30 | reward=  -847.8 | steps=  77 | 捕获 | dist=1.00
+  Episode  28/30 | reward=    96.6 | steps=  30 | 捕获 | dist=1.00
+  Episode  29/30 | reward=    97.1 | steps=  24 | 捕获 | dist=0.99
+  Episode  30/30 | reward= -2383.6 | steps= 120 | 失败 | dist=14.17
+
+  Success Rate:    77%
+  Mean Reward:     -382.5 ± 751.3
+  Mean Steps:      59
+  Mean Cap Steps:  40
+  Stats saved: /root/autodl-tmp/pursue_20260302/evaluation/results_online_ppo_bppo_v1/stats_final.json
+
+--- Trajectory Visualization ---
+  Saved: /root/autodl-tmp/pursue_20260302/evaluation/results_online_ppo_bppo_v1/traj_final_success_1.png
+  Saved GIF: /root/autodl-tmp/pursue_20260302/evaluation/results_online_ppo_bppo_v1/traj_final_success_1.gif
+  Saved: /root/autodl-tmp/pursue_20260302/evaluation/results_online_ppo_bppo_v1/traj_final_success_2.png
+  Saved GIF: /root/autodl-tmp/pursue_20260302/evaluation/results_online_ppo_bppo_v1/traj_final_success_2.gif
+  Saved: /root/autodl-tmp/pursue_20260302/evaluation/results_online_ppo_bppo_v1/traj_final_success_3.png
+  Saved GIF: /root/autodl-tmp/pursue_20260302/evaluation/results_online_ppo_bppo_v1/traj_final_success_3.gif
+  Saved: /root/autodl-tmp/pursue_20260302/evaluation/results_online_ppo_bppo_v1/traj_final_fail_1.png
+  Saved GIF: /root/autodl-tmp/pursue_20260302/evaluation/results_online_ppo_bppo_v1/traj_final_fail_1.gif
+  Saved: /root/autodl-tmp/pursue_20260302/evaluation/results_online_ppo_bppo_v1/traj_final_success_4.png
+  Saved GIF: /root/autodl-tmp/pursue_20260302/evaluation/results_online_ppo_bppo_v1/traj_final_success_4.gif
+Saved summary: /root/autodl-tmp/pursue_20260302/evaluation/results_online_ppo_bppo_v1/summary_best_vs_final.png
+
+All results in: /root/autodl-tmp/pursue_20260302/evaluation/results_online_ppo_bppo_v1

@@ -1,0 +1,262 @@
+======================================================================
+ Continuous 2D Pursuit-Evasion on cuda
+ High-level action: Box([-1,1]^2) relative waypoint
+ Collision model: soft projection without rebound
+======================================================================
+
+[1] Baselines
+  Direct Pursuit               capture=0.040 (4/100) mean_len=96.7
+  Intercept                    capture=0.010 (1/100) mean_len=99.2
+  Terrain-aware Intercept      capture=0.160 (16/100) mean_len=87.7
+  Saved -> high_tabular/xx_continuous_smoke.png
+  Saved -> high_tabular/xx_continuous_smoke.gif
+
+[2] PPO Training
+  update=  10 train_cap=0.000 step_rew=-17.193 ep_ret=-850.0 ep_len= 51.4
+    reward_parts: cap=-1.69 close=-3.83 int=-9.98 terrain=-0.50 edge=-0.03 energy=-0.06 time=-0.35
+  update=  20 train_cap=0.000 step_rew=-20.528 ep_ret=-655.0 ep_len= 34.9
+    reward_parts: cap=-2.03 close=-4.60 int=-9.72 terrain=-0.54 edge=-0.03 energy=-0.06 time=-0.35
+    greedy_eval: cap=0.000 ret=-488.4 len=18.6
+  update=  30 train_cap=0.000 step_rew=-21.918 ep_ret=-561.5 ep_len= 26.4
+    reward_parts: cap=-2.62 close=-5.98 int=-9.33 terrain=-0.64 edge=-0.03 energy=-0.06 time=-0.35
+  update=  40 train_cap=0.000 step_rew=-25.847 ep_ret=-510.4 ep_len= 20.9
+    reward_parts: cap=-3.47 close=-8.00 int=-8.87 terrain=-0.82 edge=-0.04 energy=-0.05 time=-0.35
+  update=  50 train_cap=0.000 step_rew=-24.758 ep_ret=-504.2 ep_len= 20.8
+    reward_parts: cap=-4.00 close=-9.27 int=-8.64 terrain=-0.93 edge=-0.05 energy=-0.04 time=-0.35
+    greedy_eval: cap=0.000 ret=-470.2 len=16.9
+  update=  60 train_cap=0.000 step_rew=-24.537 ep_ret=-492.3 ep_len= 19.8
+    reward_parts: cap=-4.33 close=-10.03 int=-8.47 terrain=-0.99 edge=-0.05 energy=-0.03 time=-0.35
+  update=  70 train_cap=0.000 step_rew=-24.508 ep_ret=-496.3 ep_len= 20.7
+    reward_parts: cap=-4.45 close=-10.31 int=-8.36 terrain=-1.00 edge=-0.05 energy=-0.03 time=-0.35
+    greedy_eval: cap=0.000 ret=-473.1 len=17.3
+  update=  80 train_cap=0.000 step_rew=-25.495 ep_ret=-487.1 ep_len= 19.9
+    reward_parts: cap=-4.50 close=-10.44 int=-8.29 terrain=-0.97 edge=-0.05 energy=-0.03 time=-0.35
+  update=  90 train_cap=0.005 step_rew=-23.664 ep_ret=-488.3 ep_len= 20.0
+    reward_parts: cap=-4.46 close=-10.35 int=-8.21 terrain=-0.94 edge=-0.05 energy=-0.02 time=-0.35
+  update= 100 train_cap=0.020 step_rew=-24.756 ep_ret=-471.1 ep_len= 19.6
+    reward_parts: cap=-4.29 close=-10.18 int=-8.09 terrain=-0.92 edge=-0.05 energy=-0.02 time=-0.35
+    greedy_eval: cap=0.025 ret=-451.3 len=17.1
+  update= 110 train_cap=0.010 step_rew=-23.776 ep_ret=-479.9 ep_len= 20.4
+    reward_parts: cap=-4.18 close=-10.06 int=-7.96 terrain=-0.90 edge=-0.05 energy=-0.02 time=-0.35
+  update= 120 train_cap=0.025 step_rew=-22.576 ep_ret=-475.9 ep_len= 21.7
+    reward_parts: cap=-4.07 close=-9.89 int=-7.85 terrain=-0.89 edge=-0.05 energy=-0.02 time=-0.35
+    greedy_eval: cap=0.025 ret=-452.6 len=17.5
+  update= 130 train_cap=0.045 step_rew=-24.896 ep_ret=-451.7 ep_len= 20.0
+    reward_parts: cap=-4.00 close=-9.82 int=-7.81 terrain=-0.89 edge=-0.05 energy=-0.02 time=-0.35
+  update= 140 train_cap=0.020 step_rew=-23.403 ep_ret=-473.2 ep_len= 19.7
+    reward_parts: cap=-3.97 close=-9.85 int=-7.81 terrain=-0.90 edge=-0.05 energy=-0.02 time=-0.35
+  update= 150 train_cap=0.020 step_rew=-24.482 ep_ret=-468.6 ep_len= 19.8
+    reward_parts: cap=-3.98 close=-9.91 int=-7.79 terrain=-0.92 edge=-0.05 energy=-0.02 time=-0.35
+    greedy_eval: cap=0.000 ret=-471.8 len=17.9
+  update= 160 train_cap=0.025 step_rew=-22.875 ep_ret=-470.7 ep_len= 20.7
+    reward_parts: cap=-4.01 close=-9.90 int=-7.80 terrain=-0.91 edge=-0.05 energy=-0.02 time=-0.35
+  update= 170 train_cap=0.035 step_rew=-22.828 ep_ret=-465.9 ep_len= 21.1
+    reward_parts: cap=-4.05 close=-9.92 int=-7.79 terrain=-0.92 edge=-0.05 energy=-0.02 time=-0.35
+    greedy_eval: cap=0.025 ret=-449.8 len=17.2
+  update= 180 train_cap=0.035 step_rew=-25.186 ep_ret=-459.5 ep_len= 20.4
+    reward_parts: cap=-4.03 close=-9.92 int=-7.78 terrain=-0.91 edge=-0.05 energy=-0.02 time=-0.35
+  update= 190 train_cap=0.035 step_rew=-23.113 ep_ret=-459.5 ep_len= 19.3
+    reward_parts: cap=-3.95 close=-9.86 int=-7.75 terrain=-0.90 edge=-0.05 energy=-0.02 time=-0.35
+  update= 200 train_cap=0.020 step_rew=-22.875 ep_ret=-469.6 ep_len= 20.4
+    reward_parts: cap=-3.91 close=-9.74 int=-7.68 terrain=-0.90 edge=-0.05 energy=-0.02 time=-0.35
+    greedy_eval: cap=0.025 ret=-451.0 len=18.1
+  update= 210 train_cap=0.040 step_rew=-22.480 ep_ret=-456.6 ep_len= 20.1
+    reward_parts: cap=-3.84 close=-9.67 int=-7.64 terrain=-0.90 edge=-0.05 energy=-0.02 time=-0.35
+  update= 220 train_cap=0.055 step_rew=-22.122 ep_ret=-452.5 ep_len= 21.5
+    reward_parts: cap=-3.83 close=-9.65 int=-7.62 terrain=-0.90 edge=-0.05 energy=-0.02 time=-0.35
+    greedy_eval: cap=0.000 ret=-466.9 len=18.2
+  update= 230 train_cap=0.035 step_rew=-24.396 ep_ret=-460.5 ep_len= 20.8
+    reward_parts: cap=-3.74 close=-9.61 int=-7.61 terrain=-0.90 edge=-0.05 energy=-0.03 time=-0.35
+  update= 240 train_cap=0.010 step_rew=-23.452 ep_ret=-477.6 ep_len= 19.5
+    reward_parts: cap=-3.85 close=-9.69 int=-7.65 terrain=-0.90 edge=-0.05 energy=-0.03 time=-0.35
+  update= 250 train_cap=0.030 step_rew=-23.779 ep_ret=-461.3 ep_len= 20.0
+    reward_parts: cap=-3.99 close=-9.77 int=-7.66 terrain=-0.90 edge=-0.05 energy=-0.03 time=-0.35
+    greedy_eval: cap=0.000 ret=-468.7 len=18.4
+  update= 260 train_cap=0.055 step_rew=-20.953 ep_ret=-448.0 ep_len= 20.5
+    reward_parts: cap=-3.80 close=-9.62 int=-7.61 terrain=-0.89 edge=-0.05 energy=-0.03 time=-0.35
+  update= 270 train_cap=0.060 step_rew=-20.904 ep_ret=-448.5 ep_len= 21.4
+    reward_parts: cap=-3.61 close=-9.48 int=-7.56 terrain=-0.89 edge=-0.05 energy=-0.03 time=-0.35
+    greedy_eval: cap=0.050 ret=-433.8 len=18.1
+  update= 280 train_cap=0.080 step_rew=-22.516 ep_ret=-432.1 ep_len= 21.2
+    reward_parts: cap=-3.50 close=-9.24 int=-7.48 terrain=-0.87 edge=-0.05 energy=-0.03 time=-0.35
+  update= 290 train_cap=0.040 step_rew=-22.262 ep_ret=-460.2 ep_len= 19.9
+    reward_parts: cap=-3.42 close=-9.13 int=-7.46 terrain=-0.87 edge=-0.05 energy=-0.03 time=-0.35
+  update= 300 train_cap=0.045 step_rew=-21.564 ep_ret=-454.3 ep_len= 20.7
+    reward_parts: cap=-3.30 close=-9.06 int=-7.46 terrain=-0.87 edge=-0.05 energy=-0.03 time=-0.35
+    greedy_eval: cap=0.075 ret=-417.1 len=17.4
+  update= 310 train_cap=0.090 step_rew=-21.563 ep_ret=-422.9 ep_len= 19.9
+    reward_parts: cap=-3.27 close=-9.17 int=-7.50 terrain=-0.88 edge=-0.05 energy=-0.03 time=-0.35
+  update= 320 train_cap=0.070 step_rew=-21.264 ep_ret=-440.3 ep_len= 20.9
+    reward_parts: cap=-3.36 close=-9.30 int=-7.53 terrain=-0.89 edge=-0.05 energy=-0.03 time=-0.35
+    greedy_eval: cap=0.075 ret=-415.8 len=17.1
+  update= 330 train_cap=0.060 step_rew=-23.635 ep_ret=-440.5 ep_len= 20.1
+    reward_parts: cap=-3.44 close=-9.42 int=-7.57 terrain=-0.90 edge=-0.05 energy=-0.03 time=-0.35
+  update= 340 train_cap=0.040 step_rew=-22.531 ep_ret=-454.1 ep_len= 19.3
+    reward_parts: cap=-3.56 close=-9.52 int=-7.57 terrain=-0.91 edge=-0.05 energy=-0.03 time=-0.35
+  update= 350 train_cap=0.045 step_rew=-23.200 ep_ret=-447.1 ep_len= 19.2
+    reward_parts: cap=-3.65 close=-9.61 int=-7.57 terrain=-0.91 edge=-0.05 energy=-0.03 time=-0.35
+    greedy_eval: cap=0.025 ret=-448.9 len=17.9
+  update= 360 train_cap=0.065 step_rew=-21.330 ep_ret=-437.6 ep_len= 19.8
+    reward_parts: cap=-3.62 close=-9.62 int=-7.56 terrain=-0.92 edge=-0.05 energy=-0.02 time=-0.35
+  update= 370 train_cap=0.085 step_rew=-20.911 ep_ret=-428.1 ep_len= 20.7
+    reward_parts: cap=-3.60 close=-9.58 int=-7.55 terrain=-0.90 edge=-0.05 energy=-0.02 time=-0.35
+    greedy_eval: cap=0.025 ret=-450.9 len=18.4
+  update= 380 train_cap=0.090 step_rew=-23.609 ep_ret=-421.0 ep_len= 20.2
+    reward_parts: cap=-3.44 close=-9.44 int=-7.51 terrain=-0.90 edge=-0.05 energy=-0.03 time=-0.35
+  update= 390 train_cap=0.005 step_rew=-18.344 ep_ret=-601.0 ep_len= 33.7
+    reward_parts: cap=-3.11 close=-8.37 int=-7.64 terrain=-0.80 edge=-0.04 energy=-0.03 time=-0.35
+  update= 400 train_cap=0.010 step_rew=-20.454 ep_ret=-513.4 ep_len= 25.9
+    reward_parts: cap=-3.12 close=-7.78 int=-7.69 terrain=-0.76 edge=-0.04 energy=-0.04 time=-0.35
+    greedy_eval: cap=0.050 ret=-434.2 len=19.1
+  update= 410 train_cap=0.020 step_rew=-20.438 ep_ret=-494.3 ep_len= 24.0
+    reward_parts: cap=-3.26 close=-7.72 int=-7.58 terrain=-0.75 edge=-0.04 energy=-0.04 time=-0.35
+  update= 420 train_cap=0.030 step_rew=-19.850 ep_ret=-481.0 ep_len= 23.4
+    reward_parts: cap=-3.42 close=-8.35 int=-7.35 terrain=-0.79 edge=-0.04 energy=-0.04 time=-0.35
+    greedy_eval: cap=0.050 ret=-430.6 len=18.5
+  update= 430 train_cap=0.065 step_rew=-21.005 ep_ret=-451.3 ep_len= 23.7
+    reward_parts: cap=-3.24 close=-8.32 int=-7.19 terrain=-0.78 edge=-0.04 energy=-0.04 time=-0.35
+  update= 440 train_cap=0.040 step_rew=-21.443 ep_ret=-461.1 ep_len= 21.6
+    reward_parts: cap=-3.13 close=-8.30 int=-7.07 terrain=-0.78 edge=-0.04 energy=-0.04 time=-0.35
+  update= 450 train_cap=0.095 step_rew=-16.905 ep_ret=-422.9 ep_len= 22.4
+    reward_parts: cap=-2.98 close=-8.26 int=-6.97 terrain=-0.78 edge=-0.04 energy=-0.04 time=-0.35
+    greedy_eval: cap=0.150 ret=-358.0 len=17.5
+  update= 460 train_cap=0.125 step_rew=-17.801 ep_ret=-401.5 ep_len= 21.9
+    reward_parts: cap=-2.71 close=-8.15 int=-6.88 terrain=-0.79 edge=-0.04 energy=-0.04 time=-0.35
+  update= 470 train_cap=0.185 step_rew=-12.767 ep_ret=-368.7 ep_len= 23.6
+    reward_parts: cap=-2.26 close=-7.72 int=-6.70 terrain=-0.78 edge=-0.04 energy=-0.04 time=-0.35
+    greedy_eval: cap=0.150 ret=-360.0 len=17.9
+  update= 480 train_cap=0.175 step_rew=-20.042 ep_ret=-367.1 ep_len= 22.1
+    reward_parts: cap=-1.97 close=-7.52 int=-6.68 terrain=-0.76 edge=-0.04 energy=-0.04 time=-0.35
+  update= 490 train_cap=0.190 step_rew=-15.847 ep_ret=-361.5 ep_len= 21.8
+    reward_parts: cap=-1.55 close=-7.18 int=-6.61 terrain=-0.75 edge=-0.05 energy=-0.04 time=-0.35
+  update= 500 train_cap=0.215 step_rew=-16.333 ep_ret=-343.8 ep_len= 22.1
+    reward_parts: cap=-1.25 close=-6.95 int=-6.60 terrain=-0.75 edge=-0.05 energy=-0.04 time=-0.35
+    greedy_eval: cap=0.225 ret=-312.3 len=17.7
+  update= 510 train_cap=0.190 step_rew=-15.731 ep_ret=-360.5 ep_len= 22.3
+    reward_parts: cap=-0.98 close=-6.69 int=-6.51 terrain=-0.74 edge=-0.05 energy=-0.04 time=-0.35
+  update= 520 train_cap=0.285 step_rew=-11.706 ep_ret=-301.5 ep_len= 22.5
+    reward_parts: cap=-0.91 close=-6.64 int=-6.48 terrain=-0.75 edge=-0.05 energy=-0.04 time=-0.35
+    greedy_eval: cap=0.225 ret=-314.6 len=17.6
+  update= 530 train_cap=0.255 step_rew=-17.627 ep_ret=-309.2 ep_len= 21.2
+    reward_parts: cap=-0.85 close=-6.67 int=-6.47 terrain=-0.76 edge=-0.05 energy=-0.04 time=-0.35
+  update= 540 train_cap=0.215 step_rew=-16.057 ep_ret=-331.1 ep_len= 19.4
+    reward_parts: cap=-0.74 close=-6.72 int=-6.48 terrain=-0.79 edge=-0.05 energy=-0.04 time=-0.35
+  update= 550 train_cap=0.250 step_rew=-16.159 ep_ret=-320.8 ep_len= 22.0
+    reward_parts: cap=-0.62 close=-6.57 int=-6.46 terrain=-0.78 edge=-0.05 energy=-0.04 time=-0.35
+    greedy_eval: cap=0.250 ret=-297.2 len=17.9
+  update= 560 train_cap=0.235 step_rew=-14.454 ep_ret=-331.8 ep_len= 22.1
+    reward_parts: cap=-0.63 close=-6.48 int=-6.46 terrain=-0.77 edge=-0.05 energy=-0.04 time=-0.35
+  update= 570 train_cap=0.270 step_rew=-11.279 ep_ret=-315.7 ep_len= 23.1
+    reward_parts: cap=-0.55 close=-6.36 int=-6.46 terrain=-0.77 edge=-0.05 energy=-0.04 time=-0.35
+    greedy_eval: cap=0.250 ret=-295.8 len=17.5
+  update= 580 train_cap=0.300 step_rew=-15.534 ep_ret=-283.8 ep_len= 21.8
+    reward_parts: cap=-0.47 close=-6.36 int=-6.44 terrain=-0.77 edge=-0.05 energy=-0.04 time=-0.35
+  update= 590 train_cap=0.240 step_rew=-15.728 ep_ret=-321.9 ep_len= 20.9
+    reward_parts: cap=-0.36 close=-6.26 int=-6.39 terrain=-0.76 edge=-0.05 energy=-0.04 time=-0.35
+  update= 600 train_cap=0.295 step_rew=-13.898 ep_ret=-290.0 ep_len= 21.6
+    reward_parts: cap=-0.15 close=-6.07 int=-6.37 terrain=-0.76 edge=-0.05 energy=-0.04 time=-0.35
+    greedy_eval: cap=0.250 ret=-296.0 len=17.3
+  update= 610 train_cap=0.270 step_rew=-12.363 ep_ret=-303.0 ep_len= 20.8
+    reward_parts: cap=-0.07 close=-6.03 int=-6.38 terrain=-0.77 edge=-0.05 energy=-0.04 time=-0.35
+  update= 620 train_cap=0.320 step_rew=-12.755 ep_ret=-273.7 ep_len= 21.3
+    reward_parts: cap=+0.01 close=-6.04 int=-6.39 terrain=-0.78 edge=-0.05 energy=-0.04 time=-0.35
+    greedy_eval: cap=0.250 ret=-301.0 len=17.9
+  update= 630 train_cap=0.295 step_rew=-16.770 ep_ret=-291.4 ep_len= 22.7
+    reward_parts: cap=+0.07 close=-5.99 int=-6.36 terrain=-0.76 edge=-0.05 energy=-0.04 time=-0.35
+  update= 640 train_cap=0.285 step_rew=-15.024 ep_ret=-295.5 ep_len= 21.3
+    reward_parts: cap=+0.14 close=-5.73 int=-6.29 terrain=-0.74 edge=-0.05 energy=-0.04 time=-0.35
+  update= 650 train_cap=0.325 step_rew=-13.580 ep_ret=-271.5 ep_len= 21.8
+    reward_parts: cap=+0.10 close=-5.70 int=-6.27 terrain=-0.74 edge=-0.05 energy=-0.04 time=-0.35
+    greedy_eval: cap=0.250 ret=-310.9 len=19.9
+  update= 660 train_cap=0.325 step_rew=-10.465 ep_ret=-276.3 ep_len= 22.5
+    reward_parts: cap=+0.34 close=-5.53 int=-6.24 terrain=-0.74 edge=-0.05 energy=-0.04 time=-0.35
+  update= 670 train_cap=0.340 step_rew=-9.116 ep_ret=-266.8 ep_len= 22.4
+    reward_parts: cap=+0.50 close=-5.44 int=-6.26 terrain=-0.75 edge=-0.05 energy=-0.04 time=-0.35
+    greedy_eval: cap=0.200 ret=-336.2 len=18.7
+  update= 680 train_cap=0.350 step_rew=-13.933 ep_ret=-250.1 ep_len= 21.6
+    reward_parts: cap=+0.55 close=-5.45 int=-6.26 terrain=-0.76 edge=-0.05 energy=-0.04 time=-0.35
+  update= 690 train_cap=0.295 step_rew=-12.676 ep_ret=-289.0 ep_len= 20.9
+    reward_parts: cap=+0.58 close=-5.48 int=-6.26 terrain=-0.76 edge=-0.05 energy=-0.04 time=-0.35
+  update= 700 train_cap=0.305 step_rew=-14.083 ep_ret=-287.6 ep_len= 22.5
+    reward_parts: cap=+0.59 close=-5.37 int=-6.23 terrain=-0.75 edge=-0.05 energy=-0.04 time=-0.35
+    greedy_eval: cap=0.225 ret=-321.9 len=18.7
+  update= 710 train_cap=0.350 step_rew=-9.144 ep_ret=-260.7 ep_len= 23.1
+    reward_parts: cap=+0.51 close=-5.34 int=-6.21 terrain=-0.75 edge=-0.05 energy=-0.04 time=-0.35
+  update= 720 train_cap=0.365 step_rew=-8.097 ep_ret=-250.3 ep_len= 22.2
+    reward_parts: cap=+0.57 close=-5.25 int=-6.15 terrain=-0.74 edge=-0.05 energy=-0.04 time=-0.35
+    greedy_eval: cap=0.300 ret=-281.4 len=20.4
+  update= 730 train_cap=0.305 step_rew=-14.595 ep_ret=-302.2 ep_len= 25.4
+    reward_parts: cap=+0.72 close=-4.99 int=-6.12 terrain=-0.72 edge=-0.04 energy=-0.04 time=-0.35
+  update= 740 train_cap=0.285 step_rew=-14.290 ep_ret=-303.2 ep_len= 22.2
+    reward_parts: cap=+0.48 close=-5.09 int=-6.24 terrain=-0.71 edge=-0.04 energy=-0.04 time=-0.35
+  update= 750 train_cap=0.350 step_rew=-11.483 ep_ret=-261.0 ep_len= 22.7
+    reward_parts: cap=+0.44 close=-5.14 int=-6.28 terrain=-0.72 edge=-0.04 energy=-0.04 time=-0.35
+    greedy_eval: cap=0.300 ret=-279.6 len=20.4
+  update= 760 train_cap=0.345 step_rew=-9.250 ep_ret=-272.6 ep_len= 24.5
+    reward_parts: cap=+0.79 close=-4.95 int=-6.18 terrain=-0.72 edge=-0.04 energy=-0.04 time=-0.35
+  update= 770 train_cap=0.350 step_rew=-11.622 ep_ret=-270.8 ep_len= 23.5
+    reward_parts: cap=+0.77 close=-4.90 int=-6.19 terrain=-0.72 edge=-0.04 energy=-0.04 time=-0.35
+    greedy_eval: cap=0.275 ret=-305.4 len=20.9
+  update= 780 train_cap=0.350 step_rew=-13.037 ep_ret=-265.9 ep_len= 24.2
+    reward_parts: cap=+0.75 close=-4.84 int=-6.14 terrain=-0.71 edge=-0.04 energy=-0.04 time=-0.35
+  update= 790 train_cap=0.335 step_rew=-12.850 ep_ret=-265.2 ep_len= 22.1
+    reward_parts: cap=+0.85 close=-4.75 int=-6.06 terrain=-0.71 edge=-0.04 energy=-0.04 time=-0.35
+  update= 800 train_cap=0.375 step_rew=-9.580 ep_ret=-235.1 ep_len= 21.9
+    reward_parts: cap=+0.96 close=-4.74 int=-5.96 terrain=-0.72 edge=-0.04 energy=-0.04 time=-0.35
+    greedy_eval: cap=0.300 ret=-280.3 len=20.1
+  update= 810 train_cap=0.370 step_rew=-7.363 ep_ret=-250.0 ep_len= 24.3
+    reward_parts: cap=+1.09 close=-4.69 int=-5.88 terrain=-0.73 edge=-0.05 energy=-0.04 time=-0.35
+  update= 820 train_cap=0.340 step_rew=-11.828 ep_ret=-266.9 ep_len= 23.4
+    reward_parts: cap=+0.86 close=-4.82 int=-5.88 terrain=-0.73 edge=-0.04 energy=-0.04 time=-0.35
+    greedy_eval: cap=0.250 ret=-301.1 len=18.4
+  update= 830 train_cap=0.330 step_rew=-13.769 ep_ret=-262.0 ep_len= 22.5
+    reward_parts: cap=+0.68 close=-5.07 int=-5.90 terrain=-0.74 edge=-0.04 energy=-0.04 time=-0.35
+  update= 840 train_cap=0.295 step_rew=-13.253 ep_ret=-281.9 ep_len= 20.9
+    reward_parts: cap=+0.70 close=-5.23 int=-5.89 terrain=-0.75 edge=-0.05 energy=-0.04 time=-0.35
+  update= 850 train_cap=0.350 step_rew=-11.995 ep_ret=-244.0 ep_len= 21.2
+    reward_parts: cap=+0.69 close=-5.32 int=-5.88 terrain=-0.76 edge=-0.05 energy=-0.04 time=-0.35
+    greedy_eval: cap=0.300 ret=-280.0 len=21.4
+  update= 860 train_cap=0.390 step_rew=-7.413 ep_ret=-232.8 ep_len= 23.5
+    reward_parts: cap=+0.85 close=-5.08 int=-5.83 terrain=-0.75 edge=-0.05 energy=-0.04 time=-0.35
+  update= 870 train_cap=0.385 step_rew=-8.247 ep_ret=-234.2 ep_len= 23.1
+    reward_parts: cap=+1.08 close=-4.81 int=-5.75 terrain=-0.75 edge=-0.05 energy=-0.04 time=-0.35
+    greedy_eval: cap=0.325 ret=-262.7 len=20.9
+  update= 880 train_cap=0.405 step_rew=-12.482 ep_ret=-219.3 ep_len= 23.4
+    reward_parts: cap=+1.29 close=-4.52 int=-5.71 terrain=-0.74 edge=-0.05 energy=-0.04 time=-0.35
+  update= 890 train_cap=0.340 step_rew=-13.916 ep_ret=-264.3 ep_len= 23.2
+    reward_parts: cap=+1.34 close=-4.36 int=-5.68 terrain=-0.72 edge=-0.05 energy=-0.04 time=-0.35
+  update= 900 train_cap=0.430 step_rew=-8.248 ep_ret=-209.7 ep_len= 24.3
+    reward_parts: cap=+1.48 close=-4.14 int=-5.68 terrain=-0.71 edge=-0.05 energy=-0.04 time=-0.35
+    greedy_eval: cap=0.375 ret=-240.8 len=22.7
+  update= 910 train_cap=0.405 step_rew=-7.516 ep_ret=-230.8 ep_len= 24.4
+    reward_parts: cap=+1.57 close=-4.03 int=-5.65 terrain=-0.71 edge=-0.05 energy=-0.04 time=-0.35
+  update= 920 train_cap=0.385 step_rew=-13.116 ep_ret=-237.8 ep_len= 23.2
+    reward_parts: cap=+1.66 close=-3.92 int=-5.61 terrain=-0.69 edge=-0.05 energy=-0.04 time=-0.35
+    greedy_eval: cap=0.450 ret=-202.7 len=24.7
+  update= 930 train_cap=0.495 step_rew=-8.177 ep_ret=-168.9 ep_len= 25.1
+    reward_parts: cap=+1.76 close=-3.81 int=-5.60 terrain=-0.69 edge=-0.05 energy=-0.04 time=-0.35
+  update= 940 train_cap=0.435 step_rew=-8.645 ep_ret=-220.6 ep_len= 26.4
+    reward_parts: cap=+1.77 close=-3.65 int=-5.59 terrain=-0.67 edge=-0.04 energy=-0.04 time=-0.35
+  update= 950 train_cap=0.420 step_rew=-8.458 ep_ret=-227.0 ep_len= 25.3
+    reward_parts: cap=+1.71 close=-3.58 int=-5.66 terrain=-0.65 edge=-0.04 energy=-0.04 time=-0.35
+    greedy_eval: cap=0.500 ret=-173.7 len=25.4
+  update= 960 train_cap=0.370 step_rew=-7.730 ep_ret=-260.1 ep_len= 26.0
+    reward_parts: cap=+1.66 close=-3.59 int=-5.63 terrain=-0.65 edge=-0.04 energy=-0.04 time=-0.35
+  update= 970 train_cap=0.375 step_rew=-8.381 ep_ret=-251.1 ep_len= 25.0
+    reward_parts: cap=+1.54 close=-3.66 int=-5.57 terrain=-0.63 edge=-0.04 energy=-0.04 time=-0.35
+    greedy_eval: cap=0.450 ret=-198.1 len=24.8
+  update= 980 train_cap=0.485 step_rew=-9.280 ep_ret=-177.7 ep_len= 26.0
+    reward_parts: cap=+1.56 close=-3.74 int=-5.53 terrain=-0.65 edge=-0.04 energy=-0.04 time=-0.35
+  update= 990 train_cap=0.465 step_rew=-7.134 ep_ret=-192.6 ep_len= 25.9
+    reward_parts: cap=+1.72 close=-3.63 int=-5.50 terrain=-0.64 edge=-0.05 energy=-0.04 time=-0.35
+  update=1000 train_cap=0.505 step_rew=-5.747 ep_ret=-173.1 ep_len= 26.6
+    reward_parts: cap=+1.92 close=-3.34 int=-5.44 terrain=-0.62 edge=-0.04 energy=-0.04 time=-0.35
+    greedy_eval: cap=0.500 ret=-165.6 len=26.1
+  Saved -> high_tabular/xx_continuous_redesign_u1000_training_curves.png
+
+[3] Greedy Evaluation
+  PPO (greedy)                 capture=0.630 (63/100) mean_len=26.9
+  Saved -> high_tabular/xx_continuous_redesign_u1000_ppo.png
+  Saved -> high_tabular/xx_continuous_redesign_u1000_ppo.gif
+
+Done.

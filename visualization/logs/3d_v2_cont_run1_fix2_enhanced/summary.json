@@ -1,0 +1,11 @@
+{
+  "episodes": 12,
+  "success_rate": 0.0,
+  "return_mean": -2520.126339603637,
+  "return_std": 1119.7845228501656,
+  "length_mean": 4000.0,
+  "ckpt": "checkpoints/3d_v2_cont_run1_fix2/best.pth",
+  "ckpt_dir": "checkpoints/3d_v2_cont_run1_fix2",
+  "train_log_dir": "visualization/logs/3d_v2_cont_run1_fix2",
+  "has_true_training_curve": true
+}

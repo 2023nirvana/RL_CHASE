@@ -1,0 +1,75 @@
+Device: cuda
+Loaded V4 NN: obs_dim=8, act_dim=3, hidden=(64, 64)
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:236: UserWarning: [33mWARN: Box low's precision lowered by casting to float32, current low.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:306: UserWarning: [33mWARN: Box high's precision lowered by casting to float32, current high.dtype=float64[0m
+  gym.logger.warn(
+Loaded pretrained (TD3Actor→AC): checkpoints/td3bc_v4_2m/best.pth
+Online PPO: 244 updates, 2048 steps/update [reward-norm]
+  Update 1/244 | steps=2048 | ep_rew=-43.3 | ep_len=59 | sr=79.41% | pi=0.030 vf=31.8 ent=1.838 kl=-0.677 clip=0.28 | beta=0.497 | FPS=14
+    [Eval] rew=-157.86  sr=70.00%
+Saved: /root/autodl-tmp/pursue_20260302/checkpoints/online_ppo_td3bc_v3/best.pth
+  Update 10/244 | steps=20480 | ep_rew=-457.0 | ep_len=95 | sr=61.09% | pi=0.020 vf=89.8 ent=1.842 kl=-6.727 clip=0.14 | beta=0.474 | FPS=14
+    [Eval] rew=-151.09  sr=60.00%
+    [Eval] rew=-365.98  sr=35.00%
+  Update 20/244 | steps=40960 | ep_rew=-181.3 | ep_len=89 | sr=54.40% | pi=-0.008 vf=56.0 ent=1.844 kl=-10.531 clip=0.08 | beta=0.449 | FPS=13
+    [Eval] rew=-324.72  sr=40.00%
+    [Eval] rew=-173.18  sr=55.00%
+Saved: /root/autodl-tmp/pursue_20260302/checkpoints/online_ppo_td3bc_v3/latest.pth
+  Update 30/244 | steps=61440 | ep_rew=-124.8 | ep_len=97 | sr=49.79% | pi=0.012 vf=33.5 ent=1.845 kl=-12.850 clip=0.05 | beta=0.423 | FPS=13
+    [Eval] rew=-54.13  sr=60.00%
+    [Eval] rew=-20.05  sr=75.00%
+Saved: /root/autodl-tmp/pursue_20260302/checkpoints/online_ppo_td3bc_v3/best.pth
+  Update 40/244 | steps=81920 | ep_rew=-79.1 | ep_len=90 | sr=48.53% | pi=-0.001 vf=32.9 ent=1.846 kl=-16.325 clip=0.05 | beta=0.398 | FPS=13
+    [Eval] rew=-62.37  sr=85.00%
+Saved: /root/autodl-tmp/pursue_20260302/checkpoints/online_ppo_td3bc_v3/best.pth
+    [Eval] rew=-228.55  sr=70.00%
+    [Eval] rew=-45.54  sr=70.00%
+Saved: /root/autodl-tmp/pursue_20260302/checkpoints/online_ppo_td3bc_v3/latest.pth
+  Update 50/244 | steps=102400 | ep_rew=-177.5 | ep_len=108 | sr=47.40% | pi=0.005 vf=41.4 ent=1.847 kl=-15.450 clip=0.06 | beta=0.372 | FPS=13
+    [Eval] rew=-131.12  sr=60.00%
+    [Eval] rew=-97.69  sr=55.00%
+  Update 60/244 | steps=122880 | ep_rew=-69.9 | ep_len=85 | sr=46.31% | pi=-0.007 vf=32.3 ent=1.847 kl=-17.692 clip=0.04 | beta=0.346 | FPS=13
+    [Eval] rew=-15.24  sr=55.00%
+    [Eval] rew=-16.40  sr=50.00%
+  Update 70/244 | steps=143360 | ep_rew=-178.6 | ep_len=111 | sr=45.63% | pi=-0.009 vf=41.1 ent=1.848 kl=-13.748 clip=0.04 | beta=0.321 | FPS=13
+    [Eval] rew=22.33  sr=65.00%
+Saved: /root/autodl-tmp/pursue_20260302/checkpoints/online_ppo_td3bc_v3/latest.pth
+    [Eval] rew=-42.96  sr=50.00%
+  Update 80/244 | steps=163840 | ep_rew=-65.0 | ep_len=88 | sr=45.12% | pi=0.001 vf=52.3 ent=1.848 kl=-12.192 clip=0.03 | beta=0.295 | FPS=13
+    [Eval] rew=-96.64  sr=55.00%
+    [Eval] rew=-32.75  sr=45.00%
+  Update 90/244 | steps=184320 | ep_rew=-45.6 | ep_len=104 | sr=45.43% | pi=-0.002 vf=17.5 ent=1.849 kl=-13.282 clip=0.03 | beta=0.270 | FPS=13
+    [Eval] rew=34.27  sr=80.00%
+    [Eval] rew=-63.77  sr=55.00%
+Saved: /root/autodl-tmp/pursue_20260302/checkpoints/online_ppo_td3bc_v3/latest.pth
+  Update 100/244 | steps=204800 | ep_rew=-72.4 | ep_len=104 | sr=45.02% | pi=-0.008 vf=41.2 ent=1.848 kl=-14.568 clip=0.04 | beta=0.244 | FPS=13
+    [Eval] rew=-1.27  sr=50.00%
+    [Eval] rew=-38.15  sr=60.00%
+  Update 110/244 | steps=225280 | ep_rew=-47.8 | ep_len=102 | sr=43.98% | pi=-0.007 vf=28.2 ent=1.849 kl=-17.397 clip=0.03 | beta=0.218 | FPS=13
+    [Eval] rew=-10.97  sr=50.00%
+    [Eval] rew=-44.53  sr=45.00%
+  Update 120/244 | steps=245760 | ep_rew=-2.7 | ep_len=92 | sr=43.77% | pi=-0.009 vf=19.9 ent=1.849 kl=-13.809 clip=0.03 | beta=0.193 | FPS=13
+    [Eval] rew=65.93  sr=60.00%
+Saved: /root/autodl-tmp/pursue_20260302/checkpoints/online_ppo_td3bc_v3/latest.pth
+    [Eval] rew=-61.87  sr=55.00%
+  Update 130/244 | steps=266240 | ep_rew=2.2 | ep_len=82 | sr=43.34% | pi=0.008 vf=41.1 ent=1.850 kl=-16.888 clip=0.04 | beta=0.167 | FPS=13
+    [Eval] rew=64.17  sr=75.00%
+    [Eval] rew=93.91  sr=85.00%
+  Update 140/244 | steps=286720 | ep_rew=1.2 | ep_len=102 | sr=43.46% | pi=-0.005 vf=10.3 ent=1.850 kl=-14.324 clip=0.03 | beta=0.142 | FPS=13
+    [Eval] rew=76.27  sr=60.00%
+    [Eval] rew=65.30  sr=60.00%
+Saved: /root/autodl-tmp/pursue_20260302/checkpoints/online_ppo_td3bc_v3/latest.pth
+  Update 150/244 | steps=307200 | ep_rew=14.8 | ep_len=94 | sr=43.35% | pi=-0.009 vf=14.5 ent=1.850 kl=-20.670 clip=0.04 | beta=0.116 | FPS=13
+    [Eval] rew=9.52  sr=55.00%
+    [Eval] rew=48.79  sr=50.00%
+  Update 160/244 | steps=327680 | ep_rew=27.8 | ep_len=84 | sr=43.13% | pi=0.005 vf=13.0 ent=1.850 kl=-12.618 clip=0.04 | beta=0.090 | FPS=13
+    [Eval] rew=52.43  sr=55.00%
+    [Eval] rew=63.46  sr=50.00%
+  Update 170/244 | steps=348160 | ep_rew=33.4 | ep_len=93 | sr=42.93% | pi=0.002 vf=9.3 ent=1.850 kl=-11.461 clip=0.03 | beta=0.065 | FPS=13
+    [Eval] rew=64.32  sr=55.00%
+Saved: /root/autodl-tmp/pursue_20260302/checkpoints/online_ppo_td3bc_v3/latest.pth
+    [Eval] rew=69.93  sr=55.00%
+  Update 180/244 | steps=368640 | ep_rew=52.0 | ep_len=89 | sr=42.85% | pi=-0.009 vf=9.7 ent=1.850 kl=-15.378 clip=0.04 | beta=0.039 | FPS=13
+    [Eval] rew=77.99  sr=60.00%
+    [Eval] rew=56.97  sr=60.00%

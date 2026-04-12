@@ -1,0 +1,9 @@
+{
+  "episodes": 12,
+  "success_rate": 1.0,
+  "return_mean": 57.169306384289435,
+  "return_std": 47.8595873448917,
+  "length_mean": 204.66666666666666,
+  "ckpt": "../checkpoints/2d_v2_cont_smoke/final.pth",
+  "ckpt_dir": "../checkpoints/2d_v2_cont_smoke"
+}

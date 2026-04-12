@@ -1,0 +1,233 @@
+% Compile with: pdflatex hrl_mdp_complete.tex
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsfonts,amsthm,mathtools}
+\usepackage{bm}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\setlist{nosep}
+
+\title{Complete MDP/SMDP Formulation (Option A)\\
+Discrete High-Level Pursuit + Continuous Low-Level Control}
+\author{}
+\date{}
+
+\newtheorem{proposition}{Proposition}
+\newtheorem{remark}{Remark}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This document provides a complete MDP/SMDP formulation for the revised Option-A architecture: a \emph{discrete high-level policy} selects pursuit macro-intents, while a \emph{continuous low-level controller} (PID or continuous actor) executes physically feasible control under asymmetric pursuit-evasion dynamics. The formulation explicitly enforces the project asymmetry requirement \(v^P_{\max}<v^E_{\max}\) and \(a^P_{\max}>a^E_{\max}\), and includes acceleration-aware state design and derivations for both levels and their coupling.
+\end{abstract}
+
+\section{Problem Setup and Asymmetry Constraints}
+
+We consider a bounded 2D domain
+\[
+\Omega=[-W,W]^2,
+\]
+with simulation period \(\Delta t\), primitive horizon \(T_{\max}\), and capture radius \(r_c\).
+
+Pursuer and evader primitive states:
+\[
+\bm{x}^P_t=(\bm{p}^P_t,\bm{v}^P_t,\bm{a}^P_t),\qquad
+\bm{x}^E_t=(\bm{p}^E_t,\bm{v}^E_t,\bm{a}^E_t,\psi^E_t).
+\]
+Relative variables:
+\[
+\bm{r}_t=\bm{p}^E_t-\bm{p}^P_t,\qquad d_t=\|\bm{r}_t\|,
+\qquad \Delta\bm{v}_t=\bm{v}^E_t-\bm{v}^P_t.
+\]
+
+\paragraph{Asymmetric game constraints (required)}
+\begin{equation}
+v^P_{\max}<v^E_{\max},
+\qquad
+a^P_{\max}>a^E_{\max}.
+\label{eq:asym}
+\end{equation}
+This means capture must rely on \emph{maneuverability/interception geometry}, not pure speed matching.
+
+\section{Primitive Dynamics Model}
+Both agents follow damped dynamics (project-consistent low-level physics abstraction):
+\begin{equation}
+M\dot{\bm{v}} = \bm{\tau} - D_l\bm{v} - D_q\|\bm{v}\|\bm{v},
+\end{equation}
+\begin{equation}
+\bm{a}=\frac{1}{M}\left(\bm{\tau}-D_l\bm{v}-D_q\|\bm{v}\|\bm{v}\right),
+\quad
+\|\bm{a}\|\le a_{\max},\ \|\bm{v}\|\le v_{\max}.
+\end{equation}
+Boundary projection/reflection is applied after integration.
+
+\section{Low-Level Continuous Control MDP (Execution Layer)}
+
+We define the low-level execution process as
+\[
+\mathcal{M}_L=(\mathcal{S}_L,\mathcal{U}_L,P_L,R_L,\gamma_L),
+\]
+where \(\mathcal{U}_L\subset\mathbb{R}^m\) is \emph{continuous}.
+
+\subsection{State design (acceleration-aware)}
+A sufficient low-level state for interception execution:
+\begin{equation}
+s_t^L=\big(\bm{p}^P_t,\bm{v}^P_t,\bm{a}^P_t,\bm{r}_t,\Delta\bm{v}_t,\bm{g}_t,\dot{\bm{g}}_t\big),
+\end{equation}
+where \(\bm{g}_t\) is high-level subgoal/virtual interception target.
+
+\paragraph{Why acceleration must be observed}
+Under \eqref{eq:asym}, feasible capture depends on transient burst and turn response. Without \(\bm{a}^P_t\) (or equivalent finite-difference surrogate), low-level policy cannot infer current thrust effectiveness and damping-limited maneuver phase, causing poor interception timing.
+
+\subsection{Continuous action parameterization (Option A)}
+Two equivalent realizations:
+\begin{itemize}
+  \item \textbf{PID realization (current project-friendly):} low-level action is continuous command
+  \(u_t=[v^{des}_x,v^{des}_y,\psi^{des}]\) or \([F_x,F_y,M_z]\), then PID outputs thrust.
+  \item \textbf{Continuous actor realization:} policy directly outputs bounded continuous control command \(u_t\) (e.g., SAC/TD3/PPO-Continuous), optionally filtered by safety/PID shell.
+\end{itemize}
+
+\subsection{PID execution equations (project-aligned style)}
+With desired velocity command \(\bm{v}^{des}_t\):
+\begin{equation}
+\bm{e}^v_t = \bm{v}^{des}_t - \bm{v}^P_t,
+\qquad
+\bm{f}_t = K_p^v\bm{e}^v_t - K_d^v\bm{v}^P_t,
+\end{equation}
+plus attitude/yaw loop (if used):
+\begin{equation}
+M_{z,t}=K_p^{\psi}(\psi^{des}_t-\psi_t)+K_d^{\psi}(r^{des}_t-r_t).
+\end{equation}
+Then actuator command
+\(\bm{\tau}^P_t=\operatorname{sat}(\bm{f}_t,M_{z,t})\)
+is integrated by dynamics.
+
+\subsection{Low-level reward}
+Execution-level reward emphasizes controllability and goal tracking:
+\begin{equation}
+r_t^L = -w_g\|\bm{p}^P_t-\bm{g}_t\| - w_v\|\bm{v}^P_t-\bm{v}^{des}_t\| - w_u\|u_t\|^2
+- w_j\|\bm{a}^P_t-\bm{a}^P_{t-1}\| + r_{safe}.
+\end{equation}
+This explicitly regularizes acceleration transients and avoids unstable bang-bang behavior.
+
+\section{High-Level Pursuit MDP (Decision Layer)}
+
+High-level process (macro period \(K\) primitive steps):
+\[
+\mathcal{M}_H=(\mathcal{S}_H,\mathcal{A}_H,P_H,R_H,\gamma_H).
+\]
+
+\subsection{State}
+Recommended high-level state:
+\begin{equation}
+s_t^H = \big(\bm{r}_t,\Delta\bm{v}_t,d_t,\hat{\bm{b}}_t,\hat{\bm{a}}^P_t,\hat{\bm{a}}^E_t\big),
+\end{equation}
+where \(\hat{\bm{b}}_t\) encodes boundary proximity, and acceleration terms may be smoothed estimates.
+
+\subsection{Action (discrete macro-intent)}
+\begin{equation}
+\mathcal{A}_H=\{0,1,\dots,N_H-1\},
+\end{equation}
+with semantics such as:
+\begin{itemize}
+  \item \(a=0\): direct pursuit (aim at current evader position),
+  \item \(a\in\{1..8\}\): directional interception waypoint,
+  \item optional extra intents: boundary herding, cut-off, brake-and-turn.
+\end{itemize}
+Action is mapped by
+\(\Phi_H: a_t^H\mapsto (\bm{g}_t,\text{mode}_t)\), then handed to low-level controller for \(K\) steps.
+
+\subsection{High-level reward (task objective)}
+\begin{align}
+r_t^H =&\ \alpha_1(d_{t}-d_{t+K}) + \alpha_2\,\overline v^{close}_{t:t+K}
++ \alpha_3\,\overline r^{trap}_{t:t+K} \\
+&- \alpha_4\,\overline c^{time}_{t:t+K} + \alpha_5\,\mathbb{I}[d_{t+K}<r_c].
+\end{align}
+This captures interception progress and final capture.
+
+\section{Unified SMDP Coupling (High-Level + Low-Level)}
+
+Option A is naturally modeled as SMDP:
+\[
+\mathcal{M}_{S}=(\mathcal{S}_H,\mathcal{A}_H,\mathcal{P}_S,\mathcal{R}_S,\gamma).
+\]
+For each high-level decision \(a_t^H\), low-level controller executes for random duration \(\tau_t\in\{1,\dots,K\}\) (early termination on capture/failure).
+
+\begin{equation}
+\mathcal{P}_S(s'|s,a)=\sum_{\tau=1}^{K}P(s',\tau|s,a),
+\end{equation}
+\begin{equation}
+\mathcal{R}_S(s,a)=\mathbb{E}\left[\sum_{i=0}^{\tau-1}\gamma^i r_{t+i}\mid s_t=s,a_t=a\right].
+\end{equation}
+Bellman equation:
+\begin{equation}
+Q(s,a)=\mathbb{E}\left[\sum_{i=0}^{\tau-1}\gamma^i r_{t+i}+\gamma^{\tau}\max_{a'}Q(s',a')\right].
+\end{equation}
+
+\section{Non-asymmetric feasibility insight (why acceleration matters)}
+
+Under pure pursuit geometry, if pursuer speed is strictly lower, long-run capture is not guaranteed in open space. Capture becomes feasible by exploiting:
+\begin{enumerate}
+  \item higher pursuer acceleration \(a^P_{\max}>a^E_{\max}\),
+  \item finite turn-rate and damping of evader,
+  \item boundary-induced confinement and herding.
+\end{enumerate}
+Hence acceleration-aware low-level execution is structurally necessary, not optional.
+
+\section{Practical design answers for your two concerns}
+
+\subsection{Concern 1: ``Do we need acceleration observation?''}
+\textbf{Yes.} At least one of the following must be included in low-level input:
+\begin{itemize}
+  \item explicit \((a_x,a_y)\),
+  \item finite-difference estimate \((v_t-v_{t-1})/\Delta t\),
+  \item short frame stack containing recent velocities/actions.
+\end{itemize}
+Best practice for this project: include explicit acceleration + 2--4 frame history.
+
+\subsection{Concern 2: ``Is discrete low-level action suitable for acceleration tracking?''}
+\textbf{Not ideal.} Discrete low-level actions quantize thrust and degrade acceleration shaping. Option A solves this by:
+\begin{itemize}
+  \item keeping \textbf{high-level} discrete (good for strategy),
+  \item making \textbf{low-level} continuous (PID/continuous actor),
+  \item preserving safety and controllability under constraints.
+\end{itemize}
+
+\section{Optimization objectives}
+
+\subsection{High-level optimization (discrete PPO)}
+\begin{equation}
+\mathcal{L}_{clip}^H=\mathbb{E}\left[\min\left(\rho_t\hat A_t,
+\operatorname{clip}(\rho_t,1-\epsilon,1+\epsilon)\hat A_t\right)\right],
+\quad
+\rho_t=\frac{\pi_{\theta_H}(a_t^H|s_t^H)}{\pi_{\theta_H^{old}}(a_t^H|s_t^H)}.
+\end{equation}
+
+\subsection{Low-level optimization}
+If low-level is fixed PID, no policy optimization at this layer.
+If low-level is continuous RL actor \(\pi_{\theta_L}(u|s^L)\), use SAC/TD3/PPO-Continuous objective over primitive steps with safety regularization.
+
+\section{Implementation mapping to current project files}
+\begin{itemize}
+  \item Decision-layer 2D formulation reference: \texttt{core/environment/low\_level\_env\_2d\_v2.py}
+  \item Continuous control stack reference: \texttt{core/environment/low\_level\_env.py} + \texttt{core/control/dual\_loop\_pid.py}
+  \item Pursuit-evasion asymmetry and acceleration-rich observation reference: \texttt{pursuit\_evasion\_2d/env\_asymmetric\_pe\_v2\_dynamics.py}
+  \item HRL temporal abstraction reference: \texttt{pursuit\_evasion\_2d/train\_hrl\_pe.py}
+  \item Stage-1 continuous low-level training: \texttt{pursuit\_evasion\_2d/env\_low\_level\_target\_continuous.py} + \texttt{train\_low\_level\_continuous.py}
+  \item Stage-2 high-level pursuit with PID execution: \texttt{pursuit\_evasion\_2d/env\_asymmetric\_pe\_v2\_pid\_option\_a.py} + \texttt{train\_hrl\_option\_a\_pid.py}
+\end{itemize}
+
+\begin{remark}
+This document specifies Option A as a practical two-stage pipeline: (Stage 1) train continuous low-level goal-reaching controller; (Stage 2) freeze/retain PID execution interface and train high-level discrete pursuit policy on induced SMDP.
+\end{remark}
+
+\section*{Compile}
+\begin{verbatim}
+cd docs
+pdflatex hrl_mdp_complete.tex
+\end{verbatim}
+
+\end{document}

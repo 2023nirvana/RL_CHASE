@@ -1,0 +1,22 @@
+# 2D 追逃训练 - 重启命令（分窗口运行）
+# 先 cd 到项目根目录，再复制下面每一行到不同终端执行
+
+cd /root/autodl-tmp/HRL_Control/backup_v0.1_discrete_action/UnderwaterPursuitEvasion
+
+# baseline
+python training/train_pe_low_level_2d.py --experiment-name pe2d_baseline --total-timesteps 2000000 --seed 42 --init-distance-range 2,6 --world-size 10.0 --catch-radius 0.5 --max-episode-seconds 90.0
+
+# small_world
+python training/train_pe_low_level_2d.py --experiment-name pe2d_small_world --total-timesteps 2000000 --seed 43 --init-distance-range 1,3 --world-size 5.0 --catch-radius 0.5 --max-episode-seconds 90.0
+
+# easy_catch
+python training/train_pe_low_level_2d.py --experiment-name pe2d_easy_catch --total-timesteps 2000000 --seed 44 --init-distance-range 2,4 --world-size 10.0 --catch-radius 0.8 --max-episode-seconds 90.0
+
+# closer_start
+python training/train_pe_low_level_2d.py --experiment-name pe2d_closer_start --total-timesteps 2000000 --seed 45 --init-distance-range 1,3 --world-size 10.0 --catch-radius 0.5 --max-episode-seconds 90.0
+
+# short_ep
+python training/train_pe_low_level_2d.py --experiment-name pe2d_short_ep --total-timesteps 2000000 --seed 46 --init-distance-range 2,6 --world-size 10.0 --catch-radius 0.5 --max-episode-seconds 45.0
+
+# small_easy（效果最好的一组，可优先跑）
+python training/train_pe_low_level_2d.py --experiment-name pe2d_small_easy --total-timesteps 2000000 --seed 47 --init-distance-range 1,3 --world-size 5.0 --catch-radius 0.8 --max-episode-seconds 60.0

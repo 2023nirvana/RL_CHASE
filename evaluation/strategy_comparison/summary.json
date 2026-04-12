@@ -1,0 +1,44 @@
+{
+  "PurePursuit": {
+    "catch_rate": 0.5333333333333333,
+    "avg_steps_caught": 162.0,
+    "avg_min_dist": 2.036980793873469,
+    "num_episodes": 30
+  },
+  "LeadPursuit": {
+    "catch_rate": 0.7666666666666667,
+    "avg_steps_caught": 160.7391304347826,
+    "avg_min_dist": 2.2818723261356353,
+    "num_episodes": 30
+  },
+  "ProNav(N=4.0)": {
+    "catch_rate": 0.6333333333333333,
+    "avg_steps_caught": 198.78947368421052,
+    "avg_min_dist": 1.8813174784183502,
+    "num_episodes": 30
+  },
+  "AugProNav(N=4.0)": {
+    "catch_rate": 0.8,
+    "avg_steps_caught": 192.41666666666666,
+    "avg_min_dist": 1.6231072743733723,
+    "num_episodes": 30
+  },
+  "ConstantBearing(K=8.0)": {
+    "catch_rate": 0.7,
+    "avg_steps_caught": 187.28571428571428,
+    "avg_min_dist": 2.058727838595708,
+    "num_episodes": 30
+  },
+  "DeviatedPursuit(δ=20.0°)": {
+    "catch_rate": 0.6666666666666666,
+    "avg_steps_caught": 195.55,
+    "avg_min_dist": 2.1370355089505515,
+    "num_episodes": 30
+  },
+  "Expert(pred=2.0s)": {
+    "catch_rate": 0.7333333333333333,
+    "avg_steps_caught": 168.6818181818182,
+    "avg_min_dist": 1.8735161860783895,
+    "num_episodes": 30
+  }
+}

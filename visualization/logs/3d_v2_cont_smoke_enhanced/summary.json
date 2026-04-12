@@ -1,0 +1,11 @@
+{
+  "episodes": 6,
+  "success_rate": 0.0,
+  "return_mean": -952.689979023276,
+  "return_std": 210.58493758024508,
+  "length_mean": 800.0,
+  "ckpt": "checkpoints/3d_v2_cont_smoke/final.pth",
+  "ckpt_dir": "checkpoints/3d_v2_cont_smoke",
+  "train_log_dir": "visualization/logs/3d_v2_cont_smoke",
+  "has_true_training_curve": true
+}

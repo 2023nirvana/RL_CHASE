@@ -1,0 +1,4 @@
+Device: cuda
+Loaded 1681 transitions
+  reward: [-26.4, 104.5], mean=-4.25, std=19.34
+  Split: train=1513, val=168

@@ -1,0 +1,284 @@
+{
+  "timestamp": "2026-04-08T16:45:57.684461",
+  "seeds": [
+    42,
+    123,
+    456,
+    789,
+    1024
+  ],
+  "n_episodes_per_seed": 20,
+  "ckpt_type": "best",
+  "results": {
+    "v3_bppo_A": {
+      "model": "v3_bppo_A",
+      "n_seeds": 5,
+      "n_episodes_per_seed": 20,
+      "total_episodes": 100,
+      "success_rate_mean": 0.8,
+      "success_rate_std": 0.04472135954999579,
+      "success_rate_min": 0.75,
+      "success_rate_max": 0.85,
+      "reward_mean": 193.73694351873021,
+      "reward_std": 19.048929298609952,
+      "steps_mean": 54.19,
+      "per_seed_results": {
+        "42": {
+          "success_rate": 0.8,
+          "mean_reward": 209.66178904870858,
+          "mean_steps": 43.05,
+          "mean_capture_steps": 23.8125
+        },
+        "123": {
+          "success_rate": 0.85,
+          "mean_reward": 202.1300504192269,
+          "mean_steps": 59.4,
+          "mean_capture_steps": 48.705882352941174
+        },
+        "456": {
+          "success_rate": 0.75,
+          "mean_reward": 162.43008633131132,
+          "mean_steps": 69.1,
+          "mean_capture_steps": 52.13333333333333
+        },
+        "789": {
+          "success_rate": 0.85,
+          "mean_reward": 212.81539228317624,
+          "mean_steps": 48.5,
+          "mean_capture_steps": 35.88235294117647
+        },
+        "1024": {
+          "success_rate": 0.75,
+          "mean_reward": 181.64739951122806,
+          "mean_steps": 50.9,
+          "mean_capture_steps": 27.866666666666667
+        }
+      }
+    },
+    "v3_bppo_B": {
+      "model": "v3_bppo_B",
+      "n_seeds": 5,
+      "n_episodes_per_seed": 20,
+      "total_episodes": 100,
+      "success_rate_mean": 0.85,
+      "success_rate_std": 0.05477225575051658,
+      "success_rate_min": 0.8,
+      "success_rate_max": 0.95,
+      "reward_mean": 208.07723884436504,
+      "reward_std": 19.117998855962067,
+      "steps_mean": 49.620000000000005,
+      "per_seed_results": {
+        "42": {
+          "success_rate": 0.85,
+          "mean_reward": 213.62648785907626,
+          "mean_steps": 40.6,
+          "mean_capture_steps": 26.58823529411765
+        },
+        "123": {
+          "success_rate": 0.8,
+          "mean_reward": 208.20405408974892,
+          "mean_steps": 56.9,
+          "mean_capture_steps": 41.125
+        },
+        "456": {
+          "success_rate": 0.8,
+          "mean_reward": 186.30201357122704,
+          "mean_steps": 62.9,
+          "mean_capture_steps": 48.625
+        },
+        "789": {
+          "success_rate": 0.95,
+          "mean_reward": 240.54942390272794,
+          "mean_steps": 40.65,
+          "mean_capture_steps": 36.473684210526315
+        },
+        "1024": {
+          "success_rate": 0.85,
+          "mean_reward": 191.7042147990451,
+          "mean_steps": 47.05,
+          "mean_capture_steps": 34.1764705882353
+        }
+      }
+    },
+    "v3_iql_A": {
+      "model": "v3_iql_A",
+      "n_seeds": 5,
+      "n_episodes_per_seed": 20,
+      "total_episodes": 100,
+      "success_rate_mean": 0.82,
+      "success_rate_std": 0.0748331477354788,
+      "success_rate_min": 0.75,
+      "success_rate_max": 0.95,
+      "reward_mean": 199.65262493761983,
+      "reward_std": 19.40522749990276,
+      "steps_mean": 52.720000000000006,
+      "per_seed_results": {
+        "42": {
+          "success_rate": 0.8,
+          "mean_reward": 194.85348189430277,
+          "mean_steps": 42.4,
+          "mean_capture_steps": 23.0
+        },
+        "123": {
+          "success_rate": 0.85,
+          "mean_reward": 212.83635573736032,
+          "mean_steps": 53.95,
+          "mean_capture_steps": 42.294117647058826
+        },
+        "456": {
+          "success_rate": 0.75,
+          "mean_reward": 178.14934400344706,
+          "mean_steps": 67.65,
+          "mean_capture_steps": 50.2
+        },
+        "789": {
+          "success_rate": 0.95,
+          "mean_reward": 230.06077226767167,
+          "mean_steps": 46.85,
+          "mean_capture_steps": 43.0
+        },
+        "1024": {
+          "success_rate": 0.75,
+          "mean_reward": 182.36317078531732,
+          "mean_steps": 52.75,
+          "mean_capture_steps": 30.333333333333332
+        }
+      }
+    },
+    "v3_iql_B": {
+      "model": "v3_iql_B",
+      "n_seeds": 5,
+      "n_episodes_per_seed": 20,
+      "total_episodes": 100,
+      "success_rate_mean": 0.85,
+      "success_rate_std": 0.04472135954999579,
+      "success_rate_min": 0.8,
+      "success_rate_max": 0.9,
+      "reward_mean": 212.690759337133,
+      "reward_std": 12.579644413703674,
+      "steps_mean": 52.33,
+      "per_seed_results": {
+        "42": {
+          "success_rate": 0.9,
+          "mean_reward": 220.6873550994234,
+          "mean_steps": 37.65,
+          "mean_capture_steps": 28.5
+        },
+        "123": {
+          "success_rate": 0.8,
+          "mean_reward": 222.36813297591866,
+          "mean_steps": 62.85,
+          "mean_capture_steps": 48.5625
+        },
+        "456": {
+          "success_rate": 0.8,
+          "mean_reward": 198.6811770539827,
+          "mean_steps": 64.55,
+          "mean_capture_steps": 50.6875
+        },
+        "789": {
+          "success_rate": 0.9,
+          "mean_reward": 225.53265691395444,
+          "mean_steps": 37.45,
+          "mean_capture_steps": 28.27777777777778
+        },
+        "1024": {
+          "success_rate": 0.85,
+          "mean_reward": 196.1844746423855,
+          "mean_steps": 59.15,
+          "mean_capture_steps": 48.411764705882355
+        }
+      }
+    },
+    "v3_td3bc_A": {
+      "model": "v3_td3bc_A",
+      "n_seeds": 5,
+      "n_episodes_per_seed": 20,
+      "total_episodes": 100,
+      "success_rate_mean": 0.8100000000000002,
+      "success_rate_std": 0.13564659966250536,
+      "success_rate_min": 0.55,
+      "success_rate_max": 0.9,
+      "reward_mean": 229.47689402530855,
+      "reward_std": 18.247168896390594,
+      "steps_mean": 53.75,
+      "per_seed_results": {
+        "42": {
+          "success_rate": 0.9,
+          "mean_reward": 239.9378115573998,
+          "mean_steps": 39.2,
+          "mean_capture_steps": 30.22222222222222
+        },
+        "123": {
+          "success_rate": 0.9,
+          "mean_reward": 239.07482237442468,
+          "mean_steps": 55.5,
+          "mean_capture_steps": 48.333333333333336
+        },
+        "456": {
+          "success_rate": 0.55,
+          "mean_reward": 193.05800102504898,
+          "mean_steps": 78.5,
+          "mean_capture_steps": 44.54545454545455
+        },
+        "789": {
+          "success_rate": 0.8,
+          "mean_reward": 238.89859009115042,
+          "mean_steps": 50.35,
+          "mean_capture_steps": 32.9375
+        },
+        "1024": {
+          "success_rate": 0.9,
+          "mean_reward": 236.41524507851886,
+          "mean_steps": 45.2,
+          "mean_capture_steps": 36.888888888888886
+        }
+      }
+    },
+    "v3_td3bc_B": {
+      "model": "v3_td3bc_B",
+      "n_seeds": 5,
+      "n_episodes_per_seed": 20,
+      "total_episodes": 100,
+      "success_rate_mean": 0.8799999999999999,
+      "success_rate_std": 0.024494897427831803,
+      "success_rate_min": 0.85,
+      "success_rate_max": 0.9,
+      "reward_mean": 231.50319778075496,
+      "reward_std": 8.33858445497478,
+      "steps_mean": 46.67,
+      "per_seed_results": {
+        "42": {
+          "success_rate": 0.9,
+          "mean_reward": 238.58369771271333,
+          "mean_steps": 38.55,
+          "mean_capture_steps": 29.5
+        },
+        "123": {
+          "success_rate": 0.9,
+          "mean_reward": 219.97976056372937,
+          "mean_steps": 53.0,
+          "mean_capture_steps": 45.55555555555556
+        },
+        "456": {
+          "success_rate": 0.85,
+          "mean_reward": 236.66154254625644,
+          "mean_steps": 55.4,
+          "mean_capture_steps": 44.0
+        },
+        "789": {
+          "success_rate": 0.9,
+          "mean_reward": 239.44827804143887,
+          "mean_steps": 41.0,
+          "mean_capture_steps": 32.22222222222222
+        },
+        "1024": {
+          "success_rate": 0.85,
+          "mean_reward": 222.84271003963687,
+          "mean_steps": 45.4,
+          "mean_capture_steps": 32.23529411764706
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,99 @@
+Device: cuda
+Creating SubprocVecEnv with 4 workers ...
+Loaded V4 NN: obs_dim=8, act_dim=3, hidden=(64, 64)
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:236: UserWarning: [33mWARN: Box low's precision lowered by casting to float32, current low.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:306: UserWarning: [33mWARN: Box high's precision lowered by casting to float32, current high.dtype=float64[0m
+  gym.logger.warn(
+Loaded pretrained (TD3Actor→AC): checkpoints/iql_v2_2m/best.pth
+Resumed from checkpoints/online_ppo_iql_v1/latest.pth (step=350208, update=343)
+Online PPO: 488 updates, 256 steps × 4 envs = 1024/update [reward-norm]
+Reward params: {'R_catch': 150.0, 'R_fail': -50.0, 'alpha': 5.0, 'c_sg': 10.0, 'd_sg_safe': 1.5, 'c_path': 5.0, 'lam_time': 0.02}
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:236: UserWarning: [33mWARN: Box low's precision lowered by casting to float32, current low.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:306: UserWarning: [33mWARN: Box high's precision lowered by casting to float32, current high.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:236: UserWarning: [33mWARN: Box low's precision lowered by casting to float32, current low.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:306: UserWarning: [33mWARN: Box high's precision lowered by casting to float32, current high.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:236: UserWarning: [33mWARN: Box low's precision lowered by casting to float32, current low.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:306: UserWarning: [33mWARN: Box high's precision lowered by casting to float32, current high.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:236: UserWarning: [33mWARN: Box low's precision lowered by casting to float32, current low.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:306: UserWarning: [33mWARN: Box high's precision lowered by casting to float32, current high.dtype=float64[0m
+  gym.logger.warn(
+  Update 343/488 | steps=351232 | ep_rew=-255.7 | ep_len=67 | sr=64.29% | pi=-0.001 vf=66.8 ent=1.824 kl=0.000 clip=0.00 | beta=0.000 lr=3.7e-06 | FPS=51
+    [Reward] event=85.7 shaping=38.6 sg_obs=-378.7 time=-1.3
+  Update 350/488 | steps=358400 | ep_rew=-280.8 | ep_len=82 | sr=73.45% | pi=-0.000 vf=46.4 ent=1.824 kl=0.000 clip=0.00 | beta=0.000 lr=3.6e-06 | FPS=52
+    [Reward] event=59.1 shaping=42.0 sg_obs=-380.3 time=-1.6
+    [Eval] rew=-214.39±571.6  sr=85.00%  steps=52  cap_steps=41
+    [Eval Reward] event=122.5 shaping=46.4 sg_obs=-382.2 time=-1.1
+Saved: /root/autodl-tmp/pursue_20260302/checkpoints/online_ppo_iql_v1/best.pth
+  Update 360/488 | steps=368640 | ep_rew=-567.5 | ep_len=81 | sr=76.23% | pi=0.001 vf=69.5 ent=1.824 kl=0.000 clip=0.00 | beta=0.000 lr=3.4e-06 | FPS=44
+    [Reward] event=68.2 shaping=55.7 sg_obs=-689.7 time=-1.6
+    [Eval] rew=-213.33±589.9  sr=85.00%  steps=55  cap_steps=44
+    [Eval Reward] event=122.5 shaping=51.8 sg_obs=-386.5 time=-1.1
+  Update 370/488 | steps=378880 | ep_rew=-340.5 | ep_len=68 | sr=77.40% | pi=-0.001 vf=78.0 ent=1.824 kl=0.000 clip=0.00 | beta=0.000 lr=3.2e-06 | FPS=42
+    [Reward] event=104.2 shaping=53.9 sg_obs=-497.2 time=-1.4
+    [Eval] rew=-409.88±592.1  sr=65.00%  steps=72  cap_steps=46
+    [Eval Reward] event=92.5 shaping=45.9 sg_obs=-546.9 time=-1.4
+  Update 380/488 | steps=389120 | ep_rew=-104.1 | ep_len=59 | sr=77.15% | pi=-0.000 vf=75.2 ent=1.824 kl=0.000 clip=0.00 | beta=0.000 lr=3.0e-06 | FPS=40
+    [Reward] event=126.7 shaping=44.9 sg_obs=-274.6 time=-1.2
+    [Eval] rew=-208.03±512.4  sr=80.00%  steps=64  cap_steps=50
+    [Eval Reward] event=115.0 shaping=52.3 sg_obs=-374.1 time=-1.3
+  Update 390/488 | steps=399360 | ep_rew=3.6 | ep_len=49 | sr=78.29% | pi=-0.000 vf=82.8 ent=1.824 kl=0.000 clip=0.00 | beta=0.000 lr=2.8e-06 | FPS=40
+    [Reward] event=129.4 shaping=42.2 sg_obs=-167.1 time=-1.0
+    [Eval] rew=-266.85±456.7  sr=80.00%  steps=62  cap_steps=48
+    [Eval Reward] event=117.5 shaping=49.8 sg_obs=-432.9 time=-1.2
+Saved: /root/autodl-tmp/pursue_20260302/checkpoints/online_ppo_iql_v1/latest.pth
+  Update 400/488 | steps=409600 | ep_rew=-380.0 | ep_len=71 | sr=77.32% | pi=-0.001 vf=73.2 ent=1.823 kl=0.000 clip=0.00 | beta=0.000 lr=2.6e-06 | FPS=40
+    [Reward] event=80.8 shaping=49.6 sg_obs=-508.9 time=-1.4
+    [Eval] rew=-184.78±561.5  sr=85.00%  steps=49  cap_steps=36
+    [Eval Reward] event=122.5 shaping=45.9 sg_obs=-352.2 time=-1.0
+  Update 410/488 | steps=419840 | ep_rew=-24.3 | ep_len=51 | sr=77.72% | pi=0.009 vf=69.1 ent=1.823 kl=0.000 clip=0.00 | beta=0.000 lr=2.5e-06 | FPS=40
+    [Reward] event=121.4 shaping=44.3 sg_obs=-188.9 time=-1.0
+    [Eval] rew=62.25±296.3  sr=95.00%  steps=38  cap_steps=34
+    [Eval Reward] event=142.5 shaping=41.6 sg_obs=-121.1 time=-0.8
+Saved: /root/autodl-tmp/pursue_20260302/checkpoints/online_ppo_iql_v1/best.pth
+  Update 420/488 | steps=430080 | ep_rew=-248.7 | ep_len=54 | sr=77.84% | pi=-0.000 vf=90.0 ent=1.823 kl=0.000 clip=0.00 | beta=0.000 lr=2.3e-06 | FPS=40
+    [Reward] event=128.1 shaping=51.6 sg_obs=-427.3 time=-1.1
+    [Eval] rew=-55.82±454.6  sr=90.00%  steps=42  cap_steps=33
+    [Eval Reward] event=132.5 shaping=44.1 sg_obs=-231.6 time=-0.8
+  Update 430/488 | steps=440320 | ep_rew=-329.1 | ep_len=68 | sr=77.46% | pi=-0.001 vf=75.8 ent=1.823 kl=0.000 clip=0.00 | beta=0.000 lr=2.1e-06 | FPS=40
+    [Reward] event=96.2 shaping=50.2 sg_obs=-474.1 time=-1.4
+    [Eval] rew=-434.79±591.8  sr=70.00%  steps=73  cap_steps=53
+    [Eval Reward] event=97.5 shaping=52.2 sg_obs=-583.0 time=-1.5
+  Update 440/488 | steps=450560 | ep_rew=-31.1 | ep_len=43 | sr=77.82% | pi=0.001 vf=106.0 ent=1.823 kl=0.000 clip=0.00 | beta=0.000 lr=1.9e-06 | FPS=40
+    [Reward] event=150.0 shaping=49.3 sg_obs=-229.5 time=-0.9
+    [Eval] rew=-265.35±562.3  sr=80.00%  steps=60  cap_steps=45
+    [Eval Reward] event=115.0 shaping=50.5 sg_obs=-429.6 time=-1.2
+Saved: /root/autodl-tmp/pursue_20260302/checkpoints/online_ppo_iql_v1/latest.pth
+  Update 450/488 | steps=460800 | ep_rew=-189.4 | ep_len=64 | sr=77.92% | pi=-0.000 vf=69.2 ent=1.823 kl=0.000 clip=0.00 | beta=0.000 lr=1.7e-06 | FPS=40
+    [Reward] event=123.1 shaping=46.4 sg_obs=-357.6 time=-1.3
+    [Eval] rew=-221.25±500.3  sr=80.00%  steps=58  cap_steps=42
+    [Eval Reward] event=115.0 shaping=44.6 sg_obs=-379.7 time=-1.2
+    [Eval] rew=-333.47±631.3  sr=80.00%  steps=60  cap_steps=45
+    [Eval Reward] event=112.5 shaping=53.0 sg_obs=-497.8 time=-1.2
+  Update 460/488 | steps=471040 | ep_rew=-338.5 | ep_len=67 | sr=77.85% | pi=-0.000 vf=71.3 ent=1.823 kl=0.000 clip=0.00 | beta=0.000 lr=1.5e-06 | FPS=38
+    [Reward] event=123.1 shaping=48.8 sg_obs=-509.0 time=-1.3
+    [Eval] rew=-298.12±486.3  sr=90.00%  steps=64  cap_steps=57
+    [Eval Reward] event=135.0 shaping=55.0 sg_obs=-486.8 time=-1.3
+  Update 470/488 | steps=481280 | ep_rew=-53.0 | ep_len=48 | sr=78.03% | pi=0.000 vf=96.1 ent=1.823 kl=0.000 clip=0.00 | beta=0.000 lr=1.4e-06 | FPS=38
+    [Reward] event=140.0 shaping=47.1 sg_obs=-239.1 time=-1.0
+    [Eval] rew=-17.53±327.9  sr=80.00%  steps=59  cap_steps=44
+    [Eval Reward] event=115.0 shaping=47.4 sg_obs=-178.8 time=-1.2
+  Update 480/488 | steps=491520 | ep_rew=-264.1 | ep_len=71 | sr=78.45% | pi=0.002 vf=61.9 ent=1.823 kl=0.000 clip=0.00 | beta=0.000 lr=1.2e-06 | FPS=38
+    [Reward] event=100.0 shaping=47.2 sg_obs=-409.9 time=-1.4
+Saved: /root/autodl-tmp/pursue_20260302/checkpoints/online_ppo_iql_v1/final.pth
+Saved: /root/autodl-tmp/pursue_20260302/visualization/logs/online_ppo_iql_v1/online_ppo_curves.png
+Loaded V4 NN: obs_dim=8, act_dim=3, hidden=(64, 64)
+Loaded V4 NN: obs_dim=8, act_dim=3, hidden=(64, 64)
+Loaded V4 NN: obs_dim=8, act_dim=3, hidden=(64, 64)
+Loaded V4 NN: obs_dim=8, act_dim=3, hidden=(64, 64)
+Online PPO fine-tuning done.
+obs_dim=8, act_dim=3, hidden=(64, 64)
+Online PPO fine-tuning done.
+===== IQL v1 Online PPO Done =====

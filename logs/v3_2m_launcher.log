@@ -1,0 +1,31 @@
+nohup: ignoring input
+Wed Apr  8 01:04:25 CST 2026: Extending 6 experiments to 2M steps...
+  BPPO-A  PID=9161
+  BPPO-B  PID=9162
+  IQL-A   PID=9163
+  IQL-B   PID=9164
+  TD3BC-A PID=9165
+  TD3BC-B PID=9166
+
+Wed Apr  8 01:04:25 CST 2026: All 6 extended runs launched. Waiting...
+nohup: ignoring input
+Wed Apr  8 12:33:07 CST 2026: Extending 6 experiments to 2M steps...
+  BPPO-A  PID=3287
+  BPPO-B  PID=3288
+  IQL-A   PID=3289
+  IQL-B   PID=3290
+  TD3BC-A PID=3291
+  TD3BC-B PID=3292
+
+Wed Apr  8 12:33:07 CST 2026: All 6 extended runs launched. Waiting...
+nohup: ignoring input
+Wed Apr  8 12:48:24 CST 2026: Resuming 6 experiments from latest.pth to 2M steps...
+  BPPO-A  PID=7219
+  BPPO-B  PID=7220
+  IQL-A   PID=7221
+  IQL-B   PID=7222
+  TD3BC-A PID=7223
+  TD3BC-B PID=7224
+
+Wed Apr  8 12:48:24 CST 2026: All 6 experiments resumed. Waiting...
+Wed Apr  8 22:09:09 CST 2026: All 6 experiments finished (2M steps)!

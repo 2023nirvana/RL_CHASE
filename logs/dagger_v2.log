@@ -1,0 +1,78 @@
+nohup: ignoring input
+Loaded V4 NN: obs_dim=8, act_dim=3, hidden=(64, 64)
+
+============================================================
+DAgger Round 0/3 | beta=1.00 | episodes=700 | workers=9
+============================================================
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:236: UserWarning: [33mWARN: Box low's precision lowered by casting to float32, current low.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:306: UserWarning: [33mWARN: Box high's precision lowered by casting to float32, current high.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:236: UserWarning: [33mWARN: Box low's precision lowered by casting to float32, current low.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:306: UserWarning: [33mWARN: Box high's precision lowered by casting to float32, current high.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:236: UserWarning: [33mWARN: Box low's precision lowered by casting to float32, current low.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:306: UserWarning: [33mWARN: Box high's precision lowered by casting to float32, current high.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:236: UserWarning: [33mWARN: Box low's precision lowered by casting to float32, current low.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:306: UserWarning: [33mWARN: Box high's precision lowered by casting to float32, current high.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:236: UserWarning: [33mWARN: Box low's precision lowered by casting to float32, current low.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:306: UserWarning: [33mWARN: Box high's precision lowered by casting to float32, current high.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:236: UserWarning: [33mWARN: Box low's precision lowered by casting to float32, current low.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:306: UserWarning: [33mWARN: Box high's precision lowered by casting to float32, current high.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:236: UserWarning: [33mWARN: Box low's precision lowered by casting to float32, current low.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:306: UserWarning: [33mWARN: Box high's precision lowered by casting to float32, current high.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:236: UserWarning: [33mWARN: Box low's precision lowered by casting to float32, current low.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:306: UserWarning: [33mWARN: Box high's precision lowered by casting to float32, current high.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:236: UserWarning: [33mWARN: Box low's precision lowered by casting to float32, current low.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:306: UserWarning: [33mWARN: Box high's precision lowered by casting to float32, current high.dtype=float64[0m
+  gym.logger.warn(
+Loaded V4 NN: obs_dim=8, act_dim=3, hidden=(64, 64)
+  [R0 W1] 20/78 ok=18 fail=2 trans=546
+  [R0 W1] 40/78 ok=35 fail=5 trans=1251
+  [R0 W1] 60/78 ok=51 fail=9 trans=2079
+Loaded V4 NN: obs_dim=8, act_dim=3, hidden=(64, 64)
+  [R0 W0] 20/78 ok=19 fail=1 trans=647
+  [R0 W0] 40/78 ok=32 fail=8 trans=1288
+  [R0 W0] 60/78 ok=50 fail=10 trans=2124
+Loaded V4 NN: obs_dim=8, act_dim=3, hidden=(64, 64)
+  [R0 W8] 20/77 ok=13 fail=7 trans=509
+  [R0 W8] 40/77 ok=32 fail=8 trans=1282
+  [R0 W8] 60/77 ok=46 fail=14 trans=1809
+Loaded V4 NN: obs_dim=8, act_dim=3, hidden=(64, 64)
+  [R0 W5] 20/78 ok=18 fail=2 trans=673
+  [R0 W5] 40/78 ok=34 fail=6 trans=1255
+  [R0 W5] 60/78 ok=49 fail=11 trans=1935
+Loaded V4 NN: obs_dim=8, act_dim=3, hidden=(64, 64)
+  [R0 W4] 20/78 ok=13 fail=7 trans=453
+  [R0 W4] 40/78 ok=26 fail=14 trans=1087
+  [R0 W4] 60/78 ok=42 fail=18 trans=1709
+Loaded V4 NN: obs_dim=8, act_dim=3, hidden=(64, 64)
+  [R0 W2] 20/78 ok=17 fail=3 trans=665
+  [R0 W2] 40/78 ok=32 fail=8 trans=1441
+  [R0 W2] 60/78 ok=47 fail=13 trans=2059
+Loaded V4 NN: obs_dim=8, act_dim=3, hidden=(64, 64)
+  [R0 W6] 20/78 ok=14 fail=6 trans=844
+  [R0 W6] 40/78 ok=30 fail=10 trans=1605
+  [R0 W6] 60/78 ok=46 fail=14 trans=2275
+Loaded V4 NN: obs_dim=8, act_dim=3, hidden=(64, 64)
+  [R0 W7] 20/77 ok=18 fail=2 trans=838
+  [R0 W7] 40/77 ok=33 fail=7 trans=1749
+  [R0 W7] 60/77 ok=49 fail=11 trans=2485
+Loaded V4 NN: obs_dim=8, act_dim=3, hidden=(64, 64)
+  [R0 W3] 20/78 ok=14 fail=6 trans=698
+  [R0 W3] 40/78 ok=27 fail=13 trans=1188
+  [R0 W3] 60/78 ok=39 fail=21 trans=1679

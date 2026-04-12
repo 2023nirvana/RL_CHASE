@@ -1,0 +1,91 @@
+Device: cuda
+============================================================
+Continuous High-Level PPO V2 (模仿tabular奖励)
+  Episodes: 4000
+  Pursuer: v_max=1.1, a_max=1.8
+  Evader:  v_max=1.35, a_max=0.55
+============================================================
+[PPO] ep=  50 cap=46.0% ret=44.5
+[PPO] ep= 100 cap=46.0% ret=116.6
+[PPO] ep= 150 cap=26.0% ret=146.9
+[PPO] ep= 200 cap=4.0% ret=313.3
+[PPO] ep= 250 cap=56.0% ret=222.2
+[PPO] ep= 300 cap=38.0% ret=26.3
+[PPO] ep= 350 cap=36.0% ret=148.3
+[PPO] ep= 400 cap=56.0% ret=142.4
+[PPO] ep= 450 cap=46.0% ret=59.0
+[PPO] ep= 500 cap=44.0% ret=111.2
+[PPO] ep= 550 cap=44.0% ret=91.3
+[PPO] ep= 600 cap=50.0% ret=73.0
+[PPO] ep= 650 cap=30.0% ret=-71.2
+[PPO] ep= 700 cap=52.0% ret=139.8
+[PPO] ep= 750 cap=46.0% ret=73.2
+[PPO] ep= 800 cap=34.0% ret=208.2
+[PPO] ep= 850 cap=26.0% ret=111.6
+[PPO] ep= 900 cap=54.0% ret=178.7
+[PPO] ep= 950 cap=48.0% ret=187.5
+[PPO] ep=1000 cap=72.0% ret=337.4
+[PPO] ep=1050 cap=68.0% ret=394.3
+[PPO] ep=1100 cap=72.0% ret=288.8
+[PPO] ep=1150 cap=44.0% ret=165.5
+[PPO] ep=1200 cap=42.0% ret=96.7
+[PPO] ep=1250 cap=38.0% ret=198.2
+[PPO] ep=1300 cap=70.0% ret=348.0
+[PPO] ep=1350 cap=78.0% ret=434.4
+[PPO] ep=1400 cap=64.0% ret=271.9
+[PPO] ep=1450 cap=52.0% ret=216.2
+[PPO] ep=1500 cap=66.0% ret=337.8
+[PPO] ep=1550 cap=86.0% ret=426.1
+[PPO] ep=1600 cap=58.0% ret=268.5
+[PPO] ep=1650 cap=34.0% ret=184.7
+[PPO] ep=1700 cap=86.0% ret=451.4
+[PPO] ep=1750 cap=80.0% ret=335.0
+[PPO] ep=1800 cap=80.0% ret=347.7
+[PPO] ep=1850 cap=88.0% ret=447.6
+[PPO] ep=1900 cap=80.0% ret=390.1
+[PPO] ep=1950 cap=72.0% ret=331.9
+[PPO] ep=2000 cap=84.0% ret=438.8
+[PPO] ep=2050 cap=82.0% ret=411.6
+[PPO] ep=2100 cap=80.0% ret=407.0
+[PPO] ep=2150 cap=88.0% ret=396.2
+[PPO] ep=2200 cap=72.0% ret=361.1
+[PPO] ep=2250 cap=50.0% ret=259.1
+[PPO] ep=2300 cap=80.0% ret=431.7
+[PPO] ep=2350 cap=84.0% ret=454.1
+[PPO] ep=2400 cap=68.0% ret=344.0
+[PPO] ep=2450 cap=86.0% ret=439.4
+[PPO] ep=2500 cap=44.0% ret=202.8
+[PPO] ep=2550 cap=76.0% ret=449.9
+[PPO] ep=2600 cap=84.0% ret=460.6
+[PPO] ep=2650 cap=86.0% ret=488.2
+[PPO] ep=2700 cap=90.0% ret=398.6
+[PPO] ep=2750 cap=78.0% ret=372.6
+[PPO] ep=2800 cap=80.0% ret=365.6
+[PPO] ep=2850 cap=86.0% ret=419.1
+[PPO] ep=2900 cap=76.0% ret=334.3
+[PPO] ep=2950 cap=76.0% ret=450.5
+[PPO] ep=3000 cap=82.0% ret=434.8
+[PPO] ep=3050 cap=78.0% ret=409.1
+[PPO] ep=3100 cap=78.0% ret=461.2
+[PPO] ep=3150 cap=78.0% ret=379.5
+[PPO] ep=3200 cap=82.0% ret=417.6
+[PPO] ep=3250 cap=82.0% ret=372.6
+[PPO] ep=3300 cap=74.0% ret=355.9
+[PPO] ep=3350 cap=80.0% ret=413.5
+[PPO] ep=3400 cap=76.0% ret=411.6
+[PPO] ep=3450 cap=80.0% ret=402.2
+[PPO] ep=3500 cap=80.0% ret=472.1
+[PPO] ep=3550 cap=78.0% ret=413.3
+[PPO] ep=3600 cap=78.0% ret=435.0
+[PPO] ep=3650 cap=84.0% ret=390.0
+[PPO] ep=3700 cap=88.0% ret=447.5
+[PPO] ep=3750 cap=92.0% ret=441.2
+[PPO] ep=3800 cap=80.0% ret=392.3
+[PPO] ep=3850 cap=82.0% ret=414.7
+[PPO] ep=3900 cap=78.0% ret=397.4
+[PPO] ep=3950 cap=90.0% ret=460.3
+[PPO] ep=4000 cap=90.0% ret=425.9
+------------------------------------------------------------
+Training complete! Final capture rate: 90.0%
+------------------------------------------------------------
+Results saved to: high_tabular/results_v2_opt

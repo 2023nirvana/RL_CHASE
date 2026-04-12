@@ -1,0 +1,117 @@
+Device: cuda
+Creating SubprocVecEnv with 4 workers ...
+Loaded V4 NN: obs_dim=8, act_dim=3, hidden=(64, 64)
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:236: UserWarning: [33mWARN: Box low's precision lowered by casting to float32, current low.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:306: UserWarning: [33mWARN: Box high's precision lowered by casting to float32, current high.dtype=float64[0m
+  gym.logger.warn(
+Loaded pretrained (TD3Actor→AC): checkpoints/td3bc_v4_2m/best.pth
+Online PPO: 195 updates, 256 steps × 4 envs = 1024/update [reward-norm]
+Reward params: {'R_catch': 150.0, 'R_fail': -50.0, 'alpha': 5.0, 'c_sg': 10.0, 'd_sg_safe': 1.5, 'c_path': 5.0, 'lam_time': 0.02}
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:236: UserWarning: [33mWARN: Box low's precision lowered by casting to float32, current low.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:306: UserWarning: [33mWARN: Box high's precision lowered by casting to float32, current high.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:236: UserWarning: [33mWARN: Box low's precision lowered by casting to float32, current low.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:306: UserWarning: [33mWARN: Box high's precision lowered by casting to float32, current high.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:236: UserWarning: [33mWARN: Box low's precision lowered by casting to float32, current low.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:306: UserWarning: [33mWARN: Box high's precision lowered by casting to float32, current high.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:236: UserWarning: [33mWARN: Box low's precision lowered by casting to float32, current low.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:306: UserWarning: [33mWARN: Box high's precision lowered by casting to float32, current high.dtype=float64[0m
+  gym.logger.warn(
+  Update 1/195 | steps=1024 | ep_rew=-75.0 | ep_len=83 | sr=45.45% | pi=0.074 vf=23.2 ent=1.838 kl=-0.529 clip=0.31 | beta=0.295 lr=1.0e-05 | FPS=50
+    [Reward] event=68.2 shaping=45.1 sg_obs=-186.6 time=-1.7
+  Update 10/195 | steps=10240 | ep_rew=-0.6 | ep_len=73 | sr=61.95% | pi=0.015 vf=19.5 ent=1.840 kl=-3.634 clip=0.18 | beta=0.249 lr=9.6e-06 | FPS=52
+    [Reward] event=100.0 shaping=49.8 sg_obs=-149.0 time=-1.5
+    [Eval] rew=-49.13±318.4  sr=60.00%  steps=75  cap_steps=45
+    [Eval Reward] event=90.0 shaping=49.5 sg_obs=-187.1 time=-1.5
+Saved: /root/autodl-tmp/pursue_20260302/checkpoints/ablation_subgoal_range_sg_0.5/best.pth
+  Update 20/195 | steps=20480 | ep_rew=-40.3 | ep_len=76 | sr=59.81% | pi=0.034 vf=36.0 ent=1.841 kl=-6.022 clip=0.12 | beta=0.198 lr=9.1e-06 | FPS=41
+    [Reward] event=95.0 shaping=44.9 sg_obs=-178.7 time=-1.5
+    [Eval] rew=-54.27±249.2  sr=60.00%  steps=81  cap_steps=55
+    [Eval Reward] event=87.5 shaping=55.8 sg_obs=-196.0 time=-1.6
+  Update 30/195 | steps=30720 | ep_rew=-128.8 | ep_len=82 | sr=55.34% | pi=0.005 vf=21.0 ent=1.842 kl=-4.967 clip=0.08 | beta=0.146 lr=8.7e-06 | FPS=38
+    [Reward] event=65.0 shaping=49.8 sg_obs=-241.9 time=-1.6
+    [Eval] rew=-152.42±335.3  sr=50.00%  steps=90  cap_steps=59
+    [Eval Reward] event=70.0 shaping=42.9 sg_obs=-263.6 time=-1.8
+  Update 40/195 | steps=40960 | ep_rew=-63.5 | ep_len=84 | sr=54.05% | pi=0.002 vf=28.8 ent=1.842 kl=-7.416 clip=0.09 | beta=0.095 lr=8.2e-06 | FPS=36
+    [Reward] event=68.2 shaping=45.9 sg_obs=-176.0 time=-1.7
+    [Eval] rew=-194.80±352.2  sr=40.00%  steps=96  cap_steps=61
+    [Eval Reward] event=60.0 shaping=54.0 sg_obs=-306.9 time=-1.9
+    [Eval] rew=-137.23±340.6  sr=45.00%  steps=88  cap_steps=49
+    [Eval Reward] event=65.0 shaping=44.0 sg_obs=-244.5 time=-1.8
+Saved: /root/autodl-tmp/pursue_20260302/checkpoints/ablation_subgoal_range_sg_0.5/latest.pth
+  Update 50/195 | steps=51200 | ep_rew=-29.1 | ep_len=75 | sr=51.79% | pi=0.006 vf=20.0 ent=1.843 kl=-10.578 clip=0.10 | beta=0.044 lr=7.7e-06 | FPS=32
+    [Reward] event=70.0 shaping=40.6 sg_obs=-138.2 time=-1.5
+    [Eval] rew=-37.46±260.6  sr=60.00%  steps=80  cap_steps=53
+    [Eval Reward] event=87.5 shaping=49.3 sg_obs=-172.7 time=-1.6
+  Update 60/195 | steps=61440 | ep_rew=-93.2 | ep_len=94 | sr=52.15% | pi=0.020 vf=21.9 ent=1.843 kl=0.000 clip=0.05 | beta=0.000 lr=7.3e-06 | FPS=32
+    [Reward] event=55.6 shaping=48.5 sg_obs=-195.4 time=-1.9
+    [Eval] rew=-57.78±219.7  sr=40.00%  steps=91  cap_steps=46
+    [Eval Reward] event=57.5 shaping=45.7 sg_obs=-159.2 time=-1.8
+  Update 70/195 | steps=71680 | ep_rew=55.5 | ep_len=70 | sr=51.36% | pi=0.077 vf=33.0 ent=1.843 kl=0.000 clip=0.08 | beta=0.000 lr=6.8e-06 | FPS=32
+    [Reward] event=125.0 shaping=48.1 sg_obs=-116.2 time=-1.4
+    [Eval] rew=-80.22±219.0  sr=55.00%  steps=90  cap_steps=65
+    [Eval Reward] event=80.0 shaping=50.9 sg_obs=-209.3 time=-1.8
+  Update 80/195 | steps=81920 | ep_rew=0.2 | ep_len=61 | sr=50.69% | pi=0.018 vf=38.8 ent=1.843 kl=0.000 clip=0.04 | beta=0.000 lr=6.4e-06 | FPS=32
+    [Reward] event=115.4 shaping=45.3 sg_obs=-159.2 time=-1.2
+    [Eval] rew=-8.95±171.5  sr=60.00%  steps=84  cap_steps=59
+    [Eval Reward] event=87.5 shaping=51.8 sg_obs=-146.6 time=-1.7
+  Update 90/195 | steps=92160 | ep_rew=-48.5 | ep_len=91 | sr=50.39% | pi=-0.001 vf=32.2 ent=1.843 kl=0.000 clip=0.06 | beta=0.000 lr=5.9e-06 | FPS=32
+    [Reward] event=90.0 shaping=60.7 sg_obs=-197.4 time=-1.8
+    [Eval] rew=-153.28±377.8  sr=50.00%  steps=84  cap_steps=48
+    [Eval Reward] event=65.0 shaping=49.3 sg_obs=-265.9 time=-1.7
+Saved: /root/autodl-tmp/pursue_20260302/checkpoints/ablation_subgoal_range_sg_0.5/latest.pth
+  Update 100/195 | steps=102400 | ep_rew=-42.9 | ep_len=82 | sr=51.29% | pi=0.023 vf=27.0 ent=1.843 kl=0.000 clip=0.05 | beta=0.000 lr=5.4e-06 | FPS=32
+    [Reward] event=63.6 shaping=41.6 sg_obs=-146.5 time=-1.6
+    [Eval] rew=-19.81±219.0  sr=65.00%  steps=72  cap_steps=46
+    [Eval Reward] event=95.0 shaping=44.0 sg_obs=-157.4 time=-1.4
+Saved: /root/autodl-tmp/pursue_20260302/checkpoints/ablation_subgoal_range_sg_0.5/best.pth
+  Update 110/195 | steps=112640 | ep_rew=-49.9 | ep_len=86 | sr=50.23% | pi=0.008 vf=26.2 ent=1.843 kl=0.000 clip=0.07 | beta=0.000 lr=5.0e-06 | FPS=33
+    [Reward] event=75.0 shaping=53.7 sg_obs=-176.9 time=-1.7
+    [Eval] rew=-58.15±249.1  sr=45.00%  steps=90  cap_steps=54
+    [Eval Reward] event=67.5 shaping=55.0 sg_obs=-178.8 time=-1.8
+  Update 120/195 | steps=122880 | ep_rew=40.3 | ep_len=67 | sr=50.04% | pi=0.037 vf=50.6 ent=1.843 kl=0.000 clip=0.05 | beta=0.000 lr=4.5e-06 | FPS=33
+    [Reward] event=95.8 shaping=41.3 sg_obs=-95.5 time=-1.3
+    [Eval] rew=23.76±163.4  sr=65.00%  steps=77  cap_steps=54
+    [Eval Reward] event=95.0 shaping=49.6 sg_obs=-119.3 time=-1.5
+  Update 130/195 | steps=133120 | ep_rew=-21.9 | ep_len=86 | sr=49.77% | pi=0.015 vf=24.1 ent=1.843 kl=0.000 clip=0.05 | beta=0.000 lr=4.0e-06 | FPS=33
+    [Reward] event=68.2 shaping=38.3 sg_obs=-126.7 time=-1.7
+    [Eval] rew=-18.28±202.5  sr=60.00%  steps=78  cap_steps=51
+    [Eval Reward] event=90.0 shaping=52.3 sg_obs=-159.1 time=-1.6
+  Update 140/195 | steps=143360 | ep_rew=15.6 | ep_len=88 | sr=50.04% | pi=0.016 vf=35.9 ent=1.843 kl=0.000 clip=0.06 | beta=0.000 lr=3.6e-06 | FPS=33
+    [Reward] event=85.0 shaping=58.1 sg_obs=-125.7 time=-1.8
+    [Eval] rew=-98.62±309.7  sr=60.00%  steps=76  cap_steps=46
+    [Eval Reward] event=87.5 shaping=45.7 sg_obs=-230.3 time=-1.5
+Saved: /root/autodl-tmp/pursue_20260302/checkpoints/ablation_subgoal_range_sg_0.5/latest.pth
+  Update 150/195 | steps=153600 | ep_rew=-37.8 | ep_len=93 | sr=49.42% | pi=0.016 vf=18.8 ent=1.843 kl=0.000 clip=0.05 | beta=0.000 lr=3.1e-06 | FPS=33
+    [Reward] event=60.0 shaping=53.6 sg_obs=-149.6 time=-1.9
+    [Eval] rew=-34.70±163.3  sr=50.00%  steps=87  cap_steps=55
+    [Eval Reward] event=72.5 shaping=49.9 sg_obs=-155.4 time=-1.7
+  Update 160/195 | steps=163840 | ep_rew=32.6 | ep_len=66 | sr=49.43% | pi=0.024 vf=33.3 ent=1.844 kl=0.000 clip=0.05 | beta=0.000 lr=2.7e-06 | FPS=33
+    [Reward] event=103.8 shaping=45.9 sg_obs=-115.9 time=-1.3
+    [Eval] rew=15.91±227.9  sr=70.00%  steps=76  cap_steps=58
+    [Eval Reward] event=100.0 shaping=49.3 sg_obs=-131.9 time=-1.5
+Saved: /root/autodl-tmp/pursue_20260302/checkpoints/ablation_subgoal_range_sg_0.5/best.pth
+  Update 170/195 | steps=174080 | ep_rew=-86.5 | ep_len=100 | sr=48.74% | pi=0.016 vf=19.8 ent=1.844 kl=0.000 clip=0.07 | beta=0.000 lr=2.2e-06 | FPS=33
+    [Reward] event=37.5 shaping=52.5 sg_obs=-174.6 time=-2.0
+    [Eval] rew=-25.64±212.9  sr=60.00%  steps=81  cap_steps=56
+    [Eval Reward] event=90.0 shaping=52.1 sg_obs=-166.1 time=-1.6
+  Update 180/195 | steps=184320 | ep_rew=-141.8 | ep_len=93 | sr=48.64% | pi=0.025 vf=30.2 ent=1.844 kl=0.000 clip=0.09 | beta=0.000 lr=1.7e-06 | FPS=33
+    [Reward] event=50.0 shaping=51.9 sg_obs=-241.8 time=-1.9
+    [Eval] rew=-26.24±282.1  sr=60.00%  steps=71  cap_steps=38
+    [Eval Reward] event=90.0 shaping=46.8 sg_obs=-161.6 time=-1.4
+  Update 190/195 | steps=194560 | ep_rew=-67.6 | ep_len=95 | sr=48.36% | pi=0.012 vf=15.2 ent=1.844 kl=0.000 clip=0.08 | beta=0.000 lr=1.3e-06 | FPS=33
+    [Reward] event=44.4 shaping=45.3 sg_obs=-155.5 time=-1.9
+Saved: /root/autodl-tmp/pursue_20260302/checkpoints/ablation_subgoal_range_sg_0.5/final.pth
+Saved: /root/autodl-tmp/pursue_20260302/visualization/logs/ablation_subgoal_range_sg_0.5/online_ppo_curves.png
+Loaded V4 NN: obs_dim=8, act_dim=3, hidden=(64, 64)
+Loaded V4 NN: obs_dim=8, act_dim=3, hidden=(64, 64)
+Loaded V4 NN: obs_dim=8, act_dim=3, hidden=(64, 64)
+Loaded V4 NN: obs_dim=8, act_dim=3, hidden=(64, 64)
+Online PPO fine-tuning done.

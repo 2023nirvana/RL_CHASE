@@ -1,0 +1,10 @@
+{
+  "experiment": "v4_tight_heading_terminal_Moretight",
+  "episodes": 50,
+  "success_rate": 1.0,
+  "median_final_error": 0.04719217326117536,
+  "mean_final_error": 0.04650931996792875,
+  "median_steps": 96,
+  "mean_init_speed": 0.7973905305813455,
+  "init_velocity_range": 1.0
+}

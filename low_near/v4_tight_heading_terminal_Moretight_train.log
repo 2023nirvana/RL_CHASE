@@ -1,0 +1,587 @@
+Using device: cuda
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:236: UserWarning: [33mWARN: Box low's precision lowered by casting to float32, current low.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:306: UserWarning: [33mWARN: Box high's precision lowered by casting to float32, current high.dtype=float64[0m
+  gym.logger.warn(
+2D V3 Continuous Environment initialized:
+  obs_dim=8, act_dim=3
+  target range: [0.3, 1.0] m
+  reach_threshold=0.05 m
+  max_episode_seconds=30.0
+  num_envs=4
+Network parameters: 9,735
+Start training for 488 updates (2000000 timesteps)
+  [Eval] steps=8192 reward=-254.773 succ=20.00% final_err=0.8495
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/best.pth
+  [Eval] steps=12288 reward=-285.260 succ=10.00% final_err=1.0030
+  [Eval] steps=16384 reward=-216.121 succ=30.00% final_err=0.4748
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/best.pth
+  [Eval] steps=20480 reward=-225.377 succ=30.00% final_err=0.4553
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=28672 reward=-181.892 succ=50.00% final_err=0.3280
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/best.pth
+  [Eval] steps=32768 reward=-97.711 succ=70.00% final_err=0.0757
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/best.pth
+  [Eval] steps=36864 reward=3.973 succ=90.00% final_err=0.0579
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/best.pth
+Update 10/488 | Steps 40960 | TrainRew -0.077 | Loss 772.2625 | SuccRate 100.00%
+  [Eval] steps=40960 reward=3.420 succ=100.00% final_err=0.0494
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=45056 reward=35.551 succ=100.00% final_err=0.0494
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/best.pth
+  [Eval] steps=53248 reward=48.775 succ=100.00% final_err=0.0492
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/best.pth
+  [Eval] steps=57344 reward=33.884 succ=100.00% final_err=0.0494
+  [Eval] steps=61440 reward=25.174 succ=100.00% final_err=0.0489
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=65536 reward=57.938 succ=100.00% final_err=0.0491
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/best.pth
+  [Eval] steps=73728 reward=47.041 succ=100.00% final_err=0.0487
+  [Eval] steps=77824 reward=70.885 succ=100.00% final_err=0.0490
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/best.pth
+Update 20/488 | Steps 81920 | TrainRew 0.059 | Loss 1423.5077 | SuccRate 100.00%
+  [Eval] steps=81920 reward=71.017 succ=100.00% final_err=0.0493
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/best.pth
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=86016 reward=48.612 succ=100.00% final_err=0.0491
+  [Eval] steps=90112 reward=78.161 succ=100.00% final_err=0.0491
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/best.pth
+  [Eval] steps=98304 reward=102.660 succ=100.00% final_err=0.0488
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/best.pth
+  [Eval] steps=102400 reward=69.388 succ=100.00% final_err=0.0492
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=106496 reward=57.710 succ=100.00% final_err=0.0487
+  [Eval] steps=110592 reward=81.555 succ=100.00% final_err=0.0490
+  [Eval] steps=118784 reward=84.006 succ=100.00% final_err=0.0489
+Update 30/488 | Steps 122880 | TrainRew 0.100 | Loss 1227.5451 | SuccRate 100.00%
+  [Eval] steps=122880 reward=77.905 succ=100.00% final_err=0.0487
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=126976 reward=87.860 succ=100.00% final_err=0.0492
+  [Eval] steps=131072 reward=81.245 succ=100.00% final_err=0.0486
+  [Eval] steps=135168 reward=62.457 succ=100.00% final_err=0.0482
+  [Eval] steps=143360 reward=29.120 succ=100.00% final_err=0.0488
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=147456 reward=20.533 succ=100.00% final_err=0.0482
+  [Eval] steps=151552 reward=20.621 succ=100.00% final_err=0.0489
+  [Eval] steps=155648 reward=33.526 succ=100.00% final_err=0.0483
+Update 40/488 | Steps 163840 | TrainRew 0.177 | Loss 1477.4112 | SuccRate 100.00%
+  [Eval] steps=163840 reward=107.259 succ=100.00% final_err=0.0480
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/best.pth
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=167936 reward=81.241 succ=100.00% final_err=0.0483
+  [Eval] steps=172032 reward=95.394 succ=100.00% final_err=0.0487
+  [Eval] steps=176128 reward=90.025 succ=100.00% final_err=0.0480
+  [Eval] steps=180224 reward=114.398 succ=100.00% final_err=0.0487
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/best.pth
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=188416 reward=115.241 succ=100.00% final_err=0.0486
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/best.pth
+  [Eval] steps=192512 reward=112.115 succ=100.00% final_err=0.0480
+  [Eval] steps=196608 reward=97.472 succ=100.00% final_err=0.0482
+  [Eval] steps=200704 reward=104.646 succ=100.00% final_err=0.0486
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+Update 50/488 | Steps 204800 | TrainRew 0.248 | Loss 883.8795 | SuccRate 100.00%
+  [Eval] steps=208896 reward=97.362 succ=100.00% final_err=0.0482
+  [Eval] steps=212992 reward=107.028 succ=100.00% final_err=0.0469
+  [Eval] steps=217088 reward=105.149 succ=100.00% final_err=0.0484
+  [Eval] steps=221184 reward=112.369 succ=100.00% final_err=0.0474
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=225280 reward=85.721 succ=100.00% final_err=0.0481
+  [Eval] steps=233472 reward=103.833 succ=100.00% final_err=0.0480
+  [Eval] steps=237568 reward=93.962 succ=100.00% final_err=0.0476
+  [Eval] steps=241664 reward=114.296 succ=100.00% final_err=0.0470
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+Update 60/488 | Steps 245760 | TrainRew 0.255 | Loss 621.0478 | SuccRate 100.00%
+  [Eval] steps=245760 reward=106.136 succ=100.00% final_err=0.0472
+  [Eval] steps=253952 reward=109.147 succ=100.00% final_err=0.0483
+  [Eval] steps=258048 reward=108.882 succ=100.00% final_err=0.0478
+  [Eval] steps=262144 reward=106.933 succ=100.00% final_err=0.0478
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=266240 reward=111.134 succ=100.00% final_err=0.0484
+  [Eval] steps=270336 reward=121.166 succ=100.00% final_err=0.0479
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/best.pth
+  [Eval] steps=278528 reward=106.709 succ=100.00% final_err=0.0465
+  [Eval] steps=282624 reward=103.524 succ=100.00% final_err=0.0478
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+Update 70/488 | Steps 286720 | TrainRew 0.482 | Loss 613.2797 | SuccRate 100.00%
+  [Eval] steps=286720 reward=122.260 succ=100.00% final_err=0.0484
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/best.pth
+  [Eval] steps=290816 reward=103.683 succ=100.00% final_err=0.0481
+  [Eval] steps=299008 reward=120.882 succ=100.00% final_err=0.0474
+  [Eval] steps=303104 reward=109.362 succ=100.00% final_err=0.0467
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=307200 reward=115.403 succ=100.00% final_err=0.0485
+  [Eval] steps=311296 reward=118.254 succ=100.00% final_err=0.0475
+  [Eval] steps=315392 reward=101.373 succ=100.00% final_err=0.0480
+  [Eval] steps=323584 reward=118.159 succ=100.00% final_err=0.0479
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+Update 80/488 | Steps 327680 | TrainRew 0.703 | Loss 618.6677 | SuccRate 100.00%
+  [Eval] steps=327680 reward=129.881 succ=100.00% final_err=0.0473
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/best.pth
+  [Eval] steps=331776 reward=124.234 succ=100.00% final_err=0.0461
+  [Eval] steps=335872 reward=118.306 succ=100.00% final_err=0.0458
+  [Eval] steps=344064 reward=114.217 succ=100.00% final_err=0.0483
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=348160 reward=117.691 succ=100.00% final_err=0.0472
+  [Eval] steps=352256 reward=124.818 succ=100.00% final_err=0.0475
+  [Eval] steps=356352 reward=124.676 succ=100.00% final_err=0.0471
+  [Eval] steps=360448 reward=133.578 succ=100.00% final_err=0.0466
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/best.pth
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+Update 90/488 | Steps 368640 | TrainRew 0.835 | Loss 473.9338 | SuccRate 100.00%
+  [Eval] steps=368640 reward=112.477 succ=100.00% final_err=0.0476
+  [Eval] steps=372736 reward=122.167 succ=100.00% final_err=0.0467
+  [Eval] steps=376832 reward=113.024 succ=100.00% final_err=0.0464
+  [Eval] steps=380928 reward=125.976 succ=100.00% final_err=0.0478
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=385024 reward=111.631 succ=100.00% final_err=0.0459
+  [Eval] steps=393216 reward=112.685 succ=100.00% final_err=0.0473
+  [Eval] steps=397312 reward=122.041 succ=100.00% final_err=0.0466
+  [Eval] steps=401408 reward=119.150 succ=100.00% final_err=0.0472
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=405504 reward=137.029 succ=100.00% final_err=0.0470
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/best.pth
+Update 100/488 | Steps 409600 | TrainRew 1.019 | Loss 511.9004 | SuccRate 100.00%
+  [Eval] steps=413696 reward=123.340 succ=100.00% final_err=0.0461
+  [Eval] steps=417792 reward=118.882 succ=100.00% final_err=0.0470
+  [Eval] steps=421888 reward=120.162 succ=100.00% final_err=0.0474
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=425984 reward=127.377 succ=100.00% final_err=0.0449
+  [Eval] steps=430080 reward=124.408 succ=100.00% final_err=0.0467
+  [Eval] steps=438272 reward=135.776 succ=100.00% final_err=0.0465
+  [Eval] steps=442368 reward=119.673 succ=100.00% final_err=0.0482
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=446464 reward=129.764 succ=100.00% final_err=0.0470
+Update 110/488 | Steps 450560 | TrainRew 0.840 | Loss 590.0669 | SuccRate 100.00%
+  [Eval] steps=450560 reward=111.486 succ=100.00% final_err=0.0474
+  [Eval] steps=458752 reward=125.799 succ=100.00% final_err=0.0478
+  [Eval] steps=462848 reward=121.796 succ=100.00% final_err=0.0468
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=466944 reward=121.540 succ=100.00% final_err=0.0462
+  [Eval] steps=471040 reward=103.616 succ=100.00% final_err=0.0455
+  [Eval] steps=475136 reward=121.422 succ=100.00% final_err=0.0478
+  [Eval] steps=483328 reward=117.241 succ=100.00% final_err=0.0467
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=487424 reward=123.398 succ=100.00% final_err=0.0468
+Update 120/488 | Steps 491520 | TrainRew 0.969 | Loss 468.7026 | SuccRate 100.00%
+  [Eval] steps=491520 reward=132.593 succ=100.00% final_err=0.0474
+  [Eval] steps=495616 reward=119.117 succ=100.00% final_err=0.0456
+  [Eval] steps=503808 reward=133.122 succ=100.00% final_err=0.0456
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=507904 reward=134.524 succ=100.00% final_err=0.0472
+  [Eval] steps=512000 reward=106.745 succ=100.00% final_err=0.0479
+  [Eval] steps=516096 reward=122.967 succ=100.00% final_err=0.0459
+  [Eval] steps=520192 reward=120.376 succ=100.00% final_err=0.0466
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=528384 reward=128.268 succ=100.00% final_err=0.0465
+Update 130/488 | Steps 532480 | TrainRew 0.827 | Loss 564.7745 | SuccRate 100.00%
+  [Eval] steps=532480 reward=118.705 succ=100.00% final_err=0.0467
+  [Eval] steps=536576 reward=119.524 succ=100.00% final_err=0.0461
+  [Eval] steps=540672 reward=116.996 succ=100.00% final_err=0.0462
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=548864 reward=121.713 succ=100.00% final_err=0.0482
+  [Eval] steps=552960 reward=110.609 succ=100.00% final_err=0.0469
+  [Eval] steps=557056 reward=126.982 succ=100.00% final_err=0.0471
+  [Eval] steps=561152 reward=129.941 succ=100.00% final_err=0.0476
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=565248 reward=131.423 succ=100.00% final_err=0.0460
+Update 140/488 | Steps 573440 | TrainRew 1.002 | Loss 565.6802 | SuccRate 100.00%
+  [Eval] steps=573440 reward=119.322 succ=100.00% final_err=0.0469
+  [Eval] steps=577536 reward=138.796 succ=100.00% final_err=0.0464
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/best.pth
+  [Eval] steps=581632 reward=121.696 succ=100.00% final_err=0.0472
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=585728 reward=111.432 succ=100.00% final_err=0.0474
+  [Eval] steps=593920 reward=126.186 succ=100.00% final_err=0.0466
+  [Eval] steps=598016 reward=126.868 succ=100.00% final_err=0.0457
+  [Eval] steps=602112 reward=129.940 succ=100.00% final_err=0.0467
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=606208 reward=115.923 succ=100.00% final_err=0.0468
+  [Eval] steps=610304 reward=126.356 succ=100.00% final_err=0.0459
+Update 150/488 | Steps 614400 | TrainRew 1.009 | Loss 568.1936 | SuccRate 100.00%
+  [Eval] steps=618496 reward=127.201 succ=100.00% final_err=0.0465
+  [Eval] steps=622592 reward=120.677 succ=100.00% final_err=0.0463
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=626688 reward=127.722 succ=100.00% final_err=0.0478
+  [Eval] steps=630784 reward=117.798 succ=100.00% final_err=0.0475
+  [Eval] steps=638976 reward=133.615 succ=100.00% final_err=0.0467
+  [Eval] steps=643072 reward=134.872 succ=100.00% final_err=0.0466
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=647168 reward=135.435 succ=100.00% final_err=0.0463
+  [Eval] steps=651264 reward=122.403 succ=100.00% final_err=0.0491
+Update 160/488 | Steps 655360 | TrainRew 0.912 | Loss 468.7504 | SuccRate 100.00%
+  [Eval] steps=655360 reward=129.441 succ=100.00% final_err=0.0464
+  [Eval] steps=663552 reward=124.814 succ=100.00% final_err=0.0467
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=667648 reward=130.680 succ=100.00% final_err=0.0470
+  [Eval] steps=671744 reward=123.482 succ=100.00% final_err=0.0461
+  [Eval] steps=675840 reward=126.136 succ=100.00% final_err=0.0461
+  [Eval] steps=684032 reward=122.914 succ=100.00% final_err=0.0478
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=688128 reward=128.441 succ=100.00% final_err=0.0475
+  [Eval] steps=692224 reward=124.318 succ=100.00% final_err=0.0465
+Update 170/488 | Steps 696320 | TrainRew 1.085 | Loss 405.2245 | SuccRate 100.00%
+  [Eval] steps=696320 reward=136.881 succ=100.00% final_err=0.0474
+  [Eval] steps=700416 reward=120.277 succ=100.00% final_err=0.0467
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=708608 reward=128.213 succ=100.00% final_err=0.0473
+  [Eval] steps=712704 reward=126.054 succ=100.00% final_err=0.0477
+  [Eval] steps=716800 reward=115.004 succ=100.00% final_err=0.0474
+  [Eval] steps=720896 reward=124.546 succ=100.00% final_err=0.0470
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=729088 reward=126.211 succ=100.00% final_err=0.0467
+  [Eval] steps=733184 reward=123.929 succ=100.00% final_err=0.0467
+Update 180/488 | Steps 737280 | TrainRew 0.987 | Loss 337.4397 | SuccRate 100.00%
+  [Eval] steps=737280 reward=124.593 succ=100.00% final_err=0.0471
+  [Eval] steps=741376 reward=117.433 succ=100.00% final_err=0.0468
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=745472 reward=134.100 succ=100.00% final_err=0.0456
+  [Eval] steps=753664 reward=133.209 succ=100.00% final_err=0.0465
+  [Eval] steps=757760 reward=108.566 succ=100.00% final_err=0.0468
+  [Eval] steps=761856 reward=136.256 succ=100.00% final_err=0.0457
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=765952 reward=124.511 succ=100.00% final_err=0.0462
+  [Eval] steps=770048 reward=131.723 succ=100.00% final_err=0.0475
+Update 190/488 | Steps 778240 | TrainRew 0.901 | Loss 271.9378 | SuccRate 100.00%
+  [Eval] steps=778240 reward=130.814 succ=100.00% final_err=0.0481
+  [Eval] steps=782336 reward=124.553 succ=100.00% final_err=0.0463
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=786432 reward=124.802 succ=100.00% final_err=0.0467
+  [Eval] steps=790528 reward=132.846 succ=100.00% final_err=0.0465
+  [Eval] steps=798720 reward=125.315 succ=100.00% final_err=0.0461
+  [Eval] steps=802816 reward=123.557 succ=100.00% final_err=0.0478
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=806912 reward=130.737 succ=100.00% final_err=0.0464
+  [Eval] steps=811008 reward=133.672 succ=100.00% final_err=0.0470
+  [Eval] steps=815104 reward=132.753 succ=100.00% final_err=0.0477
+Update 200/488 | Steps 819200 | TrainRew 1.117 | Loss 366.2123 | SuccRate 100.00%
+  [Eval] steps=823296 reward=132.498 succ=100.00% final_err=0.0464
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=827392 reward=136.473 succ=100.00% final_err=0.0468
+  [Eval] steps=831488 reward=137.955 succ=100.00% final_err=0.0459
+  [Eval] steps=835584 reward=118.112 succ=100.00% final_err=0.0475
+  [Eval] steps=843776 reward=124.368 succ=100.00% final_err=0.0475
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=847872 reward=136.454 succ=100.00% final_err=0.0455
+  [Eval] steps=851968 reward=126.272 succ=100.00% final_err=0.0485
+  [Eval] steps=856064 reward=125.674 succ=100.00% final_err=0.0475
+Update 210/488 | Steps 860160 | TrainRew 1.021 | Loss 223.4999 | SuccRate 100.00%
+  [Eval] steps=860160 reward=131.017 succ=100.00% final_err=0.0456
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=868352 reward=133.075 succ=100.00% final_err=0.0485
+  [Eval] steps=872448 reward=130.344 succ=100.00% final_err=0.0472
+  [Eval] steps=876544 reward=124.926 succ=100.00% final_err=0.0467
+  [Eval] steps=880640 reward=136.247 succ=100.00% final_err=0.0461
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=888832 reward=142.520 succ=100.00% final_err=0.0461
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/best.pth
+  [Eval] steps=892928 reward=128.590 succ=100.00% final_err=0.0473
+  [Eval] steps=897024 reward=125.049 succ=100.00% final_err=0.0480
+Update 220/488 | Steps 901120 | TrainRew 1.129 | Loss 194.4117 | SuccRate 100.00%
+  [Eval] steps=901120 reward=131.355 succ=100.00% final_err=0.0463
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=905216 reward=130.704 succ=100.00% final_err=0.0465
+  [Eval] steps=913408 reward=134.055 succ=100.00% final_err=0.0470
+  [Eval] steps=917504 reward=131.527 succ=100.00% final_err=0.0463
+  [Eval] steps=921600 reward=146.058 succ=100.00% final_err=0.0470
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/best.pth
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=925696 reward=139.430 succ=100.00% final_err=0.0466
+  [Eval] steps=933888 reward=137.691 succ=100.00% final_err=0.0469
+  [Eval] steps=937984 reward=130.652 succ=100.00% final_err=0.0457
+Update 230/488 | Steps 942080 | TrainRew 0.927 | Loss 292.8320 | SuccRate 100.00%
+  [Eval] steps=942080 reward=118.054 succ=100.00% final_err=0.0470
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=946176 reward=134.616 succ=100.00% final_err=0.0479
+  [Eval] steps=950272 reward=131.853 succ=100.00% final_err=0.0466
+  [Eval] steps=958464 reward=140.548 succ=100.00% final_err=0.0465
+  [Eval] steps=962560 reward=122.317 succ=100.00% final_err=0.0455
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=966656 reward=134.847 succ=100.00% final_err=0.0454
+  [Eval] steps=970752 reward=140.391 succ=100.00% final_err=0.0456
+  [Eval] steps=978944 reward=133.957 succ=100.00% final_err=0.0457
+Update 240/488 | Steps 983040 | TrainRew 1.026 | Loss 154.5170 | SuccRate 100.00%
+  [Eval] steps=983040 reward=78.263 succ=90.00% final_err=0.0479
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=987136 reward=122.992 succ=100.00% final_err=0.0475
+  [Eval] steps=991232 reward=135.539 succ=100.00% final_err=0.0471
+  [Eval] steps=995328 reward=139.480 succ=100.00% final_err=0.0466
+  [Eval] steps=1003520 reward=135.312 succ=100.00% final_err=0.0477
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=1007616 reward=129.827 succ=100.00% final_err=0.0461
+  [Eval] steps=1011712 reward=126.145 succ=100.00% final_err=0.0471
+  [Eval] steps=1015808 reward=135.268 succ=100.00% final_err=0.0479
+Update 250/488 | Steps 1024000 | TrainRew 1.064 | Loss 296.6993 | SuccRate 100.00%
+  [Eval] steps=1024000 reward=116.812 succ=100.00% final_err=0.0461
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=1028096 reward=125.617 succ=100.00% final_err=0.0469
+  [Eval] steps=1032192 reward=111.671 succ=100.00% final_err=0.0481
+  [Eval] steps=1036288 reward=123.419 succ=100.00% final_err=0.0476
+  [Eval] steps=1040384 reward=121.985 succ=100.00% final_err=0.0481
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=1048576 reward=141.873 succ=100.00% final_err=0.0467
+  [Eval] steps=1052672 reward=141.107 succ=100.00% final_err=0.0457
+  [Eval] steps=1056768 reward=141.928 succ=100.00% final_err=0.0459
+  [Eval] steps=1060864 reward=127.480 succ=100.00% final_err=0.0469
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+Update 260/488 | Steps 1064960 | TrainRew 1.082 | Loss 300.1844 | SuccRate 100.00%
+  [Eval] steps=1069056 reward=141.567 succ=100.00% final_err=0.0471
+  [Eval] steps=1073152 reward=137.473 succ=100.00% final_err=0.0461
+  [Eval] steps=1077248 reward=130.044 succ=100.00% final_err=0.0452
+  [Eval] steps=1081344 reward=133.277 succ=100.00% final_err=0.0471
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=1085440 reward=126.027 succ=100.00% final_err=0.0476
+  [Eval] steps=1093632 reward=137.871 succ=100.00% final_err=0.0463
+  [Eval] steps=1097728 reward=129.984 succ=100.00% final_err=0.0489
+  [Eval] steps=1101824 reward=135.649 succ=100.00% final_err=0.0464
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+Update 270/488 | Steps 1105920 | TrainRew 0.936 | Loss 271.3854 | SuccRate 100.00%
+  [Eval] steps=1105920 reward=145.478 succ=100.00% final_err=0.0469
+  [Eval] steps=1110016 reward=132.701 succ=100.00% final_err=0.0470
+  [Eval] steps=1118208 reward=125.420 succ=100.00% final_err=0.0471
+  [Eval] steps=1122304 reward=131.697 succ=100.00% final_err=0.0469
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=1126400 reward=124.846 succ=100.00% final_err=0.0466
+  [Eval] steps=1130496 reward=130.506 succ=100.00% final_err=0.0465
+  [Eval] steps=1138688 reward=122.352 succ=100.00% final_err=0.0479
+  [Eval] steps=1142784 reward=134.696 succ=100.00% final_err=0.0465
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+Update 280/488 | Steps 1146880 | TrainRew 1.250 | Loss 140.2856 | SuccRate 100.00%
+  [Eval] steps=1146880 reward=125.825 succ=100.00% final_err=0.0464
+  [Eval] steps=1150976 reward=133.658 succ=100.00% final_err=0.0444
+  [Eval] steps=1155072 reward=138.446 succ=100.00% final_err=0.0478
+  [Eval] steps=1163264 reward=136.695 succ=100.00% final_err=0.0476
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=1167360 reward=128.366 succ=100.00% final_err=0.0459
+  [Eval] steps=1171456 reward=140.596 succ=100.00% final_err=0.0474
+  [Eval] steps=1175552 reward=137.713 succ=100.00% final_err=0.0461
+  [Eval] steps=1183744 reward=128.136 succ=100.00% final_err=0.0455
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+Update 290/488 | Steps 1187840 | TrainRew 1.075 | Loss 258.3146 | SuccRate 100.00%
+  [Eval] steps=1187840 reward=132.232 succ=100.00% final_err=0.0463
+  [Eval] steps=1191936 reward=124.804 succ=100.00% final_err=0.0473
+  [Eval] steps=1196032 reward=126.752 succ=100.00% final_err=0.0471
+  [Eval] steps=1200128 reward=146.146 succ=100.00% final_err=0.0463
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/best.pth
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=1208320 reward=131.777 succ=100.00% final_err=0.0472
+  [Eval] steps=1212416 reward=128.531 succ=100.00% final_err=0.0475
+  [Eval] steps=1216512 reward=123.267 succ=100.00% final_err=0.0471
+  [Eval] steps=1220608 reward=129.622 succ=100.00% final_err=0.0469
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+Update 300/488 | Steps 1228800 | TrainRew 1.255 | Loss 197.4683 | SuccRate 100.00%
+  [Eval] steps=1228800 reward=122.052 succ=100.00% final_err=0.0472
+  [Eval] steps=1232896 reward=140.414 succ=100.00% final_err=0.0458
+  [Eval] steps=1236992 reward=124.667 succ=100.00% final_err=0.0456
+  [Eval] steps=1241088 reward=120.911 succ=100.00% final_err=0.0467
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=1245184 reward=118.646 succ=100.00% final_err=0.0456
+  [Eval] steps=1253376 reward=136.795 succ=100.00% final_err=0.0455
+  [Eval] steps=1257472 reward=126.798 succ=100.00% final_err=0.0455
+  [Eval] steps=1261568 reward=140.441 succ=100.00% final_err=0.0461
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=1265664 reward=119.731 succ=100.00% final_err=0.0456
+Update 310/488 | Steps 1269760 | TrainRew 1.119 | Loss 174.2976 | SuccRate 100.00%
+  [Eval] steps=1273856 reward=125.012 succ=100.00% final_err=0.0456
+  [Eval] steps=1277952 reward=129.402 succ=100.00% final_err=0.0457
+  [Eval] steps=1282048 reward=130.322 succ=100.00% final_err=0.0451
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=1286144 reward=128.413 succ=100.00% final_err=0.0463
+  [Eval] steps=1290240 reward=127.177 succ=100.00% final_err=0.0468
+  [Eval] steps=1298432 reward=122.245 succ=100.00% final_err=0.0457
+  [Eval] steps=1302528 reward=129.850 succ=100.00% final_err=0.0465
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=1306624 reward=118.682 succ=100.00% final_err=0.0457
+Update 320/488 | Steps 1310720 | TrainRew 1.142 | Loss 155.9181 | SuccRate 100.00%
+  [Eval] steps=1310720 reward=135.963 succ=100.00% final_err=0.0453
+  [Eval] steps=1318912 reward=135.186 succ=100.00% final_err=0.0465
+  [Eval] steps=1323008 reward=119.001 succ=100.00% final_err=0.0474
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=1327104 reward=127.531 succ=100.00% final_err=0.0471
+  [Eval] steps=1331200 reward=133.478 succ=100.00% final_err=0.0448
+  [Eval] steps=1335296 reward=138.449 succ=100.00% final_err=0.0464
+  [Eval] steps=1343488 reward=128.643 succ=100.00% final_err=0.0465
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=1347584 reward=130.557 succ=100.00% final_err=0.0473
+Update 330/488 | Steps 1351680 | TrainRew 1.151 | Loss 198.0436 | SuccRate 100.00%
+  [Eval] steps=1351680 reward=115.852 succ=100.00% final_err=0.0450
+  [Eval] steps=1355776 reward=127.261 succ=100.00% final_err=0.0456
+  [Eval] steps=1363968 reward=131.710 succ=100.00% final_err=0.0459
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=1368064 reward=132.353 succ=100.00% final_err=0.0465
+  [Eval] steps=1372160 reward=130.540 succ=100.00% final_err=0.0470
+  [Eval] steps=1376256 reward=128.015 succ=100.00% final_err=0.0459
+  [Eval] steps=1380352 reward=129.912 succ=100.00% final_err=0.0456
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=1388544 reward=133.298 succ=100.00% final_err=0.0463
+Update 340/488 | Steps 1392640 | TrainRew 1.156 | Loss 227.4987 | SuccRate 100.00%
+  [Eval] steps=1392640 reward=128.894 succ=100.00% final_err=0.0459
+  [Eval] steps=1396736 reward=121.610 succ=100.00% final_err=0.0465
+  [Eval] steps=1400832 reward=128.120 succ=100.00% final_err=0.0475
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=1409024 reward=137.303 succ=100.00% final_err=0.0477
+  [Eval] steps=1413120 reward=137.979 succ=100.00% final_err=0.0467
+  [Eval] steps=1417216 reward=128.651 succ=100.00% final_err=0.0455
+  [Eval] steps=1421312 reward=135.620 succ=100.00% final_err=0.0477
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=1425408 reward=133.976 succ=100.00% final_err=0.0447
+Update 350/488 | Steps 1433600 | TrainRew 1.151 | Loss 250.7896 | SuccRate 100.00%
+  [Eval] steps=1433600 reward=137.638 succ=100.00% final_err=0.0465
+  [Eval] steps=1437696 reward=136.940 succ=100.00% final_err=0.0473
+  [Eval] steps=1441792 reward=126.703 succ=100.00% final_err=0.0463
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=1445888 reward=124.760 succ=100.00% final_err=0.0463
+  [Eval] steps=1454080 reward=124.847 succ=100.00% final_err=0.0472
+  [Eval] steps=1458176 reward=138.694 succ=100.00% final_err=0.0476
+  [Eval] steps=1462272 reward=124.411 succ=100.00% final_err=0.0461
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=1466368 reward=132.244 succ=100.00% final_err=0.0473
+  [Eval] steps=1470464 reward=132.113 succ=100.00% final_err=0.0455
+Update 360/488 | Steps 1474560 | TrainRew 1.189 | Loss 181.8999 | SuccRate 100.00%
+  [Eval] steps=1478656 reward=134.469 succ=100.00% final_err=0.0456
+  [Eval] steps=1482752 reward=137.050 succ=100.00% final_err=0.0447
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=1486848 reward=134.081 succ=100.00% final_err=0.0473
+  [Eval] steps=1490944 reward=133.448 succ=100.00% final_err=0.0460
+  [Eval] steps=1495040 reward=139.384 succ=100.00% final_err=0.0460
+  [Eval] steps=1503232 reward=135.476 succ=100.00% final_err=0.0477
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=1507328 reward=127.080 succ=100.00% final_err=0.0455
+  [Eval] steps=1511424 reward=127.749 succ=100.00% final_err=0.0467
+Update 370/488 | Steps 1515520 | TrainRew 1.170 | Loss 244.8720 | SuccRate 100.00%
+  [Eval] steps=1515520 reward=129.305 succ=100.00% final_err=0.0470
+  [Eval] steps=1523712 reward=130.668 succ=100.00% final_err=0.0451
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=1527808 reward=123.543 succ=100.00% final_err=0.0464
+  [Eval] steps=1531904 reward=140.645 succ=100.00% final_err=0.0477
+  [Eval] steps=1536000 reward=135.045 succ=100.00% final_err=0.0466
+  [Eval] steps=1540096 reward=134.473 succ=100.00% final_err=0.0470
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=1548288 reward=151.132 succ=100.00% final_err=0.0453
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/best.pth
+  [Eval] steps=1552384 reward=139.518 succ=100.00% final_err=0.0475
+Update 380/488 | Steps 1556480 | TrainRew 1.168 | Loss 139.7113 | SuccRate 100.00%
+  [Eval] steps=1556480 reward=139.536 succ=100.00% final_err=0.0461
+  [Eval] steps=1560576 reward=144.224 succ=100.00% final_err=0.0452
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=1568768 reward=131.947 succ=100.00% final_err=0.0456
+  [Eval] steps=1572864 reward=136.284 succ=100.00% final_err=0.0478
+  [Eval] steps=1576960 reward=144.236 succ=100.00% final_err=0.0452
+  [Eval] steps=1581056 reward=127.502 succ=100.00% final_err=0.0476
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=1585152 reward=130.039 succ=100.00% final_err=0.0461
+  [Eval] steps=1593344 reward=144.846 succ=100.00% final_err=0.0448
+Update 390/488 | Steps 1597440 | TrainRew 1.098 | Loss 112.7926 | SuccRate 100.00%
+  [Eval] steps=1597440 reward=138.915 succ=100.00% final_err=0.0464
+  [Eval] steps=1601536 reward=142.095 succ=100.00% final_err=0.0455
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=1605632 reward=133.755 succ=100.00% final_err=0.0463
+  [Eval] steps=1613824 reward=136.147 succ=100.00% final_err=0.0456
+  [Eval] steps=1617920 reward=146.746 succ=100.00% final_err=0.0460
+  [Eval] steps=1622016 reward=123.086 succ=100.00% final_err=0.0466
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=1626112 reward=138.056 succ=100.00% final_err=0.0455
+  [Eval] steps=1630208 reward=129.101 succ=100.00% final_err=0.0465
+Update 400/488 | Steps 1638400 | TrainRew 1.206 | Loss 121.1138 | SuccRate 100.00%
+  [Eval] steps=1638400 reward=130.793 succ=100.00% final_err=0.0464
+  [Eval] steps=1642496 reward=139.245 succ=100.00% final_err=0.0467
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=1646592 reward=131.749 succ=100.00% final_err=0.0454
+  [Eval] steps=1650688 reward=140.725 succ=100.00% final_err=0.0457
+  [Eval] steps=1658880 reward=126.255 succ=100.00% final_err=0.0459
+  [Eval] steps=1662976 reward=138.602 succ=100.00% final_err=0.0474
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=1667072 reward=131.216 succ=100.00% final_err=0.0453
+  [Eval] steps=1671168 reward=128.800 succ=100.00% final_err=0.0463
+  [Eval] steps=1675264 reward=126.270 succ=100.00% final_err=0.0446
+Update 410/488 | Steps 1679360 | TrainRew 1.267 | Loss 149.2178 | SuccRate 100.00%
+  [Eval] steps=1683456 reward=143.924 succ=100.00% final_err=0.0435
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=1687552 reward=131.111 succ=100.00% final_err=0.0459
+  [Eval] steps=1691648 reward=126.899 succ=100.00% final_err=0.0449
+  [Eval] steps=1695744 reward=134.673 succ=100.00% final_err=0.0456
+  [Eval] steps=1703936 reward=133.045 succ=100.00% final_err=0.0461
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=1708032 reward=136.403 succ=100.00% final_err=0.0457
+  [Eval] steps=1712128 reward=145.951 succ=100.00% final_err=0.0462
+  [Eval] steps=1716224 reward=127.810 succ=100.00% final_err=0.0457
+Update 420/488 | Steps 1720320 | TrainRew 1.169 | Loss 180.2053 | SuccRate 100.00%
+  [Eval] steps=1720320 reward=140.244 succ=100.00% final_err=0.0457
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=1728512 reward=127.760 succ=100.00% final_err=0.0453
+  [Eval] steps=1732608 reward=142.002 succ=100.00% final_err=0.0462
+  [Eval] steps=1736704 reward=146.117 succ=100.00% final_err=0.0469
+  [Eval] steps=1740800 reward=140.110 succ=100.00% final_err=0.0449
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=1748992 reward=125.940 succ=100.00% final_err=0.0455
+  [Eval] steps=1753088 reward=121.198 succ=100.00% final_err=0.0447
+  [Eval] steps=1757184 reward=128.954 succ=100.00% final_err=0.0456
+Update 430/488 | Steps 1761280 | TrainRew 1.201 | Loss 106.6422 | SuccRate 100.00%
+  [Eval] steps=1761280 reward=146.979 succ=100.00% final_err=0.0456
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=1765376 reward=143.526 succ=100.00% final_err=0.0451
+  [Eval] steps=1773568 reward=135.486 succ=100.00% final_err=0.0466
+  [Eval] steps=1777664 reward=122.843 succ=100.00% final_err=0.0466
+  [Eval] steps=1781760 reward=135.690 succ=100.00% final_err=0.0459
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=1785856 reward=132.822 succ=100.00% final_err=0.0460
+  [Eval] steps=1794048 reward=130.207 succ=100.00% final_err=0.0457
+  [Eval] steps=1798144 reward=142.484 succ=100.00% final_err=0.0461
+Update 440/488 | Steps 1802240 | TrainRew 1.261 | Loss 112.5599 | SuccRate 100.00%
+  [Eval] steps=1802240 reward=135.592 succ=100.00% final_err=0.0465
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=1806336 reward=136.850 succ=100.00% final_err=0.0449
+  [Eval] steps=1810432 reward=142.311 succ=100.00% final_err=0.0455
+  [Eval] steps=1818624 reward=144.696 succ=100.00% final_err=0.0444
+  [Eval] steps=1822720 reward=115.328 succ=100.00% final_err=0.0456
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=1826816 reward=125.890 succ=100.00% final_err=0.0462
+  [Eval] steps=1830912 reward=130.120 succ=100.00% final_err=0.0460
+  [Eval] steps=1835008 reward=138.506 succ=100.00% final_err=0.0461
+Update 450/488 | Steps 1843200 | TrainRew 1.258 | Loss 69.5688 | SuccRate 100.00%
+  [Eval] steps=1843200 reward=132.428 succ=100.00% final_err=0.0464
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=1847296 reward=127.193 succ=100.00% final_err=0.0467
+  [Eval] steps=1851392 reward=134.504 succ=100.00% final_err=0.0471
+  [Eval] steps=1855488 reward=122.579 succ=100.00% final_err=0.0456
+  [Eval] steps=1863680 reward=141.506 succ=100.00% final_err=0.0455
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=1867776 reward=133.106 succ=100.00% final_err=0.0456
+  [Eval] steps=1871872 reward=142.894 succ=100.00% final_err=0.0456
+  [Eval] steps=1875968 reward=132.517 succ=100.00% final_err=0.0455
+  [Eval] steps=1880064 reward=142.072 succ=100.00% final_err=0.0452
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+Update 460/488 | Steps 1884160 | TrainRew 1.324 | Loss 119.6879 | SuccRate 100.00%
+  [Eval] steps=1888256 reward=139.417 succ=100.00% final_err=0.0457
+  [Eval] steps=1892352 reward=133.136 succ=100.00% final_err=0.0467
+  [Eval] steps=1896448 reward=133.179 succ=100.00% final_err=0.0464
+  [Eval] steps=1900544 reward=138.428 succ=100.00% final_err=0.0457
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=1908736 reward=137.556 succ=100.00% final_err=0.0471
+  [Eval] steps=1912832 reward=123.606 succ=100.00% final_err=0.0463
+  [Eval] steps=1916928 reward=143.352 succ=100.00% final_err=0.0457
+  [Eval] steps=1921024 reward=141.164 succ=100.00% final_err=0.0457
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+Update 470/488 | Steps 1925120 | TrainRew 1.206 | Loss 99.1731 | SuccRate 100.00%
+  [Eval] steps=1925120 reward=134.482 succ=100.00% final_err=0.0452
+  [Eval] steps=1933312 reward=136.737 succ=100.00% final_err=0.0466
+  [Eval] steps=1937408 reward=137.186 succ=100.00% final_err=0.0464
+  [Eval] steps=1941504 reward=143.081 succ=100.00% final_err=0.0453
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=1945600 reward=131.751 succ=100.00% final_err=0.0455
+  [Eval] steps=1953792 reward=143.074 succ=100.00% final_err=0.0470
+  [Eval] steps=1957888 reward=130.658 succ=100.00% final_err=0.0459
+  [Eval] steps=1961984 reward=136.864 succ=100.00% final_err=0.0468
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+Update 480/488 | Steps 1966080 | TrainRew 1.321 | Loss 89.6713 | SuccRate 100.00%
+  [Eval] steps=1966080 reward=134.729 succ=100.00% final_err=0.0456
+  [Eval] steps=1970176 reward=131.485 succ=100.00% final_err=0.0459
+  [Eval] steps=1978368 reward=131.488 succ=100.00% final_err=0.0463
+  [Eval] steps=1982464 reward=131.487 succ=100.00% final_err=0.0454
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/latest.pth
+  [Eval] steps=1986560 reward=132.859 succ=100.00% final_err=0.0476
+  [Eval] steps=1990656 reward=127.575 succ=100.00% final_err=0.0461
+  [Eval] steps=1998848 reward=130.867 succ=100.00% final_err=0.0464
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/checkpoints/final.pth
+Saved training curves: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_heading_terminal_Moretight/training_curves.png
+Training finished.

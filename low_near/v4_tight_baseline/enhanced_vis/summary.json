@@ -1,0 +1,10 @@
+{
+  "experiment": "v4_tight_baseline",
+  "episodes": 50,
+  "success_rate": 1.0,
+  "median_final_error": 0.04710923161175637,
+  "mean_final_error": 0.04648553697336043,
+  "median_steps": 79,
+  "mean_init_speed": 0.0,
+  "init_velocity_range": 0.0
+}

@@ -1,0 +1,10 @@
+Device: cuda
+Loaded 482279 transitions
+  reward: [-76.3, 105.5], mean=-6.65, std=17.88
+  Reward normalized: mean=-6.65, std=17.88
+  After: [-3.89, 6.27], mean=-0.0000
+  Split: train=434052, val=48227
+  Target Q clip: [-1500.0, 1500.0]
+Total params: 119,428
+
+AWAC: 2000000 steps, beta=1.0, gamma=0.99

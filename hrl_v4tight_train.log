@@ -1,0 +1,16 @@
+nohup: ignoring input
+Using device: cuda
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:236: UserWarning: [33mWARN: Box low's precision lowered by casting to float32, current low.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:306: UserWarning: [33mWARN: Box high's precision lowered by casting to float32, current high.dtype=float64[0m
+  gym.logger.warn(
+[Asymmetry] pursuer_v_max=1.500, evader_v_max=2.500 (need pursuer<evader) | pursuer_a_max=2.000, evader_a_max=1.000 (need pursuer>evader)
+[LowLevelLoad] ignored unexpected keys: ['critic.0.weight', 'critic.0.bias', 'critic.2.weight', 'critic.2.bias', 'critic.4.weight', 'critic.4.bias']
+Low-level actor hidden inferred: (64, 64)
+Total timesteps: 500000
+Steps/update: 256
+Num updates: 1953
+Update 10/1953 | Steps 2560 | FPS 17.9 | TrainRew -1.595 | Loss 2763.1413 | Succ 4.88%
+Update 20/1953 | Steps 5120 | FPS 18.0 | TrainRew -0.013 | Loss 1547.5691 | Succ 4.88%
+  [Eval] steps=5120 mean_reward=-80.910 success_rate=0.00%
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/checkpoints/hrl_v4tight_r07_s100/best.pth

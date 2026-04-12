@@ -1,0 +1,28 @@
+# 二维非对称追逃 (速度 vs 加速度) 配置
+# 研究：利用多维度优势（机动性/地形）弥补速度劣势
+
+env:
+  pursuer_v_max: 1.0   # 追击者最大速度 < 逃脱者
+  pursuer_a_max: 2.0   # 追击者最大加速度 > 逃脱者
+  evader_v_max: 1.5
+  evader_a_max: 0.8
+  catch_radius: 0.4
+  world_size: 10.0
+  dt: 0.05
+  max_steps: 1000
+
+training:
+  total_timesteps: 1000000
+  n_envs: 8
+  n_steps: 128
+  batch_size: 64
+  learning_rate: 3.0e-4
+  gamma: 0.99
+  gae_lambda: 0.95
+  clip_range: 0.2
+  ent_coef: 0.01
+
+hrl:
+  low_level_steps: 5
+  waypoint_dist: 2.0
+  num_high_actions: 9

@@ -1,0 +1,8 @@
+Device: cuda
+Loaded 482279 transitions from data/expert_trajectories/expert_dataset.npz
+  ? episodes, 0 strategies
+Offline PPO: 2000 iterations, 482279 transitions
+  Iter 1/2000 | loss=14314.0033 actor=-0.1125 critic=28628.2686 ent=1.840 (176s)
+Saved: /root/autodl-tmp/pursue_20260302/checkpoints/offline_ppo_v2_2k/best.pth
+Saved: /root/autodl-tmp/pursue_20260302/checkpoints/offline_ppo_v2_2k/best.pth
+Saved: /root/autodl-tmp/pursue_20260302/checkpoints/offline_ppo_v2_2k/best.pth

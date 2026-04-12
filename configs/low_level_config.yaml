@@ -1,0 +1,380 @@
+# =============================================================================    
+# 底层控制网络训练配置    
+# =============================================================================    
+    
+training:    
+  # 基本训练参数    
+  total_timesteps: 10000000     # 总训练步数    
+  n_envs: 8                     # 并行环境数量    
+  n_steps: 2048                 # 每次更新的步数    
+  batch_size: 512               # mini-batch大小 - 增加以稳定训练    
+  n_epochs: 4                   # 每次更新的epoch数    
+      
+  # 学习率配置    
+  learning_rate: 5.0e-5         # 降低学习率以减少震荡    
+  lr_schedule: "linear"         # "constant", "linear", "cosine"    
+  lr_end: 1.0e-6                # 最终学习率 - 降低    
+      
+  # PPO超参数    
+  gamma: 0.99                   # 折扣因子    
+  gae_lambda: 0.95              # GAE参数    
+  clip_range: 0.2               # PPO裁剪范围    
+  clip_range_vf: null           # 价值函数裁剪（null表示不裁剪）    
+  ent_coef: 0.08                # 熵系数（增加探索，避免过早收敛）    
+  vf_coef: 0.5                  # 价值函数系数    
+  max_grad_norm: 0.5            # 梯度裁剪    
+      
+  # 早停和保存    
+  save_freq: 50000              # 保存频率（步数）    
+  eval_freq: 10000              # 评估频率    
+  eval_episodes: 20             # 评估episode数    
+  early_stop_patience: 50       # 早停耐心值    
+  early_stop_min_delta: 0.01    # 早停最小改善阈值    
+    
+# =============================================================================    
+# 网络架构配置    
+# =============================================================================    
+    
+network:    
+  # Encoder/Decoder（可选，用于加深网络）  
+  encoder:  
+    hidden_sizes: [128]  
+  decoder:  
+    hidden_sizes: [128]  
+  
+  # 特征提取器    
+  feature_extractor:    
+    hidden_sizes: [256, 256]    # 全连接层尺寸    
+    activation: "relu"          # 激活函数    
+    use_layer_norm: true        # 是否使用LayerNorm    
+        
+  # LSTM配置    
+  lstm:    
+    hidden_size: 256    
+    num_layers: 2    
+    dropout: 0.0                # LSTM dropout    
+        
+  # Actor和Critic头    
+  actor_head:    
+    hidden_sizes: [128]    
+        
+  critic_head:    
+    hidden_sizes: [128]    
+    
+# =============================================================================    
+# 底层动作空间配置    
+# =============================================================================    
+    
+action_space:    
+  type: "discrete"    
+  num_actions: 13    
+      
+  # 动作定义（与 IntegratedController.ACTION_NAMES 一致）  
+  actions:    
+    0: "hover"    
+    1: "surge_forward"    
+    2: "surge_backward"    
+    3: "sway_left"    
+    4: "sway_right"    
+    5: "heave_up"    
+    6: "heave_down"    
+    7: "yaw_left"    
+    8: "yaw_right"    
+    9: "pitch_up"    
+    10: "pitch_down"    
+    11: "roll_left"    
+    12: "roll_right"    
+  
+  # 动作控制模式  
+  # distance: 每步动作对应固定位移（通过速度环换算为推力）  
+  # force: 直接给定力（兼容旧版本）  
+  translation_mode: "distance"  
+  
+  # 位置动作时的航向策略  
+  # lock: 固定当前yaw  
+  # target: 对准目标方向  
+  translation_heading: "target"  
+  heading_max_delta: 0.12        # 每步最大航向变化 (rad)  
+  
+  # 每步动作对应的位移 (m)，在 dt 步长内换算为目标速度  
+  action_distance:  
+    surge: 0.05  
+    sway: 0.05  
+    heave: 0.04  
+  
+  # 动作角度变化幅值 (rad)  
+  action_angle_delta:  
+    yaw: 0.1  
+    pitch: 0.1  
+    roll: 0.1  
+  
+  # 线速度控制器（将目标速度映射为力）  
+  velocity_controller:  
+    kp: [20.0, 20.0, 25.0]  
+    kd: [6.0, 6.0, 8.0]  
+    max_force: [30.0, 30.0, 30.0]  
+  
+  # 目标附近减速，避免冲过目标后绕圈  
+  goal_slowdown:  
+    enabled: true  
+    radius: 1.0  
+    min_scale: 0.2  
+    
+  # =============================================================================  
+  # 推进器配置 - 8推进器布局  
+  #  
+  # 俯视图 (x向前, y向左):  
+  #  
+  #          前(x+)  
+  #      T1 ↗    ↖ T4      水平推进器(45度角)  
+  #        T2  T6          垂直推进器  
+  #          [ROV]  
+  #        T3  T7          垂直推进器    
+  #      T5 ↖    ↗ T8      水平推进器(45度角)  
+  #          后(x-)  
+  #  
+  # 功能分组:  
+  #   T1, T4, T5, T8: 水平推进器 → Fx, Fy, Mz  
+  #   T2, T3, T6, T7: 垂直推进器 → Fz, Mx, My  
+  #  
+  # 推进器顺序: [T1, T2, T3, T4, T5, T6, T7, T8]  
+  # =============================================================================  
+    
+  # =========================================================================  
+  # 注意：action_thrust_mapping 已被双环PID控制器替代！  
+  #   
+  # 现在的控制流程：  
+  #   action → IntegratedController.compute_thrust() → 8维推力  
+  #  
+  # 以下映射仅作为参考/备用，不再直接使用  
+  # =========================================================================  
+    
+  action_thrust_mapping:    
+    # 格式: [T1, T2, T3, T4, T5, T6, T7, T8] (归一化值 -1.0 ~ 1.0)  
+      
+    # 悬停 - 垂直推进器轻微向上抵消负浮力  
+    hover: [0.0, 0.1, 0.1, 0.0, 0.0, 0.1, 0.1, 0.0]  
+      
+    # 前进/后退 - 水平推进器 T1,T4,T5,T8 协同  
+    surge_forward:  [1.0, 0.0, 0.0, 1.0, -1.0, 0.0, 0.0, -1.0]  
+    surge_backward: [-0.7, 0.0, 0.0, -0.7, 0.7, 0.0, 0.0, 0.7]  
+      
+    # 左右平移 - 水平推进器差动  
+    sway_left:  [1.0, 0.0, 0.0, -1.0, 1.0, 0.0, 0.0, -1.0]  
+    sway_right: [-1.0, 0.0, 0.0, 1.0, -1.0, 0.0, 0.0, 1.0]  
+      
+    # 上浮/下潜 - 垂直推进器 T2,T3,T6,T7 协同  
+    heave_up:   [0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0]  
+    heave_down: [0.0, -0.7, -0.7, 0.0, 0.0, -0.7, -0.7, 0.0]  
+      
+    # 偏航 - 水平推进器产生Mz力矩  
+    yaw_left:  [0.7, 0.0, 0.0, 0.7, 0.7, 0.0, 0.0, 0.7]  
+    yaw_right: [-0.7, 0.0, 0.0, -0.7, -0.7, 0.0, 0.0, -0.7]  
+      
+    # 俯仰 - 垂直推进器差动产生My力矩  
+    pitch_up:   [0.0, -0.5, 0.5, 0.0, 0.0, -0.5, 0.5, 0.0]  
+    pitch_down: [0.0, 0.5, -0.5, 0.0, 0.0, 0.5, -0.5, 0.0]  
+      
+    # 横滚 - 垂直推进器左右差动产生Mx力矩  
+    roll_left:  [0.0, -0.5, -0.5, 0.0, 0.0, 0.5, 0.5, 0.0]  
+    roll_right: [0.0, 0.5, 0.5, 0.0, 0.0, -0.5, -0.5, 0.0]  
+  
+    
+# =============================================================================    
+# 观测空间配置    
+# =============================================================================    
+    
+observation_space:    
+  # 自身状态 (必需)    
+  include_position: true        # [x, y, z]    
+  include_orientation: true     # [roll, pitch, yaw]    
+  include_velocity: true        # [u, v, w, p, q, r]    
+      
+  # 目标信息 (底层控制)    
+  include_target_position: true    
+  include_target_orientation: true    
+  include_error: true           # 当前与目标的误差    
+      
+  # 历史信息    
+  history_length: 1             # 历史帧数（LSTM会处理序列）    
+      
+  # 观测归一化    
+  normalize: true    
+  clip_obs: 10.0                # 观测裁剪范围    
+    
+# =============================================================================    
+# 奖励函数配置    
+# =============================================================================    
+    
+reward:    
+  # 奖励权重    
+  weights:
+    position_error: -0.3        # 位置误差惩罚 - 进一步降低    
+    orientation_error: -0.1     # 姿态误差惩罚 - 进一步降低    
+    velocity_penalty: -0.02     # 速度过大惩罚 - 进一步降低    
+    angular_velocity_penalty: -0.02  # 角速度过大惩罚 - 进一步降低    
+    energy_cost: -0.002         # 能耗惩罚 - 进一步降低    
+    stability_bonus: 0.3        # 稳定性奖励 - 增加奖励    
+    goal_reached: 30.0          # 到达目标奖励 - 大幅增加，强烈鼓励完成任务    
+    time_penalty: -0.0002       # 时间惩罚 - 进一步降低
+        
+  # 阈值配置    
+  thresholds:
+    position_tolerance: 0.5     # 位置容差 (m) - 合理设置，确保需要努力达到    
+    orientation_tolerance: 0.3  # 姿态容差 (rad, ~17°) - 合理设置    
+    velocity_limit: 4.0         # 速度限制触发惩罚 - 进一步放宽    
+    angular_velocity_limit: 4.0 # 角速度限制 - 进一步放宽    
+  # 对姿态惩罚进行裁剪，避免单步惩罚过大（绝对值上界）
+  attitude_clip_limit: 1.0  # 降低裁剪阈值，减少惩罚
+  # 可配置的姿态惩罚系数（负值表示惩罚）- 降低惩罚强度
+  attitude_roll_coeff: -0.5
+  attitude_pitch_coeff: -0.5
+  attitude_angular_coeff: -0.05  # 降低角速度惩罚
+  # 翻转终止阈值（弧度），约120度 - 给智能体恢复机会
+  flip_threshold: 2.0
+        
+  # 稀疏奖励还是稠密奖励    
+  sparse: false    
+  
+# =============================================================================    
+# 终止条件（防止长时间无进展）  
+# =============================================================================  
+  
+termination:  
+  no_progress:  
+    enabled: true  
+    patience_steps: 180  
+    min_improvement: 0.01  
+    min_distance: 1.5  
+    
+# =============================================================================    
+# 课程学习配置    
+# =============================================================================    
+    
+curriculum:    
+  enabled: true    
+      
+  # 任务难度阶段    
+  stages:
+    - name: "easy"
+      position_range: 1.5       # 目标距离范围 - 缩小到1.5m，更容易    
+      orientation_required: false    
+      velocity_init: "zero"    
+      success_threshold: 0.6    # 降低成功阈值，更容易进阶
+          
+    - name: "medium"    
+      position_range: 5.0    
+      orientation_required: true    
+      velocity_init: "small"    # 小范围随机初始速度    
+      success_threshold: 0.7    
+          
+    - name: "hard"    
+      position_range: 10.0    
+      orientation_required: true    
+      velocity_init: "random"    
+      success_threshold: 0.6    
+          
+    - name: "expert"    
+      position_range: 20.0    
+      orientation_required: true    
+      velocity_init: "random"    
+      add_disturbance: true    
+      success_threshold: 0.5    
+    
+# =============================================================================    
+# 日志和可视化    
+# =============================================================================    
+    
+logging:    
+  log_dir: "visualization/logs"    
+  save_dir: "checkpoints"    
+      
+  # TensorBoard配置    
+  tensorboard:    
+    enabled: true    
+    log_freq: 100               # 记录频率（步数）    
+        
+  # 要记录的指标    
+  metrics:    
+    - "episode_reward"    
+    - "episode_length"    
+    - "success_rate"    
+    - "position_error"    
+    - "orientation_error"    
+    - "actor_loss"    
+    - "critic_loss"    
+    - "entropy"    
+    - "learning_rate"    
+    - "explained_variance"    
+        
+  # 视频录制    
+  video:    
+    enabled: true    
+    record_freq: 100000         # 录制频率（步数）    
+    max_video_length: 500       # 最大帧数    
+    
+# =============================================================================    
+# 域随机化（提高泛化能力）    
+# =============================================================================    
+    
+domain_randomization:    
+  enabled: false    
+      
+  # 动力学参数随机化    
+  dynamics:    
+    mass_range: [0.9, 1.1]              # 质量变化范围（倍数）    
+    inertia_range: [0.9, 1.1]           # 惯性矩变化    
+    damping_range: [0.7, 1.3]           # 阻尼系数变化    
+    thruster_efficiency_range: [0.8, 1.0]  # 推进器效率    
+        
+  # 环境随机化    
+  environment:    
+    current_velocity_range: [0.0, 0.3]  # 水流速度范围    
+    initial_position_noise: 0.5         # 初始位置噪声    
+    initial_velocity_noise: 0.2         # 初始速度噪声    
+  
+# =============================================================================    
+# 双环PID控制器配置（新增）  
+# =============================================================================    
+  
+dual_loop_pid:  
+  # 是否启用（true则使用PID，false则使用action_thrust_mapping）  
+  enabled: true  
+    
+  # 动力学参数 [yaw, pitch, roll]  
+  dynamics:  
+    J: [0.35, 0.27, 0.16]       # 转动惯量 (kg·m²)  
+    B: [0.06, 0.05, 0.04]       # 线性阻尼 (N·m·s/rad)  
+    D: [0.01, 0.008, 0.06]      # 二次阻尼 (N·m·s²/rad²)  
+    
+  # 外环PI增益 [yaw, pitch, roll]  
+  outer_loop:  
+    Kp: [2.0, 2.0, 2.5]  
+    Ki: [0.1, 0.1, 0.1]  
+    
+  # 内环PD增益 [yaw, pitch, roll]  
+  inner_loop:  
+    Kp: [1.5, 1.5, 1.2]  
+    Kd: [0.05, 0.05, 0.03]  
+    
+  # ESO观测器带宽 [yaw, pitch, roll]  
+  eso:  
+    w0: [10.0, 10.0, 10.0]  
+    
+  # 限幅参数  
+  limits:  
+    integral: [1.0, 1.0, 1.0]     # 积分限幅  
+    omega_ref: [2.0, 2.0, 2.0]   # 参考角速度限幅 (rad/s)  
+    tau: [10.0, 10.0, 10.0]      # 力矩限幅 (N·m)  
+    
+  # 动作力幅值  
+  action_force:  
+    surge: 30.0                  # 前进力 (N)  
+    sway: 25.0                   # 平移力 (N)  
+    heave: 30.0                  # 升沉力 (N)  
+    
+  # 动作角度变化幅值 (rad)  
+  action_angle_delta:  
+    yaw: 0.1  
+    pitch: 0.1  
+    roll: 0.1  

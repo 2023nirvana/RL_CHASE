@@ -1,0 +1,10 @@
+{
+  "experiment": "v4_tight_heading_terminal_No-timepenalty",
+  "episodes": 50,
+  "success_rate": 1.0,
+  "median_final_error": 0.0961670615470698,
+  "mean_final_error": 0.09607290852620377,
+  "median_steps": 86,
+  "mean_init_speed": 0.7250803365527301,
+  "init_velocity_range": 1.0
+}

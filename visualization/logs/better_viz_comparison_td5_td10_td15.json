@@ -1,0 +1,26 @@
+[
+  {
+    "name": "td5",
+    "dist": 5,
+    "success_rate": 1.0,
+    "return_mean": 39.15636766515733,
+    "length_mean": 248.66666666666666,
+    "return_std": 61.347514442792196
+  },
+  {
+    "name": "td10",
+    "dist": 10,
+    "success_rate": 1.0,
+    "return_mean": -250.9503282855092,
+    "length_mean": 453.26666666666665,
+    "return_std": 351.4639280170745
+  },
+  {
+    "name": "td15",
+    "dist": 15,
+    "success_rate": 1.0,
+    "return_mean": -570.2784433021733,
+    "length_mean": 607.2333333333333,
+    "return_std": 648.0631174571424
+  }
+]

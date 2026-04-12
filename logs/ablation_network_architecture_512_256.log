@@ -1,0 +1,29 @@
+Device: cuda
+Creating SubprocVecEnv with 4 workers ...
+Loaded V4 NN: obs_dim=8, act_dim=3, hidden=(64, 64)
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:236: UserWarning: [33mWARN: Box low's precision lowered by casting to float32, current low.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:306: UserWarning: [33mWARN: Box high's precision lowered by casting to float32, current high.dtype=float64[0m
+  gym.logger.warn(
+Traceback (most recent call last):
+  File "/root/autodl-tmp/pursue_20260302/training/online_ppo_finetune.py", line 1004, in <module>
+    main()
+  File "/root/autodl-tmp/pursue_20260302/training/online_ppo_finetune.py", line 999, in main
+    trainer = OnlinePPOTrainer(args)
+              ^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/pursue_20260302/training/online_ppo_finetune.py", line 228, in __init__
+    self._load_pretrained(args.pretrain_ckpt)
+  File "/root/autodl-tmp/pursue_20260302/training/online_ppo_finetune.py", line 310, in _load_pretrained
+    self.model.load_state_dict(new_sd)
+  File "/root/miniconda3/lib/python3.12/site-packages/torch/nn/modules/module.py", line 2593, in load_state_dict
+    raise RuntimeError(
+RuntimeError: Error(s) in loading state_dict for HighLevelActorCritic:
+	size mismatch for actor_body.0.weight: copying a param with shape torch.Size([256, 21]) from checkpoint, the shape in current model is torch.Size([512, 21]).
+	size mismatch for actor_body.0.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([512]).
+	size mismatch for actor_body.1.weight: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([512]).
+	size mismatch for actor_body.1.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([512]).
+	size mismatch for actor_body.3.weight: copying a param with shape torch.Size([128, 256]) from checkpoint, the shape in current model is torch.Size([256, 512]).
+	size mismatch for actor_body.3.bias: copying a param with shape torch.Size([128]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for actor_body.4.weight: copying a param with shape torch.Size([128]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for actor_body.4.bias: copying a param with shape torch.Size([128]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for mu_head.weight: copying a param with shape torch.Size([2, 128]) from checkpoint, the shape in current model is torch.Size([2, 256]).

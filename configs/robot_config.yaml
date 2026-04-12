@@ -1,0 +1,135 @@
+
+# =============================================================================  
+# 水下机器人物理参数配置 - 最终修复版  
+# 使用矢量推进器布局（X形水平 + 垂直）  
+# =============================================================================  
+  
+robot:  
+  name: "AUV_Pursuer"  
+  mass: 15.0  
+    
+  # 尺寸: 52cm × 35cm × 25cm  
+  dimensions:  
+    length: 0.52                # x方向 (前后)  
+    width: 0.35                 # y方向 (左右)  
+    height: 0.25                # z方向 (上下)  
+  
+  # 中性浮力配置  
+  volume: 0.0146                  # 略微负浮力，便于控制  
+  water_density: 1025.0  
+    
+  # 重心略低于浮心，提供自然稳定性  
+  center_of_gravity: [0.0, 0.0, -0.03]  
+  center_of_buoyancy: [0.0, 0.0, 0.03]  
+    
+  inertia:  
+    Ixx: 0.16  
+    Iyy: 0.27  
+    Izz: 0.35  
+    Ixy: 0.0  
+    Ixz: 0.0  
+    Iyz: 0.0  
+  
+hydrodynamics:  
+  added_mass:  
+    X_udot: -3.0  
+    Y_vdot: -8.0  
+    Z_wdot: -8.0  
+    K_pdot: -0.016  
+    M_qdot: -0.027
+    N_rdot: -0.035  
+      
+  linear_damping:  
+    X_u: -5.0           # 增加阻尼，提高稳定性  
+    Y_v: -8.0  
+    Z_w: -8.0  
+    K_p: -0.04 
+    M_q: -0.05
+    N_r: -0.06
+      
+  quadratic_damping:  
+    X_uu: -15.0  
+    Y_vv: -25.0  
+    Z_ww: -25.0  
+    K_pp: -0.06
+    M_qq: -0.008  
+    N_rr: -0.01  
+      
+  uncertainty:  
+    added_mass_range: [0.9, 1.1]  
+    linear_damping_range: [0.8, 1.2]  
+    quadratic_damping_range: [0.8, 1.2]  
+  
+# =============================================================================    
+# 推进器配置 - 8推进器布局  
+#  
+# 俯视图 (x向前, y向左):  
+#  
+#          前(x+)  
+#      T1 ↗    ↖ T4      水平推进器(45度角)  
+#        T2  T6          垂直推进器  
+#          [ROV]  
+#        T3  T7          垂直推进器    
+#      T5 ↖    ↗ T8      水平推进器(45度角)  
+#          后(x-)  
+#  
+# 功能分组:  
+#   T1, T4, T5, T8: 水平推进器 → 产生 Fx, Fy, Mz  
+#   T2, T3, T6, T7: 垂直推进器 → 产生 Fz, Mx, My  
+# =============================================================================      
+  
+thruster:  
+  num_thrusters: 8 
+    
+  # 推进器位置 (m)  
+  positions:    
+    - [0.20, -0.14, 0.0]        # T1: 右前水平  
+    - [0.11, -0.10, 0.0]        # T2: 右前垂直  
+    - [-0.11, -0.10, 0.0]       # T3: 右后垂直  
+    - [0.20, 0.14, 0.0]         # T4: 左前水平  
+    - [-0.20, -0.14, 0.0]       # T5: 右后水平  
+    - [0.11, 0.10, 0.0]         # T6: 左前垂直  
+    - [-0.11, 0.10, 0.0]        # T7: 左后垂直  
+    - [-0.20, 0.14, 0.0]        # T8: 左后水平  
+        
+  # 推进器方向（归一化向量）  
+  directions:    
+    - [0.707, 0.707, 0.0]       # T1  
+    - [0.0, 0.0, 1.0]           # T2  
+    - [0.0, 0.0, 1.0]           # T3  
+    - [0.707, -0.707, 0.0]      # T4  
+    - [0.707, 0.707, 0.0]       # T5 (反装)  
+    - [0.0, 0.0, 1.0]           # T6  
+    - [0.0, 0.0, 1.0]           # T7  
+    - [0.707, -0.707, 0.0]      # T8 (反装)   
+      
+  max_thrust: 40.0  
+  min_thrust: -35.0  
+  time_constant: 0.05  
+  deadband: 0.5  
+  
+velocity_limits:  
+  max_surge: 2.0  
+  max_sway: 1.2  
+  max_heave: 1.0  
+  max_roll_rate: 1.5  
+  max_pitch_rate: 1.5  
+  max_yaw_rate: 2.0  
+  
+pursuer:  
+  max_speed: 2.0  
+  max_acceleration: 2.5  
+  turn_rate: 1.2  
+  
+evader:  
+  max_speed: 1.5  
+  max_acceleration: 1.0  
+  turn_rate: 0.8  
+  # 感知参数（有限视野 + 反应延迟）  
+  patrol_speed_ratio: 0.5     # 巡逻时使用 max_speed 的比例  
+  detection_radius: 4.0       # 探测半径 (m)  
+  fov_angle: 120.0            # 视野角度 (deg, 以朝向为中心)
+  fov_deg: 120.0              # 与 fov_angle 等价，便于读取
+  reaction_delay: 0.5         # 检测到追击者后的反应延迟 (s)  
+  lost_memory: 2.0            # 丢失追击者后保持逃跑的时间 (s)  
+  heading_noise_std: 0.15     # 巡逻时每步航向随机扰动 (rad)  

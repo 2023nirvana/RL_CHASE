@@ -1,0 +1,5 @@
+policy,capture_rate,terrain_capture_rate,boundary_capture_rate,avg_steps,avg_capture_steps
+RL_Greedy,0.614000,0.566775,0.205212,94.242,59.189
+PurePursuit,0.558000,0.727599,0.232975,96.384,53.914
+LeadPursuit,0.624000,0.676282,0.227564,85.042,45.901
+Random,0.002000,0.000000,0.000000,92.824,8.000

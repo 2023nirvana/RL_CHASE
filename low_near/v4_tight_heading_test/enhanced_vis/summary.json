@@ -1,0 +1,10 @@
+{
+  "experiment": "v4_tight_heading_test",
+  "episodes": 50,
+  "success_rate": 1.0,
+  "median_final_error": 0.04739818796210547,
+  "mean_final_error": 0.0463246285535784,
+  "median_steps": 93,
+  "mean_init_speed": 0.782706666874524,
+  "init_velocity_range": 1.0
+}

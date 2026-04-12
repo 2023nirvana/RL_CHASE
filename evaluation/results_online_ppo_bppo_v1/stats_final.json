@@ -1,0 +1,10 @@
+{
+  "n_episodes": 30,
+  "success_rate": 0.7666666666666667,
+  "mean_reward": -382.47552137349317,
+  "std_reward": 751.3422276507508,
+  "median_reward": 23.12057513591221,
+  "mean_steps": 58.63333333333333,
+  "mean_capture_steps": 39.95652173913044,
+  "median_capture_steps": 32.0
+}

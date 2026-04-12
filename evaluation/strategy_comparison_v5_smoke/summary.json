@@ -1,0 +1,20 @@
+{
+  "PurePursuit": {
+    "catch_rate": 0.3333333333333333,
+    "avg_steps_caught": 9.0,
+    "avg_min_dist": 1.4460828105608623,
+    "num_episodes": 3
+  },
+  "LeadPursuit": {
+    "catch_rate": 0.6666666666666666,
+    "avg_steps_caught": 32.5,
+    "avg_min_dist": 1.812188943227132,
+    "num_episodes": 3
+  },
+  "Expert(pred=2.0s)": {
+    "catch_rate": 0.6666666666666666,
+    "avg_steps_caught": 19.0,
+    "avg_min_dist": 3.3830919663111367,
+    "num_episodes": 3
+  }
+}

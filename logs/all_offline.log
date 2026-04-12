@@ -1,0 +1,126 @@
+============================================
+ Offline Training: 7 algorithms
+ Dataset: data/expert_trajectories/expert_dataset.npz
+ Wed Apr  1 22:10:39 CST 2026
+============================================
+
+>>> [1/7] TD3+BC  (2M steps)
+Device: cuda
+Loaded 482279 transitions
+  reward: [-76.3, 105.5], mean=-6.65, std=17.88
+  Reward normalized: mean=-6.65, std=17.88
+  After: [-3.89, 6.27], mean=-0.0000
+  Split: train=434052, val=48227
+  Target Q clip: [-1500.0, 1500.0]
+Total params: 119,428
+
+TD3+BC: 2000000 steps, alpha_ratio=2.5, gamma=0.99
+  Step   10000/2000000 | c_loss=2.2631 q=[-8.7,6.2,9.3] a_loss=-2.2390 bc=0.12742 lam=0.354 grad_c=96.867 grad_a=1.359 (77s)
+  Step   20000/2000000 | c_loss=1.5821 q=[-2.1,9.7,13.0] a_loss=-2.4165 bc=0.08350 lam=0.244 grad_c=28.979 grad_a=0.781 (162s)
+  Step   30000/2000000 | c_loss=3.9683 q=[-1.0,11.4,15.8] a_loss=-2.4297 bc=0.07019 lam=0.209 grad_c=134.573 grad_a=1.359 (244s)
+  Step   40000/2000000 | c_loss=3.1559 q=[-9.4,12.0,18.6] a_loss=-2.4061 bc=0.07542 lam=0.196 grad_c=185.666 grad_a=0.599 (327s)
+  Step   50000/2000000 | c_loss=3.4443 q=[-10.2,13.1,20.2] a_loss=-2.3907 bc=0.08171 lam=0.179 grad_c=257.163 grad_a=0.933 (411s)
+    [Val] critic=6.1221 bc=0.08882
+Loaded V4 NN: obs_dim=8, act_dim=3, hidden=(64, 64)
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:236: UserWarning: [33mWARN: Box low's precision lowered by casting to float32, current low.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:306: UserWarning: [33mWARN: Box high's precision lowered by casting to float32, current high.dtype=float64[0m
+  gym.logger.warn(
+    [Eval diag] avg_steps=96 max_steps=120
+    [Reward breakdown per step] event=0.313 shaping=0.454 sg_obs=-8.082 time=-0.050
+    [Reward total] event=450.0 shaping=651.5 sg_obs=-11606.1 time=-71.8
+    [Eval] step=50000 reward=-705.1 success=47%
+  Saved: /root/autodl-tmp/pursue_20260302/checkpoints/td3bc_v4_2m/best.pth
+  Step   60000/2000000 | c_loss=4.0452 q=[-5.4,13.9,23.2] a_loss=-2.4065 bc=0.08252 lam=0.168 grad_c=157.981 grad_a=0.619 (583s)
+  Step   70000/2000000 | c_loss=5.7937 q=[-1.9,14.7,25.2] a_loss=-2.4124 bc=0.08341 lam=0.161 grad_c=207.007 grad_a=0.595 (664s)
+  Step   80000/2000000 | c_loss=3.8822 q=[-4.9,14.1,26.0] a_loss=-2.4049 bc=0.08311 lam=0.165 grad_c=279.053 grad_a=0.699 (744s)
+  Step   90000/2000000 | c_loss=8.8719 q=[-5.1,14.6,25.2] a_loss=-2.4147 bc=0.07835 lam=0.163 grad_c=186.635 grad_a=0.839 (819s)
+  Step  100000/2000000 | c_loss=5.5065 q=[-5.4,11.3,23.8] a_loss=-2.3970 bc=0.07685 lam=0.205 grad_c=241.715 grad_a=0.891 (889s)
+    [Val] critic=4.6271 bc=0.06749
+    [Eval diag] avg_steps=82 max_steps=120
+    [Reward breakdown per step] event=0.566 shaping=0.493 sg_obs=-7.228 time=-0.050
+    [Reward total] event=700.0 shaping=609.5 sg_obs=-8940.5 time=-61.8
+    [Eval] step=100000 reward=-512.9 success=53%
+  Saved: /root/autodl-tmp/pursue_20260302/checkpoints/td3bc_v4_2m/best.pth
+  Saved: /root/autodl-tmp/pursue_20260302/checkpoints/td3bc_v4_2m/latest.pth
+  Step  110000/2000000 | c_loss=5.8148 q=[-8.1,10.9,24.0] a_loss=-2.3754 bc=0.08109 lam=0.211 grad_c=265.359 grad_a=0.816 (1040s)
+  Step  120000/2000000 | c_loss=2.6968 q=[-7.7,9.0,20.7] a_loss=-2.2808 bc=0.08652 lam=0.246 grad_c=434.969 grad_a=0.563 (1112s)
+  Step  130000/2000000 | c_loss=3.2616 q=[-9.9,7.7,17.9] a_loss=-2.2484 bc=0.07681 lam=0.284 grad_c=201.265 grad_a=0.843 (1184s)
+  Step  140000/2000000 | c_loss=3.5269 q=[-9.8,7.9,18.2] a_loss=-2.2148 bc=0.09703 lam=0.273 grad_c=207.009 grad_a=1.316 (1254s)
+  Step  150000/2000000 | c_loss=2.9770 q=[-11.3,7.2,16.9] a_loss=-2.1318 bc=0.09904 lam=0.285 grad_c=191.026 grad_a=1.140 (1331s)
+    [Val] critic=2.2964 bc=0.08836
+    [Eval diag] avg_steps=77 max_steps=120
+    [Reward breakdown per step] event=0.828 shaping=0.563 sg_obs=-5.172 time=-0.050
+    [Reward total] event=950.0 shaping=645.9 sg_obs=-5938.0 time=-57.4
+    [Eval] step=150000 reward=-293.3 success=67%
+  Saved: /root/autodl-tmp/pursue_20260302/checkpoints/td3bc_v4_2m/best.pth
+  Step  160000/2000000 | c_loss=1.7893 q=[-11.9,7.0,17.5] a_loss=-2.1015 bc=0.10013 lam=0.289 grad_c=167.652 grad_a=1.038 (1485s)
+  Step  170000/2000000 | c_loss=2.3450 q=[-13.4,7.4,19.0] a_loss=-2.0684 bc=0.10288 lam=0.273 grad_c=181.900 grad_a=0.937 (1561s)
+  Step  180000/2000000 | c_loss=3.1267 q=[-16.1,6.1,18.5] a_loss=-1.8272 bc=0.09093 lam=0.284 grad_c=281.540 grad_a=1.476 (1637s)
+  Step  190000/2000000 | c_loss=2.4193 q=[-18.3,6.4,18.7] a_loss=-1.8801 bc=0.10079 lam=0.280 grad_c=195.876 grad_a=0.763 (1708s)
+  Step  200000/2000000 | c_loss=3.3461 q=[-16.1,6.7,17.7] a_loss=-1.9049 bc=0.09480 lam=0.273 grad_c=275.948 grad_a=1.597 (1781s)
+    [Val] critic=2.7373 bc=0.08326
+    [Eval diag] avg_steps=74 max_steps=120
+    [Reward breakdown per step] event=0.905 shaping=0.608 sg_obs=-3.820 time=-0.050
+    [Reward total] event=1000.0 shaping=671.8 sg_obs=-4220.7 time=-55.2
+    [Eval] step=200000 reward=-173.6 success=67%
+  Saved: /root/autodl-tmp/pursue_20260302/checkpoints/td3bc_v4_2m/best.pth
+  Saved: /root/autodl-tmp/pursue_20260302/checkpoints/td3bc_v4_2m/latest.pth
+  Step  210000/2000000 | c_loss=2.9926 q=[-14.8,7.4,17.0] a_loss=-2.0612 bc=0.08984 lam=0.272 grad_c=172.845 grad_a=1.655 (1925s)
+  Step  220000/2000000 | c_loss=2.7063 q=[-14.8,6.0,17.0] a_loss=-1.8647 bc=0.10768 lam=0.296 grad_c=189.419 grad_a=1.314 (2001s)
+  Step  230000/2000000 | c_loss=4.6925 q=[-11.7,6.5,16.9] a_loss=-1.9072 bc=0.09455 lam=0.287 grad_c=245.195 grad_a=1.923 (2087s)
+  Step  240000/2000000 | c_loss=4.9928 q=[-14.2,5.9,16.0] a_loss=-1.8076 bc=0.11747 lam=0.293 grad_c=198.493 grad_a=1.653 (2167s)
+  Step  250000/2000000 | c_loss=2.4445 q=[-17.3,5.5,16.6] a_loss=-1.6883 bc=0.10702 lam=0.293 grad_c=220.279 grad_a=1.909 (2241s)
+    [Val] critic=2.6413 bc=0.09562
+    [Eval diag] avg_steps=70 max_steps=120
+    [Reward breakdown per step] event=0.946 shaping=0.607 sg_obs=-4.897 time=-0.050
+    [Reward total] event=1000.0 shaping=641.2 sg_obs=-5175.7 time=-52.8
+    [Eval] step=250000 reward=-239.2 success=73%
+  Saved: /root/autodl-tmp/pursue_20260302/checkpoints/td3bc_v4_2m/best.pth
+  Step  260000/2000000 | c_loss=1.8940 q=[-14.9,6.7,15.4] a_loss=-1.9477 bc=0.09393 lam=0.281 grad_c=120.107 grad_a=1.634 (2384s)
+  Step  270000/2000000 | c_loss=2.0537 q=[-16.1,5.9,16.4] a_loss=-1.8244 bc=0.10318 lam=0.294 grad_c=199.277 grad_a=1.585 (2459s)
+  Step  280000/2000000 | c_loss=2.1895 q=[-20.5,4.6,15.6] a_loss=-1.5015 bc=0.11057 lam=0.307 grad_c=355.620 grad_a=1.859 (2533s)
+  Step  290000/2000000 | c_loss=3.0129 q=[-20.8,4.8,15.0] a_loss=-1.4900 bc=0.09686 lam=0.294 grad_c=237.038 grad_a=1.507 (2618s)
+  Step  300000/2000000 | c_loss=2.7622 q=[-17.5,4.9,14.8] a_loss=-1.4115 bc=0.09672 lam=0.279 grad_c=192.897 grad_a=1.500 (2698s)
+    [Val] critic=2.5981 bc=0.10779
+    [Eval diag] avg_steps=55 max_steps=120
+    [Reward breakdown per step] event=1.519 shaping=0.764 sg_obs=-2.687 time=-0.050
+    [Reward total] event=1250.0 shaping=629.1 sg_obs=-2211.8 time=-41.1
+    [Eval] step=300000 reward=-24.9 success=87%
+  Saved: /root/autodl-tmp/pursue_20260302/checkpoints/td3bc_v4_2m/best.pth
+  Saved: /root/autodl-tmp/pursue_20260302/checkpoints/td3bc_v4_2m/latest.pth
+  Step  310000/2000000 | c_loss=3.6022 q=[-18.2,4.9,15.1] a_loss=-1.5228 bc=0.09591 lam=0.298 grad_c=335.041 grad_a=2.711 (2833s)
+  Step  320000/2000000 | c_loss=3.0880 q=[-15.2,4.7,14.7] a_loss=-1.5208 bc=0.09983 lam=0.305 grad_c=217.086 grad_a=5.186 (2916s)
+  Step  330000/2000000 | c_loss=1.9972 q=[-21.9,3.9,14.4] a_loss=-1.2544 bc=0.10276 lam=0.306 grad_c=203.987 grad_a=2.455 (3002s)
+  Step  340000/2000000 | c_loss=2.0190 q=[-17.2,5.2,14.3] a_loss=-1.6605 bc=0.09164 lam=0.307 grad_c=180.116 grad_a=3.309 (3089s)
+  Step  350000/2000000 | c_loss=3.2252 q=[-24.4,4.1,14.4] a_loss=-1.3751 bc=0.11683 lam=0.316 grad_c=273.014 grad_a=2.194 (3167s)
+    [Val] critic=1.7043 bc=0.11082
+    [Eval diag] avg_steps=71 max_steps=120
+    [Reward breakdown per step] event=1.130 shaping=0.641 sg_obs=-3.143 time=-0.050
+    [Reward total] event=1200.0 shaping=680.4 sg_obs=-3338.1 time=-53.1
+    [Eval] step=350000 reward=-100.7 success=80%
+  Step  360000/2000000 | c_loss=1.2698 q=[-20.0,4.4,14.4] a_loss=-1.4185 bc=0.11920 lam=0.304 grad_c=137.714 grad_a=2.893 (3315s)
+  Step  370000/2000000 | c_loss=1.5511 q=[-19.2,4.4,13.8] a_loss=-1.4459 bc=0.12931 lam=0.313 grad_c=234.787 grad_a=1.284 (3396s)
+  Step  380000/2000000 | c_loss=2.7398 q=[-19.7,4.8,15.0] a_loss=-1.5056 bc=0.10559 lam=0.298 grad_c=229.397 grad_a=1.756 (3476s)
+  Step  390000/2000000 | c_loss=3.3924 q=[-23.4,5.8,13.9] a_loss=-1.7717 bc=0.11588 lam=0.298 grad_c=330.807 grad_a=1.750 (3556s)
+  Step  400000/2000000 | c_loss=1.1789 q=[-20.3,4.8,15.1] a_loss=-1.4942 bc=0.10578 lam=0.300 grad_c=180.925 grad_a=2.492 (3636s)
+    [Val] critic=1.7297 bc=0.09585
+    [Eval diag] avg_steps=73 max_steps=120
+    [Reward breakdown per step] event=0.907 shaping=0.642 sg_obs=-4.035 time=-0.050
+    [Reward total] event=1000.0 shaping=707.1 sg_obs=-4447.0 time=-55.1
+    [Eval] step=400000 reward=-186.3 success=67%
+  Saved: /root/autodl-tmp/pursue_20260302/checkpoints/td3bc_v4_2m/latest.pth
+  Step  410000/2000000 | c_loss=2.2882 q=[-19.7,4.1,17.2] a_loss=-1.3551 bc=0.13037 lam=0.306 grad_c=214.383 grad_a=1.846 (3784s)
+  Step  420000/2000000 | c_loss=1.3538 q=[-22.4,4.8,13.6] a_loss=-1.4641 bc=0.10039 lam=0.294 grad_c=234.296 grad_a=2.526 (3856s)
+  Step  430000/2000000 | c_loss=1.5474 q=[-21.4,4.1,13.6] a_loss=-1.3617 bc=0.12055 lam=0.317 grad_c=177.522 grad_a=2.175 (3934s)
+  Step  440000/2000000 | c_loss=2.9941 q=[-21.7,4.4,14.3] a_loss=-1.4534 bc=0.10886 lam=0.311 grad_c=326.853 grad_a=1.635 (4010s)
+  Step  450000/2000000 | c_loss=1.3608 q=[-22.6,4.4,15.3] a_loss=-1.4029 bc=0.11502 lam=0.296 grad_c=369.205 grad_a=1.598 (4086s)
+    [Val] critic=2.6859 bc=0.10801
+    [Eval diag] avg_steps=62 max_steps=120
+    [Reward breakdown per step] event=1.296 shaping=0.737 sg_obs=-3.491 time=-0.050
+    [Reward total] event=1200.0 shaping=682.8 sg_obs=-3232.4 time=-46.3
+    [Eval] step=450000 reward=-93.1 success=80%
+  Step  460000/2000000 | c_loss=2.3142 q=[-20.3,4.7,15.1] a_loss=-1.3886 bc=0.10614 lam=0.283 grad_c=180.435 grad_a=1.688 (4220s)
+  Step  470000/2000000 | c_loss=1.5563 q=[-23.2,4.9,16.3] a_loss=-1.5586 bc=0.09954 lam=0.302 grad_c=136.563 grad_a=1.615 (4298s)
+  Step  480000/2000000 | c_loss=1.8425 q=[-22.9,4.1,14.3] a_loss=-1.3543 bc=0.12492 lam=0.302 grad_c=373.056 grad_a=1.985 (4865s)
+Terminated

@@ -1,0 +1,377 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{hyperref}
+
+\title{水下追逃的分层马尔可夫建模（中文版）}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{概述}
+本文基于项目实现给出三套一致的建模形式：
+\begin{itemize}
+  \item 低层 6DOF 控制 MDP。
+  \item 高层追逃任务 MDP。
+  \item 宏动作（Options）SMDP 分层建模。
+\end{itemize}
+
+\section{低层 6DOF 控制 MDP}
+低层控制可建模为：
+\begin{equation}
+M_{LL} = (\mathcal{S}_{LL}, \mathcal{A}_{LL}, P_{LL}, R_{LL}, \gamma).
+\end{equation}
+
+\subsection*{状态}
+低层状态为完整 6DOF 状态与目标：
+\begin{equation}
+ s_t^{LL} = (\eta_t, \nu_t, g_t),
+\end{equation}
+其中 $\eta_t = [x, y, z, \phi, \theta, \psi]^\top$ 表示位置与姿态，$\nu_t = [u, v, w, p, q, r]^\top$ 表示线速度与角速度，$g_t$ 为目标状态（目标位置/姿态，必要时包含目标速度）。
+
+\subsection*{动作}
+低层动作是 13 个离散语义动作：
+\begin{equation}
+\mathcal{A}_{LL} = \{a_0, a_1, \ldots, a_{12}\}.
+\end{equation}
+对应悬停、surge/sway/heave 以及 yaw/pitch/roll 的正负方向。
+
+\subsection*{转移}
+动作通过控制器映射为推力，再由 6DOF 动力学产生状态演化：
+\begin{align}
+\tau_t &= f_{ctrl}(a_t, s_t^{LL}), \\
+ s_{t+1}^{LL} &= f_{dyn}(s_t^{LL}, \tau_t, \xi_t),
+\end{align}
+其中 $\xi_t$ 表示水流、参数随机化等扰动。
+
+\subsection*{奖励}
+奖励项综合位置/姿态误差、速度惩罚、能耗与到达奖励：
+\begin{equation}
+ r_t^{LL} = w_p\|e_p\| + w_o\|e_o\| + w_v\|\nu\| + w_e\|\tau\| + r_{goal} + r_{time}.
+\end{equation}
+
+\subsection*{终止}
+成功（达到阈值）、越界/翻转、无进展或超时终止。
+
+\section{低层 2D 连续控制 MDP（V2）}
+本节对应项目中的 2D 连续低层环境（\texttt{low\_level\_env\_2d\_v2\_continuous}），
+给出可与实现逐项对照的形式化定义。
+
+\subsection*{MDP 定义}
+定义低层连续控制 MDP：
+\begin{equation}
+\mathcal{M}_{LL}^{2D,cont}=(\mathcal{S},\mathcal{A},\mathcal{P},r,\gamma,\rho_0,\mathcal{T}).
+\end{equation}
+
+\subsection*{状态、观测与动作}
+真实马尔可夫状态可写为
+\begin{equation}
+s_t=\{\eta_t,\nu_t,g_t,\xi_t\},
+\end{equation}
+其中 $\eta_t=[x,y,z,\phi,\theta,\psi]^\top$，$\nu_t=[u,v,w,p,q,r]^\top$，
+$g_t$ 为目标状态，$\xi_t$ 为控制器内部状态（如 PID 积分项）。
+
+策略输入观测为 8 维：
+\begin{equation}
+o_t=[e_x^b,e_y^b,e_\psi,\theta_{tar},u_n,v_n,r_n,d_n]^\top.
+\end{equation}
+其中
+\begin{align}
+u_n &= u/2,\quad v_n=v/2,\quad r_n=r/2,\quad d_n=d/5,\\
+e_\psi &= \mathrm{wrap}(\theta_{tar}-\psi)/\pi,
+\end{align}
+并对观测执行裁剪 $o_t\leftarrow\mathrm{clip}(o_t,-10,10)$。
+
+连续动作空间为
+\begin{equation}
+\mathcal{A}=[-1,1]^3,\quad a_t=[a_t^{surge},a_t^{sway},a_t^{yaw}]^\top.
+\end{equation}
+
+\subsection*{几何关系与坐标变换}
+定义世界系位置误差
+\begin{equation}
+e_t^w=[x_g-x_t,\ y_g-y_t]^\top,\quad d_t=\|e_t^w\|_2,
+\end{equation}
+目标方位角
+\begin{equation}
+\theta_{tar}=\mathrm{atan2}(e_y^w,e_x^w).
+\end{equation}
+机体系误差由平面旋转得到：
+\begin{equation}
+\begin{bmatrix}\tilde e_x^b\\ \tilde e_y^b\end{bmatrix}
+=
+\begin{bmatrix}
+\cos\psi & \sin\psi\\
+-\sin\psi & \cos\psi
+\end{bmatrix}
+\begin{bmatrix}e_x^w\\ e_y^w\end{bmatrix}.
+\end{equation}
+
+\subsection*{动作到控制命令映射}
+动作先映射为位移意图与偏航增量：
+\begin{equation}
+\Delta x_{cmd}=a_t^{surge}\,\delta_s,\quad
+\Delta y_{cmd}=a_t^{sway}\,\delta_{sw},\quad
+\Delta\psi_{cmd}=a_t^{yaw}\,\delta_\psi.
+\end{equation}
+再转为期望机体系速度：
+\begin{equation}
+v_{cmd}^b=\frac{1}{\Delta t}[\Delta x_{cmd},\Delta y_{cmd},0]^\top.
+\end{equation}
+并施加目标邻域减速：
+\begin{align}
+\alpha_t &= \max\!\left(\alpha_{min},\min\!\left(1,\frac{\|p_g-p_t\|}{r_{slow}}\right)\right),\\
+v_{cmd}^b &\leftarrow \alpha_t v_{cmd}^b.
+\end{align}
+
+\subsection*{转移模型}
+速度环给出力指令：
+\begin{equation}
+F_t=K_p^v(v_{cmd}^b-v_t^b)-K_d^v v_t^b,
+\end{equation}
+姿态环给出偏航相关力矩，经推力分配器与动力学积分得到
+\begin{equation}
+s_{t+1}=f_{dyn}(s_t,a_t,w_t),
+\end{equation}
+故转移核为 $\mathcal{P}(s_{t+1}\mid s_t,a_t)$，由控制器、动力学与扰动联合决定。
+
+\subsection*{奖励分解}
+总奖励为
+\begin{equation}
+r_t=r_t^{pos}+r_t^{imp}+r_t^{head}+r_t^{dir}+r_t^{prox}+r_t^{goal}+r_t^{time}+r_t^{spin}.
+\end{equation}
+各项写为：
+\begin{align}
+r_t^{pos} &= -0.3\,d_t,\\
+r_t^{imp} &= 10(d_{t-1}-d_t),\\
+r_t^{head} &= 0.3\left(1-\frac{|e_{\psi,t}|}{\pi}\right),\\
+r_t^{dir} &=
+\begin{cases}
+0.5\,u_t, & d_t>0.1,\ |e_{\psi,t}|<0.5,\ u_t>0,\\
+0, & \text{otherwise},
+\end{cases}\\
+r_t^{prox} &=
+\begin{cases}
+3(0.3-d_t), & d_t<0.3,\\
+0, & \text{otherwise},
+\end{cases}\\
+r_t^{goal} &=
+\begin{cases}
+100, & d_t<0.2,\\
+0, & \text{otherwise},
+\end{cases}\\
+r_t^{time} &= -0.02,\\
+r_t^{spin} &=
+\begin{cases}
+-0.1|r_t|, & |r_t|>0.5\ \land\ |u_t|<0.1,\\
+0, & \text{otherwise}.
+\end{cases}
+\end{align}
+
+\subsection*{终止条件与优化目标}
+终止集合
+\begin{equation}
+\mathcal{T}=\mathcal{T}_{succ}\cup\mathcal{T}_{bound}\cup\mathcal{T}_{timeout}
+\end{equation}
+对应
+\begin{equation}
+d_t<0.2\quad\text{或}\quad |x_t|>20\ \text{或}\ |y_t|>20\quad\text{或}\quad t\ge 90/\Delta t.
+\end{equation}
+优化目标为最大化折扣回报：
+\begin{equation}
+J(\theta)=\mathbb{E}_{\tau\sim\pi_\theta}\left[\sum_{t=0}^{T}\gamma^t r_t\right].
+\end{equation}
+
+\section{高层追逃任务 MDP}
+追逃任务可建模为：
+\begin{equation}
+M_H = (\mathcal{S}_H, \mathcal{A}_H, P_H, R_H, \gamma_H).
+\end{equation}
+
+\subsection*{状态}
+高层任务态可由相对几何与边界信息描述：
+\begin{equation}
+ s_t^H = [p_p, v_p, p_e, v_e, \psi_e, b_p, b_e],
+\end{equation}
+其中 $p_p, v_p$ 为追击者位置与速度，$p_e, v_e$ 为逃脱者位置与速度，$\psi_e$ 为逃脱者朝向，$b_p, b_e$ 表示边界余量。
+
+\subsection*{动作}
+高层动作可表示子目标/追击策略选择：
+\begin{equation}
+ \mathcal{A}_H = \{\text{子目标/方向/策略}\}.
+\end{equation}
+
+\subsection*{转移}
+高层动作通过低层策略执行若干步实现：
+\begin{equation}
+ s_{t+1}^{H} = F(s_t^{H}, a_t^{H}, \pi_{LL}).
+\end{equation}
+
+\subsection*{奖励}
+追逃高层奖励可定义为：
+\begin{equation}
+ r_t^H = \alpha\Delta d + \beta v_{close} + r_{catch} + r_{boundary} - r_{time}.
+\end{equation}
+
+\subsection*{终止}
+捕获成功、失败（逃脱或越界）或超时。
+
+\section{宏动作 / Options SMDP}
+分层控制可建模为 Options SMDP：
+\begin{equation}
+M_S = (\mathcal{S}, \mathcal{O}, P_S, R_S, \gamma).
+\end{equation}
+
+\subsection*{选项定义}
+每个宏动作定义为：
+\begin{equation}
+ o = (\mathcal{I}_o, \pi_o, \beta_o),
+\end{equation}
+其中 $\mathcal{I}_o$ 为启动条件，$\pi_o$ 为选项内策略（低层控制器），$\beta_o$ 为终止条件。
+
+\subsection*{转移}
+宏动作持续 $k$ 步后产生状态转移：
+\begin{equation}
+ P_S(s'\mid s,o) = \sum_{k\ge 1} P(s', k \mid s, o).
+\end{equation}
+
+\subsection*{回报}
+宏动作的累计回报为：
+\begin{equation}
+ R_S(s,o) = \mathbb{E}\left[\sum_{i=0}^{k-1}\gamma^i r_{t+i}\right].
+\end{equation}
+
+\section{观测向量定义}
+本节给出代码中使用的观测向量精确定义。
+
+\section{奖励项展开（更细化）}
+本节给出低层 6DOF 与 2D 追逃环境的奖励分解形式，便于与实现逐项对照。
+
+\subsection{低层 6DOF 奖励分解}
+低层环境的奖励由多个子项线性组合构成：
+\begin{equation}
+ r_t^{LL} = r_{pos} + r_{ori} + r_{vel} + r_{ang} + r_{energy} + r_{att} + r_{stab} + r_{goal} + r_{time}.
+\end{equation}
+其中各子项含义如下：
+\begin{itemize}
+  \item 位置相关项（含改进与方向引导）：
+  \begin{align}
+   r_{pos} &= w_{pos}\,\|e_p\| 
+   + \lambda_{imp}\,\Delta\|e_p\| 
+   + \lambda_{prox}\,\max(0, 1-\|e_p\|) 
+   + \lambda_{dir}\,\langle \hat{e}_p, \hat{v}\rangle,
+  \end{align}
+  其中 $\Delta\|e_p\|$ 为相邻步的位置误差改进量，$\langle \hat{e}_p, \hat{v}\rangle$ 表示速度方向与目标方向的一致性。
+  \item 姿态误差惩罚：
+  \begin{equation}
+   r_{ori} = w_{ori}\,\|e_o\|.
+  \end{equation}
+  \item 线速度惩罚（超限部分）：
+  \begin{equation}
+   r_{vel} = w_{vel}\,\max(0, \|\nu_{lin}\| - v_{lim}).
+  \end{equation}
+  \item 角速度惩罚（超限部分）：
+  \begin{equation}
+   r_{ang} = w_{ang}\,\max(0, \|\nu_{ang}\| - \omega_{lim}).
+  \end{equation}
+  \item 能耗惩罚（推力绝对值归一化）：
+  \begin{equation}
+   r_{energy} = w_{energy}\,\frac{\sum_i |\tau_i|}{\tau_{max} \cdot n_{thr}}.
+  \end{equation}
+  \item 姿态稳定项（平滑惩罚与奖励）：
+  \begin{equation}
+   r_{att} = r_{roll} + r_{pitch} + r_{rate} + r_{bonus},
+  \end{equation}
+  仅当横滚/俯仰超过阈值才惩罚，小角度范围内给予稳定性奖励。
+  \item 稳定性奖励：当接近目标且速度较小时给正奖励。
+  \item 到达奖励：当 $\|e_p\|$ 与 $\|e_o\|$ 同时小于阈值时给定奖励。
+  \item 时间惩罚：常数项 $r_{time}<0$。
+\end{itemize}
+权重与阈值来自配置文件（reward weights/thresholds）。
+
+\subsection{2D 追逃奖励分解}
+2D 追逃环境的奖励为：
+\begin{equation}
+ r_t^{PE} = r_{improve} + r_{closing} + r_{align} + r_{boundary} + r_{time} + r_{hit} + r_{prox} + r_{catch}.
+\end{equation}
+各项含义如下：
+\begin{itemize}
+  \item 距离改进奖励：$r_{improve} = w_{imp} (d_{t-1} - d_t)$。
+  \item 闭合速度奖励：$r_{closing} = w_{close}\,\text{clip}(v_{close}, -1, 1)$。
+  \item 方向一致性：$r_{align} = w_{align}\,\langle \hat{v}_p, \hat{\Delta p}\rangle$。
+  \item 边界压制：当逃脱者接近边界时给正奖励。
+  \item 时间惩罚：$r_{time}=-\lambda_{time}$。
+  \item 撞边惩罚：若追击者撞边，给负奖励 $r_{hit}$。
+  \item 接近奖励：当距离小于阈值时给额外正奖励 $r_{prox}$。
+  \item 捕获奖励：距离小于捕获半径时给 $r_{catch}$。
+\end{itemize}
+
+\subsection{2D 追逃观测（22 维）}
+记 $\Delta p = p_e - p_p$, $\Delta v = v_e - v_p$, $d = \|\Delta p\|$, 且
+\begin{equation}
+ v_{close} = -\frac{\Delta v \cdot \Delta p}{\|\Delta p\|} \quad (d>0).
+\end{equation}
+归一化常量：
+\begin{equation}
+\text{pos\_scale}=\frac{1}{\text{world\_size}},\quad
+\text{vel\_scale}=\frac{1}{\max(v_{p\_max}, v_{e\_max})},\quad
+\text{acc\_scale}=\frac{1}{\max(a_{p\_max}, a_{e\_max})}.
+\end{equation}
+22 维观测按如下顺序排列：
+\begin{align*}
+&1: p_{p,x}\cdot\text{pos\_scale}, \quad
+2: p_{p,y}\cdot\text{pos\_scale}, \\
+&3: v_{p,x}\cdot\text{vel\_scale}, \quad
+4: v_{p,y}\cdot\text{vel\_scale}, \\
+&5: \Delta p_x\cdot\text{pos\_scale}, \quad
+6: \Delta p_y\cdot\text{pos\_scale}, \\
+&7: \Delta v_x\cdot\text{vel\_scale}, \quad
+8: \Delta v_y\cdot\text{vel\_scale}, \\
+&9: d\cdot\text{pos\_scale}, \quad
+10: v_{close}\cdot\text{vel\_scale}, \\
+&11: \hat{v}_{e,x}, \quad
+12: \hat{v}_{e,y}, \\
+&13: (\text{world\_size} - p_{p,y})\cdot\text{pos\_scale}, \\
+&14: (p_{p,y} + \text{world\_size})\cdot\text{pos\_scale}, \\
+&15: (p_{p,x} + \text{world\_size})\cdot\text{pos\_scale}, \\
+&16: (\text{world\_size} - p_{p,x})\cdot\text{pos\_scale}, \\
+&17: \min(\text{world\_size}-|p_{e,x}|,\;\text{world\_size}-|p_{e,y}|)\cdot\text{pos\_scale}, \\
+&18: \|v_p\|\cdot\text{vel\_scale}, \quad
+19: \|v_e\|\cdot\text{vel\_scale}, \\
+&20: \hat{v}_p\cdot\hat{\Delta p}, \\
+&21: a_{p,x}\cdot\text{acc\_scale}, \quad
+22: a_{p,y}\cdot\text{acc\_scale}.
+\end{align*}
+
+\subsection{低层 6DOF 观测}
+定义旋转矩阵 $R(\phi,\theta,\psi)$（体坐标到世界坐标）。体坐标系位置误差：
+\begin{equation}
+ e_p^{body} = R(\phi,\theta,\psi)^\top (g_p - \eta_{pos}).
+\end{equation}
+姿态误差为：
+\begin{equation}
+ e_o = \text{wrap}(\eta_{ori} - g_{ori}) \in [-\pi,\pi]^3.
+\end{equation}
+观测向量按配置开关拼接，顺序如下：
+\begin{itemize}
+  \item 位置误差（体坐标系）：$e_p^{body}/10$。
+  \item 姿态误差：$e_o/\pi$。
+  \item 线速度（体坐标系）：$[u,v,w]/2$。
+  \item 角速度（体坐标系）：$[p,q,r]/2$。
+  \item 目标位置（体坐标系）：$e_p^{body}/10$。
+  \item 目标姿态：$g_{ori}/\pi$。
+  \item 误差项：$e_p^{body}/10$ 与 $e_o/\pi$。
+\end{itemize}
+最终观测为所有启用段的串联。
+
+\section{编译方法}
+在项目根目录执行：
+\begin{verbatim}
+cd docs
+pdflatex markov_modeling_cn.tex
+\end{verbatim}
+
+\end{document}

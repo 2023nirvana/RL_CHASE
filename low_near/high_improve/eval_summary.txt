@@ -1,0 +1,10 @@
+Evaluation Summary
+==================
+Episodes: 50
+Success Rate: 5/50 = 10.0%
+Mean Final Error: 1.2222 m
+Median Final Error: 1.1603 m
+Min Final Error: 0.0984 m
+Max Final Error: 2.6079 m
+Mean Steps: 1383.1
+Mean Reward: 460.19

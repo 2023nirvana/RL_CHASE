@@ -1,0 +1,10 @@
+{
+  "experiment": "pe2d_hrl_cont_td5",
+  "episodes": 3,
+  "success_rate": 0.0,
+  "return_mean": 367.0889437505939,
+  "return_std": 10.777952365246666,
+  "length_mean": 1536.0,
+  "high_ckpt": "checkpoints/pe2d_hrl_cont_td5/best.pth",
+  "low_ckpt": "checkpoints/2d_v2_cont_td5_log/best.pth"
+}

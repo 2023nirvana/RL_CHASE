@@ -1,0 +1,40 @@
+nohup: ignoring input
+Using device: cuda
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:236: UserWarning: [33mWARN: Box low's precision lowered by casting to float32, current low.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:306: UserWarning: [33mWARN: Box high's precision lowered by casting to float32, current high.dtype=float64[0m
+  gym.logger.warn(
+2D V3 Continuous Environment initialized:
+  obs_dim=8, act_dim=3
+  target range: [0.3, 1.0] m
+  reach_threshold=0.05 m
+  max_episode_seconds=30.0
+  num_envs=4
+Network parameters: 9,735
+Start training for 244 updates (1000000 timesteps)
+  [Eval] steps=8192 reward=-172.250 succ=50.00% final_err=0.3352
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_baseline/checkpoints/best.pth
+  [Eval] steps=12288 reward=-38.130 succ=80.00% final_err=0.1398
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_baseline/checkpoints/best.pth
+  [Eval] steps=16384 reward=-51.865 succ=70.00% final_err=0.1447
+  [Eval] steps=20480 reward=-46.593 succ=80.00% final_err=0.0854
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_baseline/checkpoints/latest.pth
+  [Eval] steps=28672 reward=101.837 succ=100.00% final_err=0.0494
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_baseline/checkpoints/best.pth
+  [Eval] steps=32768 reward=-13.839 succ=80.00% final_err=0.1491
+  [Eval] steps=36864 reward=39.490 succ=90.00% final_err=0.0879
+Update 10/244 | Steps 40960 | TrainRew -0.148 | Loss 277.0075 | SuccRate 100.00%
+  [Eval] steps=40960 reward=21.390 succ=90.00% final_err=0.0548
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_baseline/checkpoints/latest.pth
+  [Eval] steps=45056 reward=33.092 succ=90.00% final_err=0.0824
+  [Eval] steps=53248 reward=79.504 succ=100.00% final_err=0.0491
+  [Eval] steps=57344 reward=84.392 succ=100.00% final_err=0.0496
+  [Eval] steps=61440 reward=37.911 succ=90.00% final_err=0.1012
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_baseline/checkpoints/latest.pth
+  [Eval] steps=65536 reward=117.328 succ=100.00% final_err=0.0491
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_baseline/checkpoints/best.pth
+  [Eval] steps=73728 reward=119.279 succ=100.00% final_err=0.0487
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_baseline/checkpoints/best.pth
+  [Eval] steps=77824 reward=119.871 succ=100.00% final_err=0.0487
+Saved checkpoint: /root/autodl-tmp/pursue_20260302/low_near/v4_tight_baseline/checkpoints/best.pth
+Update 20/244 | Steps 81920 | TrainRew 0.108 | Loss 2040.4615 | SuccRate 100.00%

@@ -1,0 +1,20 @@
+[
+  {
+    "update": 1,
+    "steps": 2048,
+    "train_mean_reward": -1.2396848355413554,
+    "train_loss": 1840.6785316467285,
+    "train_success_rate": 0.0,
+    "eval_mean_reward": null,
+    "eval_success_rate": null
+  },
+  {
+    "update": 2,
+    "steps": 4096,
+    "train_mean_reward": -1.2016199425523943,
+    "train_loss": 1615.376148223877,
+    "train_success_rate": 0.0,
+    "eval_mean_reward": null,
+    "eval_success_rate": null
+  }
+]

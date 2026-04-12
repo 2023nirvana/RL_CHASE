@@ -1,0 +1,123 @@
+nohup: ignoring input
+Loaded V4 NN: obs_dim=8, act_dim=3, hidden=(64, 64)
+
+============================================================
+DAgger Round 0/3 | beta=1.00 | episodes=700 | workers=9
+============================================================
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:236: UserWarning: [33mWARN: Box low's precision lowered by casting to float32, current low.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:306: UserWarning: [33mWARN: Box high's precision lowered by casting to float32, current high.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:236: UserWarning: [33mWARN: Box low's precision lowered by casting to float32, current low.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:306: UserWarning: [33mWARN: Box high's precision lowered by casting to float32, current high.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:236: UserWarning: [33mWARN: Box low's precision lowered by casting to float32, current low.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:306: UserWarning: [33mWARN: Box high's precision lowered by casting to float32, current high.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:236: UserWarning: [33mWARN: Box low's precision lowered by casting to float32, current low.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:306: UserWarning: [33mWARN: Box high's precision lowered by casting to float32, current high.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:236: UserWarning: [33mWARN: Box low's precision lowered by casting to float32, current low.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:306: UserWarning: [33mWARN: Box high's precision lowered by casting to float32, current high.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:236: UserWarning: [33mWARN: Box low's precision lowered by casting to float32, current low.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:306: UserWarning: [33mWARN: Box high's precision lowered by casting to float32, current high.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:236: UserWarning: [33mWARN: Box low's precision lowered by casting to float32, current low.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:306: UserWarning: [33mWARN: Box high's precision lowered by casting to float32, current high.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:236: UserWarning: [33mWARN: Box low's precision lowered by casting to float32, current low.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:306: UserWarning: [33mWARN: Box high's precision lowered by casting to float32, current high.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:236: UserWarning: [33mWARN: Box low's precision lowered by casting to float32, current low.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:306: UserWarning: [33mWARN: Box high's precision lowered by casting to float32, current high.dtype=float64[0m
+  gym.logger.warn(
+Loaded V4 NN: obs_dim=8, act_dim=3, hidden=(64, 64)
+  [R0 W1] 10/78 ok=9 fail=1 trans=268
+Loaded V4 NN: obs_dim=8, act_dim=3, hidden=(64, 64)
+  [R0 W5] 10/78 ok=8 fail=2 trans=197
+Loaded V4 NN: obs_dim=8, act_dim=3, hidden=(64, 64)
+  [R0 W0] 10/78 ok=9 fail=1 trans=307
+Loaded V4 NN: obs_dim=8, act_dim=3, hidden=(64, 64)
+  [R0 W2] 10/78 ok=8 fail=2 trans=338
+Loaded V4 NN: obs_dim=8, act_dim=3, hidden=(64, 64)
+  [R0 W7] 10/77 ok=9 fail=1 trans=445
+Loaded V4 NN: obs_dim=8, act_dim=3, hidden=(64, 64)
+  [R0 W8] 10/77 ok=7 fail=3 trans=221
+Loaded V4 NN: obs_dim=8, act_dim=3, hidden=(64, 64)
+  [R0 W4] 10/78 ok=6 fail=4 trans=206
+  [R0 W0] 20/78 ok=19 fail=1 trans=647
+  [R0 W1] 20/78 ok=18 fail=2 trans=546
+Loaded V4 NN: obs_dim=8, act_dim=3, hidden=(64, 64)
+  [R0 W3] 10/78 ok=5 fail=5 trans=298
+  [R0 W5] 20/78 ok=18 fail=2 trans=673
+Loaded V4 NN: obs_dim=8, act_dim=3, hidden=(64, 64)
+  [R0 W6] 10/78 ok=6 fail=4 trans=415
+  [R0 W2] 20/78 ok=17 fail=3 trans=665
+  [R0 W7] 20/77 ok=18 fail=2 trans=838
+  [R0 W4] 20/78 ok=13 fail=7 trans=453
+  [R0 W8] 20/77 ok=13 fail=7 trans=509
+  [R0 W5] 30/78 ok=26 fail=4 trans=950
+  [R0 W3] 20/78 ok=14 fail=6 trans=698
+  [R0 W2] 30/78 ok=26 fail=4 trans=995
+  [R0 W1] 30/78 ok=25 fail=5 trans=829
+  [R0 W0] 30/78 ok=26 fail=4 trans=1014
+  [R0 W6] 20/78 ok=14 fail=6 trans=844
+  [R0 W8] 30/77 ok=23 fail=7 trans=835
+  [R0 W4] 30/78 ok=22 fail=8 trans=858
+  [R0 W7] 30/77 ok=26 fail=4 trans=1352
+  [R0 W3] 30/78 ok=22 fail=8 trans=895
+  [R0 W1] 40/78 ok=35 fail=5 trans=1251
+  [R0 W5] 40/78 ok=34 fail=6 trans=1255
+  [R0 W6] 30/78 ok=23 fail=7 trans=1348
+  [R0 W0] 40/78 ok=32 fail=8 trans=1288
+  [R0 W8] 40/77 ok=32 fail=8 trans=1282
+  [R0 W2] 40/78 ok=32 fail=8 trans=1441
+  [R0 W1] 50/78 ok=43 fail=7 trans=1603
+  [R0 W5] 50/78 ok=43 fail=7 trans=1661
+  [R0 W7] 40/77 ok=33 fail=7 trans=1749
+  [R0 W3] 40/78 ok=27 fail=13 trans=1188
+  [R0 W4] 40/78 ok=26 fail=14 trans=1087
+  [R0 W8] 50/77 ok=39 fail=11 trans=1471
+  [R0 W6] 40/78 ok=30 fail=10 trans=1605
+  [R0 W0] 50/78 ok=40 fail=10 trans=1644
+  [R0 W2] 50/78 ok=39 fail=11 trans=1793
+  [R0 W1] 60/78 ok=51 fail=9 trans=2079
+  [R0 W5] 60/78 ok=49 fail=11 trans=1935
+  [R0 W7] 50/77 ok=41 fail=9 trans=2170
+  [R0 W6] 50/78 ok=39 fail=11 trans=1918
+  [R0 W4] 50/78 ok=34 fail=16 trans=1408
+  [R0 W0] 60/78 ok=50 fail=10 trans=2124
+  [R0 W3] 50/78 ok=34 fail=16 trans=1444
+  [R0 W8] 60/77 ok=46 fail=14 trans=1809
+  [R0 W2] 60/78 ok=47 fail=13 trans=2059
+  [R0 W1] 70/78 ok=61 fail=9 trans=2542
+  [R0 W7] 60/77 ok=49 fail=11 trans=2485
+  [R0 W0] 70/78 ok=59 fail=11 trans=2509
+  [R0 W8] 70/77 ok=56 fail=14 trans=2203
+  [R0 W4] 60/78 ok=42 fail=18 trans=1709
+  [R0 W5] 70/78 ok=58 fail=12 trans=2591
+  [R0 W6] 60/78 ok=46 fail=14 trans=2275
+  [R0 W1] 78/78 ok=68 fail=10 trans=2843
+  [R0 W3] 60/78 ok=39 fail=21 trans=1679
+  [R0 W2] 70/78 ok=55 fail=15 trans=2558
+  [R0 W0] 78/78 ok=65 fail=13 trans=2743
+  [R0 W8] 77/77 ok=60 fail=17 trans=2349
+  [R0 W7] 70/77 ok=56 fail=14 trans=2738
+  [R0 W5] 78/78 ok=63 fail=15 trans=2748
+  [R0 W4] 70/78 ok=50 fail=20 trans=2128
+  [R0 W6] 70/78 ok=53 fail=17 trans=2560
+  [R0 W2] 78/78 ok=61 fail=17 trans=2797
+  [R0 W4] 78/78 ok=58 fail=20 trans=2392
+  [R0 W3] 70/78 ok=46 fail=24 trans=2020
+  [R0 W7] 77/77 ok=60 fail=17 trans=3014
+  [R0 W6] 78/78 ok=59 fail=19 trans=2735
+  [R0 W3] 78/78 ok=53 fail=25 trans=2583

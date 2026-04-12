@@ -1,0 +1,11 @@
+{
+  "episodes": 30,
+  "success_rate": 1.0,
+  "return_mean": 39.15636766515733,
+  "return_std": 61.347514442792196,
+  "length_mean": 248.66666666666666,
+  "ckpt": "../checkpoints/2d_v2_cont_td5_log/final.pth",
+  "ckpt_dir": "../checkpoints/2d_v2_cont_td5_log",
+  "train_log_dir": "../visualization/logs/2d_v2_cont_td5_log",
+  "has_true_training_curve": true
+}

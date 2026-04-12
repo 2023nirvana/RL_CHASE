@@ -1,0 +1,139 @@
+% Compile with: xelatex high_level_bc_rl.tex
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{bm}
+\usepackage{booktabs}
+\usepackage{hyperref}
+
+\title{高层追击策略：算法与奖励函数}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+%% ============================================================
+\section{算法选择}
+%% ============================================================
+
+\subsection{整体思路}
+
+采用\textbf{两阶段}训练：
+\begin{enumerate}
+  \item \textbf{行为克隆(Behavior Cloning, BC)}：
+        用传统追击策略（Lead Pursuit、Expert等）的成功rollout数据，
+        通过监督学习预训练高层策略网络，提供合理的初始化；
+  \item \textbf{强化学习微调(RL Fine-tuning)}：
+        以BC权重为起点，用PPO在线交互训练，突破传统策略的性能上限。
+\end{enumerate}
+
+\subsection{为什么先BC再RL}
+
+直接RL失败的原因：
+\begin{itemize}
+  \item 连续动作空间 $[-1,1]^2$ 中随机探索几乎无法产生有效追击行为；
+  \item 捕获奖励稀疏（每episode只出现一次），策略梯度信噪比极低；
+  \item 逃脱者有策略，差的探索导致状态分布完全偏移。
+\end{itemize}
+BC预训练解决了冷启动问题——给RL一个``已经会追''的起点。
+
+\subsection{Phase 1: BC预训练}
+
+\paragraph{数据来源} 混合多种传统策略的\underline{成功}episode（captured=True）。
+
+\paragraph{损失函数} 标准MSE回归（在tanh逆变换空间）：
+\begin{equation}
+  \mathcal{L}_{\text{BC}} = \frac{1}{N}\sum_{i=1}^{N}
+  \big\| \mu_\theta(s_i) - \operatorname{atanh}(a_i^{\text{expert}}) \big\|^2,
+\end{equation}
+其中 $\mu_\theta$ 为策略网络的均值输出，$a_i^{\text{expert}}$ 为传统策略的归一化子目标动作。
+
+\paragraph{验证标准} 在30个episode上 catch\_rate $\ge 60\%$。
+
+\subsection{Phase 2: PPO + KL正则微调}
+
+\paragraph{算法} Proximal Policy Optimization (PPO)，加入对BC策略的KL散度惩罚：
+\begin{equation}
+  \mathcal{L} = \mathcal{L}_{\text{PPO}}(\theta)
+  + \beta \cdot D_{\text{KL}}\big(\pi_\theta \,\|\, \pi_{\text{BC}}\big),
+\end{equation}
+$\beta$ 从 $0.5$ 线性退火至 $0$，让策略逐渐脱离BC约束。
+
+\paragraph{课程学习} 逃脱者难度递进：simple $\to$ medium $\to$ hard。
+
+
+%% ============================================================
+\section{奖励函数设计}
+%% ============================================================
+
+高层RL每步产生一个标量奖励 $r_t$，由以下\textbf{三项}组成：
+
+\begin{equation}
+  r_t = r_t^{\text{event}} + r_t^{\text{shaping}} + r_t^{\text{time}}.
+\end{equation}
+
+\subsection{第一项：事件奖励 $r^{\text{event}}$}
+
+\begin{equation}
+  r_t^{\text{event}} =
+  \begin{cases}
+    +100 & \text{追击者捕获逃脱者}\ (d_{pe} \le 1.0\,\text{m}),\\
+    -50  & \text{追击者出界或碰障碍物},\\
+    0    & \text{其他}.
+  \end{cases}
+\end{equation}
+
+只在episode结束时触发。数值不对称：鼓励先活下来再抓人。
+
+\subsection{第二项：势函数整形 $r^{\text{shaping}}$ (PBRS)}
+
+采用基于势函数的奖励整形(Potential-Based Reward Shaping, PBRS)，
+\textbf{不改变最优策略}（Ng et al., 1999）。
+
+\paragraph{势函数}
+\begin{equation}
+  \Phi(s) = -\|p_p - p_e\|_2, \qquad \text{即负距离。}
+\end{equation}
+
+\paragraph{整形奖励}
+\begin{equation}
+  r_t^{\text{shaping}} = \alpha \big(\gamma\,\Phi(s_{t+1}) - \Phi(s_t)\big),
+  \qquad \alpha = 5.
+\end{equation}
+
+物理含义：追击者靠近逃脱者 $\Rightarrow$ 正奖励；远离 $\Rightarrow$ 负奖励。
+$\alpha=5$ 是缩放系数，让该项的量级与事件奖励匹配。
+
+\subsection{第三项：时间惩罚 $r^{\text{time}}$}
+
+\begin{equation}
+  r_t^{\text{time}} = -0.1.
+\end{equation}
+
+每步扣 $0.1$，避免策略拖延。一个episode最多300步，
+最大累计惩罚 $-30$，远小于捕获奖励 $+100$。
+
+\subsection{与原有奖励的对比}
+
+原有 \texttt{\_compute\_reward} 包含6项以上：
+\begin{itemize}
+  \item distance reward
+  \item heading alignment bonus
+  \item obstacle proximity penalty
+  \item progress reward (path shortening)
+  \item capture / out-of-bounds / collision
+  \item time penalty
+\end{itemize}
+
+\textbf{删减理由}：
+\begin{itemize}
+  \item \textbf{heading alignment}: 隐式包含在PBRS中——朝向目标自然靠近更快；
+  \item \textbf{obstacle proximity}: 子目标已经被推出障碍物，低层控制器负责避障；
+  \item \textbf{path shortening}: 与PBRS高度冗余——都是鼓励缩短距离；
+  \item \textbf{distance reward}: 被PBRS替代，且PBRS有理论保证。
+\end{itemize}
+
+3项设计更简洁、更稳定、信号不冲突。
+
+\end{document}

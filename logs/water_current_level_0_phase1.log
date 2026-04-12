@@ -1,0 +1,80 @@
+Strategies: ['lead', 'pn', 'apn', 'cb', 'expert']
+Episodes per strategy: 10
+Only success: True
+Num workers: 1
+Loaded V4 NN: obs_dim=8, act_dim=3, hidden=(64, 64)
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:236: UserWarning: [33mWARN: Box low's precision lowered by casting to float32, current low.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:306: UserWarning: [33mWARN: Box high's precision lowered by casting to float32, current high.dtype=float64[0m
+  gym.logger.warn(
+  [LeadPursuit] ep  10/10 | ok=7 fail=3 trans=368 (48s)
+  LeadPursuit: 7 ok, 3 fail, 368 transitions (48s)
+  [ProNav(N=4.0)] ep  10/10 | ok=10 fail=0 trans=395 (76s)
+  ProNav(N=4.0): 10 ok, 0 fail, 395 transitions (76s)
+  [AugProNav(N=4.0)] ep  10/10 | ok=7 fail=3 trans=264 (118s)
+  AugProNav(N=4.0): 7 ok, 3 fail, 264 transitions (118s)
+  [ConstantBearing(K=8.0)] ep  10/10 | ok=8 fail=2 trans=373 (160s)
+  ConstantBearing(K=8.0): 8 ok, 2 fail, 373 transitions (160s)
+  [Expert_pred2.0s] ep  10/10 | ok=8 fail=2 trans=281 (196s)
+  Expert_pred2.0s: 8 ok, 2 fail, 281 transitions (196s)
+
+Saved 1681 transitions → checkpoints/water_current_level_0/expert_data/expert_dataset.npz
+{
+  "total_transitions": 1681,
+  "total_episodes": 40,
+  "per_strategy": {
+    "LeadPursuit": {
+      "success": 7,
+      "fail": 3,
+      "success_rate": 0.7,
+      "mean_steps": 52.57142857142857
+    },
+    "ProNav(N=4.0)": {
+      "success": 10,
+      "fail": 0,
+      "success_rate": 1.0,
+      "mean_steps": 39.5
+    },
+    "AugProNav(N=4.0)": {
+      "success": 7,
+      "fail": 3,
+      "success_rate": 0.7,
+      "mean_steps": 37.714285714285715
+    },
+    "ConstantBearing(K=8.0)": {
+      "success": 8,
+      "fail": 2,
+      "success_rate": 0.8,
+      "mean_steps": 46.625
+    },
+    "Expert_pred2.0s": {
+      "success": 8,
+      "fail": 2,
+      "success_rate": 0.8,
+      "mean_steps": 35.125
+    }
+  },
+  "args": {
+    "low_level_ckpt": "low_near/v4_tight_heading_terminal/checkpoints/best.pth",
+    "episodes_per_strategy": 10,
+    "only_success": true,
+    "evader_mode": "medium",
+    "world_size": 30.0,
+    "catch_radius": 1.0,
+    "subgoal_range": 0.7,
+    "low_steps": 50,
+    "max_steps": 6000,
+    "output_dir": "checkpoints/water_current_level_0/expert_data",
+    "seed": 42,
+    "strategies": [
+      "lead",
+      "pn",
+      "apn",
+      "cb",
+      "expert"
+    ],
+    "merge": false,
+    "num_workers": 1
+  }
+}
+Saved: checkpoints/water_current_level_0/expert_data/dataset_stats.png
