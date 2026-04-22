@@ -36,9 +36,33 @@ sys.path.insert(0, PROJECT_ROOT)
 from high_tabular.hrl_v3_real_auv_fixed import (
     load_v4_nn, PursuitEnvRealAUVFixed,
 )
+from high_tabular.hrl_v3_real_auv_direct_thrust import (
+    load_v5_nn, PursuitEnvDirectThrust,
+)
 from training.offline_ppo_pretrain import HighLevelActorCritic
 from training.collect_expert_trajectories import compute_high_reward
 from training.vec_env import SubprocVecEnv
+
+
+def _make_env(args, nn_policy, device, env_kwargs):
+    """根据 args.env_version 创建 v4/v5 环境"""
+    if getattr(args, "env_version", "v4") == "v5":
+        v5_kw = dict(env_kwargs)
+        for k in ("v_max_pursuer", "a_max_pursuer",
+                  "v_max_evader", "a_max_evader"):
+            val = getattr(args, k, None)
+            if val is not None:
+                v5_kw[k] = val
+        return PursuitEnvDirectThrust(
+            nn_policy=nn_policy, device=device, **v5_kw)
+    return PursuitEnvRealAUVFixed(
+        nn_policy=nn_policy, device=device, **env_kwargs)
+
+
+def _load_low_nn(args, device):
+    if getattr(args, "env_version", "v4") == "v5":
+        return load_v5_nn(args.low_level_ckpt, device)
+    return load_v4_nn(args.low_level_ckpt, device)
 
 
 # ─────────── Rollout Buffer ───────────
@@ -155,6 +179,19 @@ class RunningMeanStd:
 # ─────────── Online PPO Trainer ───────────
 
 class OnlinePPOTrainer:
+    @staticmethod
+    def _build_env_kwargs(env_kwargs, args):
+        """v5 下把 v_max/a_max 参数注入 env_kwargs，否则原样返回"""
+        if getattr(args, "env_version", "v4") != "v5":
+            return env_kwargs
+        kw = dict(env_kwargs)
+        for k in ("v_max_pursuer", "a_max_pursuer",
+                  "v_max_evader", "a_max_evader"):
+            val = getattr(args, k, None)
+            if val is not None:
+                kw[k] = val
+        return kw
+
     def __init__(self, args):
         self.args = args
         self.device = torch.device(
@@ -190,32 +227,27 @@ class OnlinePPOTrainer:
                 n_envs=args.num_envs,
                 project_root=PROJECT_ROOT,
                 low_ckpt=args.low_level_ckpt,
-                env_kwargs=env_kwargs,
+                env_kwargs=self._build_env_kwargs(env_kwargs, args),
                 reward_kwargs=self.reward_kwargs,
                 nn_device="cpu",
+                env_version=getattr(args, "env_version", "v4"),
             )
             self.n_envs = args.num_envs
             self.use_vec = True
         else:
             # 单环境模式 (无子进程开销)
-            self.nn_policy = load_v4_nn(
-                args.low_level_ckpt, self.device)
-            self.env = PursuitEnvRealAUVFixed(
-                nn_policy=self.nn_policy, device=self.device,
-                **env_kwargs,
-            )
+            self.nn_policy = _load_low_nn(args, self.device)
+            self.env = _make_env(args, self.nn_policy, self.device,
+                                 env_kwargs)
             self.n_envs = 1
             self.use_vec = False
 
         # ── 评估环境 (始终单进程) ──
-        self.nn_policy_eval = load_v4_nn(
-            args.low_level_ckpt, self.device)
+        self.nn_policy_eval = _load_low_nn(args, self.device)
         eval_kw = dict(env_kwargs)
         eval_kw["seed"] = args.seed + 9999
-        self.eval_env = PursuitEnvRealAUVFixed(
-            nn_policy=self.nn_policy_eval, device=self.device,
-            **eval_kw,
-        )
+        self.eval_env = _make_env(args, self.nn_policy_eval,
+                                  self.device, eval_kw)
 
         # ── 高层网络 ──
         self.model = HighLevelActorCritic(
@@ -934,6 +966,13 @@ class OnlinePPOTrainer:
 def main():
     pa = argparse.ArgumentParser()
     pa.add_argument("--low-level-ckpt", type=str, required=True)
+    pa.add_argument("--env-version", type=str, default="v4",
+                    choices=["v4", "v5"],
+                    help="v4=PursuitEnvRealAUVFixed, v5=PursuitEnvDirectThrust")
+    pa.add_argument("--v-max-pursuer", type=float, default=None)
+    pa.add_argument("--a-max-pursuer", type=float, default=None)
+    pa.add_argument("--v-max-evader",  type=float, default=None)
+    pa.add_argument("--a-max-evader",  type=float, default=None)
     pa.add_argument("--pretrain-ckpt", type=str, default=None,
                     help="Offline pretrained checkpoint (best.pth)")
     pa.add_argument("--resume", type=str, default=None,

@@ -1,0 +1,344 @@
+Device: cuda
+Creating SubprocVecEnv with 4 workers ...
+Loaded v5 direct thrust NN: obs=8, act=8, hidden=(64, 64)
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:236: UserWarning: [33mWARN: Box low's precision lowered by casting to float32, current low.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:306: UserWarning: [33mWARN: Box high's precision lowered by casting to float32, current high.dtype=float64[0m
+  gym.logger.warn(
+Loaded pretrained (TD3Actor→AC): checkpoints/iql_v5_2m/best.pth
+Online PPO: 61 updates, 2048 steps × 4 envs = 8192/update [reward-norm]
+Reward params: {'R_catch': 200.0, 'R_fail': -50.0, 'alpha': 5.0, 'c_sg': 1.0, 'd_sg_safe': 1.5, 'c_path': 1.0, 'lam_time': 0.01}
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:236: UserWarning: [33mWARN: Box low's precision lowered by casting to float32, current low.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:306: UserWarning: [33mWARN: Box high's precision lowered by casting to float32, current high.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:236: UserWarning: [33mWARN: Box low's precision lowered by casting to float32, current low.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:306: UserWarning: [33mWARN: Box high's precision lowered by casting to float32, current high.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:236: UserWarning: [33mWARN: Box low's precision lowered by casting to float32, current low.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:306: UserWarning: [33mWARN: Box high's precision lowered by casting to float32, current high.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:236: UserWarning: [33mWARN: Box low's precision lowered by casting to float32, current low.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:306: UserWarning: [33mWARN: Box high's precision lowered by casting to float32, current high.dtype=float64[0m
+  gym.logger.warn(
+  Update 1/61 | steps=8192 | ep_rew=155.1 | ep_len=58 | sr=78.83% | pi=-0.002 vf=9.5 ent=1.837 kl=0.000 clip=0.03 | beta=0.000 lr=3.0e-05 | FPS=59
+    [Reward] event=155.1 shaping=49.7 sg_obs=-49.1 time=-0.6
+    [Eval] rew=142.30±147.6  sr=75.00%  steps=49  cap_steps=25
+    [Eval Reward] event=142.5 shaping=42.8 sg_obs=-42.5 time=-0.5
+Saved: /root/autodl-tmp/pursue_20260302/checkpoints/v5_iql_B/best.pth
+    [Eval] rew=182.07±133.8  sr=90.00%  steps=38  cap_steps=29
+    [Eval Reward] event=175.0 shaping=43.7 sg_obs=-36.3 time=-0.4
+Saved: /root/autodl-tmp/pursue_20260302/checkpoints/v5_iql_B/best.pth
+Saved: /root/autodl-tmp/pursue_20260302/checkpoints/v5_iql_B/latest.pth
+    [Eval] rew=170.85±94.0  sr=85.00%  steps=52  cap_steps=40
+    [Eval Reward] event=170.0 shaping=43.8 sg_obs=-42.4 time=-0.5
+  Update 10/61 | steps=81920 | ep_rew=164.8 | ep_len=53 | sr=80.86% | pi=-0.003 vf=4.5 ent=1.827 kl=0.000 clip=0.03 | beta=0.000 lr=2.6e-05 | FPS=55
+    [Reward] event=159.4 shaping=45.0 sg_obs=-39.1 time=-0.5
+    [Eval] rew=212.13±52.9  sr=95.00%  steps=39  cap_steps=35
+    [Eval Reward] event=190.0 shaping=45.9 sg_obs=-23.3 time=-0.4
+Saved: /root/autodl-tmp/pursue_20260302/checkpoints/v5_iql_B/best.pth
+    [Eval] rew=169.52±107.7  sr=85.00%  steps=46  cap_steps=32
+    [Eval Reward] event=165.0 shaping=44.8 sg_obs=-39.8 time=-0.5
+Saved: /root/autodl-tmp/pursue_20260302/checkpoints/v5_iql_B/latest.pth
+    [Eval] rew=171.71±137.4  sr=85.00%  steps=37  cap_steps=22
+    [Eval Reward] event=165.0 shaping=42.0 sg_obs=-34.9 time=-0.4
+    [Eval] rew=217.87±59.7  sr=95.00%  steps=27  cap_steps=22
+    [Eval Reward] event=190.0 shaping=36.3 sg_obs=-8.2 time=-0.3
+Saved: /root/autodl-tmp/pursue_20260302/checkpoints/v5_iql_B/latest.pth
+  Update 20/61 | steps=163840 | ep_rew=174.0 | ep_len=52 | sr=82.13% | pi=-0.002 vf=3.9 ent=1.820 kl=0.000 clip=0.02 | beta=0.000 lr=2.1e-05 | FPS=55
+    [Reward] event=167.1 shaping=46.7 sg_obs=-39.2 time=-0.5
+    [Eval] rew=220.40±22.0  sr=100.00%  steps=30  cap_steps=30
+    [Eval Reward] event=200.0 shaping=42.5 sg_obs=-21.8 time=-0.3
+Saved: /root/autodl-tmp/pursue_20260302/checkpoints/v5_iql_B/best.pth
+    [Eval] rew=158.84±141.3  sr=85.00%  steps=49  cap_steps=36
+    [Eval Reward] event=165.0 shaping=47.7 sg_obs=-53.3 time=-0.5
+    [Eval] rew=147.94±143.2  sr=75.00%  steps=49  cap_steps=25
+    [Eval Reward] event=145.0 shaping=41.7 sg_obs=-38.3 time=-0.5
+Saved: /root/autodl-tmp/pursue_20260302/checkpoints/v5_iql_B/latest.pth
+    [Eval] rew=191.98±90.9  sr=90.00%  steps=37  cap_steps=28
+    [Eval Reward] event=177.5 shaping=41.4 sg_obs=-26.6 time=-0.4
+  Update 30/61 | steps=245760 | ep_rew=177.8 | ep_len=50 | sr=82.52% | pi=0.004 vf=3.8 ent=1.815 kl=0.000 clip=0.02 | beta=0.000 lr=1.6e-05 | FPS=55
+    [Reward] event=165.1 shaping=45.1 sg_obs=-31.9 time=-0.5
+    [Eval] rew=199.99±69.5  sr=90.00%  steps=43  cap_steps=35
+    [Eval Reward] event=180.0 shaping=46.1 sg_obs=-25.7 time=-0.4
+Saved: /root/autodl-tmp/pursue_20260302/checkpoints/v5_iql_B/latest.pth
+Device: cuda
+Creating SubprocVecEnv with 4 workers ...
+Loaded v5 direct thrust NN: obs=8, act=8, hidden=(64, 64)
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:236: UserWarning: [33mWARN: Box low's precision lowered by casting to float32, current low.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:306: UserWarning: [33mWARN: Box high's precision lowered by casting to float32, current high.dtype=float64[0m
+  gym.logger.warn(
+Resumed from checkpoints/v5_iql_B/latest.pth (step=253952, update=32)
+Online PPO: 61 updates, 2048 steps × 4 envs = 8192/update [reward-norm]
+Reward params: {'R_catch': 200.0, 'R_fail': -50.0, 'alpha': 5.0, 'c_sg': 1.0, 'd_sg_safe': 1.5, 'c_path': 1.0, 'lam_time': 0.01}
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:236: UserWarning: [33mWARN: Box low's precision lowered by casting to float32, current low.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:306: UserWarning: [33mWARN: Box high's precision lowered by casting to float32, current high.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:236: UserWarning: [33mWARN: Box low's precision lowered by casting to float32, current low.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:306: UserWarning: [33mWARN: Box high's precision lowered by casting to float32, current high.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:236: UserWarning: [33mWARN: Box low's precision lowered by casting to float32, current low.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:306: UserWarning: [33mWARN: Box high's precision lowered by casting to float32, current high.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:236: UserWarning: [33mWARN: Box low's precision lowered by casting to float32, current low.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:306: UserWarning: [33mWARN: Box high's precision lowered by casting to float32, current high.dtype=float64[0m
+  gym.logger.warn(
+  Update 32/61 | steps=262144 | ep_rew=187.3 | ep_len=46 | sr=90.34% | pi=-0.002 vf=3.0 ent=1.814 kl=0.000 clip=0.01 | beta=0.000 lr=1.5e-05 | FPS=62
+    [Reward] event=178.1 shaping=46.4 sg_obs=-36.8 time=-0.5
+    [Eval] rew=188.15±101.7  sr=90.00%  steps=36  cap_steps=27
+    [Eval Reward] event=177.5 shaping=42.0 sg_obs=-31.0 time=-0.4
+Saved: /root/autodl-tmp/pursue_20260302/checkpoints/v5_iql_B/best.pth
+    [Eval] rew=226.03±18.8  sr=100.00%  steps=33  cap_steps=33
+    [Eval Reward] event=200.0 shaping=45.9 sg_obs=-19.5 time=-0.3
+Saved: /root/autodl-tmp/pursue_20260302/checkpoints/v5_iql_B/best.pth
+    [Eval] rew=172.95±96.7  sr=85.00%  steps=48  cap_steps=36
+    [Eval Reward] event=170.0 shaping=43.6 sg_obs=-40.2 time=-0.5
+Saved: /root/autodl-tmp/pursue_20260302/checkpoints/v5_iql_B/latest.pth
+  Update 40/61 | steps=327680 | ep_rew=160.6 | ep_len=55 | sr=85.35% | pi=-0.002 vf=3.5 ent=1.812 kl=0.000 clip=0.01 | beta=0.000 lr=1.1e-05 | FPS=57
+    [Reward] event=159.9 shaping=46.1 sg_obs=-44.9 time=-0.5
+    [Eval] rew=198.49±75.1  sr=90.00%  steps=42  cap_steps=34
+    [Eval Reward] event=177.5 shaping=46.9 sg_obs=-25.5 time=-0.4
+    [Eval] rew=160.36±129.1  sr=80.00%  steps=53  cap_steps=36
+    [Eval Reward] event=157.5 shaping=43.9 sg_obs=-40.5 time=-0.5
+Saved: /root/autodl-tmp/pursue_20260302/checkpoints/v5_iql_B/latest.pth
+    [Eval] rew=183.14±129.8  sr=90.00%  steps=33  cap_steps=24
+    [Eval Reward] event=175.0 shaping=42.2 sg_obs=-33.7 time=-0.3
+    [Eval] rew=218.91±57.1  sr=95.00%  steps=27  cap_steps=22
+    [Eval Reward] event=190.0 shaping=36.6 sg_obs=-7.5 time=-0.3
+    [Eval] rew=207.68±93.3  sr=95.00%  steps=28  cap_steps=23
+    [Eval Reward] event=187.5 shaping=39.7 sg_obs=-19.2 time=-0.3
+Saved: /root/autodl-tmp/pursue_20260302/checkpoints/v5_iql_B/latest.pth
+  Update 50/61 | steps=409600 | ep_rew=189.0 | ep_len=45 | sr=85.91% | pi=0.002 vf=3.4 ent=1.811 kl=0.000 clip=0.00 | beta=0.000 lr=6.7e-06 | FPS=57
+    [Reward] event=178.8 shaping=44.5 sg_obs=-33.8 time=-0.4
+    [Eval] rew=198.32±79.9  sr=95.00%  steps=42  cap_steps=38
+    [Eval Reward] event=190.0 shaping=47.9 sg_obs=-39.1 time=-0.4
+    [Eval] rew=171.71±128.0  sr=85.00%  steps=43  cap_steps=29
+    [Eval Reward] event=165.0 shaping=44.9 sg_obs=-37.8 time=-0.4
+Saved: /root/autodl-tmp/pursue_20260302/checkpoints/v5_iql_B/latest.pth
+    [Eval] rew=194.26±81.9  sr=90.00%  steps=39  cap_steps=30
+    [Eval Reward] event=180.0 shaping=41.7 sg_obs=-27.1 time=-0.4
+    [Eval] rew=190.01±113.1  sr=90.00%  steps=45  cap_steps=37
+    [Eval Reward] event=177.5 shaping=47.8 sg_obs=-34.8 time=-0.5
+  Update 60/61 | steps=491520 | ep_rew=193.9 | ep_len=47 | sr=86.26% | pi=0.007 vf=3.1 ent=1.811 kl=0.000 clip=0.00 | beta=0.000 lr=2.0e-06 | FPS=56
+    [Reward] event=178.4 shaping=46.3 sg_obs=-30.4 time=-0.5
+Saved: /root/autodl-tmp/pursue_20260302/checkpoints/v5_iql_B/final.pth
+Saved: /root/autodl-tmp/pursue_20260302/visualization/logs/v5_iql_B/online_ppo_curves.png
+Loaded v5 direct thrust NN: obs=8, act=8, hidden=(64, 64)
+Loaded v5 direct thrust NN: obs=8, act=8, hidden=(64, 64)
+Loaded v5 direct thrust NN: obs=8, act=8, hidden=(64, 64)
+Loaded v5 direct thrust NN: obs=8, act=8, hidden=(64, 64)
+Online PPO fine-tuning done.
+Device: cuda
+Creating SubprocVecEnv with 4 workers ...
+Loaded v5 direct thrust NN: obs=8, act=8, hidden=(64, 64)
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:236: UserWarning: [33mWARN: Box low's precision lowered by casting to float32, current low.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:306: UserWarning: [33mWARN: Box high's precision lowered by casting to float32, current high.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:236: UserWarning: [33mWARN: Box low's precision lowered by casting to float32, current low.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:306: UserWarning: [33mWARN: Box high's precision lowered by casting to float32, current high.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:236: UserWarning: [33mWARN: Box low's precision lowered by casting to float32, current low.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:306: UserWarning: [33mWARN: Box high's precision lowered by casting to float32, current high.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:236: UserWarning: [33mWARN: Box low's precision lowered by casting to float32, current low.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:306: UserWarning: [33mWARN: Box high's precision lowered by casting to float32, current high.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:236: UserWarning: [33mWARN: Box low's precision lowered by casting to float32, current low.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:306: UserWarning: [33mWARN: Box high's precision lowered by casting to float32, current high.dtype=float64[0m
+  gym.logger.warn(
+Resumed from checkpoints/v5_iql_B/final.pth (step=499712, update=62)
+Online PPO: 244 updates, 2048 steps × 4 envs = 8192/update [reward-norm]
+Reward params: {'R_catch': 200.0, 'R_fail': -50.0, 'alpha': 5.0, 'c_sg': 1.0, 'd_sg_safe': 1.5, 'c_path': 1.0, 'lam_time': 0.01}
+  Update 62/244 | steps=507904 | ep_rew=172.9 | ep_len=47 | sr=84.62% | pi=-0.002 vf=3.5 ent=1.811 kl=0.000 clip=0.02 | beta=0.000 lr=2.3e-05 | FPS=56
+    [Reward] event=166.3 shaping=44.7 sg_obs=-37.6 time=-0.5
+    [Eval] rew=189.03±102.4  sr=90.00%  steps=36  cap_steps=27
+    [Eval Reward] event=177.5 shaping=42.0 sg_obs=-30.1 time=-0.4
+Saved: /root/autodl-tmp/pursue_20260302/checkpoints/v5_iql_B/best.pth
+Saved: /root/autodl-tmp/pursue_20260302/checkpoints/v5_iql_B/latest.pth
+    [Eval] rew=224.79±20.6  sr=100.00%  steps=34  cap_steps=34
+    [Eval Reward] event=200.0 shaping=46.0 sg_obs=-20.8 time=-0.3
+Saved: /root/autodl-tmp/pursue_20260302/checkpoints/v5_iql_B/best.pth
+    [Eval] rew=166.11±123.4  sr=85.00%  steps=48  cap_steps=35
+    [Eval Reward] event=167.5 shaping=40.9 sg_obs=-41.8 time=-0.5
+Saved: /root/autodl-tmp/pursue_20260302/checkpoints/v5_iql_B/latest.pth
+    [Eval] rew=180.91±117.1  sr=85.00%  steps=46  cap_steps=33
+    [Eval Reward] event=165.0 shaping=44.8 sg_obs=-28.4 time=-0.5
+  Update 70/244 | steps=573440 | ep_rew=159.2 | ep_len=55 | sr=85.09% | pi=-0.002 vf=3.2 ent=1.806 kl=0.000 clip=0.02 | beta=0.000 lr=2.2e-05 | FPS=52
+    [Reward] event=156.4 shaping=45.9 sg_obs=-42.5 time=-0.5
+    [Eval] rew=188.25±98.3  sr=90.00%  steps=48  cap_steps=41
+    [Eval Reward] event=177.5 shaping=45.7 sg_obs=-34.5 time=-0.5
+    [Eval] rew=185.28±122.3  sr=90.00%  steps=33  cap_steps=23
+    [Eval Reward] event=177.5 shaping=42.4 sg_obs=-34.3 time=-0.3
+Saved: /root/autodl-tmp/pursue_20260302/checkpoints/v5_iql_B/latest.pth
+    [Eval] rew=230.63±14.5  sr=100.00%  steps=23  cap_steps=23
+    [Eval Reward] event=200.0 shaping=37.0 sg_obs=-6.1 time=-0.2
+    [Eval] rew=226.96±17.0  sr=100.00%  steps=25  cap_steps=25
+    [Eval Reward] event=200.0 shaping=40.6 sg_obs=-13.4 time=-0.2
+  Update 80/244 | steps=655360 | ep_rew=183.6 | ep_len=45 | sr=85.70% | pi=-0.003 vf=3.4 ent=1.800 kl=0.000 clip=0.02 | beta=0.000 lr=2.1e-05 | FPS=54
+    [Reward] event=172.9 shaping=43.4 sg_obs=-32.2 time=-0.5
+Saved: /root/autodl-tmp/pursue_20260302/checkpoints/v5_iql_B/latest.pth
+    [Eval] rew=200.59±53.0  sr=95.00%  steps=44  cap_steps=40
+    [Eval Reward] event=190.0 shaping=47.9 sg_obs=-36.9 time=-0.4
+    [Eval] rew=177.51±103.3  sr=85.00%  steps=44  cap_steps=31
+    [Eval Reward] event=167.5 shaping=45.6 sg_obs=-35.1 time=-0.4
+    [Eval] rew=195.43±82.1  sr=90.00%  steps=37  cap_steps=28
+    [Eval Reward] event=180.0 shaping=41.5 sg_obs=-25.7 time=-0.4
+Saved: /root/autodl-tmp/pursue_20260302/checkpoints/v5_iql_B/latest.pth
+    [Eval] rew=202.76±81.7  sr=90.00%  steps=40  cap_steps=31
+    [Eval Reward] event=180.0 shaping=44.6 sg_obs=-21.5 time=-0.4
+  Update 90/244 | steps=737280 | ep_rew=186.7 | ep_len=49 | sr=86.40% | pi=-0.003 vf=3.0 ent=1.800 kl=0.000 clip=0.01 | beta=0.000 lr=1.9e-05 | FPS=54
+    [Reward] event=172.4 shaping=46.0 sg_obs=-31.2 time=-0.5
+    [Eval] rew=210.27±50.6  sr=95.00%  steps=42  cap_steps=38
+    [Eval Reward] event=190.0 shaping=44.6 sg_obs=-23.9 time=-0.4
+Saved: /root/autodl-tmp/pursue_20260302/checkpoints/v5_iql_B/latest.pth
+    [Eval] rew=206.30±83.2  sr=90.00%  steps=38  cap_steps=28
+    [Eval Reward] event=177.5 shaping=39.7 sg_obs=-10.6 time=-0.4
+    [Eval] rew=203.35±55.9  sr=95.00%  steps=44  cap_steps=40
+    [Eval Reward] event=190.0 shaping=46.7 sg_obs=-32.9 time=-0.4
+Device: cuda
+Creating SubprocVecEnv with 4 workers ...
+Loaded v5 direct thrust NN: obs=8, act=8, hidden=(64, 64)
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:236: UserWarning: [33mWARN: Box low's precision lowered by casting to float32, current low.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:306: UserWarning: [33mWARN: Box high's precision lowered by casting to float32, current high.dtype=float64[0m
+  gym.logger.warn(
+Resumed from checkpoints/v5_iql_B/latest.pth (step=753664, update=93)
+Online PPO: 244 updates, 2048 steps × 4 envs = 8192/update [reward-norm]
+Reward params: {'R_catch': 200.0, 'R_fail': -50.0, 'alpha': 5.0, 'c_sg': 1.0, 'd_sg_safe': 1.5, 'c_path': 1.0, 'lam_time': 0.01}
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:236: UserWarning: [33mWARN: Box low's precision lowered by casting to float32, current low.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:306: UserWarning: [33mWARN: Box high's precision lowered by casting to float32, current high.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:236: UserWarning: [33mWARN: Box low's precision lowered by casting to float32, current low.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:306: UserWarning: [33mWARN: Box high's precision lowered by casting to float32, current high.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:236: UserWarning: [33mWARN: Box low's precision lowered by casting to float32, current low.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:306: UserWarning: [33mWARN: Box high's precision lowered by casting to float32, current high.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:236: UserWarning: [33mWARN: Box low's precision lowered by casting to float32, current low.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:306: UserWarning: [33mWARN: Box high's precision lowered by casting to float32, current high.dtype=float64[0m
+  gym.logger.warn(
+  Update 93/244 | steps=761856 | ep_rew=186.8 | ep_len=46 | sr=87.43% | pi=-0.002 vf=2.9 ent=1.801 kl=0.000 clip=0.02 | beta=0.000 lr=1.9e-05 | FPS=57
+    [Reward] event=173.1 shaping=45.4 sg_obs=-31.3 time=-0.5
+    [Eval] rew=187.42±108.7  sr=90.00%  steps=36  cap_steps=27
+    [Eval Reward] event=175.0 shaping=42.6 sg_obs=-29.8 time=-0.4
+Saved: /root/autodl-tmp/pursue_20260302/checkpoints/v5_iql_B/best.pth
+    [Eval] rew=205.55±67.2  sr=90.00%  steps=38  cap_steps=28
+    [Eval Reward] event=180.0 shaping=44.7 sg_obs=-18.8 time=-0.4
+    [Eval] rew=172.01±121.7  sr=85.00%  steps=45  cap_steps=32
+    [Eval Reward] event=167.5 shaping=39.9 sg_obs=-35.0 time=-0.5
+Saved: /root/autodl-tmp/pursue_20260302/checkpoints/v5_iql_B/latest.pth
+  Update 100/244 | steps=819200 | ep_rew=185.6 | ep_len=44 | sr=87.86% | pi=-0.002 vf=2.9 ent=1.801 kl=0.000 clip=0.02 | beta=0.000 lr=1.8e-05 | FPS=54
+    [Reward] event=173.3 shaping=43.1 sg_obs=-30.3 time=-0.4
+    [Eval] rew=195.94±74.0  sr=90.00%  steps=47  cap_steps=39
+    [Eval Reward] event=177.5 shaping=48.5 sg_obs=-29.6 time=-0.5
+    [Eval] rew=171.82±129.7  sr=85.00%  steps=47  cap_steps=34
+    [Eval Reward] event=165.0 shaping=43.2 sg_obs=-35.9 time=-0.5
+Saved: /root/autodl-tmp/pursue_20260302/checkpoints/v5_iql_B/latest.pth
+    [Eval] rew=188.07±121.5  sr=90.00%  steps=33  cap_steps=23
+    [Eval Reward] event=177.5 shaping=41.8 sg_obs=-30.9 time=-0.3
+    [Eval] rew=230.60±14.9  sr=100.00%  steps=23  cap_steps=23
+    [Eval Reward] event=200.0 shaping=37.0 sg_obs=-6.1 time=-0.2
+Saved: /root/autodl-tmp/pursue_20260302/checkpoints/v5_iql_B/best.pth
+  Update 110/244 | steps=901120 | ep_rew=187.2 | ep_len=46 | sr=87.32% | pi=0.001 vf=3.0 ent=1.798 kl=0.000 clip=0.01 | beta=0.000 lr=1.7e-05 | FPS=55
+    [Reward] event=173.3 shaping=43.6 sg_obs=-29.3 time=-0.5
+    [Eval] rew=215.25±58.6  sr=95.00%  steps=30  cap_steps=25
+    [Eval Reward] event=190.0 shaping=40.8 sg_obs=-15.3 time=-0.3
+Saved: /root/autodl-tmp/pursue_20260302/checkpoints/v5_iql_B/latest.pth
+    [Eval] rew=188.47±104.8  sr=90.00%  steps=46  cap_steps=38
+    [Eval Reward] event=177.5 shaping=45.6 sg_obs=-34.2 time=-0.5
+    [Eval] rew=177.16±99.1  sr=85.00%  steps=45  cap_steps=32
+    [Eval Reward] event=167.5 shaping=45.3 sg_obs=-35.2 time=-0.4
+Saved: /root/autodl-tmp/pursue_20260302/checkpoints/v5_iql_B/latest.pth
+    [Eval] rew=207.63±59.5  sr=95.00%  steps=37  cap_steps=33
+    [Eval Reward] event=190.0 shaping=42.1 sg_obs=-24.1 time=-0.4
+  Update 120/244 | steps=983040 | ep_rew=186.8 | ep_len=47 | sr=87.47% | pi=0.001 vf=2.9 ent=1.796 kl=0.000 clip=0.01 | beta=0.000 lr=1.6e-05 | FPS=55
+    [Reward] event=173.1 shaping=45.3 sg_obs=-31.1 time=-0.5
+    [Eval] rew=212.33±54.1  sr=95.00%  steps=41  cap_steps=37
+    [Eval Reward] event=190.0 shaping=45.9 sg_obs=-23.1 time=-0.4
+    [Eval] rew=219.75±19.1  sr=100.00%  steps=36  cap_steps=36
+    [Eval Reward] event=200.0 shaping=44.8 sg_obs=-24.7 time=-0.4
+Saved: /root/autodl-tmp/pursue_20260302/checkpoints/v5_iql_B/latest.pth
+    [Eval] rew=210.15±67.9  sr=90.00%  steps=40  cap_steps=32
+    [Eval Reward] event=180.0 shaping=40.9 sg_obs=-10.3 time=-0.4
+    [Eval] rew=187.73±99.4  sr=90.00%  steps=46  cap_steps=38
+    [Eval Reward] event=180.0 shaping=45.3 sg_obs=-37.1 time=-0.5
+Device: cuda
+Creating SubprocVecEnv with 4 workers ...
+Loaded v5 direct thrust NN: obs=8, act=8, hidden=(64, 64)
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:236: UserWarning: [33mWARN: Box low's precision lowered by casting to float32, current low.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:306: UserWarning: [33mWARN: Box high's precision lowered by casting to float32, current high.dtype=float64[0m
+  gym.logger.warn(
+Resumed from checkpoints/v5_iql_B/latest.pth (step=1007616, update=124)
+Online PPO: 244 updates, 2048 steps × 4 envs = 8192/update [reward-norm]
+Reward params: {'R_catch': 200.0, 'R_fail': -50.0, 'alpha': 5.0, 'c_sg': 1.0, 'd_sg_safe': 1.5, 'c_path': 1.0, 'lam_time': 0.01}
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:236: UserWarning: [33mWARN: Box low's precision lowered by casting to float32, current low.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:306: UserWarning: [33mWARN: Box high's precision lowered by casting to float32, current high.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:236: UserWarning: [33mWARN: Box low's precision lowered by casting to float32, current low.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:306: UserWarning: [33mWARN: Box high's precision lowered by casting to float32, current high.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:236: UserWarning: [33mWARN: Box low's precision lowered by casting to float32, current low.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:306: UserWarning: [33mWARN: Box high's precision lowered by casting to float32, current high.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:236: UserWarning: [33mWARN: Box low's precision lowered by casting to float32, current low.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:306: UserWarning: [33mWARN: Box high's precision lowered by casting to float32, current high.dtype=float64[0m
+  gym.logger.warn(
+  Update 124/244 | steps=1015808 | ep_rew=197.2 | ep_len=44 | sr=90.71% | pi=-0.002 vf=2.4 ent=1.797 kl=0.000 clip=0.02 | beta=0.000 lr=1.5e-05 | FPS=52
+    [Reward] event=180.3 shaping=45.3 sg_obs=-28.0 time=-0.4
+    [Eval] rew=192.13±96.8  sr=90.00%  steps=36  cap_steps=27
+    [Eval Reward] event=180.0 shaping=41.8 sg_obs=-29.3 time=-0.4
+Saved: /root/autodl-tmp/pursue_20260302/checkpoints/v5_iql_B/best.pth
+    [Eval] rew=202.72±83.3  sr=90.00%  steps=38  cap_steps=29
+    [Eval Reward] event=180.0 shaping=45.7 sg_obs=-22.6 time=-0.4
+Saved: /root/autodl-tmp/pursue_20260302/checkpoints/v5_iql_B/latest.pth
+  Update 130/244 | steps=1064960 | ep_rew=194.4 | ep_len=43 | sr=89.49% | pi=-0.001 vf=2.5 ent=1.797 kl=0.000 clip=0.01 | beta=0.000 lr=1.5e-05 | FPS=53
+    [Reward] event=177.7 shaping=44.4 sg_obs=-27.3 time=-0.4
+    [Eval] rew=198.82±69.6  sr=95.00%  steps=43  cap_steps=39
+    [Eval Reward] event=190.0 shaping=41.9 sg_obs=-32.6 time=-0.4
+Saved: /root/autodl-tmp/pursue_20260302/checkpoints/v5_iql_B/best.pth
+    [Eval] rew=185.36±84.4  sr=85.00%  steps=48  cap_steps=35
+    [Eval Reward] event=170.0 shaping=47.7 sg_obs=-31.9 time=-0.5
+    [Eval] rew=190.79±98.2  sr=90.00%  steps=45  cap_steps=36
+    [Eval Reward] event=177.5 shaping=44.5 sg_obs=-30.8 time=-0.4
+Saved: /root/autodl-tmp/pursue_20260302/checkpoints/v5_iql_B/latest.pth
+    [Eval] rew=183.07±130.6  sr=90.00%  steps=34  cap_steps=25
+    [Eval Reward] event=175.0 shaping=42.6 sg_obs=-34.1 time=-0.3
+  Update 140/244 | steps=1146880 | ep_rew=180.9 | ep_len=49 | sr=89.00% | pi=-0.002 vf=2.7 ent=1.797 kl=0.000 clip=0.01 | beta=0.000 lr=1.3e-05 | FPS=54
+    [Reward] event=166.7 shaping=44.7 sg_obs=-30.0 time=-0.5
+    [Eval] rew=231.11±14.3  sr=100.00%  steps=23  cap_steps=23
+    [Eval Reward] event=200.0 shaping=37.0 sg_obs=-5.6 time=-0.2
+Saved: /root/autodl-tmp/pursue_20260302/checkpoints/v5_iql_B/best.pth
+Saved: /root/autodl-tmp/pursue_20260302/checkpoints/v5_iql_B/latest.pth
+    [Eval] rew=206.30±74.8  sr=90.00%  steps=33  cap_steps=24
+    [Eval Reward] event=180.0 shaping=40.4 sg_obs=-13.8 time=-0.3
+    [Eval] rew=213.53±44.5  sr=95.00%  steps=37  cap_steps=33
+    [Eval Reward] event=190.0 shaping=44.5 sg_obs=-20.6 time=-0.4
+    [Eval] rew=160.26±107.0  sr=75.00%  steps=51  cap_steps=28
+    [Eval Reward] event=147.5 shaping=44.6 sg_obs=-31.3 time=-0.5
+Saved: /root/autodl-tmp/pursue_20260302/checkpoints/v5_iql_B/latest.pth
+    [Eval] rew=207.02±63.0  sr=95.00%  steps=37  cap_steps=33
+    [Eval Reward] event=190.0 shaping=42.0 sg_obs=-24.6 time=-0.4
+  Update 150/244 | steps=1228800 | ep_rew=195.5 | ep_len=45 | sr=88.52% | pi=0.003 vf=2.6 ent=1.798 kl=0.000 clip=0.01 | beta=0.000 lr=1.2e-05 | FPS=55
+    [Reward] event=178.4 shaping=44.7 sg_obs=-27.0 time=-0.5

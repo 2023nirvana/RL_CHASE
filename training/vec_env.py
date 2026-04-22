@@ -12,20 +12,32 @@ import sys
 import os
 
 
-def _worker_fn(conn, project_root, low_ckpt, nn_device, env_kwargs, reward_kwargs):
+def _worker_fn(conn, project_root, low_ckpt, nn_device, env_kwargs, reward_kwargs,
+               env_version="v4"):
     """Worker 进程: 创建环境 + 处理 step/reset/close 命令。"""
     sys.path.insert(0, project_root)
-    from high_tabular.hrl_v3_real_auv_fixed import (
-        load_v4_nn, PursuitEnvRealAUVFixed,
-    )
     from training.collect_expert_trajectories import compute_high_reward
 
-    nn_policy = load_v4_nn(low_ckpt, torch.device(nn_device))
-    env = PursuitEnvRealAUVFixed(
-        nn_policy=nn_policy,
-        device=torch.device(nn_device),
-        **env_kwargs,
-    )
+    if env_version == "v5":
+        from high_tabular.hrl_v3_real_auv_direct_thrust import (
+            load_v5_nn, PursuitEnvDirectThrust,
+        )
+        nn_policy = load_v5_nn(low_ckpt, torch.device(nn_device))
+        env = PursuitEnvDirectThrust(
+            nn_policy=nn_policy,
+            device=torch.device(nn_device),
+            **env_kwargs,
+        )
+    else:
+        from high_tabular.hrl_v3_real_auv_fixed import (
+            load_v4_nn, PursuitEnvRealAUVFixed,
+        )
+        nn_policy = load_v4_nn(low_ckpt, torch.device(nn_device))
+        env = PursuitEnvRealAUVFixed(
+            nn_policy=nn_policy,
+            device=torch.device(nn_device),
+            **env_kwargs,
+        )
     prev_dist = None
 
     try:
@@ -86,8 +98,10 @@ class SubprocVecEnv:
     """
 
     def __init__(self, n_envs, project_root, low_ckpt,
-                 env_kwargs, reward_kwargs, nn_device="cpu"):
+                 env_kwargs, reward_kwargs, nn_device="cpu",
+                 env_version="v4"):
         self.n_envs = n_envs
+        self.env_version = env_version
         ctx = mp.get_context("spawn")
         self.parent_conns = []
         self.processes = []
@@ -100,7 +114,7 @@ class SubprocVecEnv:
             p = ctx.Process(
                 target=_worker_fn,
                 args=(child_conn, project_root, low_ckpt,
-                      nn_device, kw, reward_kwargs),
+                      nn_device, kw, reward_kwargs, env_version),
                 daemon=True,
             )
             p.start()

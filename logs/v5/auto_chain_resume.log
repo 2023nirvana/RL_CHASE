@@ -1,0 +1,43 @@
+nohup: ignoring input
+[2026-04-22 15:05:25] ============================================
+[2026-04-22 15:05:25]  V5 Auto Chain (RESUME): online→500k → extend 2M
+[2026-04-22 15:05:25] ============================================
+[2026-04-22 15:05:25]   OK  checkpoints/v5_bppo_A/latest.pth
+[2026-04-22 15:05:25]   OK  checkpoints/v5_bppo_B/latest.pth
+[2026-04-22 15:05:25]   OK  checkpoints/v5_iql_A/latest.pth
+[2026-04-22 15:05:25]   OK  checkpoints/v5_iql_B/latest.pth
+[2026-04-22 15:05:25]   OK  checkpoints/v5_td3bc_A/latest.pth
+[2026-04-22 15:05:25]   OK  checkpoints/v5_td3bc_B/latest.pth
+[2026-04-22 15:05:25] 
+[2026-04-22 15:05:25] Phase 1/2: resume online → 500k ...
+Wed Apr 22 15:05:25 CST 2026: Resuming 6 v5 online experiments from latest.pth → 500k...
+  BPPO-A  PID=6498
+  BPPO-B  PID=6499
+  IQL-A   PID=6500
+  IQL-B   PID=6501
+  TD3BC-A PID=6502
+  TD3BC-B PID=6503
+
+Wed Apr 22 15:05:25 CST 2026: All 6 resumed. Waiting...
+Wed Apr 22 16:37:27 CST 2026: Online resume to 500k complete.
+[2026-04-22 16:37:27] resume 阶段退出码: 0
+[2026-04-22 16:37:27] 
+[2026-04-22 16:37:27] 检查 final.pth 是否生成：
+[2026-04-22 16:37:27]   OK  checkpoints/v5_bppo_A/final.pth
+[2026-04-22 16:37:27]   OK  checkpoints/v5_bppo_B/final.pth
+[2026-04-22 16:37:27]   OK  checkpoints/v5_iql_A/final.pth
+[2026-04-22 16:37:27]   OK  checkpoints/v5_iql_B/final.pth
+[2026-04-22 16:37:27]   OK  checkpoints/v5_td3bc_A/final.pth
+[2026-04-22 16:37:27]   OK  checkpoints/v5_td3bc_B/final.pth
+[2026-04-22 16:37:27] 
+[2026-04-22 16:37:27] Phase 2/2: extend → 2M ...
+Wed Apr 22 16:37:27 CST 2026: Extending 6 v5 experiments to 2M steps...
+Log dir: logs/v5/online
+  BPPO-A  PID=13672
+  BPPO-B  PID=13673
+  IQL-A   PID=13674
+  IQL-B   PID=13675
+  TD3BC-A PID=13676
+  TD3BC-B PID=13677
+
+Wed Apr 22 16:37:27 CST 2026: All 6 extended runs launched. Waiting...

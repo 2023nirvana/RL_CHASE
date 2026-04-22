@@ -1,0 +1,31 @@
+nohup: ignoring input
+[2026-04-22 00:19:27] ============================================
+[2026-04-22 00:19:27]  V5 Auto Chain: offline-wait → online → extend
+[2026-04-22 00:19:27] ============================================
+[2026-04-22 00:19:27] 当前 offline PIDs:
+td3bc 138191
+iql 138192
+bppo 138193
+[2026-04-22 00:19:27] Phase 1/3: 等离线预训练完成 ...
+[2026-04-22 00:19:27]   waiting td3bc (PID=138191) ...
+[2026-04-22 10:41:29]   td3bc (PID=138191) 已结束
+[2026-04-22 10:41:29]   waiting iql (PID=138192) ...
+[2026-04-22 10:50:29]   iql (PID=138192) 已结束
+[2026-04-22 10:50:29]   waiting bppo (PID=138193) ...
+[2026-04-22 10:50:29]   bppo (PID=138193) 已结束
+[2026-04-22 10:50:29] 离线预训练全部结束。检查 ckpt 是否就绪：
+[2026-04-22 10:50:29]   OK  checkpoints/td3bc_v5_2m/best.pth
+[2026-04-22 10:50:29]   OK  checkpoints/iql_v5_2m/best.pth
+[2026-04-22 10:50:29]   OK  checkpoints/bppo_v5_2m/best.pth
+[2026-04-22 10:50:29] 
+[2026-04-22 10:50:29] Phase 2/3: 启动 online 微调 (500k × 6) ...
+Wed Apr 22 10:50:29 CST 2026: Starting 6 v5 experiments in parallel...
+===== 日志目录: logs/v5/online =====
+  BPPO-A  PID=167465  log=logs/v5/online/bppo_A.log
+  BPPO-B  PID=167466  log=logs/v5/online/bppo_B.log
+  IQL-A   PID=167467  log=logs/v5/online/iql_A.log
+  IQL-B   PID=167468  log=logs/v5/online/iql_B.log
+  TD3BC-A PID=167469  log=logs/v5/online/td3bc_A.log
+  TD3BC-B PID=167470  log=logs/v5/online/td3bc_B.log
+
+Wed Apr 22 10:50:29 CST 2026: All 6 launched. Waiting...

@@ -8,3 +8,10 @@ __pycache__/
 
 # OS
 .DS_Store
+
+# === 大文件（latest.pth 体积 ≈ best.pth 但会被频繁覆盖，忽略以减小 diff） ===
+checkpoints/**/latest.pth
+# 训练中间产物
+visualization/logs/
+# 训练 pid 临时文件
+logs/**/pids*.txt

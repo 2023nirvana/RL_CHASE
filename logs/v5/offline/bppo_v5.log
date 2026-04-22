@@ -1,0 +1,157 @@
+Device: cuda
+Loaded 482279 transitions
+  reward: [-76.3, 105.5], mean=-6.65, std=17.88
+  Reward normalized: mean=-6.65, std=17.88
+  After: [-3.89, 6.27], mean=-0.0000
+  Split: train=434052, val=48227
+Total params: 159,111
+
+============================================================
+BPPO Training Pipeline
+  Phase 1: V steps=300000, Q steps=300000
+  Phase 2: BC steps=300000
+  Phase 3: BPPO steps=3000, clip=0.2, omega=0.9
+============================================================
+
+Phase 1a: Training Value function V(s) ...
+  [V] step  10000/300000 | loss=14.5817 V=-3.43 (150s)
+  [V] step  20000/300000 | loss=9.9433 V=-5.44 (307s)
+  [V] step  30000/300000 | loss=6.6584 V=-3.60 (466s)
+  [V] step  40000/300000 | loss=11.6034 V=-4.13 (617s)
+  [V] step  50000/300000 | loss=5.3190 V=-4.35 (770s)
+  [V] step  60000/300000 | loss=6.0918 V=-4.27 (927s)
+  [V] step  70000/300000 | loss=8.0189 V=-5.31 (1083s)
+  [V] step  80000/300000 | loss=5.7081 V=-4.80 (1239s)
+  [V] step  90000/300000 | loss=7.2655 V=-2.09 (1383s)
+  [V] step 100000/300000 | loss=4.6946 V=-2.41 (1535s)
+  [V] step 110000/300000 | loss=6.6356 V=-3.20 (1665s)
+  [V] step 120000/300000 | loss=6.8071 V=-4.73 (1726s)
+  [V] step 130000/300000 | loss=8.0131 V=-4.59 (1835s)
+  [V] step 140000/300000 | loss=5.4499 V=-4.06 (1988s)
+  [V] step 150000/300000 | loss=7.6542 V=-2.38 (2141s)
+  [V] step 160000/300000 | loss=7.0200 V=-3.84 (2289s)
+  [V] step 170000/300000 | loss=7.1909 V=-2.27 (2426s)
+  [V] step 180000/300000 | loss=5.8827 V=-2.84 (2582s)
+  [V] step 190000/300000 | loss=10.2183 V=-2.73 (2735s)
+  [V] step 200000/300000 | loss=6.5240 V=-3.61 (2889s)
+  [V] step 210000/300000 | loss=7.1275 V=-2.03 (3043s)
+  [V] step 220000/300000 | loss=5.6715 V=-3.27 (3191s)
+  [V] step 230000/300000 | loss=6.8747 V=-3.53 (3346s)
+  [V] step 240000/300000 | loss=6.6956 V=-4.71 (3440s)
+  [V] step 250000/300000 | loss=7.0579 V=-5.26 (3516s)
+  [V] step 260000/300000 | loss=6.3755 V=-3.10 (3658s)
+  [V] step 270000/300000 | loss=4.4529 V=-2.51 (3813s)
+  [V] step 280000/300000 | loss=8.2683 V=-3.91 (3967s)
+  [V] step 290000/300000 | loss=4.9753 V=-5.12 (4111s)
+  [V] step 300000/300000 | loss=5.1846 V=-1.82 (4266s)
+
+Phase 1b: Training Q function Q(s,a) ...
+  [Q] step  10000/300000 | loss=70.0527 Q=-4.68 (4437s)
+  [Q] step  20000/300000 | loss=69.2956 Q=-2.52 (4609s)
+  [Q] step  30000/300000 | loss=35.8706 Q=-1.40 (4775s)
+  [Q] step  40000/300000 | loss=42.2362 Q=-2.86 (4946s)
+  [Q] step  50000/300000 | loss=37.8271 Q=-3.41 (5111s)
+  [Q] step  60000/300000 | loss=30.1510 Q=-2.14 (5213s)
+  [Q] step  70000/300000 | loss=33.9100 Q=-3.29 (5335s)
+  [Q] step  80000/300000 | loss=32.1535 Q=-2.19 (5505s)
+  [Q] step  90000/300000 | loss=28.3002 Q=-1.89 (5676s)
+  [Q] step 100000/300000 | loss=28.8416 Q=-1.79 (5842s)
+  [Q] step 110000/300000 | loss=28.3766 Q=-2.40 (6015s)
+  [Q] step 120000/300000 | loss=22.2259 Q=-2.66 (6183s)
+  [Q] step 130000/300000 | loss=27.8753 Q=-0.97 (6355s)
+  [Q] step 140000/300000 | loss=18.0736 Q=-2.90 (6527s)
+  [Q] step 150000/300000 | loss=24.4804 Q=-2.16 (6689s)
+  [Q] step 160000/300000 | loss=19.1397 Q=-2.28 (6861s)
+  [Q] step 170000/300000 | loss=21.8155 Q=-3.56 (6940s)
+  [Q] step 180000/300000 | loss=17.2058 Q=-3.63 (7103s)
+  [Q] step 190000/300000 | loss=12.8283 Q=-1.96 (7274s)
+  [Q] step 200000/300000 | loss=11.6138 Q=-1.44 (7437s)
+  [Q] step 210000/300000 | loss=13.7289 Q=-2.88 (7598s)
+  [Q] step 220000/300000 | loss=17.9196 Q=-3.15 (7767s)
+  [Q] step 230000/300000 | loss=15.6952 Q=-3.16 (7935s)
+  [Q] step 240000/300000 | loss=11.7404 Q=-1.25 (8107s)
+  [Q] step 250000/300000 | loss=17.3256 Q=-2.80 (8269s)
+  [Q] step 260000/300000 | loss=10.6810 Q=-2.37 (8441s)
+  [Q] step 270000/300000 | loss=11.9942 Q=-2.58 (8588s)
+  [Q] step 280000/300000 | loss=11.2066 Q=-2.95 (8676s)
+  [Q] step 290000/300000 | loss=14.6068 Q=-4.75 (8846s)
+  [Q] step 300000/300000 | loss=7.4471 Q=-2.37 (9013s)
+
+Phase 2: Behavior Cloning ...
+  [BC] step  10000/300000 | loss=-1.8905 (9184s)
+  [BC] step  20000/300000 | loss=-2.2463 (9364s)
+  [BC] step  30000/300000 | loss=-2.3067 (9537s)
+  [BC] step  40000/300000 | loss=-2.4027 (9714s)
+  [BC] step  50000/300000 | loss=-2.1700 (9890s)
+Loaded v5 direct thrust NN: obs=8, act=8, hidden=(64, 64)
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:236: UserWarning: [33mWARN: Box low's precision lowered by casting to float32, current low.dtype=float64[0m
+  gym.logger.warn(
+/root/miniconda3/lib/python3.12/site-packages/gymnasium/spaces/box.py:306: UserWarning: [33mWARN: Box high's precision lowered by casting to float32, current high.dtype=float64[0m
+  gym.logger.warn(
+    [Eval diag] avg_steps=44 max_steps=120
+    [Reward breakdown per step] event=2.131 shaping=0.976 sg_obs=-9.297 time=-0.050
+    [Reward total] event=1400.0 shaping=641.2 sg_obs=-6108.1 time=-32.9
+    [BC Eval] step=50000 reward=-273.3 success=93%
+  Saved: /root/autodl-tmp/pursue_20260302/checkpoints/bppo_v5_2m/bc_best.pth
+  [BC] step  60000/300000 | loss=-2.3893 (10174s)
+  [BC] step  70000/300000 | loss=-1.9812 (10262s)
+  [BC] step  80000/300000 | loss=-2.1874 (10422s)
+  [BC] step  90000/300000 | loss=-2.4156 (10599s)
+  [BC] step 100000/300000 | loss=-2.3377 (10774s)
+    [Eval diag] avg_steps=48 max_steps=120
+    [Reward breakdown per step] event=1.928 shaping=0.940 sg_obs=-11.682 time=-0.050
+    [Reward total] event=1400.0 shaping=682.7 sg_obs=-8481.2 time=-36.3
+    [BC Eval] step=100000 reward=-429.0 success=93%
+  [BC] step 110000/300000 | loss=-2.8414 (11079s)
+  [BC] step 120000/300000 | loss=-2.5458 (11265s)
+  [BC] step 130000/300000 | loss=-2.2716 (11445s)
+  [BC] step 140000/300000 | loss=-2.5413 (11626s)
+  [BC] step 150000/300000 | loss=-2.2400 (11790s)
+    [Eval diag] avg_steps=49 max_steps=120
+    [Reward breakdown per step] event=1.839 shaping=0.907 sg_obs=-10.187 time=-0.050
+    [Reward total] event=1350.0 shaping=665.8 sg_obs=-7477.0 time=-36.7
+    [BC Eval] step=150000 reward=-366.5 success=93%
+  [BC] step 160000/300000 | loss=-2.4442 (12050s)
+  [BC] step 170000/300000 | loss=-2.3904 (12231s)
+  [BC] step 180000/300000 | loss=-2.4493 (12411s)
+  [BC] step 190000/300000 | loss=-2.7001 (12596s)
+  [BC] step 200000/300000 | loss=-2.4445 (12781s)
+    [Eval diag] avg_steps=41 max_steps=120
+    [Reward breakdown per step] event=2.273 shaping=1.044 sg_obs=-9.174 time=-0.050
+    [Reward total] event=1400.0 shaping=643.2 sg_obs=-5651.4 time=-30.8
+    [BC Eval] step=200000 reward=-242.6 success=93%
+  [BC] step 210000/300000 | loss=-2.6377 (13054s)
+  [BC] step 220000/300000 | loss=-2.4765 (13231s)
+  [BC] step 230000/300000 | loss=-2.7174 (13373s)
+  [BC] step 240000/300000 | loss=-2.5426 (13488s)
+  [BC] step 250000/300000 | loss=-2.6819 (13793s)
+    [Eval diag] avg_steps=37 max_steps=110
+    [Reward breakdown per step] event=2.669 shaping=1.135 sg_obs=-10.135 time=-0.050
+    [Reward total] event=1500.0 shaping=637.8 sg_obs=-5695.9 time=-28.1
+    [BC Eval] step=250000 reward=-239.1 success=100%
+  Saved: /root/autodl-tmp/pursue_20260302/checkpoints/bppo_v5_2m/bc_best.pth
+  [BC] step 260000/300000 | loss=-2.7474 (14502s)
+  [BC] step 270000/300000 | loss=-2.5258 (14958s)
+  [BC] step 280000/300000 | loss=-2.5595 (15430s)
+  [BC] step 290000/300000 | loss=-2.5481 (15908s)
+  [BC] step 300000/300000 | loss=-2.4824 (16363s)
+    [Eval diag] avg_steps=43 max_steps=110
+    [Reward breakdown per step] event=2.329 shaping=1.029 sg_obs=-10.847 time=-0.050
+    [Reward total] event=1500.0 shaping=662.7 sg_obs=-6985.2 time=-32.2
+    [BC Eval] step=300000 reward=-323.6 success=100%
+  Saved: /root/autodl-tmp/pursue_20260302/checkpoints/bppo_v5_2m/bc_final.pth
+  BC done. Best BC success: 100%
+
+Phase 3: BPPO policy improvement ...
+
+  [BPPO] Final evaluation ...
+    [Eval diag] avg_steps=43 max_steps=110
+    [Reward breakdown per step] event=2.329 shaping=1.029 sg_obs=-10.920 time=-0.050
+    [Reward total] event=1500.0 shaping=663.0 sg_obs=-7032.6 time=-32.2
+    [BPPO Final Eval] reward=-326.8 success=100%
+  Saved: /root/autodl-tmp/pursue_20260302/checkpoints/bppo_v5_2m/best.pth
+  Saved: /root/autodl-tmp/pursue_20260302/checkpoints/bppo_v5_2m/final.pth
+Saved: /root/autodl-tmp/pursue_20260302/visualization/logs/bppo_v5_2m/bppo_curves.png
+
+BPPO done. Best success: 100%, Best eval reward: -326.8
+Total time: 17061s

@@ -31,6 +31,34 @@ sys.path.insert(0, PROJECT_ROOT)
 from high_tabular.hrl_v3_real_auv_fixed import (
     load_v4_nn, PursuitEnvRealAUVFixed,
 )
+from high_tabular.hrl_v3_real_auv_direct_thrust import (
+    load_v5_nn, PursuitEnvDirectThrust,
+)
+
+
+def _make_eval_env(args, device):
+    """根据 args.env_version 创建 评估 env（v4 或 v5）"""
+    kw = dict(
+        world_size=args.world_size,
+        catch_radius=args.catch_radius,
+        max_steps=120 * args.low_steps,
+        subgoal_range=args.subgoal_range,
+        low_steps=args.low_steps,
+        seed=9999,
+        evader_mode=args.evader_mode,
+    )
+    if getattr(args, "env_version", "v4") == "v5":
+        nn_policy = load_v5_nn(args.low_level_ckpt, device)
+        for k in ("v_max_pursuer", "a_max_pursuer",
+                  "v_max_evader", "a_max_evader"):
+            val = getattr(args, k, None)
+            if val is not None:
+                kw[k] = val
+        return PursuitEnvDirectThrust(
+            nn_policy=nn_policy, device=device, **kw)
+    nn_policy = load_v4_nn(args.low_level_ckpt, device)
+    return PursuitEnvRealAUVFixed(
+        nn_policy=nn_policy, device=device, **kw)
 from training.collect_expert_trajectories import compute_high_reward
 from training.td3bc_pretrain import OfflineReplayBuffer, TD3Critic
 
@@ -302,18 +330,7 @@ class BPPOTrainer:
             if not self.args.low_level_ckpt:
                 return {"eval_reward": float("nan"),
                         "eval_success": float("nan")}
-            nn_policy = load_v4_nn(
-                self.args.low_level_ckpt, self.device)
-            self._eval_env = PursuitEnvRealAUVFixed(
-                nn_policy=nn_policy, device=self.device,
-                world_size=self.args.world_size,
-                catch_radius=self.args.catch_radius,
-                max_steps=120 * self.args.low_steps,
-                subgoal_range=self.args.subgoal_range,
-                low_steps=self.args.low_steps,
-                seed=9999,
-                evader_mode=self.args.evader_mode,
-            )
+            self._eval_env = _make_eval_env(self.args, self.device)
 
         env = self._eval_env
         self.policy.eval()
@@ -742,6 +759,12 @@ def main():
     p.add_argument("--eval-every", type=int, default=5000)
     p.add_argument("--eval-episodes", type=int, default=15)
     p.add_argument("--low-level-ckpt", type=str, default="")
+    p.add_argument("--env-version", type=str, default="v4",
+                   choices=["v4", "v5"])
+    p.add_argument("--v-max-pursuer", type=float, default=None)
+    p.add_argument("--a-max-pursuer", type=float, default=None)
+    p.add_argument("--v-max-evader",  type=float, default=None)
+    p.add_argument("--a-max-evader",  type=float, default=None)
     p.add_argument("--world-size", type=float, default=30.0)
     p.add_argument("--catch-radius", type=float, default=1.0)
     p.add_argument("--max-steps", type=int, default=6000)
